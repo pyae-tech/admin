@@ -66,14 +66,14 @@ body {
   -ms-overflow-style: scrollbar;
 }
 body {
-  background-color: #ecf0f5;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif,Zawgyi-One;
-  font-size: 13px;
-  font-weight: normal;
-  font-variant: normal;
-  color: #7a878e;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased !important;
+    background-color: #ecf0f5;
+    font-family: 'Pyidaungsu';
+    font-size: 13px;
+    font-weight: normal;
+    font-variant: normal;
+    color: #7a878e;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased !important;
 }
 h1,
 h2,
@@ -6250,7 +6250,7 @@ button.list-group-item-dark:focus {
 /* TOOLTIP */
 /*======================================*/
 .tooltip {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Pyidaungsu';
   font-size: 13px;
   z-index: 999999;
 }
@@ -6790,9 +6790,9 @@ blockquote {
 }
 .bq-open:before,
 .bq-close:after {
-  content: '\201C';
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 3.5em;
+    content: '\201C';
+    font-family: 'Pyidaungsu';
+    font-size: 3.5em;
 }
 .bq-open:before {
   position: absolute;
@@ -8889,12 +8889,12 @@ a.disabled-link:hover {
 
 /*zawgyi font*/
 @font-face {
-    font-family: Zawgyi-One;
-    src: url(../fonts/ZawgyiOne2008.ttf) format("opentype");
+    font-family: 'Pyidaungsu';
+    src: url(../fonts/Pyidaungsu-2.5_Regular.ttf) format("opentype");
 }
 
 .zawgyi-font {
-    font-family: Zawgyi-One;
+    font-family: 'Pyidaungsu';
 }
 
 /*loading*/

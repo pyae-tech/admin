@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Login page | Nifty - Admin Template</title>
+    <title>Login | NPT DC</title>
 
 
     <!--STYLESHEET-->
@@ -73,7 +73,7 @@
 		        <div class="panel-body">
 		            <div class="mar-ver pad-btm">
                       
-		                <h1 class="h3">ဘ႑ာေရး.com</h1>
+		                <h1 class="h4">နေပြည်တော် စည်ပင်သာယာရေး ကော်မတီ</h1>
 		                <p>Sign In to your account</p>
 		            </div>
 		            <form>

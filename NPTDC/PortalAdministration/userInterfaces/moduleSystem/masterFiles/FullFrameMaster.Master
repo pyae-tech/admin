@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>SYSTEMATIC</title>
+    <title>NPT DC</title>
 
 
     <!--STYLESHEET-->
@@ -103,7 +103,7 @@
                     <a href="modules" class="navbar-brand">
                         <img src='<%= ResolveUrl("../../../img/logo.png")%>' alt="Nifty Logo" class="brand-icon">
                         <div class="brand-title">
-                            <span class="brand-text zawgyi-font">ဘ႑ာေရး.com</span>
+                            <span class="brand-text zawgyi-font">NPT DC</span>
                         </div>
                     </a>
                 </div>
@@ -1058,7 +1058,7 @@
             <!-- Visible when footer positions are static -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <div class="hide-fixed pull-right pad-rgt">
-                www.<strong>bandaryae</strong>.com
+          နေပြည်တော် စည်ပင်သာယာရေး ကော်မတီ
             </div>
 
 

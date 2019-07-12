@@ -1750,6 +1750,8 @@
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\masterFiles\FullFrameMaster_Account.master" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\masterFiles\FullFrameMaster_Reporting.master" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\masterFiles\FullFrameMaster_NPTDC.master" />
+    <Content Include="PortalAdministration\fonts\Pyidaungsu-2.5_Bold.ttf" />
+    <Content Include="PortalAdministration\fonts\Pyidaungsu-2.5_Regular.ttf" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
@@ -4512,19 +4514,6 @@
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemUserRoles\pageSystemUserRoles.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemUsers\pageSystemUsers.aspx" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemUsers\pageSystemUsers.js" />
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -4843,7 +4832,6 @@
       <DependentUpon>pageSystemUsers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SqlServerTypes\Loader.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\Publish2\" />
