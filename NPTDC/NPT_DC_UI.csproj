@@ -1747,7 +1747,6 @@
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\masterFiles\FullFrameMaster_CustomerOrder.Master" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\masterFiles\FullFrameMaster_Account.master" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\masterFiles\FullFrameMaster_Reporting.master" />
-    <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
@@ -4650,6 +4649,13 @@
     </Compile>
     <Compile Include="PortalAdministration\userInterfaces\moduleSystem\masterFiles\FullFrameMaster_Account.master.designer.cs">
       <DependentUpon>FullFrameMaster_Account.master</DependentUpon>
+    </Compile>
+    <Compile Include="PortalAdministration\userInterfaces\moduleSystem\masterFiles\FullFrameMaster_NPTDC.master.cs">
+      <DependentUpon>FullFrameMaster_NPTDC.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PortalAdministration\userInterfaces\moduleSystem\masterFiles\FullFrameMaster_NPTDC.master.designer.cs">
+      <DependentUpon>FullFrameMaster_NPTDC.master</DependentUpon>
     </Compile>
     <Compile Include="PortalAdministration\userInterfaces\moduleSystem\masterFiles\FullFrameMaster_Reporting.master.cs">
       <DependentUpon>FullFrameMaster_Reporting.master</DependentUpon>

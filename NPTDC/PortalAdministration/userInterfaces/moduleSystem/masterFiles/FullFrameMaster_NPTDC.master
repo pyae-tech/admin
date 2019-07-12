@@ -1,0 +1,47 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/PortalAdministration/userInterfaces/moduleSystem/masterFiles/FullFrameMaster.Master" AutoEventWireup="true" CodeBehind="FullFrameMaster_NPTDC.master.cs" Inherits="SBSPortal3.PortalAdministration.userInterfaces.moduleSystem.masterFiles.FullFrameMaster_NPTDC" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_CSS" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_CSS" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Header" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_Header" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder_Body" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_Body" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder_SliderMenu" runat="server">
+    <!--Menu list item-->
+    <li class="" id="menu_sale">
+        <a href="#">
+            <i class="ion-clipboard"></i>
+            <span class="menu-title" data-translate="_salemodule">Sale Module</span>
+            <i class="arrow"></i>
+        </a>
+
+        <!--Submenu-->
+        <ul class="collapse" id="menu_sale_group">
+            <li id="menu_sale_order"><a href="orders"><span data-translate="_saleOrder">Sale Order</span></a></li>
+           
+            <li class="list-divider"></li>
+            <li id="menu_service_by_ffs"><a href="services"><span data-translate="_Services">Service</span></a></li>
+
+            <li class="list-divider"></li>
+            <li id="menu_sale_invoice"><a href="invoices"><span data-translate="_SaleInvoices">Sale Invoice</span></a></li>
+            <li id="menu_sale_invoice_rp"><a href="invoiceReport"><span data-translate="_sale_invoice_report">Sale Invoice Reports</span></a></li>
+
+            <li class="list-divider"></li>
+            <li id="menu_sale_summary_by_item"><a href="saleSummaryItem"><span data-translate="_salebyitem">Sale By Item</span></a></li>
+            <li id="menu_sale_summary_by_customer"><a href="saleSummaryCustomer"><span data-translate="_salebycustomer">Sale  By Customer</span></a></li>
+
+
+        </ul>
+        <div id="sale_book"> </div>
+  </li>
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder_JS" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_JS" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
