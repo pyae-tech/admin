@@ -1747,6 +1747,7 @@
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\masterFiles\FullFrameMaster_CustomerOrder.Master" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\masterFiles\FullFrameMaster_Account.master" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\masterFiles\FullFrameMaster_Reporting.master" />
+    <Content Include="PortalAdministration\userInterfaces\moduleSystem\masterFiles\FullFrameMaster_NPTDC.master" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
