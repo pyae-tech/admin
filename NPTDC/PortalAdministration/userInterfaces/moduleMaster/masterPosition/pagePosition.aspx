@@ -109,61 +109,34 @@
                        
                      
                                                         <div class="form-group">
-                                                            <label for="tb_name" class="col-md-3 control-label" data-translate="PositionName">အမည္</label>
+                                                            <label for="tb_name" class="col-md-3 control-label" data-translate="PositionName">Position Name</label>
                                                             <div class="col-md-5">
-                                                                <input type="text" class="form-control" id="tb_name" placeholder="အမည္">
+                                                                <input type="text" class="form-control" id="tb_name" placeholder="Enter Position Name">
                                                             </div>
                                                              <label for="tb_position_code" class="col-md-1 control-label" data-translate="Code">Code</label>
                                                             <div class="col-md-3">
-                                                                <input type="text" class="form-control" id="tb_position_code" placeholder="ရာထူး Code">
+                                                                <input type="text" class="form-control" id="tb_position_code" placeholder="Enter Position Code">
                                                             </div>
                                                         </div>
 
-                          
-                     
-
-
-
                                                         <div class="form-group">
-                                                            <label for="tb_DBasic_Salary" class="col-md-3 control-label" data-translate="Basic Salary">အေျခခံလစာ</label>
-                                                            <div class="col-md-3">
-                                                                <input type="text" class="form-control" style="text-align: right" id="tb_DBasic_Salary" placeholder="အေျခခံလစာ">
+                                                            <label for="tb_DBasic_Salary" class="col-md-3 control-label" data-translate="">Protocol</label>
+                                                            <div class="col-md-5">
+                                                                <input type="text" class="form-control"  id="tb_protocol" placeholder="Enter Protocol">
                                                             </div>
                                                         </div>
 
 
                                                         <div class="form-group">
-                                                            <label for="tb_DOTRate" class="col-md-3 control-label" data-translate="OT Rate">အခိ်န္ပိုႏႈန္း</label>
-                                                            <div class="col-md-3">
-                                                                <input type="text" class="form-control" style="text-align: right" id="tb_DOTRate" placeholder="အခိ်န္ပိုႏႈန္း">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label for="tb_DMini_Salary" class="col-md-3 control-label " data-translate="Mini Salary">အနိမ့္ဆံုးလစာ</label>
-                                                            <div class="col-md-3">
-                                                                <input type="text" class="form-control" id="tb_DMini_Salary" style="text-align: right" placeholder="အနိမ့္ဆံုးလစာ">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label for="tb_DGAdjustment" class="col-md-3 control-label" data-translate="Adjustment">ရာထူးတိုး</label>
-                                                            <div class="col-md-3">
-                                                                <input type="text" class="form-control" style="text-align: right" id="tb_DGAdjustment" placeholder="ရာထူးတိုး">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label for="tb_Job_Level" class="col-md-3 control-label" data-translate="JobLeve">ရာထူး အဆင္႔</label>
+                                                            <label for="tb_DOTRate" class="col-md-3 control-label" data-translate="">Description</label>
                                                             <div class="col-md-9">
-                                                                <input type="text" class="form-control" id="tb_Job_Level" placeholder="ရာထူး အဆင့္">
+                                                                <textarea  class="form-control" rows="3"  id="tb_description" placeholder="Enter Description"></textarea>
                                                             </div>
                                                         </div>
-
                                                         <div class="form-group">
-                                                            <label for="tb_remark" class="col-md-3 control-label" data-translate="Remark">မွတ္ခ်က္</label>
+                                                            <label for="tb_remark" class="col-md-3 control-label" data-translate="">Remark</label>
                                                             <div class="col-md-9">
-                                                                <textarea class="form-control" rows="3" placeholder="မွတ္ခ်က္" id="tb_remark"></textarea>
+                                                                <textarea class="form-control" rows="3" placeholder="Enter Remark" id="tb_remark"></textarea>
                                                             </div>
                                                         </div>
                   

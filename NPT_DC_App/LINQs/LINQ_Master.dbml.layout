@@ -2,10 +2,34 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LINQ_Master">
   <DataContextMoniker Name="/LINQ_MasterDataContext" />
   <nestedChildShapes>
-    <classShape Id="2b69316a-429a-45bb-8a98-339f5776414d" absoluteBounds="1, 0.875, 2, 3.3093082682291666">
+    <classShape Id="2b69316a-429a-45bb-8a98-339f5776414d" absoluteBounds="0.5, 0.5, 2, 3.3093082682291666">
       <DataClassMoniker Name="/LINQ_MasterDataContext/Mst_Image" />
       <nestedChildShapes>
-        <elementListCompartment Id="d79d756c-7e57-40ac-8dcb-7cb3670f23af" absoluteBounds="1.0149999999999997, 1.335, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d79d756c-7e57-40ac-8dcb-7cb3670f23af" absoluteBounds="0.51499999999999968, 0.96, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="59f4cc14-37a6-4609-a5a8-f3af902522fb" absoluteBounds="2.75, 0.625, 2, 3.1170068359375">
+      <DataClassMoniker Name="/LINQ_MasterDataContext/Mst_Department" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1d58bd7c-b067-484d-a48f-62799c803f62" absoluteBounds="2.765, 1.085, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0fcaacf4-fda3-42c5-9cd3-8a6fc62be055" absoluteBounds="2.875, 3.875, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/LINQ_MasterDataContext/Mst_DepartmentView" />
+      <nestedChildShapes>
+        <elementListCompartment Id="20db1775-7c06-4c4b-9b86-2590d174aeff" absoluteBounds="2.89, 4.335, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7f2d49d1-3897-4b73-b407-dcedd38a6e93" absoluteBounds="5.25, 0.625, 2, 3.1170068359375">
+      <DataClassMoniker Name="/LINQ_MasterDataContext/Mst_Position" />
+      <nestedChildShapes>
+        <elementListCompartment Id="500e5379-d47a-482c-a199-3f800b78b232" absoluteBounds="5.265, 1.085, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aa49a281-5159-4355-8e75-7463c86b1f53" absoluteBounds="5.25, 3.875, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/LINQ_MasterDataContext/Mst_PositionView" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f528f79e-7ade-4754-8d60-3eaaa056138e" absoluteBounds="5.265, 4.335, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

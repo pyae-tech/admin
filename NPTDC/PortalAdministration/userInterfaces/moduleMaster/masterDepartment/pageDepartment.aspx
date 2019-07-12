@@ -102,30 +102,33 @@
                      
                                                         <div class="form-group">
                                                             <label for="tb_name" class="col-md-3 control-label">Department Name</label>
-                                                            <div class="col-md-5">
+                                                            <div class="col-md-9">
                                                                 <input type="text" class="form-control" id="tb_name" placeholder="Enter Department Name">
-                                                            </div>
-                                                             <label for="tb_position_code" class="col-md-1 control-label">Code</label>
-                                                            <div class="col-md-3">
-                                                                <input type="text" class="form-control" id="tb_code" placeholder="Enter Department Code">
                                                             </div>
                                                         </div>
                                        <div class="form-group">
-                                       <label for="tb_address" class="col-md-3 control-label">Payment Type</label>
-                                       <div class="col-md-3">
-                                       <select id="ddl_pay_type" class="form-control">
-                                       <option value="MMK">MMK</option>
-                                       <option value="USD">USD</option>
-                                       </select>
-                                       </div>
+                                       <label for="tb_address" class="col-md-3 control-label">Email</label>
+                                      <div class="col-md-9">
+                                          <input type="text" class="form-control" id="tb_notifyemail" placeholder="Enter Notify Email"/>
+                                      </div>
                           
                                         </div>
-                                             
-
-                                                        <div class="form-group">
-                                                            <label for="tb_remark" class="col-md-3 control-label">မွတ္ခ်က္</label>
+                           <div class="form-group">
+                                                            <label for="tb_remark" class="col-md-3 control-label">Protocol</label>
                                                             <div class="col-md-9">
-                                                                <textarea class="form-control" rows="3" placeholder="မွတ္ခ်က္" id="tb_remark"></textarea>
+                                                                <input type="text" class="form-control" placeholder="Enter Protocol" id="tb_protocol"/>
+                                                            </div>
+                                                        </div>
+                                  <div class="form-group">
+                                                            <label for="tb_remark" class="col-md-3 control-label">Description</label>
+                                                            <div class="col-md-9">
+                                                                <input type="text" class="form-control" placeholder="Enter Description" id="tb_description"/>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="tb_remark" class="col-md-3 control-label">Remark</label>
+                                                            <div class="col-md-9">
+                                                                <textarea class="form-control" rows="5" placeholder="Enter Remark" id="tb_remark"></textarea>
                                                             </div>
                                                         </div>
                   

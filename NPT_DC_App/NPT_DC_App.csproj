@@ -70,7 +70,9 @@
   <ItemGroup>
     <Content Include="Web.config" />
     <Content Include="WebServices\WebService_Attachment.asmx" />
+    <Content Include="WebServices\WebService_Department.asmx" />
     <Content Include="WebServices\WebService_Image.asmx" />
+    <Content Include="WebServices\WebService_Position.asmx" />
     <Content Include="WebServices\WebService_Program.asmx" />
     <Content Include="WebServices\WebService_System.asmx" />
     <Content Include="WebServices\WebService_SystemLog.asmx" />
@@ -83,9 +85,11 @@
   <ItemGroup>
     <Compile Include="Controllers\Controller_Attachment.cs" />
     <Compile Include="Controllers\Controller_Common.cs" />
+    <Compile Include="Controllers\Controller_Department.cs" />
     <Compile Include="Controllers\Controller_EmailHelper.cs" />
     <Compile Include="Controllers\Controller_FileUpload.cs" />
     <Compile Include="Controllers\Controller_Image.cs" />
+    <Compile Include="Controllers\Controller_Position.cs" />
     <Compile Include="Controllers\Controller_Program.cs" />
     <Compile Include="Controllers\Controller_RunningNo.cs" />
     <Compile Include="Controllers\Controller_Stock_Transaction.cs" />
@@ -115,8 +119,16 @@
       <DependentUpon>WebService_Attachment.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="WebServices\WebService_Department.asmx.cs">
+      <DependentUpon>WebService_Department.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="WebServices\WebService_Image.asmx.cs">
       <DependentUpon>WebService_Image.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\WebService_Position.asmx.cs">
+      <DependentUpon>WebService_Position.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="WebServices\WebService_Program.asmx.cs">
@@ -206,7 +218,6 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-   
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
