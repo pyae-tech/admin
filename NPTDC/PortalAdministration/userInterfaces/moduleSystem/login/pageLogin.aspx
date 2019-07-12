@@ -72,7 +72,7 @@
 		    <div class="cls-content-sm panel">
 		        <div class="panel-body">
 		            <div class="mar-ver pad-btm">
-                      
+                      <center><img src='<%= ResolveUrl("../../../img/logo.png")%>'  style="width:200px"/></center>
 		                <h1 class="h4">နေပြည်တော် စည်ပင်သာယာရေး ကော်မတီ</h1>
 		                <p>Sign In to your account</p>
 		            </div>
