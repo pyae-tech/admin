@@ -1,8 +1,8 @@
 ﻿$('title').html(get_current_organization_title() + "Departments");
 
-$('#menu_master').addClass('active-sub');
-$('#menu_master_group').addClass('in');
-$('#menu_master_StaffDepartment').addClass('active-link');
+$('#menu_system').addClass('active-sub');
+$('#menu_system_group').addClass('in');
+$('#menu_department').addClass('active-link');
 
 
 $("#tab-main").tabs();

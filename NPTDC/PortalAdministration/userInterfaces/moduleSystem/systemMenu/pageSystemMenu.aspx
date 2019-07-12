@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/PortalAdministration/userInterfaces/moduleSystem/masterFiles/FullFrameMaster.Master" CodeBehind="pageSystemMenu.aspx.cs" Inherits="SBSPortal3.PortalAdministration.userInterfaces.moduleSystem.systemMenu.pageSystemMenu" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/PortalAdministration/userInterfaces/moduleSystem/masterFiles/FullFrameMaster_NPTDC.Master" CodeBehind="pageSystemMenu.aspx.cs" Inherits="SBSPortal3.PortalAdministration.userInterfaces.moduleSystem.systemMenu.pageSystemMenu" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_CSS" runat="server">
     <link href='<%= ResolveUrl("../../../plugins/jstree/themes/default/style.css")%>' rel="stylesheet" />

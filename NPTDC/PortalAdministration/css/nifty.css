@@ -68,7 +68,7 @@ body {
 body {
     background-color: #ecf0f5;
     font-family: 'Pyidaungsu';
-    font-size: 13px;
+    font-size: 15px;
     font-weight: normal;
     font-variant: normal;
     color: #7a878e;
@@ -623,12 +623,15 @@ h6,
   line-height: 59px;
 }
 .brand-icon {
-  display: block;
-  line-height: 59px;
-  width: 59px;
-  height: 59px;
-  float: left;
-  margin: 0;
+    display: block;
+    line-height: 59px;
+    width: 59px;
+    height: 39px;
+    float: left;
+    margin: 0;
+    margin-top:10px;
+    margin-left:10px;
+    margin-right: 10px;
 }
 .brand-text {
   display: block;
@@ -5556,7 +5559,7 @@ hr {
 /*======================================*/
 .form-control {
   height: 33px;
-  font-size: 13px;
+  font-size: 15px;
   border-radius: 3px;
   box-shadow: none;
   border: 1px solid rgba(0, 0, 0, 0.13);

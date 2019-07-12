@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PortalAdministration/userInterfaces/moduleSystem/masterFiles/FullFrameMaster.Master" AutoEventWireup="true" CodeBehind="pageSystemUserRoles.aspx.cs" Inherits="SBSPortal3.PortalAdministration.userInterfaces.moduleSystem.systemUserRoles.pageSystemUserRoles" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PortalAdministration/userInterfaces/moduleSystem/masterFiles/FullFrameMaster_NPTDC.Master" AutoEventWireup="true" CodeBehind="pageSystemUserRoles.aspx.cs" Inherits="SBSPortal3.PortalAdministration.userInterfaces.moduleSystem.systemUserRoles.pageSystemUserRoles" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_CSS" runat="server">    
     <link href='<%= ResolveUrl("../../../plugins/jstree/themes/default/style.css")%>' rel="stylesheet" />
