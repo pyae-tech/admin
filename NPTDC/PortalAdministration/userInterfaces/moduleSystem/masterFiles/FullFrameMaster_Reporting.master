@@ -1,0 +1,39 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/PortalAdministration/userInterfaces/moduleSystem/masterFiles/FullFrameMaster.Master" AutoEventWireup="true" CodeBehind="FullFrameMaster_Reporting.master.cs" Inherits="SBSPortal3.PortalAdministration.userInterfaces.moduleSystem.masterFiles.FullFrameMaster_Reporting" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_CSS" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_CSS" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content6" ContentPlaceHolderID="cph_slider_general_bar" runat="server">
+  <p class="pad-all text-main text-sm text-uppercase text-bold">Additional Actions</p>
+
+                                    <!--Simple Menu-->
+                                    <div class="list-group bg-trans">
+                                        <a href="#" class="list-group-item"><i class="demo-pli-information icon-lg icon-fw"></i>Service Information</a>
+                                        <a href="#" class="list-group-item"><i class="demo-pli-mine icon-lg icon-fw"></i>Usage Profile</a>
+                                        <a href="#" class="list-group-item"><span class="label label-info pull-right">New</span><i class="demo-pli-credit-card-2 icon-lg icon-fw"></i> Payment Options</a>
+                                        <a href="#" class="list-group-item"><i class="demo-pli-support icon-lg icon-fw"></i>Message Center</a>
+                                    </div>
+
+    
+</asp:Content>
+
+
+
+<asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder_SliderMenu" runat="server">
+
+    <div id="reporting_flow"> </div>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Header" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_Header" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder_Body" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_Body" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder_JS" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_JS" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

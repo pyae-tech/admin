@@ -1,0 +1,252 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PortalAdministration/userInterfaces/moduleSystem/masterFiles/FullFrameMaster.Master" AutoEventWireup="true" CodeBehind="pageSystemUsers.aspx.cs" Inherits="SBSPortal3.PortalAdministration.userInterfaces.moduleSystem.systemUsers.pageSystemUsers" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_CSS" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Header" runat="server">
+    <!--Page Title-->
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <div id="page-title">
+        <h1 class="page-header text-overflow">Users</h1>
+    </div>
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <!--End page title-->
+
+
+    <!--Breadcrumb-->
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="demo-pli-home"></i></a></li>
+        <li><a href="#">System</a></li>
+        <li class="active">Users</li>
+        <li class="active">
+            <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="LoadNew();return false;"><i class="btn-label ion-plus-round"></i><span class="bold">New</span></button>
+    </ol>
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <!--End breadcrumb-->
+
+
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder_Body" runat="server">
+
+    <div id="page-content">
+
+        <div class="panel">
+            <div class="panel-body">
+
+
+
+                <div class="panel">
+                    <div class="tabs-container" id="tab-main">
+                        <!--Panel heading-->
+                        <div class="panel-heading">
+                            <div class="panel-control">
+                                <ul class="nav nav-tabs">
+                                    <li class="tab-menu" id="tab_list_menu"><a href="#tab-list" data-toggle="tab">Listing <span class="pull-right badge badge-primary list_count">0</span></a></li>
+                                    <li class="tab-menu" id="tab_search_menu"><a href="#tab-search" data-toggle="tab">Search</a></li>
+                                </ul>
+                            </div>
+                            <h3><i class="ion-person-stalker"></i>System Users</h3>
+                        </div>
+
+                        <!--Panel body-->
+                        <div class="panel-body">
+                            <div class="tab-content">
+                                <div class="tab-pane fade in " id="tab-list">
+
+                                    <table style="display: none">
+                                        <tbody id="template_row">
+                                            <tr style="cursor: pointer;" onclick="GetUser('[UserID]');return false;">
+                                                <td>[UserName]</td>
+                                                <td>[UserCode]</td>
+                                                <td>[RoleName]</td>
+                                                <td>[Email]</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-hover  table-bordered" id="panel_list">
+                                            <thead>
+                                                <tr>
+                                                    <th>User Name</th>
+                                                    <th>User Code</th>
+                                                    <th>Role</th>
+                                                    <th>Email</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="table_list">
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="tab-pane fade" id="tab-search">
+                                    <div class="panel-body">
+                                        <div class="panel  panel-filled panel-c-accent">
+
+                                            <div class="panel-body">
+                                                <form class="form-horizontal">
+
+                                                    <div class="form-group">
+
+                                                        <label for="tb_search_text" class="col-md-2 control-label">Name / Code</label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control" id="tb_search_text" placeholder="">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="col-md-2"></div>
+                                                        <div class="col-md-6">
+
+
+                                                            <button class="btn  btn-primary  btn-rounded  btn-labeled" type="button" onclick="clearSearch();return false;">
+                                                                <i class="btn-label ion-backspace"></i>
+                                                                <span class="bold">Show All</span></button>
+
+                                                            <button class="btn  btn-primary  btn-rounded  btn-labeled" type="button" onclick="search();return false;"><i class="btn-label ion-search"></i><span class="bold">Search</span></button>
+
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </form>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="modal fade" id="dialogBox_Detail_Form" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!--Modal header-->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+                    <h4 class="modal-title">System User - Detail Infromation</h4>
+                </div>
+
+                <!--Modal body-->
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <input type="hidden" id="tb_id" value="" />
+                        <div class="form-group">
+
+                            <label for="tb_name" class="  col-md-2  control-label">Name</label>
+                            <div class=" col-md-4">
+                                <input type="text" class="form-control" id="tb_name" placeholder="Enter Name Of The User">
+                            </div>
+
+                            <label for="tb_code" class="col-md-2 control-label">User Code</label>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" id="tb_code" placeholder="Enter User Code For The User">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tb_role" class="col-md-2 control-label">User Role</label>
+                            <div class="col-md-4">
+                                <select id="tb_role" class="form-control"></select>
+                            </div>
+
+
+                            <label for="tb_user_email" class="col-md-2 control-label">Email</label>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" id="tb_user_email" placeholder="Email Address Of The User">
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="tb_user_type" class="col-md-2 control-label">User Type</label>
+                            <div class="col-md-4">
+                                <select class="form-control" id="tb_user_type" placeholder="Is Admin or Agent ?">
+                                    <option value="Admin">Admin</option>
+                                    <option value="Agent">Agent</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="tb_org_name" class="col-md-2 control-label">Org Name</label>
+                            <div class="col-md-9">
+                                <input type="hidden" id="hf_org_id" />
+                                <select class="form-control" id="tb_org_name">
+                                </select>
+                            </div>
+                        </div>
+
+                        <div id="pnl_password" class="form-group">
+                            <label for="tb_password" class="col-md-2 control-label">Password</label>
+                            <div class="col-md-9">
+                                <input type="password" class="form-control" id="tb_password" placeholder="Enter Password">
+                            </div>
+                        </div>
+
+                        <div id="pnl_confirmpassword" class="form-group">
+                            <label for="tb_confirm_password" class="col-md-2 control-label">Confirm</label>
+                            <div class="col-md-9">
+                                <input type="password" class="form-control" id="tb_confirm_password" placeholder="Enter Confirm Password">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tb_contact_info" class="col-md-2 control-label">Contact Info</label>
+                            <div class="col-md-9">
+                                <textarea class="form-control" rows="3" placeholder="Enter Detail Contact Information Of User" id="tb_contact_info"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="tb_note" class="col-md-2 control-label">Note</label>
+                            <div class="col-md-9">
+                                <textarea class="form-control" rows="7" placeholder="Enter Note For User" id="tb_note"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="tb_note" class="col-md-2 control-label"></label>
+                            <div class="col-md-9">
+                                <small><span id="lbl_created" data-translate="_createdon"></span></small>
+                                <br />
+                                <small><span id="lbl_modified" data-translate="_modifiedon"></span></small>
+                                <br />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!--Modal footer-->
+                <div class="modal-footer">
+                    <button class="btn btn-primary  btn-rounded  btn-labeled" type="button" onclick="SaveUser();return false;"><i class="btn-label ion-checkmark"></i><span class="bold" data-translate="_save">Save</span></button>
+                    <button class="btn btn-danger  btn-rounded btn-labeled" type="button" onclick="DeleteRecordConfirmation();return false;">
+                        <i class="btn-label ion-trash-b"></i><span class="bold" data-translate="_delete">Delete</span></button>
+                    <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="LoadNew();return false;"><i class="btn-label ion-plus-round"></i><span class="bold" data-translate="_new">New</span></button>
+                    <button data-dismiss="modal" class="btn btn-dark  btn-rounded  btn-labeled" type="button"><i class="btn-label ion-close"></i><span class="bold" data-translate="_close">Close</span></button>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder_JS" runat="server">
+    <script src='<%= ResolveUrl("pageSystemUsers.js")%>'></script>
+</asp:Content>

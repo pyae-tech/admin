@@ -1,0 +1,57 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/PortalAdministration/userInterfaces/moduleSystem/masterFiles/FullFrameMaster.Master" AutoEventWireup="true" CodeBehind="FullFrameMaster_VanSale.master.cs" Inherits="SBSPortal3.PortalAdministration.userInterfaces.moduleSystem.masterFiles.FullFrameMaster_VanSale" %>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder_SliderMenu" runat="server">
+    <!--Menu list item-->
+  <%--  <li class="" id="menu_salevan">
+        <a href="#">
+            <i class="ion-arrow-graph-up-right"></i>
+            <span class="menu-title" data-translate="_vansale">Van Sales</span>
+            <i class="arrow"></i>
+        </a>
+
+        <!--Submenu-->
+        <ul class="collapse" id="menu_salevan_group">
+
+            <li id="menu_salevan_dashboard"><a href="dashboardVanSale"><span data-translate="_dashboardVanSale">Dashboard</span></a></li>
+            <li id="menu_salevan_issueNote"><a href="issues" data-translate="_issuenote">Issue Note</a></li>
+
+
+            <li class="list-divider"></li>
+            <li id="menu_salevan_ways"><a href="ways" data-translate="_waysale">Way Sales</a></li>
+            <li class="list-divider"></li>
+
+            <li id="menu_salevan_orderbydate"><a href="saleorderbydate"><span data-translate="">Order By Date</span></a></li>
+            <li id="menu_salevan_weeklySaleOrder"><a href="weeklySaleOrders" data-translate="">Weekly  Orders</a></li>
+            <li id="menu_customerorder_delivery_report"><a href="orderdeliveryreports" data-translate="">Order Delivery</a></li>
+
+            <li class="list-divider"></li>
+            <li id="menu_salevan_route"><a href="wayplan" data-translate="_route">Route</a></li>
+
+            <li id="menu_salevan_routeplan"><a href="waydetail" data-translate="_routplan">Route Plan</a></li>
+            <li class="list-divider"></li>
+
+            <li id="menu_carSchedule"><a href="carSchedule" data-translate="_routeschedule">Route Schedule </a></li>
+            <li class="list-divider"></li>
+
+            <li id="menu_customerorder"><a href="customerlogin" data-translate="_customerlogin">Customer Login </a></li>
+            <li class="list-divider"></li>
+        </ul>
+    </li>--%>
+    <div id="van_sale"> </div>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Header" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_Header" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder_Body" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_Body" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_JS" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_JS" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder_CSS" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_CSS" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

@@ -1,0 +1,85 @@
+/* line 6, source/sass/image-picker.scss */
+ul.thumbnails.image_picker_selector {
+    overflow: auto;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    padding: 0px;
+    /*margin: 0px;*/
+    margin: 10px auto;
+    width: 640px;
+    text-align: center;
+}
+  /* line 15, source/sass/image-picker.scss */
+    ul.thumbnails.image_picker_selector ul {
+        /*overflow: auto;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;*/
+        padding: 3px;
+        list-style: none;
+        display: inline-block;
+        border: 1px solid #aaa;
+        background: radial-gradient(rgba(255, 255, 255, 0.8) 50%, rgba(180,180,180,0.8));
+    }
+  /* line 25, source/sass/image-picker.scss */
+  ul.thumbnails.image_picker_selector li.group_title {
+    float: none; }
+  /* line 30, source/sass/image-picker.scss */
+    ul.thumbnails.image_picker_selector li {
+        /*margin: 0px 12px 12px 0px;
+    float: left;*/
+        padding: 0px;
+        cursor: pointer;
+        float: left;
+        margin: 0 2px 0 2px;
+        font-family: cursive;
+        color: #723A3A;
+        /*border: 1px solid #aaa;*/
+        padding: 2px;
+    }
+    /* line 35, source/sass/image-picker.scss */
+    ul.thumbnails.image_picker_selector li .thumbnail {
+      padding: 6px;
+      border: 1px solid #DDD;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none; }
+      /* line 42, source/sass/image-picker.scss */
+      ul.thumbnails.image_picker_selector li .thumbnail img {
+        -webkit-user-drag: none; }
+    /* line 48, source/sass/image-picker.scss */
+    ul.thumbnails.image_picker_selector li .thumbnail.selected {
+      background: #08C; }
+.img_thumb {
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    /*padding: 5px;*/
+    width: 150px;
+  
+}
+
+.picker {
+    position: relative;
+    padding-bottom: 40px;
+    background-color: #ecf0f5;
+    color: #7a878e;
+}
+
+/*.tclose {
+    background: black;
+    color: white;
+    position: absolute;
+    right: 3px;
+    top: -2px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: 'Arial Black', Arial, sans-serif;
+    box-shadow: 1px 0 0 0 #000;
+    border-radius: 50%;
+    padding: 0px 4px;
+    cursor: pointer;
+}*/

@@ -1,0 +1,38 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/PortalAdministration/userInterfaces/moduleSystem/masterFiles/FullFrameMaster.Master" AutoEventWireup="true" CodeBehind="FullFrameMaster_Marketing.master.cs" Inherits="SBSPortal3.PortalAdministration.userInterfaces.moduleSystem.masterFiles.FullFrameMaster_Marketing" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_CSS" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_CSS" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Header" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_Header" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder_Body" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_Body" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder_SliderMenu" runat="server">
+    <!--Menu list item-->
+<%--    <li class="" id="menu_marketing">
+        <a href="#">
+            <i class="ion-clipboard"></i>
+            <span class="menu-title"  >Marketing Module</span>
+            <i class="arrow"></i>
+        </a>
+
+        <!--Submenu-->
+        <ul class="collapse" id="menu_marketing_group">
+            <li id="menu_marketing_scoutInfo"><a href="scoutInfo"  ><span  data-translate="">Scout Information</span></a></li>
+                 <li class="list-divider"></li>
+            <li id="menu_marketing_scoutMap"><a href="scoutmap" ><span  data-translate="">Scout Map</span></a></li> 
+            <li class="list-divider"></li>
+           <li id="menu_marketing_scoutType"><a href="scouttypes"><span  data-translate="">Scout Type</span></a></li>
+            
+        </ul>
+    </li>--%>
+     <div id="marketing_scout"> </div>
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder_JS" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_JS" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

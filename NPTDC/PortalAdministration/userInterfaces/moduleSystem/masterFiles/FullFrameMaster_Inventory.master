@@ -1,0 +1,38 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/PortalAdministration/userInterfaces/moduleSystem/masterFiles/FullFrameMaster.Master" AutoEventWireup="true" CodeBehind="FullFrameMaster_Inventory.master.cs" Inherits="SBSPortal3.PortalAdministration.userInterfaces.moduleSystem.masterFiles.FullFrameMaster_Inventory" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_CSS" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_CSS" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Header" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_Header" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder_Body" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_Body" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder_SliderMenu" runat="server">
+    <!--Menu list item-->
+    <li class="" id="menu_inventory">
+        <a href="#">
+            <i class="ion-clipboard"></i>
+            <span class="menu-title"  >Inventory Module</span>
+            <i class="arrow"></i>
+        </a>
+
+        <!--Submenu-->
+        <ul class="collapse" id="menu_inventory_group">  
+            <li id="menu_purchase_order"><a href="purchaseorders" ><span  data-translate="_purchasetitle">Purchase Order</span></a></li> 
+            <li class="list-divider"></li>
+            <li id="menu_stockinitem"><a href="stockinitems" ><span  data-translate="Stock_InTitle">Stock In</span></a></li> 
+            <li id="menu_stocklostitem"><a href="stocklostitems" ><span  data-translate="Stock_LostTitle">Stock Lost</span></a></li> 
+             <li class="list-divider"></li>
+            <li id="menu_deliver_order"><a href="deliverorders" ><span  data-translate="DeliverOrder">Delivery Order</span></a></li> 
+        </ul>
+    </li>
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder_JS" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_JS" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

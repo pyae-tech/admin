@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/PortalAdministration/userInterfaces/moduleSystem/masterFiles/FullFrameMaster.Master" AutoEventWireup="true" CodeBehind="FullFrameMaster_CashFlow.master.cs" Inherits="SBSPortal3.PortalAdministration.userInterfaces.moduleSystem.masterFiles.FullFrameMaster_CashFlow" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_CSS" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_CSS" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content6" ContentPlaceHolderID="cph_slider_general_bar" runat="server">
+  <p class="pad-all text-main text-sm text-uppercase text-bold">Additional Actions</p>
+
+                                    <!--Simple Menu-->
+                                    <div class="list-group bg-trans">
+                                        <a href="#" class="list-group-item"><i class="demo-pli-information icon-lg icon-fw"></i>Service Information</a>
+                                        <a href="#" class="list-group-item"><i class="demo-pli-mine icon-lg icon-fw"></i>Usage Profile</a>
+                                        <a href="#" class="list-group-item"><span class="label label-info pull-right">New</span><i class="demo-pli-credit-card-2 icon-lg icon-fw"></i> Payment Options</a>
+                                        <a href="#" class="list-group-item"><i class="demo-pli-support icon-lg icon-fw"></i>Message Center</a>
+                                    </div>
+
+    
+</asp:Content>
+
+
+
+<asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder_SliderMenu" runat="server">
+   <%-- <li id="menu_cashflow">
+        <a href="#">
+            <i class="ion-pie-graph"></i>
+            <span class="menu-title" data-translate="_cashflow">Cash Flow</span>
+            <i class="arrow"></i>
+        </a>
+        <!--Submenu-->
+        <ul class="collapse" id="menu_cashflow_group">
+            <li id="menu_cashflow_monthly"><a href="monthlyCashFlow" data-translate="_monthlyFlow">Monthly's Flow</a></li>
+            <li id="menu_cashflow_advanced"><a href="advanceds" data-translate="_advanceForm">Advanced Form</a></li>
+            <li id="menu_cashflow_expense"><a href="expenses" data-translate="_dailyExpense">Daily's Expense</a></li>
+            <li id="menu_cashflow_income"><a href="incomes" data-translate="_dailyIncome">Daily's Income</a></li>
+            <li class="list-divider"></li> 
+            <li id="menu_cashflow_wallet"><a href="wallet" data-translate="_wallet">Wallets</a></li> 
+            <li id="menu_cashflow_wallettransfer"><a href="wallettransfer" data-translate="_walletTransfer">Wallet Transfer</a></li>
+            <li class="list-divider"></li>
+            <li id="menu_cashflow_billing"><a href="billingplans" data-translate="_billing">Billing Reminder</a></li>
+             <li id="menu_cashflow_credit_remains"><a href="creditremain" data-translate="_credit_remain">Credit Remain</a></li>
+             <li class="list-divider"></li>
+            
+            <li id="menu_cashflow_assess"><a href="assess" data-translate="_assets">Asset </a></li>
+            <li id="menu_cashflow_assesstype"><a href="assesstypes" data-translate="_assesstypename">Asset Type</a></li>
+             <li class="list-divider"></li> 
+            <li id="menu_cashflow_expensetitle"><a href="expensetitles" data-translate="_expenseTitle">Expense titles</a></li>
+            <li id="menu_cashflow_incometitle"><a href="incometitles" data-translate="_incomeTitle">Income titles</a></li>
+            <li class="list-divider"></li>
+            <li id="menu_accounttransaction"><a href="accounttransactions" data-translate="">Account Transaction</a></li>
+            <li id="menu_account"><a href="accounts" data-translate="">Account</a></li>
+             <li id="menu_account_accounttype"><a href="accounttypes" data-translate="">Account Type</a></li>
+             
+        </ul>
+    </li>--%>
+    <div id="cash_flow"> </div>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Header" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_Header" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder_Body" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_Body" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder_JS" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_JS" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

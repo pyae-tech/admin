@@ -1,0 +1,62 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/PortalAdministration/userInterfaces/moduleSystem/masterFiles/FullFrameMaster.Master" AutoEventWireup="true" CodeBehind="FullFrameMaster_MasterBook.master.cs" Inherits="SBSPortal3.PortalAdministration.userInterfaces.moduleSystem.masterFiles.FullFrameMaster_MasterBook" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_CSS" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_CSS" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Header" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_Header" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder_Body" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_Body" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder_SliderMenu" runat="server">
+    <!--Menu list item-->
+    <%--<li class="" id="menu_master">
+        <a href="#">
+            <i class="ion-clipboard"></i>
+            <span class="menu-title" data-translate="_materbook">Master Data</span>
+            <i class="arrow"></i>
+        </a>
+
+        <!--Submenu-->
+        <ul class="collapse" id="menu_master_group">
+             <li id="menu_exchange_rate"><a href="exchangerates" data-translate="_exchangeratedetail">Exchange Rate</a></li> 
+             <li class="list-divider"></li>
+            <li id="menu_master_brand"><a href="brands" data-translate="Brand_Tit">Brand</a></li>
+            <li id="menu_master_supplier"><a href="suppliers" data-translate="_suppliertitle">Supplier</a></li>
+            <li id="menu_master_item"><a href="items" data-translate="_item">Item</a></li>
+            <li id="menu_master_itemgroups"><a href="itemgroups"  data-translate="_itemgroup">Item Group</a></li>
+             <li id="menu_master_itemcustomerprice"><a href="itemcustomerprice" data-translate="_itemcustomerprice">Item Customer Price</a></li>
+            <li class="list-divider"></li>
+            <li id="menu_master_customers"><a href="customers" data-translate="_customer">Customer</a></li>
+            <li id="menu_master_customergroup"><a href="customergroups" data-translate="_customergroup">Customer Group</a></li>
+            <li class="list-divider"></li>
+            <li id="menu_master_Location"><a href="warehouse"  data-translate="_warehouse">Warehouse</a></li>
+          <%--  <li id="menu_salevan_wayplan"><a href="wayplan"  data-translate="_ways">Ways</a></li>--%>
+           <%-- <li id="menu_salevan_car"><a href="cars" data-translate="_cars">Cars</a></li>
+               <li class="list-divider"></li>
+            <li id="menu_salestaff"><a href="staffs" data-translate="_salestaff">Sale Staff</a></li> 
+            <li id="menu_staff_position"><a href="positions" data-translate="_positiontitle">Staff Position</a></li> 
+            <li id="menu_staff_department"><a href="departments" data-translate="_departmenttitle">Staff Department</a></li> 
+            
+           
+            
+
+            <li class="list-divider"></li>
+            <li id="menu_master_regions"><a href="regions" data-translate="_region">Regions</a></li>
+            <li id="menu_master_cities"><a href="cities" data-translate="_city">City</a></li>
+            <li id="menu_master_township"><a href="townships" data-translate="_township">Township</a></li>
+
+            <li class="list-divider"></li>
+             <li id="menu_master_projects"><a href="projects" data-translate="_projects">Projects</a></li>
+        </ul>
+    </li>--%>
+     <div id="master_book"> </div>
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder_JS" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_JS" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
