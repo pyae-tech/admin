@@ -25,120 +25,6 @@ $(".tab-menu").removeClass("active");
 $("#tab_list_menu").addClass("active");
 
 Load_List();
-
-//#region Listing
-//function clearSearch() {
-//    $('#tb_search_text').val('');
-//    $('#tb_search').val('');
-   
-//    Load_List();
-//    $("#tab-main").tabs("option", "active", 0);
-//    $(".tab-menu").removeClass("active");
-//    $("#tab_list_menu").addClass("active");
-//}
-//function search() {
-
-
-//    Load_List();
-//    $("#tab-main").tabs("option", "active", 0);
-//    $(".tab-menu").removeClass("active");
-//    $("#tab_list_menu").addClass("active");
-
-//}
-
-//function Load_List() {
-//    $('#panel_list_background').loading();
-//    Pace.start();
-//    $.ajax({
-
-//        //GetAllAirLineWithPagination(string search_text, string RequestID, string pageNo)
-//        url: baseUrl() + "WebServices/WebService_Department.asmx/GetAllDepartmentWithPagination",
-//        data: "{ " +
-//            "'search_text':'" + $("#tb_search_text").val() + "' " +
-//            ",'search_dep':'" + $("#tb_search").val() + "' " +
-//            ",'RequestID':'" + get_current_user_id() + "' " +
-//            ",'PageNoString':'" + $('#hf_current_page').val() + "' " +
-//            " }",
-//        dataType: 'json',
-//        type: "POST",
-//        contentType: "application/json; charset=utf-8",
-//        success: function (data) {
-//            if (data.d != null) {
-//                generate_list(data.d);
-//                $('#panel_list_background').loading('stop');
-//            }
-//        },
-//        error: function (xhr, msg) {
-//            LogJSError('Web Service Fail: ' + msg + '\n' + xhr.responseText);
-
-//        }
-//    });
-//}
-
-//function generate_list(records) {
-//    var allCardsCode = '';
-//    rowindex = 0;
-
-//    $.each(records, function (key, val) {
-//        rowindex++;
-//        the_template = $('#template_row').html();
-
-//        if (rowindex == 1) {//paginatin function
-//            paginationInfos = records[key].split('~');
-//            $('.lbl_record_count').html("Total Records : " + paginationInfos[0] + ", Page: ");
-//            $('.tb_current_page').val(paginationInfos[2]);
-//            $('.lbl_page_count').html(" of " + paginationInfos[1] + " pages");
-//            $('#hf_current_page').val(paginationInfos[2]);
-//            $('.btn_pagination_next').hide();
-//            $('.btn_pagination_previous').hide();
-//            if (paginationInfos[4] == 'y') {
-//                $('.btn_pagination_next').attr('actionPage', parseInt(paginationInfos[2]) + 1);
-//                $('.btn_pagination_next').show();
-//            }
-//            if (paginationInfos[3] == 'y') {
-//                $('.btn_pagination_previous').attr('actionPage', parseInt(paginationInfos[2]) - 1);
-//                $('.btn_pagination_previous').show();
-//            }
-//        } else {
-
-//            the_template = $('#template_row').html();
-
-
-//            allCardsCode += the_template.replace()
-//                .replace("[DepartmentID]", records[key]['DepartmentID'])
-//                .replace("[DepartmentName]", records[key]['DepartmentName'])
-//                .replace("[DepartmentCode]", records[key]['DepartmentCode'])
-//                .replace("[PaymentType]", records[key]['PaymentType'])
-//                .replace("[Remark]", records[key]['Remark']);
-//        }
-
-//    });
-//    if (rowindex == 0) $('#panel_list').hide();
-//    else $('#panel_list').show();
-
-
-
-//    $('.list_count').html(rowindex - 1);
-//    $('#table_list').empty();
-//    $('#table_list').append(allCardsCode);
-
-
-
-//}
-
-//function pageJump(control)//paginatin function
-//{
-//    $('#hf_current_page').val($(control).attr('actionPage'));
-//    Load_List();
-//}
-//function pageJumpToThis()//paginatin function
-//{
-//    $('#hf_current_page').val($('.tb_current_page').val());
-//    Load_List();
-//}
-
-//#endregion
-
 //#region Save
 function SaveRecordVerification() {
     error_message = "";
@@ -146,7 +32,17 @@ function SaveRecordVerification() {
         if (error_message != "") error_message += "\n";
         error_message += "Department Name Need To Be Fill"
     }
-  
+    if ($("#tb_notifyemail").val() == "") {
+        if (error_message != "") error_message += "\n";
+        error_message += "Email Need To Be Fill"
+    }
+    if ($("#tb_notifyemail").val() != "") {
+        var email = $("#tb_notifyemail").val();
+        var filter = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+        if (!filter.test(email)) {
+            error_message += "Please provide a valid email address.";
+        }
+    }
 
     if (error_message == "") { return true; }
     else {
@@ -167,8 +63,9 @@ function SaveDepartment() {
             "'dep_id':'" + $("#tb_id").val() + "' " +
             ",'user_id':'" + get_current_user_id() + "' " +
             ",'department_name':'" + $("#tb_name").val() + "' " +
-            ",'dep_code':'" + $("#tb_code").val() + "' " +
-            ",'paymenttype':'" + $("#ddl_pay_type").val() + "' " +
+            ",'notifyemail':'" + $("#tb_notifyemail").val() + "' " +
+            ",'protocol':'" + $("#tb_protocol").val() + "' " +
+            ",'description':'" + esc_quot($("#tb_description").val()) + "' " +
             ",'remark':'" + esc_quot($("#tb_remark").val()) + "' " +
             ",'RequestID':'" + get_current_user_id() + "' " +
             " }",
@@ -182,7 +79,7 @@ function SaveDepartment() {
                 scrollToDiv('#tab-main');
             }
             else if (data.d.toString().split('~')[0] == "Error") {
-                ShowErrorBoxMessage("Duplicate Department Code");
+                ShowErrorBoxMessage("Duplicate Department Name");
                 scrollToDiv('#tab-main');
             }
             else {
@@ -201,13 +98,13 @@ function SaveDepartment() {
 //#region New Record
 function LoadNew() {
     Pace.start();
-    $("#tab_detail_header").html('Create New Position');
+    $("#tab_detail_header").html('Create New Department');
     $("#tb_id").val("");
     $("#tb_name").val("");
-    $("#tb_code").val("");
-    $("#ddl_pay_type").val("MMK");
+    $("#tb_notifyemail").val("");
+    $("#tb_protocol").val("");
     $("#tb_remark").val("");
-
+    $("#tb_description").val("");
     $("#lbl_created").text("");
     $("#lbl_modified").text("");
     $("#lbl_lastlogin").text("");
@@ -245,7 +142,8 @@ function DeleteDepartment() {
             if (data.d.toString().split('~')[0] == "Success") {
                 LoadNew();
                 ShowSuccessMessage("Deleted.");
-                LoadList();
+                Load_List();
+               
             }
             else {
                 ShowBoxMessage("Oops, we can't save. " + data.d.toString().split('~')[1]);
@@ -282,8 +180,9 @@ function GetDepartment(id) {
 
                 $("#tab_detail_header").html(data.d["DepartmentName"]);
                 $("#tb_name").val(data.d["DepartmentName"]);
-                $("#tb_code").val(data.d["DepartmentCode"]);
-                $("#ddl_pay_type").val(data.d["PaymentType"]);
+                $("#tb_notifyemail").val(data.d["NotifyEmail"]);
+                $("#tb_protocol").val(data.d["Protocol"]);
+                $("#tb_description").val(data.d["Description"]);
                 $("#tb_remark").val(data.d["Remark"]);
                 $("#lbl_created").text("Created By : " + data.d["CreatedByCode"] + " on " + JsonDateToFormat(data.d["CreatedOn"], 'DD/MM/YYYY HH:mm'));
                 $("#lbl_modified").text("Modified By : " + data.d["ModifiedByCode"] + " on " + JsonDateToFormat(data.d["ModifiedOn"], 'DD/MM/YYYY HH:mm'));
@@ -309,8 +208,7 @@ function Load_List() {
     $.ajax({
         url: baseUrl() + "WebServices/WebService_Department.asmx/GetAllDepartmentJSON",
         data: "{ " +
-            "'search_text':'" + "" + "' " +
-            ",'RequestID':'" + get_current_user_id() + "' " +
+            "'RequestID':'" + get_current_user_id() + "' " +
             " }",
         dataType: 'json',
         type: "POST",
@@ -400,17 +298,17 @@ function Build_ColumnHeader() {
             caption: "Department Name",
         },
         {
-            dataField: "DepartmentCode",
-            caption: "Code",
+            dataField: "NotifyEmail",
+            caption: "Email",
 
         },
         {
-            dataField: "PaymentType",
-            caption: "Payment Type",
+            dataField: "Protocol",
+            caption: "Protocol",
         },
         {
-            dataField: "Remark",
-            caption: "Remark",
+            dataField: "Description",
+            caption: "Description",
             allowHeaderFiltering: false
         },
     ];

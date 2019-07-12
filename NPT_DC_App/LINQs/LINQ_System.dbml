@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SS_NPTDC" Class="LINQ_SystemDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=systematic-svr;Initial Catalog=SS_NPTDC;User ID=rgbdeveloper" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SS_SaleVanConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=systematic-svr;Initial Catalog=SS_NPTDC;User ID=rgbdeveloper" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SS_NPTDC_APP_ConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.SYS_User" Member="SYS_Users">
     <Type Name="SYS_User">
       <Column Name="UserID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />

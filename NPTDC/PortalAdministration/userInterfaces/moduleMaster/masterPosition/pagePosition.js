@@ -26,125 +26,7 @@ $("#tab_list_menu").addClass("active");
 
 Load_List();
 
-//#region Listing
-//function clearSearch() {
-//    $('#tb_search_text').val('');
-//    $('#tb_search').val('');
-   
-//    Load_List();
-//    $("#tab-main").tabs("option", "active", 0);
-//    $(".tab-menu").removeClass("active");
-//    $("#tab_list_menu").addClass("active");
-//}
-//function search() {
 
-//    $('#tb_search_text').val();
-//    $('#tb_search').val();
-
-//    Load_List();
-//    $("#tab-main").tabs("option", "active", 0);
-//    $(".tab-menu").removeClass("active");
-//    $("#tab_list_menu").addClass("active");
-
-//}
-
-//function Load_List() {
-//    $('#panel_list_background').loading();
-//    Pace.start();
-//    $.ajax({
-
-//        //GetAllAirLineWithPagination(string search_text, string RequestID, string pageNo)
-//        url: baseUrl() + "WebServices/WebService_Position.asmx/GetAllPositionWithPagination",
-//        data: "{ " +
-//            "'search_text':'" + $("#tb_search_text").val() + "' " +
-//            ",'search_position':'" + $("#tb_search").val() + "' " +
-//            ",'RequestID':'" + get_current_user_id() + "' " +
-//            ",'pageNo':'" + $('#hf_current_page').val() + "' " +
-//            " }",
-//        dataType: 'json',
-//        type: "POST",
-//        contentType: "application/json; charset=utf-8",
-//        success: function (data) {
-//            if (data.d != null) {
-//                generate_list(data.d);
-//                $('#panel_list_background').loading('stop');
-//            }
-//        },
-//        error: function (xhr, msg) {
-//            LogJSError('Web Service Fail: ' + msg + '\n' + xhr.responseText);
-//            $('#panel_list_background').loading('stop');
-//        }
-//    });
-//}
-
-//function generate_list(records) {
-//    var allCardsCode = '';
-//    rowindex = 0;
-
-//    $.each(records, function (key, val) {
-//        rowindex++;
-//        the_template = $('#template_row').html();
-
-//        if (rowindex == 1) {//paginatin function
-//            paginationInfos = records[key].split('~');
-//            $('.lbl_record_count').html("Total Records : " + paginationInfos[0] + ", Page: ");
-//            $('.tb_current_page').val(paginationInfos[2]);
-//            $('.lbl_page_count').html(" of " + paginationInfos[1] + " pages");
-//            $('#hf_current_page').val(paginationInfos[2]);
-//            $('.btn_pagination_next').hide();
-//            $('.btn_pagination_previous').hide();
-//            if (paginationInfos[4] == 'y') {
-//                $('.btn_pagination_next').attr('actionPage', parseInt(paginationInfos[2]) + 1);
-//                $('.btn_pagination_next').show();
-//            }
-//            if (paginationInfos[3] == 'y') {
-//                $('.btn_pagination_previous').attr('actionPage', parseInt(paginationInfos[2]) - 1);
-//                $('.btn_pagination_previous').show();
-//            }
-//        } else {
-
-//            the_template = $('#template_row').html();
-
-
-//            allCardsCode += the_template.replace()
-//                .replace("[PositionID]", records[key]['PositionID'])
-//                .replace("[PositionName]", records[key]['PositionName'])
-//                .replace("[PositionCode]", records[key]['PositionCode'])
-//                .replace("[DefaultBasicSalary]", NumberWithCommas(records[key]['DefaultBasicSalary']))
-//                .replace("[DefaultOTRate]", NumberWithCommas(records[key]['DefaultOTRate']))
-//                .replace("[DefaultMinSalary]", NumberWithCommas(records[key]['DefaultMinSalary']))
-//                .replace("[DefaultGeneralAdjustment]", NumberWithCommas(records[key]['DefaultGeneralAdjustment']))
-//                .replace("[JobLevel]", records[key]['JobLevel']);
-//        }
-
-//    });
-//    if (rowindex == 0) $('#panel_list').hide();
-//    else $('#panel_list').show();
-
-
-
-//    $('.list_count').html(rowindex - 1);
-//    $('#table_list').empty();
-//    $('#table_list').append(allCardsCode);
-
-
-
-//}
-
-//function pageJump(control)//paginatin function
-//{
-//    $('#hf_current_page').val($(control).attr('actionPage'));
-//    Load_List();
-//}
-//function pageJumpToThis()//paginatin function
-//{
-//    $('#hf_current_page').val($('.tb_current_page').val());
-//    Load_List();
-//}
-
-//#endregion
-
-//#region Save
 function SaveRecordVerification() {
     error_message = "";
     if ($("#tb_name").val() == "") {
@@ -174,15 +56,12 @@ function SavePosition() {
     $.ajax({
         url: baseUrl() + "WebServices/WebService_Position.asmx/SavePosition",
         data: "{ " +
-            "'position_id':'" + $("#tb_id").val() + "' " +
+            "'pos_id':'" + $("#tb_id").val() + "' " +
             ",'user_id':'" + get_current_user_id() + "' " +
             ",'position_name':'" + $("#tb_name").val() + "' " +
             ",'position_code':'" + $("#tb_position_code").val() + "' " +
-            ",'dbasic_salary':'" + $("#tb_DBasic_Salary").val() + "' " +
-            ",'dot_rate':'" + $("#tb_DOTRate").val() + "' " +
-            ",'dmini_salary':'" + $("#tb_DMini_Salary").val() + "' " +
-            ",'dg_adjustment':'" + $("#tb_DGAdjustment").val() + "' " +
-            ",'job_level':'" + $("#tb_Job_Level").val() + "' " +
+            ",'protocol':'" + $("#tb_DBasic_Salary").val() + "' " +
+            ",'description':'" + $("#tb_DOTRate").val() + "' " +
             ",'remark':'" + esc_quot($("#tb_remark").val()) + "' " +
             ",'RequestID':'" + get_current_user_id() + "' " +
             " }",
@@ -221,11 +100,8 @@ function LoadNew() {
     $("#tb_id").val("");
     $("#tb_name").val("");
     $("#tb_position_code").val("");
-    $("#tb_DBasic_Salary").val("");
-    $("#tb_DOTRate").val("");
-    $("#tb_DMini_Salary").val("");
-    $("#tb_DGAdjustment").val("");
-    $("#tb_Job_Level").val("");
+    $("#tb_protocol").val("");
+    $("#tb_description").val("");
     $("#tb_remark").val("");
 
     $("#lbl_created").text("");
@@ -254,7 +130,7 @@ function DeletePosition() {
     $.ajax({
         url: baseUrl() + "WebServices/WebService_Position.asmx/DeletePosition",
         data: "{ " +
-            "'position_id':'" + $("#tb_id").val() + "' " +
+            "'pos_id':'" + $("#tb_id").val() + "' " +
             ",'user_id':'" + get_current_user_id() + "' " +
             ",'RequestID':'" + get_current_user_id() + "' " +
             " }",
@@ -289,7 +165,7 @@ function GetPosition(id) {
     $.ajax({
         url: baseUrl() + "WebServices/WebService_Position.asmx/GetPosition",
         data: "{ " +
-            "'position_id':'" + id + "' " +
+            "'pos_id':'" + id + "' " +
             ",'RequestID':'" + get_current_user_id() + "' " +
             " }",
         dataType: 'json',
@@ -303,11 +179,8 @@ function GetPosition(id) {
                 $("#tab_detail_header").html(data.d["PositionName"]);
                 $("#tb_name").val(data.d["PositionName"]);
                 $("#tb_position_code").val(data.d["PositionCode"]);
-                $("#tb_DBasic_Salary").val(NumberWithCommas(data.d["DefaultBasicSalary"]));
-                $("#tb_DOTRate").val(NumberWithCommas(data.d["DefaultOTRate"]));
-                $("#tb_DMini_Salary").val(NumberWithCommas(data.d["DefaultMinSalary"]));
-                $("#tb_DGAdjustment").val(NumberWithCommas(data.d["DefaultGeneralAdjustment"]));
-                $("#tb_Job_Level").val(data.d["JobLevel"]);
+                $("#tb_protocol").val(data.d["Protocol"]);
+                $("#tb_description").val(data.d["Description"]);
                 $("#tb_remark").val(data.d["Remark"]);
                 $("#lbl_created").text("Created By : " + data.d["CreatedByCode"] + " on " + JsonDateToFormat(data.d["CreatedOn"], 'DD/MM/YYYY HH:mm'));
                 $("#lbl_modified").text("Modified By : " + data.d["ModifiedByCode"] + " on " + JsonDateToFormat(data.d["ModifiedOn"], 'DD/MM/YYYY HH:mm'));
@@ -333,8 +206,7 @@ function Load_List() {
     $.ajax({
         url: baseUrl() + "WebServices/WebService_Position.asmx/GetAllPositionJSON",
         data: "{ " +
-            "'search_text':'" + "" + "' " +
-            ",'RequestID':'" + get_current_user_id() + "' " +
+            "'RequestID':'" + get_current_user_id() + "' " +
             " }",
         dataType: 'json',
         type: "POST",
