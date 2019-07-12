@@ -22,7 +22,7 @@ namespace NPT_DC_App.LINQs
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="SS_SaleVan")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name= "SS_NPTDC")]
 	public partial class LINQ_MasterDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -36,7 +36,7 @@ namespace NPT_DC_App.LINQs
     #endregion
 		
 		public LINQ_MasterDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["SS_SaleVanConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["SS_NPTDC_APP_ConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

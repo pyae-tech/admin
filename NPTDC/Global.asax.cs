@@ -28,6 +28,8 @@ namespace SBSPortal3
             RouteTable.Routes.MapPageRoute("portal/menugroup", "portal/menugroup", "~/PortalAdministration/userInterfaces/moduleSystem/systemMenu/pageSystemMenu.aspx");
             RouteTable.Routes.MapPageRoute("portal/logs", "portal/logs", "~/PortalAdministration/userInterfaces/moduleSystem/systemLog/pageSystemLog.aspx");
 
+            //meeting
+            RouteTable.Routes.MapPageRoute("portal/request", "portal/request", "~/PortalAdministration/userInterfaces/moduleMeeting/pageMETReuest.aspx");
             //Master
             DevExpress.XtraReports.Web.ASPxWebDocumentViewer.StaticInitialize();
             DevExpress.XtraReports.Web.ASPxReportDesigner.StaticInitialize();

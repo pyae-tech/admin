@@ -72,7 +72,7 @@ namespace NPT_DC_App.LINQs
     #endregion
 		
 		public LINQ_SystemDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["SS_SaleVanConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["SS_NPTDC_APP_ConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

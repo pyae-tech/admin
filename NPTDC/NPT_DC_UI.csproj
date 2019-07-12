@@ -1664,6 +1664,8 @@
     <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterItemCustomerPrice\PageItemCustomerPrice.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterPosition\pagePosition.aspx" />
     <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterPosition\pagePosition.js" />
+    <Content Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETReuest.aspx" />
+    <Content Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETReuest.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\crmActivityPlugin\controlActivity.ascx" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\crmActivityPlugin\controlActivity.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\login\pagechangePassword.js" />
@@ -4588,6 +4590,13 @@
     <Compile Include="PortalAdministration\userInterfaces\moduleMaster\carPlan\pageCar.aspx.designer.cs">
       <DependentUpon>pageCar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETReuest.aspx.cs">
+      <DependentUpon>pageMETReuest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETReuest.aspx.designer.cs">
+      <DependentUpon>pageMETReuest.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PortalAdministration\userInterfaces\moduleSystem\crmActivityPlugin\controlActivity.ascx.cs">
       <DependentUpon>controlActivity.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4863,7 +4872,6 @@
     <Folder Include="PortalAdministration\plugins\moment\src\lib\utils\" />
     <Folder Include="PortalAdministration\plugins\moment\src\locale\" />
     <Folder Include="PortalAdministration\plugins\moment\templates\" />
-    <Folder Include="PortalAdministration\userInterfaces\moduleMeeting\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
