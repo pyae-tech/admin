@@ -8,7 +8,7 @@
     <!--Page Title-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <div id="page-title">
-        <h1 class="page-header text-overflow"><span data-translate="">Request</span></h1>
+        <h1 class="page-header text-overflow"><span data-translate="">အမှာစာ ပြုစုခြင်း</span></h1>
     </div>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--End page title-->
@@ -18,8 +18,8 @@
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <ol class="breadcrumb">
         <li><a href="#"><i class="demo-pli-home"></i></a></li>
-        <li><a href="#" data-translate="_materbook"><span data-translate="">Meeting Module</span></a></li>
-        <li class="active"><span data-translate="">Requests</span></li>
+        <li><a href="#" data-translate="_materbook"><span data-translate="">အစည်းအဝေးများ</span></a></li>
+        <li class="active"><span data-translate="">အမှာစာ ပြုစုခြင်း</span></li>
         <li class="active">
             <button class="btn btn-mint  btn-rounded  btn-labeled" type="button" onclick="LoadNew();return false;"><i class="btn-label ion-plus-round"></i><span class="bold" data-translate="_new">New</span></button>
             <button class="btn btn-purple  btn-rounded  btn-labeled" type="button" onclick="SaveRequest();return false;"><i class="btn-label ion-checkmark"></i><span class="bold" data-translate="_save">Save</span></button>
@@ -68,10 +68,11 @@
                                                         <div class="panel-body">
                                                             <form class="form-horizontal">
                                                                 <div class="form-group">
+                                                                        <input type="hidden" id="tb_id" value="" />
 
                                                                     <label for="tb_department_name" class="col-md-2 control-label" data-translate="">Department</label>
                                                                     <div class="col-md-6">
-                                                                        <input type="text" class="form-control" id="tb_department_name">
+                                                                        <input type="text" class="form-control" id="tb_department_name" readonly>
                                                                     </div>
                                                                 </div>
 
@@ -125,7 +126,7 @@
                                                                 <div class="form-group">
                                                                     <label for="tb_name" class="col-md-3 control-label" data-translate="">Req No</label>
                                                                     <div class="col-md-9">
-                                                                        <input type="text" class="form-control" id="tb_service_no" placeholder="Enter Request No" readonly="true">
+                                                                        <input type="text" class="form-control" id="tb_request_no" placeholder="Enter Request No" readonly="true">
                                                                     </div>
                                                                 </div>
 
@@ -151,7 +152,7 @@
                                                                 <div class="form-group">
                                                                     <label for="ddl_requestby" class="col-md-3 control-label" data-translate="">Requestby</label>
                                                                     <div class="col-md-9">
-                                                                        <input type="text" class="form-control" id="ddl_requestby" placeholder="Enter Request No">
+                                                                       <div id="ddl_requestby"></div>
                                                                     </div>
                                                                 </div>
 
