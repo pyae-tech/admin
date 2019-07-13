@@ -134,7 +134,7 @@ function CreateMenu() {
             if (data.d != null) {
                 localStorage.setItem('module_menu', JSON.stringify(data.d.ModuleMenu));
                 localStorage.setItem('main_menu', JSON.stringify(data.d.MainMenu));
-                GotoPage("portal/modules");
+                GotoPage("portal/users");
             }
         },
         error: function (xhr, msg) {
@@ -366,66 +366,7 @@ function statusChangeCallback(response) {
     }
 
 }
-
-// This function is called when someone finishes with the Login
-// Button.  See the onlogin handler attached to it in the sample
-// code below.
-function checkFBLoginState() {
-    FB.getLoginStatus(function (response) {
-        if (response.status == "not_authorized") {
-            FB.login(function (response) {
-                if (response.authResponse) {
-                    console.log('Welcome!  Fetching your information.... ');
-                    FB.api('/me', function (response) {
-                        console.log('Good to see you, ' + response.name + '.');
-                    });
-                } else {
-                    console.log('User cancelled login or did not fully authorize.');
-                }
-            });
-        } else if (response.status == "unknown") {
-            FB.login(function (response) {
-                if (response.authResponse) {
-                    console.log('Welcome!  Fetching your information.... ');
-                    FB.api('/me', function (response) {
-                        console.log('Good to see you, ' + response.name + '.');
-                    });
-                } else {
-                    console.log('User cancelled login or did not fully authorize.');
-                }
-            });
-        }
-        statusChangeCallback(response);
-    });
-}
-
-// Here we run a very simple test of the Graph API after login is
-// successful.  See statusChangeCallback() for when this call is made.
-
-var fb_email = '';
-var fb_fname = '';
-var fb_lname = '';
-
-function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me',
-        { fields: "id,age_range,picture,birthday,email,first_name,last_name,gender,hometown,link,location,middle_name,name,timezone,website,work" },
-        function (response) {
-            console.log("fetching info:" + response);
-            console.log('Successful login for: ' + response.name + response.first_name + " " + response.email);
-            fb_email = response.email;
-            fb_fname = response.name;
-            fb_lname = '';
-
-            provider = 'facebook';
-            // retrieve organization of current user   
-            if (fb_email != '' && fb_email != null && fb_email != undefined) {
-                get_orgbycurrentuser(fb_email);
-            }
-
-        });
-}
-
+  
 function get_orgbycurrentuser(email) {
     $.ajax({
         url: baseUrl() + "WebServices/WebService_System.asmx/do_getorganization",
@@ -466,112 +407,4 @@ function show_orgmodal() {
     $('#org-modal').modal('show');
 }
 
-
-function facebook_authen() {
-    checkFBLoginState();
-    provider = 'facebook';
-
-}
-
-function twitter_authen() {
-    show_orgmodal();
-    provider = 'twitter';
-}
-
-function google_authen() {
-    show_orgmodal();
-    provider = 'google';
-}
-
-function loginByFacebook() {
-    FB.login(function (response) {
-        if (response.authResponse) {
-            FacebookLoggedIn(response);
-            //testAPI();
-        } else {
-            console.log('User cancelled login or did not fully authorize.');
-        }
-    }, { scope: 'public_profile,email' });
-}
-
-function FacebookLoggedIn(response) {
-    var loc = 'https://bandaryae.com/portal/facebook-backend';
-    if (loc.indexOf('?') > -1)
-        window.location = loc + '&authprv=facebook&access_token=' + response.authResponse.accessToken;
-    else
-        window.location = loc + '?authprv=facebook&access_token=' + response.authResponse.accessToken;
-}
-
-
-function do_loginwithfacebookuser() {
-    $.ajax({
-        url: baseUrl() + "WebServices/WebService_System.asmx/do_login",
-        data: "{ " +
-        "'usercode':'" + fb_email + "' " +
-        ",'password':'" + "' " +
-        " }",
-        dataType: 'json',
-        type: "POST",
-        contentType: "application/json; charset=utf-8",
-        success: function (data) {
-            if (data.d !== null && data.d['Note'] == 'Success') {
-                ShowSuccessMessage("Login Successful");
-                $.cookie('userid', data.d["UserID"], { expires: 1, path: '/' });
-                $.cookie('usercode', data.d["UserCode"], { expires: 1, path: '/' });
-                $.cookie('username', data.d["UserName"], { expires: 1, path: '/' });
-                $.cookie('useremail', data.d["Email"], { expires: 1, path: '/' });
-                $.cookie('refid', data.d["Ref_ID"], { expires: 1, path: '/' });
-                $.cookie('reftype', data.d["Ref_Type"], { expires: 1, path: '/' });
-                $.cookie('roleid', data.d["RoleID"], { expires: 1, path: '/' });
-                $.cookie('rolename', data.d["RoleName"], { expires: 1, path: '/' });
-                $.cookie('rolemenu', data.d["RoleMenu"], { expires: 1, path: '/' });
-                $.cookie('StoreName', data.d["AgentName"], { expires: 1, path: '/' });
-                $.cookie('orgName', data.d["OrgName"], { expires: 1, path: '/' });
-                $.cookie('orgID', data.d["OrgID"], { expires: 1, path: '/' });
-                $.cookie('orgCode', data.d["OrgCode"], { expires: 1, path: '/' });
-
-                //if (data.d["Ref_Type"] == 'Admin')
-                //    GotoPage("portal/users");   //dashboardSacouts  //dashboardAdmin //dashboardExpenses
-                ////GotoPage("portal/dashboardAdmin");  
-                ////GotoPage("portal/dashboardSacouts"); 
-                //else
-
-                GotoPage("portal/modules");
-            }
-            else if (data.d !== null && data.d['Note'] != 'Success') {
-
-                $.cookie('userid', "", { expires: 1, path: '/' });
-                $.cookie('usercode', "", { expires: 1, path: '/' });
-                $.cookie('username', "", { expires: 1, path: '/' });
-                $.cookie('refid', "", { expires: 1, path: '/' });
-                $.cookie('reftype', "", { expires: 1, path: '/' });
-                $.cookie('roleid', "", { expires: 1, path: '/' });
-                $.cookie('rolename', "", { expires: 1, path: '/' });
-                $.cookie('rolemenu', "", { expires: 1, path: '/' });
-                $.cookie('StoreName', "", { expires: 1, path: '/' });
-                $.cookie('orgName', "", { expires: 1, path: '/' });
-                $.cookie('orgID', "", { expires: 1, path: '/' });
-
-                ShowErrorMessage(data.d['Note']);
-            }
-            else {
-                $.cookie('userid', "", { expires: 1, path: '/' });
-                $.cookie('usercode', "", { expires: 1, path: '/' });
-                $.cookie('username', "", { expires: 1, path: '/' });
-                $.cookie('refid', "", { expires: 1, path: '/' });
-                $.cookie('reftype', "", { expires: 1, path: '/' });
-                $.cookie('roleid', "", { expires: 1, path: '/' });
-                $.cookie('rolename', "", { expires: 1, path: '/' });
-                $.cookie('rolemenu', "", { expires: 1, path: '/' });
-                $.cookie('StoreName', "", { expires: 1, path: '/' });
-                $.cookie('orgName', "", { expires: 1, path: '/' });
-                $.cookie('orgID', "", { expires: 1, path: '/' });
-
-                ShowErrorMessage('User Name Or Password Is Wroung Please Check And Try Again! ');
-            }
-        },
-        error: function (xhr, msg) {
-            LogJSError('Web Service Fail: ' + msg + '\n' + xhr.responseText);
-        }
-    });
-}
+ 
