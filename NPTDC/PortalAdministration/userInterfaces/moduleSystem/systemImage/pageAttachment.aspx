@@ -32,23 +32,13 @@
     <!--Page Title-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <div id="page-title">
-        <h1 class="page-header text-overflow">System Attachment</h1>
+        <h1 class="page-header text-overflow">ဖိုင်လ်တင်ရန်</h1>
     </div>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--End page title-->
 
 
-    <!--Breadcrumb-->
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <ol class="breadcrumb">
-        <li><a href="#"><i class="demo-pli-home"></i></a></li>
-        <li><a href="#">System</a></li>
-        <li class="active">Organizations</li>
-        <li class="active">
-            <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="LoadNew();return false;"><i class="btn-label ion-plus-round"></i><span class="bold">New</span></button>
-    </ol>
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!--End breadcrumb-->
+    
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder_Body" runat="server">
@@ -104,12 +94,12 @@
                 <div class="panel-heading">
                     <div class="panel-control">
                     </div>
-                    <h3 class="panel-title" data-translate="">Upload Attachment</h3>
+                    <h3 class="panel-title" data-translate="">နောက်ဆက်တွဲ အချက်အလက် ဖိုင်လ်များတင်ရန်</h3>
                 </div>
                 <div class="panel-body">
-                    <div class="col-md-2"></div>
+                  
 
-                  <div class="col-md-5" style="border:1px solid #ddd;min-height:600px;">
+                  <div class="col-md-12" style="border:1px solid #ddd;min-height:600px;">
                       <form  id="form1">
                         <div class="demo-container" style="min-height: 100%">
                             <div id="fileuploader">
@@ -117,18 +107,18 @@
                                     <div id="file-uploader"></div>
                                     <div class="content" id="selected-files">
                                         <div>
-                                            <h4>Selected Files</h4>
+                                            <h4>တင်မည့် ဖိုင်လ် ရွှေးချယ်ပါ။</h4>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="options">
-                                    <div class="caption">Options</div>
+                                    <div class="caption">အခြားရွှေးချယ်ခြင်း</div>
                                     <div class="option">
-                                        <span>File types</span>
+                                        <span>ဖိုင်လ် အမျိုးအစား</span>
                                         <div id="accept-option"></div>
                                     </div>
                                     <div class="option">
-                                        <span>Upload mode</span>
+                                        <span>ပုံစံ</span>
                                         <div id="upload-option"></div>
                                     </div>
                                     <div class="option">
