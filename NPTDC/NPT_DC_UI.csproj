@@ -1654,14 +1654,8 @@
     <Content Include="PortalAdministration\plugins\WidgetsGallery\js\vectormap-data\world.js" />
     <Content Include="PortalAdministration\plugins\x-editable\LICENSE-MIT" />
     <Content Include="PortalAdministration\plugins\x-editable\README.md" />
-    <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterCurrency\pageCurrency.aspx" />
-    <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterCurrency\pageCurrency.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterDepartment\pageDepartment.aspx" />
     <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterDepartment\pageDepartment.js" />
-    <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterExchangeRate\pageExchangeRate.aspx" />
-    <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterExchangeRate\pageExchangeRate.js" />
-    <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterItemCustomerPrice\PageItemCustomerPrice.aspx" />
-    <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterItemCustomerPrice\PageItemCustomerPrice.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterPosition\pagePosition.aspx" />
     <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterPosition\pagePosition.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETReuest.aspx" />
@@ -1697,12 +1691,6 @@
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemOrganization\pageSystmeOrganizationDetail.aspx" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemOrganization\pageSystmeOrganizationDetail.js" />
     <Content Include="PortalAdministration\plugins\toastr\toastr.js.map" />
-    <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterItemGroup\pageItemGroup.aspx" />
-    <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterItemGroup\pageItemGroup.js" />
-    <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterLocation\masterLocationDetail.js" />
-    <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterLocation\pageLocationDetail.aspx" />
-    <Content Include="PortalAdministration\userInterfaces\moduleMaster\carPlan\pageCar.aspx" />
-    <Content Include="PortalAdministration\userInterfaces\moduleMaster\carPlan\pageCar.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\masterFiles\FullFrameMaster.Master" />
     <Content Include="PortalAdministration\plugins\moment\.bower.json" />
     <Content Include="PortalAdministration\plugins\moment\bower.json" />
@@ -4523,13 +4511,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\models_class.cs" />
-    <Compile Include="PortalAdministration\userInterfaces\moduleMaster\masterCurrency\pageCurrency.aspx.cs">
-      <DependentUpon>pageCurrency.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PortalAdministration\userInterfaces\moduleMaster\masterCurrency\pageCurrency.aspx.designer.cs">
-      <DependentUpon>pageCurrency.aspx</DependentUpon>
-    </Compile>
     <Compile Include="PortalAdministration\userInterfaces\moduleMaster\masterDepartment\pageDepartment.aspx.cs">
       <DependentUpon>pageDepartment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4537,47 +4518,12 @@
     <Compile Include="PortalAdministration\userInterfaces\moduleMaster\masterDepartment\pageDepartment.aspx.designer.cs">
       <DependentUpon>pageDepartment.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PortalAdministration\userInterfaces\moduleMaster\masterExchangeRate\pageExchangeRate.aspx.cs">
-      <DependentUpon>pageExchangeRate.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PortalAdministration\userInterfaces\moduleMaster\masterExchangeRate\pageExchangeRate.aspx.designer.cs">
-      <DependentUpon>pageExchangeRate.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PortalAdministration\userInterfaces\moduleMaster\masterItemCustomerPrice\PageItemCustomerPrice.aspx.cs">
-      <DependentUpon>PageItemCustomerPrice.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PortalAdministration\userInterfaces\moduleMaster\masterItemCustomerPrice\PageItemCustomerPrice.aspx.designer.cs">
-      <DependentUpon>PageItemCustomerPrice.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PortalAdministration\userInterfaces\moduleMaster\masterItemGroup\pageItemGroup.aspx.cs">
-      <DependentUpon>pageItemGroup.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PortalAdministration\userInterfaces\moduleMaster\masterItemGroup\pageItemGroup.aspx.designer.cs">
-      <DependentUpon>pageItemGroup.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PortalAdministration\userInterfaces\moduleMaster\masterLocation\pageLocationDetail.aspx.cs">
-      <DependentUpon>pageLocationDetail.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PortalAdministration\userInterfaces\moduleMaster\masterLocation\pageLocationDetail.aspx.designer.cs">
-      <DependentUpon>pageLocationDetail.aspx</DependentUpon>
-    </Compile>
     <Compile Include="PortalAdministration\userInterfaces\moduleMaster\masterPosition\pagePosition.aspx.cs">
       <DependentUpon>pagePosition.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PortalAdministration\userInterfaces\moduleMaster\masterPosition\pagePosition.aspx.designer.cs">
       <DependentUpon>pagePosition.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PortalAdministration\userInterfaces\moduleMaster\carPlan\pageCar.aspx.cs">
-      <DependentUpon>pageCar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PortalAdministration\userInterfaces\moduleMaster\carPlan\pageCar.aspx.designer.cs">
-      <DependentUpon>pageCar.aspx</DependentUpon>
     </Compile>
     <Compile Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETReuest.aspx.cs">
       <DependentUpon>pageMETReuest.aspx</DependentUpon>

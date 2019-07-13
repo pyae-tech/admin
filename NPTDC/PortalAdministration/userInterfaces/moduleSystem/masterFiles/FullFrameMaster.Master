@@ -176,238 +176,10 @@
 
                     <%--#region_meun_list_drop_down--%>
                     <ul class="nav navbar-top-links">                                                
-                          <li class="dropdown" id="CashFlowModule" style="display: none;">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">
-                                <i class="ion-pie-graph"></i>&nbsp;&nbsp;<span data-translate="_cashflow"> Cash Flow </span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
-                                <div class="nano scrollable">
-                                    <div class="nano-content">
-                                        <ul class="head-list">
-                                            <li>
-                                                <a href="monthlyCashFlow"><i class="demo-pli-male icon-lg icon-fw"></i>Monthly Flow</a>
-                                            </li>
-                                            <li>
-                                                <a href="advanceds"><i class="demo-pli-mail icon-lg icon-fw"></i>Daily Advanced</a>
-                                            </li>
-                                            <li>
-                                                <a href="expenses"><i class="demo-pli-gear icon-lg icon-fw"></i> Daily Expense</a>
-                                            </li>
-                                            <li>
-                                                <a href="incomes"><i class="demo-pli-computer-secure icon-lg icon-fw"></i>Daily Income</a>
-                                            </li>
-                                            <li>
-                                                <a href="wallet"><i class="demo-pli-unlock icon-lg icon-fw"></i>Wallet</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="demo-pli-gear icon-lg icon-fw"></i> Wallet Transaction</a>
-                                            </li>
-                                            <li>
-                                                <a href="wallettransfer"><i class="demo-pli-computer-secure icon-lg icon-fw"></i>Wallet Transfer</a>
-                                            </li>
-                                            <li>
-                                                <a href="billingplans"><i class="demo-pli-unlock icon-lg icon-fw"></i>Billing Remainder</a>
-                                            </li>
-                                             <li>
-                                                <a href="expensetitles"><i class="demo-pli-unlock icon-lg icon-fw"></i>Expense Title</a>
-                                            </li>
-                                             <li>
-                                                <a href="incometitles"><i class="demo-pli-unlock icon-lg icon-fw"></i>Income Title</a>
-                                            </li>
-                                             <li>
-                                                <a href="creditremain"><i class="demo-pli-unlock icon-lg icon-fw"></i>Credit Remain</a>
-                                            </li>
-                                             <li>
-                                                <a href="assess"><i class="demo-pli-unlock icon-lg icon-fw"></i>Asset</a>
-                                            </li>
-                                             <li>
-                                                <a href="assesstypes"><i class="demo-pli-unlock icon-lg icon-fw"></i>Asset Type</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <!--Dropdown footer-->
-                                <div class="pad-all bord-top">
-                                    <a href="#" class="btn-link text-main box-block">
-                                        <i class="pci-chevron chevron-right pull-right"></i>More Detail....
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                       
-                        <li class="dropdown" id="SaleBookModule">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">
-                                <i class="ti-shopping-cart"></i>&nbsp;&nbsp;Sale
-                            </a>
-                           <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
-                                <div class="nano scrollable">
-                                    <div class="nano-content">
-                                        <ul class="head-list">
-                                            <li>
-                                                <a href="#"><i class="demo-pli-male icon-lg icon-fw"></i>Dashboard</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><%--<span class="badge badge-danger pull-right">9</span>--%><i class="demo-pli-mail icon-lg icon-fw"></i> Issue Note</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><span class="label label-success pull-right">New</span><i class="demo-pli-gear icon-lg icon-fw"></i> Order By Date</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="demo-pli-computer-secure icon-lg icon-fw"></i>Weekly Orders</a>
-                                            </li>
-                                            <li>
-                                                <a href="pages-login.html"><i class="demo-pli-unlock icon-lg icon-fw"></i>Way Sale</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><span class="label label-success pull-right">New</span><i class="demo-pli-gear icon-lg icon-fw"></i> Rouets</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="demo-pli-computer-secure icon-lg icon-fw"></i>Route Plan</a>
-                                            </li>
-                                            <li>
-                                                <a href="pages-login.html"><i class="demo-pli-unlock icon-lg icon-fw"></i>Monthly Route Plan</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <!--Dropdown footer-->
-                                <div class="pad-all bord-top">
-                                    <a href="invoices" class="btn-link text-main box-block">
-                                        <i class="pci-chevron chevron-right pull-right"></i>More Detail....
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="dropdown" id="DistributionModule" style="display: none;">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">
-                                <i class="ti-truck"></i>&nbsp;Distribution 
-                                 <span class="badge badge-header badge-danger" id="head_menu_indicator_distribution" style="display: none"></span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
-                                <div class="nano scrollable">
-                                    <div class="nano-content">
-                                        <ul class="head-list">
-                                            <li>
-                                                <a href="#"><i class="demo-pli-male icon-lg icon-fw"></i>Dashboard</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><%--<span class="badge badge-danger pull-right">9</span>--%><i class="demo-pli-mail icon-lg icon-fw"></i> Issue Note</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><span class="label label-success pull-right">New</span><i class="demo-pli-gear icon-lg icon-fw"></i> Order By Date</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="demo-pli-computer-secure icon-lg icon-fw"></i>Weekly Orders</a>
-                                            </li>
-                                            <li>
-                                                <a href="pages-login.html"><i class="demo-pli-unlock icon-lg icon-fw"></i>Way Sale</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><span class="label label-success pull-right">New</span><i class="demo-pli-gear icon-lg icon-fw"></i> Rouets</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="demo-pli-computer-secure icon-lg icon-fw"></i>Route Plan</a>
-                                            </li>
-                                            <li>
-                                                <a href="pages-login.html"><i class="demo-pli-unlock icon-lg icon-fw"></i>Monthly Route Plan</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <!--Dropdown footer-->
-                                <div class="pad-all bord-top">
-                                    <a href="issues" class="btn-link text-main box-block">
-                                        <i class="pci-chevron chevron-right pull-right"></i>More Detail....
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                       
-
-                        <li class="dropdown" id="InventoryModule" style="display: none;">
-                            <a href="#">
-                                <i class="ti-package"></i>&nbsp;&nbsp;Stock                            
-                            </a>
-                        </li>
-
-                        <li class="dropdown" id="MarketingModule">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">
-                                <i class="ti-light-bulb"></i>&nbsp;Marketing 
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
-                                <div class="nano scrollable">
-                                    <div class="nano-content">
-                                        <ul class="head-list">
-                                            <li>
-                                                <a class="media" href="#">
-                                                    <div class="media-left">
-                                                        <i class="demo-pli-file-edit icon-2x"></i>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <p class="mar-no text-nowrap text-main text-semibold">Dashboard</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="media" href="#">
-                                                    <div class="media-left">
-                                                        <i class="demo-pli-file-edit icon-2x"></i>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <p class="mar-no text-nowrap text-main text-semibold">Daily Scouts</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="media" href="#">
-                                                    <div class="media-left">
-                                                        <i class="demo-pli-file-edit icon-2x"></i>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <p class="mar-no text-nowrap text-main text-semibold">Scout Map</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="media" href="#">
-                                                    <div class="media-left">
-                                                        <i class="demo-pli-file-edit icon-2x"></i>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <p class="mar-no text-nowrap text-main text-semibold">ScoutType</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="media" href="#">
-                                                    <div class="media-left">
-                                                        <i class="demo-pli-file-edit icon-2x"></i>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <p class="mar-no text-nowrap text-main text-semibold">Daily Opportunity</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <!--Dropdown footer-->
-                                <div class="pad-all bord-top">
-                                    <a href="#" class="btn-link text-main box-block">
-                                        <i class="pci-chevron chevron-right pull-right"></i>More Detail....
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                        
+                         
                         <li class="dropdown">
                             <a href="#" data-toggle="dropdown" class="dropdown-toggle">
-                                <i class="ti-briefcase"></i>&nbsp;General                             
+                                <i class="ti-info"></i>&nbsp;Notification                             
                             </a>                           
                             <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
                                 <div class="nano scrollable">
@@ -567,16 +339,7 @@
                                 </div>
                             </div>
                         </li>
-                      
-                        <li id="dropdown-language" class="dropdown">
-                            <a href="#" style="color: black;">
-                                <select id="lang">
-                                    <option value="english">EN</option>
-                                    <option value="myanmar">MM</option>
-                                </select>
-                            </a>
-                        </li>
-                        
+                       
                         <li id="menu_setting">
                             <a href="#" class="aside-toggle">
                                 <i class="demo-pli-dot-vertical"></i>
@@ -1067,7 +830,7 @@
             <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-            <p class="pad-lft">&#0169; 2018 SYSTEMATIC Business Solution</p>
+            <p class="pad-lft">&#0169; 2019 Partner Associates International Co.,Ltd</p>
 
 
 

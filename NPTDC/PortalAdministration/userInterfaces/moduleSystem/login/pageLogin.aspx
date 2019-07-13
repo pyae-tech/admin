@@ -74,7 +74,7 @@
 		            <div class="mar-ver pad-btm">
                       <center><img src='<%= ResolveUrl("../../../img/logo.png")%>'  style="width:200px"/></center>
 		                <h1 class="h4">နေပြည်တော် စည်ပင်သာယာရေး ကော်မတီ</h1>
-		                <p>Sign In to your account</p>
+		                <p style="font-size:12px;">Executive Committee Meeting Management System</p>
 		            </div>
 		            <form>
 		                <div class="form-group">
@@ -85,8 +85,7 @@
 		                </div>
 		                <div class="checkbox pad-btm text-left">
                              <a href="forget" class="btn-link mar-rgt">Forgot password ?</a>
-		                 <%--   <input id="demo-form-checkbox" class="magic-checkbox" type="checkbox">
-		                    <label for="demo-form-checkbox">Remember me</label>--%>
+		         
 		                </div>
 		                <button class="btn btn-primary btn-lg btn-block" onclick="do_login();return false;">Sign In</button>
 		            </form>
