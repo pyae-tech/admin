@@ -33,7 +33,7 @@ namespace SBSPortal3
             RouteTable.Routes.MapPageRoute("portal/request", "portal/request", "~/PortalAdministration/userInterfaces/moduleMeeting/pageMETReuest.aspx");
             //Master
             RouteTable.Routes.MapPageRoute("portal/departments", "portal/departments", "~/PortalAdministration/userInterfaces/moduleMaster/masterDepartment/pageDepartment.aspx");
-            //RouteTable.Routes.MapPageRoute("portal/departments", "portal/positions", "~/PortalAdministration/userInterfaces/moduleMaster/masterPosition/pagePosition.aspx");
+            RouteTable.Routes.MapPageRoute("portal/positions", "portal/positions", "~/PortalAdministration/userInterfaces/moduleMaster/masterPosition/pagePosition.aspx");
             DevExpress.XtraReports.Web.ASPxWebDocumentViewer.StaticInitialize();
             DevExpress.XtraReports.Web.ASPxReportDesigner.StaticInitialize();
         }
