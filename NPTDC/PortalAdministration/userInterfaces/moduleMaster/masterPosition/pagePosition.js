@@ -1,8 +1,8 @@
 ﻿$('title').html(get_current_organization_title() + "Positions");
 
-$('#menu_master').addClass('active-sub');
-$('#menu_master_group').addClass('in');
-$('#menu_master_StaffPosition').addClass('active-link');
+$('#menu_system').addClass('active-sub');
+$('#menu_system_group').addClass('in');
+$('#menu_positions').addClass('active-link');
 
 
 $("#tab-main").tabs();
@@ -50,9 +50,6 @@ function SavePosition() {
     if (SaveRecordVerification() == false)
         return;
     Pace.start();
-
-
-   
     $.ajax({
         url: baseUrl() + "WebServices/WebService_Position.asmx/SavePosition",
         data: "{ " +
@@ -60,8 +57,8 @@ function SavePosition() {
             ",'user_id':'" + get_current_user_id() + "' " +
             ",'position_name':'" + $("#tb_name").val() + "' " +
             ",'position_code':'" + $("#tb_position_code").val() + "' " +
-            ",'protocol':'" + $("#tb_DBasic_Salary").val() + "' " +
-            ",'description':'" + $("#tb_DOTRate").val() + "' " +
+            ",'protocol':'" + $("#tb_protocol").val() + "' " +
+            ",'description':'" + esc_quot($("#tb_description").val()) + "' " +
             ",'remark':'" + esc_quot($("#tb_remark").val()) + "' " +
             ",'RequestID':'" + get_current_user_id() + "' " +
             " }",
@@ -77,7 +74,7 @@ function SavePosition() {
             }
 
             else if (data.d.toString().split('~')[0] == "Error") {
-                ShowErrorBoxMessage("Duplicate Position Code");
+                ShowErrorBoxMessage("Duplicate Position Name");
                 scrollToDiv('#tab-main');
             }
             else {
@@ -235,7 +232,7 @@ function BindTable(data) {
         },
         "export": {
             enabled: true,
-            fileName: "Brand",
+            fileName: "Position",
             allowExportSelectedData: false
         },
         headerFilter: {
@@ -293,16 +290,16 @@ function Build_ColumnHeader() {
     Columns = [
         {
             dataField: "PositionName",
-            caption: "အမည္",
+            caption: "Position Name",
         },
         {
             dataField: "PositionCode",
-            caption: "ကုဒ္",
+            caption: "Code",
 
         },
         {
-            dataField: "DefaultBasicSalary",
-            caption: "အေျခခ",
+            dataField: "Protocol",
+            caption: "Protocol",
             format: {
                 type: "fixedPoint",
                 precision: 0
@@ -310,41 +307,11 @@ function Build_ColumnHeader() {
             allowHeaderFiltering: false
         },
         {
-            dataField: "DefaultOTRate",
-            caption: "အခိ်န္ပိ",
-            format: {
-                type: "fixedPoint",
-                precision: 0
-            },
+            dataField: "Description",
+            caption: "Description",
             allowHeaderFiltering: false
         },
-        {
-            dataField: "DefaultMinSalary",
-            caption: "အနိမ့္ဆ",
-            format: {
-                type: "fixedPoint",
-                precision: 0
-            },
-            allowHeaderFiltering: false
-        },
-        {
-            dataField: "DefaultGeneralAdjustment",
-            caption: "ရာထူးတိုး",
-            format: {
-                type: "fixedPoint",
-                precision: 0
-            },
-            allowHeaderFiltering: false
-        },
-        {
-            dataField: "JobLevel",
-            caption: "ရာထူး",
-            format: {
-                type: "fixedPoint",
-                precision: 0
-            },
-            allowHeaderFiltering: false
-        },
+      
     ];
 }
 

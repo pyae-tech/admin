@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Serialization;
 using NPT_DC_App.LINQs;
 namespace NPT_DC_App.Controllers
 {
@@ -338,6 +339,27 @@ namespace NPT_DC_App.Controllers
             return_result.ModuleMenu = module_result_list;
             return return_result;
 
+        }
+
+        public static string GetAllUserRoleJSON(string RequestID)
+        {
+            //Security Check
+            if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, RequestID, "read")) throw new Exception("No Access.");
+            LINQ_SystemDataContext dc = new LINQ_SystemDataContext();
+            //Get current user info
+            SYS_UserView current_user = Controller_User.GetUser(RequestID, RequestID);
+            //Add into Query Statment
+            var Query = (from c in dc.SYS_UserRoleViews
+                         where c.Active == true
+                         orderby c.RoleName
+                         select new SYS_UserRoleView
+                         {
+                             RoleID=c.RoleID,
+                             RoleCode = c.RoleCode,
+                             RoleName = c.RoleName,
+                         }).ToList();
+            string return_str = new JavaScriptSerializer().Serialize(Query);
+            return return_str;
         }
 
     }
