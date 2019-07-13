@@ -75,6 +75,7 @@
     <Content Include="WebServices\WebService_ImageController.asmx" />
     <Content Include="WebServices\WebService_Position.asmx" />
     <Content Include="WebServices\WebService_Program.asmx" />
+    <Content Include="WebServices\WebService_Request.asmx" />
     <Content Include="WebServices\WebService_System.asmx" />
     <Content Include="WebServices\WebService_SystemLog.asmx" />
     <Content Include="WebServices\WebService_SystemMenu.asmx" />
@@ -84,6 +85,7 @@
     <Content Include="WebServices\WebService_UserRole.asmx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Controller_Request.cs" />
     <Compile Include="Controllers\Controller_Attachment.cs" />
     <Compile Include="Controllers\Controller_Common.cs" />
     <Compile Include="Controllers\Controller_Department.cs" />
@@ -109,6 +111,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LINQ_Master.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="LINQs\LINQ_Meeting.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LINQ_Meeting.dbml</DependentUpon>
     </Compile>
     <Compile Include="LINQs\LINQ_System.designer.cs">
       <AutoGen>True</AutoGen>
@@ -138,6 +145,10 @@
     </Compile>
     <Compile Include="WebServices\WebService_Program.asmx.cs">
       <DependentUpon>WebService_Program.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\WebService_Request.asmx.cs">
+      <DependentUpon>WebService_Request.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="WebServices\WebService_System.asmx.cs">
@@ -182,6 +193,14 @@
     </Content>
     <None Include="LINQs\LINQ_Master.dbml.layout">
       <DependentUpon>LINQ_Master.dbml</DependentUpon>
+    </None>
+    <Content Include="LINQs\LINQ_Meeting.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>LINQ_Meeting.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="LINQs\LINQ_Meeting.dbml.layout">
+      <DependentUpon>LINQ_Meeting.dbml</DependentUpon>
     </None>
     <None Include="LINQs\LINQ_System.dbml.layout">
       <DependentUpon>LINQ_System.dbml</DependentUpon>
