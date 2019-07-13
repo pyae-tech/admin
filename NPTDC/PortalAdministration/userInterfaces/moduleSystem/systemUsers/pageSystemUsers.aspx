@@ -55,7 +55,7 @@
                             </div>
                            
                         </div>
-                         <h3><i class="ion-person-stalker"></i>&nbsp;ဝန်ထမ်းများ</h3>
+                       
                         <!--Panel body-->
                         <div class="panel-body">
                             <div class="tab-content">

@@ -14,7 +14,7 @@
     <!--Page Title-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <div id="page-title">
-        <h1 class="page-header text-overflow">Department</h1>
+        <h1 class="page-header text-overflow"><i class="ion-home"></i> ဌာနများ</h1>
     </div>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--End page title-->
@@ -24,8 +24,8 @@
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <ol class="breadcrumb">
         <li><a href="#"><i class="demo-pli-home"></i></a></li>
-        <li><a href="#">Master</a></li>
-        <li class="active">Departments</li>
+        <li><a href="#">စနစ် စီမံခြင်း </a></li>
+        <li class="active">ဌာနများ</li>
           <li class="active"> <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="LoadNew();return false;"><i class="btn-label ion-plus-round"></i><span class="bold">New</span></button>
       
     </ol>
@@ -55,7 +55,7 @@
                             </div>
                            
                         </div>
-                         <h3><i class="ion-home"></i> Departments</h3>
+                        
                         <!--Panel body-->
                         <div class="panel-body">
                             <div class="tab-content">
