@@ -16,7 +16,7 @@
     <!--Menu list item-->
     <li class="" id="menu_request">
         <a href="#">
-            <i class="ion-clipboard"></i>
+            <i class="ion-ios-briefcase"></i>
             <span class="menu-title">အစည်းအဝေးများ</span>
             <i class="arrow"></i>
         </a>
@@ -32,7 +32,7 @@
     </li>
     <li class="" id="menu_system">
         <a href="#">
-            <i class="ion-clipboard"></i>
+            <i class="ion-android-settings"></i>
             <span class="menu-title">စနစ် စီမံခြင်း</span>
             <i class="arrow"></i>
         </a>

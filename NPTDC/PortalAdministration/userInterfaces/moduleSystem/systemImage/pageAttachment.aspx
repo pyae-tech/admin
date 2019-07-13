@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PortalAdministration/userInterfaces/moduleSystem/masterFiles/FullFrameMaster.Master" AutoEventWireup="true" CodeBehind="pageAttachment.aspx.cs" Inherits="SBSPortal3.PortalAdministration.userInterfaces.moduleSystem.systemImage.pageAttachment" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PortalAdministration/userInterfaces/moduleSystem/masterFiles/FullFrameMaster_NPTDC.Master" AutoEventWireup="true" CodeBehind="pageAttachment.aspx.cs" Inherits="SBSPortal3.PortalAdministration.userInterfaces.moduleSystem.systemImage.pageAttachment" %>
 
 <%@ Register Assembly="DevExpress.Web.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <%@ Register Src="~/PortalAdministration/userInterfaces/moduleSystem/systemImage/UploadedFilesContainer.ascx" TagPrefix="uc1" TagName="UploadedFilesContainer" %>
@@ -32,7 +32,7 @@
     <!--Page Title-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <div id="page-title">
-        <h1 class="page-header text-overflow">ဖိုင်လ်တင်ရန်</h1>
+        <h1 class="page-header text-overflow">ဖိုင်လ်တင်ရန် <i class="ion-ios-cloud-upload"></i> </h1>
     </div>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--End page title-->
@@ -42,50 +42,7 @@
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder_Body" runat="server">
-
-    <%--  <div id="page-content">
-        <div class="row">
-
-            <h3><i class="ion-briefcase">&nbsp;</i><span data-translate="">Upload Attachment</span> </h3>
-            <br />
-        </div>
-
-        <div class="row">
-            <div class="col-md-12" style="height:100%">
-                  <div class="demo-container">
-                            <div id="fileuploader">
-                                <div class="widget-container">
-                                    <div id="file-uploader"></div>
-                                    <div class="content" id="selected-files">
-                                        <div>
-                                            <h4>Selected Files</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="options">
-                                    <div class="caption">Options</div>
-                                    <div class="option">
-                                        <span>File types</span>
-                                        <div id="accept-option"></div>
-                                    </div>
-                                    <div class="option">
-                                        <span>Upload mode</span>
-                                        <div id="upload-option"></div>
-                                    </div>
-                                    <div class="option">
-                                        <div id="multiple-option"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-            </div>
-         
-
-        </div>    
-
-
-
-    </div>--%>
+     
     <div id="page-content">
 
 
@@ -94,6 +51,7 @@
                 <div class="panel-heading">
                     <div class="panel-control">
                     </div>
+                    <br />
                     <h3 class="panel-title" data-translate="">နောက်ဆက်တွဲ အချက်အလက် ဖိုင်လ်များတင်ရန်</h3>
                 </div>
                 <div class="panel-body">
@@ -124,6 +82,12 @@
                                     <div class="option">
                                         <div id="multiple-option"></div>
                                     </div>
+                                    <div class="option">
+                                        <br/><br /> 
+                                         <button data-dismiss="modal" class="btn btn-danger  btn-rounded  btn-labeled btn-large" type="button" onclick="window.close();"><i class="btn-label ion-close"></i><span class="bold" >ပိတ်မည်</span></button>
+
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -134,70 +98,9 @@
             </div>
         </div>
     </div>
-
-    <%--  <div id="page-content">
-
-        <div class="panel">
-            <div class="panel-body">
-
-
-
-                <div class="panel">
-                    <div class="tabs-container" id="tab-main">
-                        <!--Panel heading-->
-                        <div class="panel-heading">
-
-                            <h3><i class="ion-briefcase"></i>Upload Attachment </h3>--%>
-    <%-- <form class="form-horizontal" runat="server">
-
-                                <div class="form-group">
-                                    <div class="col-md-3"></div>
-                                    <div class="col-md-6">
-                                        <dx:aspxuploadcontrol id="UploadControl" runat="server" clientinstancename="UploadControl" width="320"
-                                            nulltext="Select multiple files..." uploadmode="Advanced" showuploadbutton="True" showprogresspanel="True"
-                                            onfileuploadcomplete="UploadControl_FileUploadComplete">
-                                            <AdvancedModeSettings EnableMultiSelect="True" EnableFileList="True" EnableDragAndDrop="True" />
-                                            <ValidationSettings MaxFileSize="4194304" AllowedFileExtensions=".jpg,.jpeg,.gif,.png,.txt,.pdf">
-                                            </ValidationSettings>
-                                            <ClientSideEvents FilesUploadStart="function(s, e) { DXUploadedFilesContainer.Clear(); }"
-                                                FileUploadComplete="onFileUploadComplete" />
-                                        </dx:aspxuploadcontrol>
-                                        <br />
-
-                                        <uc1:uploadedfilescontainer id="FileContainer" runat="server" width="380" height="180"
-                                            namecolumnwidth="240" sizecolumnwidth="70" headertext="Uploaded files" />
-                                        <br />
-                                        <br />
-                                        <p class="note">
-                                            <dx:aspxlabel id="AllowedFileExtensionsLabel" runat="server" text="Allowed file extensions: .jpg, .jpeg, .gif, .png." font-size="8pt">
-                                            </dx:aspxlabel>
-                                            <br />
-                                            <dx:aspxlabel id="MaxFileSizeLabel" runat="server" text="Maximum file size: 4 MB." font-size="8pt">
-                                            </dx:aspxlabel>
-                                        </p>
-
-                                    </div>
-
-
-                                </div>
-
-                            </form>--%>
-
-
-
-
-    <%--                        </div>
-
-
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-    </div>--%>
+     
 </asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder_SliderMenu" runat="server">
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder_JS" runat="server">
 
     <script src='<%= ResolveUrl("../../../plugins/WidgetsGallery/js/dx.all.js")%>'></script>
     <script src='<%= ResolveUrl("Demo.js")%>'></script>
