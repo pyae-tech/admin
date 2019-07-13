@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SaveImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImageURL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ImagePath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ImageName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RefID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RefType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveImageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SaveImageSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveImage" />
+  </wsdl:message>
+  <wsdl:message name="SaveImageSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveImageHttpGetIn">
+    <wsdl:part name="ImageURL" type="s:string" />
+    <wsdl:part name="ImagePath" type="s:string" />
+    <wsdl:part name="ImageName" type="s:string" />
+    <wsdl:part name="RefID" type="s:string" />
+    <wsdl:part name="RefType" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SaveImageHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SaveImageHttpPostIn">
+    <wsdl:part name="ImageURL" type="s:string" />
+    <wsdl:part name="ImagePath" type="s:string" />
+    <wsdl:part name="ImageName" type="s:string" />
+    <wsdl:part name="RefID" type="s:string" />
+    <wsdl:part name="RefType" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SaveImageHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="WebService_ImageControllerSoap">
+    <wsdl:operation name="SaveImage">
+      <wsdl:input message="tns:SaveImageSoapIn" />
+      <wsdl:output message="tns:SaveImageSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebService_ImageControllerHttpGet">
+    <wsdl:operation name="SaveImage">
+      <wsdl:input message="tns:SaveImageHttpGetIn" />
+      <wsdl:output message="tns:SaveImageHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebService_ImageControllerHttpPost">
+    <wsdl:operation name="SaveImage">
+      <wsdl:input message="tns:SaveImageHttpPostIn" />
+      <wsdl:output message="tns:SaveImageHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService_ImageControllerSoap" type="tns:WebService_ImageControllerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveImage">
+      <soap:operation soapAction="http://tempuri.org/SaveImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService_ImageControllerSoap12" type="tns:WebService_ImageControllerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveImage">
+      <soap12:operation soapAction="http://tempuri.org/SaveImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService_ImageControllerHttpGet" type="tns:WebService_ImageControllerHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="SaveImage">
+      <http:operation location="/SaveImage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService_ImageControllerHttpPost" type="tns:WebService_ImageControllerHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="SaveImage">
+      <http:operation location="/SaveImage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService_ImageController">
+    <wsdl:port name="WebService_ImageControllerSoap" binding="tns:WebService_ImageControllerSoap">
+      <soap:address location="http://localhost:2231/WebServices/WebService_ImageController.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService_ImageControllerSoap12" binding="tns:WebService_ImageControllerSoap12">
+      <soap12:address location="http://localhost:2231/WebServices/WebService_ImageController.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService_ImageControllerHttpGet" binding="tns:WebService_ImageControllerHttpGet">
+      <http:address location="http://localhost:2231/WebServices/WebService_ImageController.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService_ImageControllerHttpPost" binding="tns:WebService_ImageControllerHttpPost">
+      <http:address location="http://localhost:2231/WebServices/WebService_ImageController.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

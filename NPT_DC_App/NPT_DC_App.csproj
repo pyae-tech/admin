@@ -72,6 +72,7 @@
     <Content Include="WebServices\WebService_Attachment.asmx" />
     <Content Include="WebServices\WebService_Department.asmx" />
     <Content Include="WebServices\WebService_Image.asmx" />
+    <Content Include="WebServices\WebService_ImageController.asmx" />
     <Content Include="WebServices\WebService_Position.asmx" />
     <Content Include="WebServices\WebService_Program.asmx" />
     <Content Include="WebServices\WebService_System.asmx" />
@@ -125,6 +126,10 @@
     </Compile>
     <Compile Include="WebServices\WebService_Image.asmx.cs">
       <DependentUpon>WebService_Image.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\WebService_ImageController.asmx.cs">
+      <DependentUpon>WebService_ImageController.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="WebServices\WebService_Position.asmx.cs">

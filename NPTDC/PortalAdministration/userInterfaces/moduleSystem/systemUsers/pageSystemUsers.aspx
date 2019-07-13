@@ -215,8 +215,30 @@
                         </div>
                         <div class="form-group">
                             <label for="tb_note" class="col-md-2 control-label">Note</label>
-                            <div class="col-md-9">
+                            <div class="col-md-4">
                                 <textarea class="form-control" rows="7" placeholder="Enter Note For User" id="tb_note"></textarea>
+                            </div>
+                            <div class="col-md-6">
+                           
+                            
+                                            <div class="col-md-12 ImageContainer" id="item_image_zone" >
+                                                <label class="col-md-12">Upload User's Signature</label>
+
+                                                <div id="image_item" style="display: block;">
+
+                                                    <img id="bind_item_image_src" src='' style="width: 100%; height: 100%;" /><br />
+                                                    <br>
+                                                    <button id="btn_changeImage" class="btn btn-dark btn-icon btn-sm btn-rounded" onclick="changeItemImage();"><i class="demo-psi-pen-5 icon-lg"></i>&nbsp; <span class="bold" data-translate="_edit">Edit</span></button>
+                                                    &nbsp &nbsp
+                                                    <button id="btn_deleteImage" class="btn btn-dark btn-icon btn-sm btn-rounded " onclick="deleteImage();"><i class="ion-close-circled icon-lg"></i>&nbsp;<span class="bold" data-translate="_delete">Delete</span></button>
+                                                </div>
+                                                <div id="Image_drop_zone" style="display: block;">
+                                                    <button id="btn_uploadImage" class="btn btn-dark btn-icon btn-sm btn-rounded" onclick="UploadItemImage1();" style="padding-left: 3px;"><i class="ion-upload icon-lg"></i>&nbsp;<span class="bold" data-translate="_upload">Upload</span></button>
+                                                </div>
+                                          
+
+                        </div>
+                                
                             </div>
                         </div>
                         <div class="form-group">
@@ -229,6 +251,9 @@
                             </div>
                         </div>
                     </form>
+
+                 
+
                 </div>
                 <!--Modal footer-->
                 <div class="modal-footer">

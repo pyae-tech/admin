@@ -23,27 +23,10 @@ namespace NPT_DC_App.Controllers
                 string delete_result = "";
                 switch (RefType)
                 {
-                    case "Item":
+                    case "User":
                         delete_result = DeleteImages(RefID, RefType, UserID);
                         break;
-
-                    //case "EcommerceItem":
-                    //    delete_result = DeleteImages(RefID, RefType, UserID);
-                    //    break;
-
-                    case "ItemType":
-                        delete_result = DeleteImages(RefID, RefType, UserID);
-                        break;
-
-                    case "Barcode":
-                        delete_result = DeleteImages(RefID, RefType, UserID);
-                        break;
-
-                    case "Brand":
-                        delete_result = DeleteImages(RefID, RefType, UserID);
-                        break;
-
-
+                      
                     default:
                         delete_result = "Success~";
                         break;

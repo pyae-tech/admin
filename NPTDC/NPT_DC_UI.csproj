@@ -164,6 +164,8 @@
       <HintPath>..\packages\Spire.XLS.9.5.6\lib\net40\Spire.Pdf.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -393,6 +395,13 @@
     <Content Include="bin\zh-CHT\Microsoft.ReportViewer.Design.resources.dll" />
     <Content Include="bin\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll" />
     <Content Include="bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <None Include="Connected Services\SR_ImageController\WebService_ImageController.disco" />
+    <None Include="Connected Services\SR_ImageController\configuration91.svcinfo" />
+    <None Include="Connected Services\SR_ImageController\configuration.svcinfo" />
+    <None Include="Connected Services\SR_ImageController\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="PortalAdministration\css\bootstrap.min.css.map" />
     <Content Include="PortalAdministration\css\demo\fonts\nifty-demo-icons.ttf" />
     <Content Include="PortalAdministration\css\demo\fonts\nifty-demo-icons.woff" />
@@ -1680,6 +1689,11 @@
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemAttachment\PagePreviewAndPrint.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemCompanyProfile\pageCompanyProfile.aspx" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemCompanyProfile\pageCompanyProfile.js" />
+    <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemImage\attachment.css" />
+    <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemImage\Demo.js" />
+    <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemImage\pageAttachment.aspx" />
+    <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemImage\pageAttachment.js" />
+    <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemImage\UploadedFilesContainer.ascx" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemLog\pageSystemLog.aspx" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemLog\pageSystemLog.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemMenuGroup\systemMenuGroup.aspx" />
@@ -1740,6 +1754,7 @@
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\masterFiles\FullFrameMaster_NPTDC.master" />
     <Content Include="PortalAdministration\fonts\Pyidaungsu-2.5_Bold.ttf" />
     <Content Include="PortalAdministration\fonts\Pyidaungsu-2.5_Regular.ttf" />
+    <None Include="Connected Services\SR_ImageController\WebService_ImageController.wsdl" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
@@ -4507,6 +4522,11 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\SR_ImageController\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -4721,6 +4741,13 @@
     <Compile Include="PortalAdministration\userInterfaces\moduleSystem\systemCompanyProfile\pageCompanyProfile.aspx.designer.cs">
       <DependentUpon>pageCompanyProfile.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PortalAdministration\userInterfaces\moduleSystem\systemImage\pageAttachment.aspx.cs">
+      <DependentUpon>pageAttachment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PortalAdministration\userInterfaces\moduleSystem\systemImage\pageAttachment.aspx.designer.cs">
+      <DependentUpon>pageAttachment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PortalAdministration\userInterfaces\moduleSystem\systemLog\pageSystemLog.aspx.cs">
       <DependentUpon>pageSystemLog.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4795,6 +4822,7 @@
     <Folder Include="PortalAdministration\img\Item_Barcode\" />
     <Folder Include="PortalAdministration\img\Item_Images\" />
     <Folder Include="PortalAdministration\img\Service_Images\" />
+    <Folder Include="PortalAdministration\img\User_Images\" />
     <Folder Include="PortalAdministration\plugins\flot-charts\examples\gauge\" />
     <Folder Include="PortalAdministration\plugins\moment\src\lib\create\" />
     <Folder Include="PortalAdministration\plugins\moment\src\lib\duration\" />
@@ -4821,6 +4849,9 @@
       <Project>{0d18f98c-29fa-4d30-8a56-8a37a434e98e}</Project>
       <Name>NPT_DC_App</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\SR_ImageController\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

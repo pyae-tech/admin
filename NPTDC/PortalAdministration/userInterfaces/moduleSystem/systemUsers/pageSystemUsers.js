@@ -324,7 +324,7 @@ function GetUser(id) {
                 $("#lbl_modified").text("Modified By : " + data.d["ModifiedByCode"] + " on " + moment(data.d["ModifiedOn"]).format('DD / MM / YYYY HH:mm'));
 
 
-
+                getImage(id);
                 ShowSuccessMessage("Loaded.");
 
 
@@ -396,6 +396,58 @@ function Load_Org_Name() {
         },
         error: function (xhr, msg) {
             LogJSError('Web Service Fail: ' + msg + '\n' + xhr.responseText);
+        }
+    });
+}
+
+
+function UploadItemImage1() {
+    window.open('attachment?id=' + $("#tb_id").val() + '&UserId=' + get_current_user_id() + '&refType=user', '_blank');
+}
+
+
+function getImage(id) {
+    $.ajax({
+        url: baseUrl() + "WebServices/WebService_Image.asmx/GetImage",
+        data: "{ " +
+            "'refID':'" + id + "' " +
+            ",'RequestID':'" + get_current_user_id() + "' " +
+            " }",
+        dataType: 'json',
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+            if (data.d != null) {
+                $("#item_image_zone").css("display", "block");
+                $("#image_item").css("display", "none");
+                $("#Image_drop_zone").css("display", "block");
+
+                $("#item_barcode_zone").css("display", "block");
+                $("#barcode_item_image").css("display", "none");
+                $("#barcode_drop_zone").css("display", "block");
+                $.each(data.d, function (key, val) {
+
+                    if (data.d[key]['RefType'] == "user") {
+                        $("#tb_imageid").val(data.d[key]['ImageID']);
+                        var src = "/PortalAdministration/img/User_Images/" + data.d[key]['ImageName'];
+                        $("#item_image_zone").css("display", "block");
+                        $("#image_item").css("display", "block");
+                        $("#Image_drop_zone").css("display", "none");
+                        $("#bind_item_image_src").attr("src", src);
+
+                    }
+                 
+                });
+
+            }
+            else {
+                ShowBoxMessage("Oops, we can't find the record.");
+            }
+
+        },
+        error: function (xhr, msg) {
+            LogJSError('Web Service Fail: ' + msg + '\n' + xhr.responseText);
+
         }
     });
 }

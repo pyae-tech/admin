@@ -48,6 +48,7 @@ namespace NPT_DC_App.WebServices
         {
               return Controllers.Controller_Image.DeleteImages(RefID, RefType, RequestID);
         }
-        
+
+
     }
 }
