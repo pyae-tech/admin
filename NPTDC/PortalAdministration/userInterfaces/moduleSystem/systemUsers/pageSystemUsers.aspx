@@ -6,7 +6,7 @@
     <!--Page Title-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <div id="page-title">
-        <h1 class="page-header text-overflow">Users</h1>
+        <h1 class="page-header text-overflow">ဝန်ထမ်းများ</h1>
     </div>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--End page title-->
@@ -16,10 +16,10 @@
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <ol class="breadcrumb">
         <li><a href="#"><i class="demo-pli-home"></i></a></li>
-        <li><a href="#">System</a></li>
-        <li class="active">Users</li>
+        <li><a href="#">စနစ် စီမံခြင်း</a></li>
+        <li class="active">ဝန်ထမ်းများ</li>
         <li class="active">
-            <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="LoadNew();return false;"><i class="btn-label ion-plus-round"></i><span class="bold">New</span></button>
+            <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="LoadNew();return false;"><i class="btn-label ion-plus-round"></i><span class="bold">အသစ်</span></button>
     </ol>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--End breadcrumb-->
@@ -41,11 +41,11 @@
                         <div class="panel-heading">
                             <div class="panel-control">
                                 <ul class="nav nav-tabs">
-                                    <li class="tab-menu" id="tab_list_menu"><a href="#tab-list" data-toggle="tab">Listing <span class="pull-right badge badge-primary list_count">0</span></a></li>
-                                    <li class="tab-menu" id="tab_search_menu"><a href="#tab-search" data-toggle="tab">Search</a></li>
+                                    <li class="tab-menu" id="tab_list_menu"><a href="#tab-list" data-toggle="tab">စာရင်းချုပ် <span class="pull-right badge badge-primary list_count">0</span></a></li>
+                                    <li class="tab-menu" id="tab_search_menu"><a href="#tab-search" data-toggle="tab">ရှာဖွေရန်</a></li>
                                 </ul>
                             </div>
-                            <h3><i class="ion-person-stalker"></i>System Users</h3>
+                            <h3><i class="ion-person-stalker"></i>&nbsp;ဝန်ထမ်းများ</h3>
                         </div>
 
                         <!--Panel body-->
@@ -68,10 +68,10 @@
                                         <table class="table table-striped table-hover  table-bordered" id="panel_list">
                                             <thead>
                                                 <tr>
-                                                    <th>User Name</th>
-                                                    <th>User Code</th>
-                                                    <th>Role</th>
-                                                    <th>Email</th>
+                                                    <th>အမည်</th>
+                                                    <th>ကုဒ်နံပါတ်</th>
+                                                    <th>သုံးစွဲခွင့် ကုဒ်</th>
+                                                    <th>အီးမေး(လ်)</th>
                                                 </tr>
                                             </thead>
                                             <tbody id="table_list">
@@ -105,9 +105,9 @@
 
                                                             <button class="btn  btn-primary  btn-rounded  btn-labeled" type="button" onclick="clearSearch();return false;">
                                                                 <i class="btn-label ion-backspace"></i>
-                                                                <span class="bold">Show All</span></button>
+                                                                <span class="bold">အားလုံး</span></button>
 
-                                                            <button class="btn  btn-primary  btn-rounded  btn-labeled" type="button" onclick="search();return false;"><i class="btn-label ion-search"></i><span class="bold">Search</span></button>
+                                                            <button class="btn  btn-primary  btn-rounded  btn-labeled" type="button" onclick="search();return false;"><i class="btn-label ion-search"></i><span class="bold">ရှာဖွေမည်</span></button>
 
 
                                                         </div>
@@ -140,7 +140,7 @@
                 <!--Modal header-->
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-                    <h4 class="modal-title">System User - Detail Infromation</h4>
+                    <h4 class="modal-title">ဝန်ထမ်း  - အချက်အလက် အသေးစိတ်</h4>
                 </div>
 
                 <!--Modal body-->
@@ -149,25 +149,25 @@
                         <input type="hidden" id="tb_id" value="" />
                         <div class="form-group">
 
-                            <label for="tb_name" class="  col-md-2  control-label">Name</label>
+                            <label for="tb_name" class="  col-md-2  control-label">အမည်</label>
                             <div class=" col-md-4">
                                 <input type="text" class="form-control" id="tb_name" placeholder="Enter Name Of The User">
                             </div>
 
-                            <label for="tb_code" class="col-md-2 control-label">User Code</label>
+                            <label for="tb_code" class="col-md-2 control-label">ကုဒ်နံပါတ်</label>
                             <div class="col-md-3">
                                 <input type="text" class="form-control" id="tb_code" placeholder="Enter User Code For The User">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="tb_role" class="col-md-2 control-label">User Role</label>
+                            <label for="tb_role" class="col-md-2 control-label">သုံးစွဲခွင့်</label>
                             <div class="col-md-4">
                                 <select id="tb_role" class="form-control"></select>
                             </div>
 
 
-                            <label for="tb_user_email" class="col-md-2 control-label">Email</label>
+                            <label for="tb_user_email" class="col-md-2 control-label">အီးမေး(လ်)</label>
                             <div class="col-md-3">
                                 <input type="text" class="form-control" id="tb_user_email" placeholder="Email Address Of The User">
                             </div>
@@ -208,13 +208,13 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="tb_contact_info" class="col-md-2 control-label">Contact Info</label>
+                            <label for="tb_contact_info" class="col-md-2 control-label">ဆက်သွယ်ရန်</label>
                             <div class="col-md-9">
                                 <textarea class="form-control" rows="3" placeholder="Enter Detail Contact Information Of User" id="tb_contact_info"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="tb_note" class="col-md-2 control-label">Note</label>
+                            <label for="tb_note" class="col-md-2 control-label">မှတ်ချက်</label>
                             <div class="col-md-4">
                                 <textarea class="form-control" rows="7" placeholder="Enter Note For User" id="tb_note"></textarea>
                             </div>
@@ -222,11 +222,11 @@
                            
                             
                                             <div class="col-md-12 ImageContainer" id="item_image_zone" >
-                                                <label class="col-md-12">Upload User's Signature</label>
+                                                <label class="col-md-12">လက်မှတ်</label>
 
                                                 <div id="image_item" style="display: block;">
 
-                                                    <img id="bind_item_image_src" src='' style="width: 100%; height: 100%;" /><br />
+                                                    <img id="bind_item_image_src" src='' style=" height: 200px;" /><br />
                                                     <br>
                                                     <button id="btn_changeImage" class="btn btn-dark btn-icon btn-sm btn-rounded" onclick="changeItemImage();"><i class="demo-psi-pen-5 icon-lg"></i>&nbsp; <span class="bold" data-translate="_edit">Edit</span></button>
                                                     &nbsp &nbsp
@@ -257,11 +257,11 @@
                 </div>
                 <!--Modal footer-->
                 <div class="modal-footer">
-                    <button class="btn btn-primary  btn-rounded  btn-labeled" type="button" onclick="SaveUser();return false;"><i class="btn-label ion-checkmark"></i><span class="bold" data-translate="_save">Save</span></button>
+                    <button class="btn btn-primary  btn-rounded  btn-labeled" type="button" onclick="SaveUser();return false;"><i class="btn-label ion-checkmark"></i><span class="bold" data-translate="_save">စာရင်းသိမ်း</span></button>
                     <button class="btn btn-danger  btn-rounded btn-labeled" type="button" onclick="DeleteRecordConfirmation();return false;">
-                        <i class="btn-label ion-trash-b"></i><span class="bold" data-translate="_delete">Delete</span></button>
-                    <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="LoadNew();return false;"><i class="btn-label ion-plus-round"></i><span class="bold" data-translate="_new">New</span></button>
-                    <button data-dismiss="modal" class="btn btn-dark  btn-rounded  btn-labeled" type="button"><i class="btn-label ion-close"></i><span class="bold" data-translate="_close">Close</span></button>
+                        <i class="btn-label ion-trash-b"></i><span class="bold" data-translate="_delete">ဖျတ်ရန်</span></button>
+                    <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="LoadNew();return false;"><i class="btn-label ion-plus-round"></i><span class="bold" data-translate="_new">အသစ်</span></button>
+                    <button data-dismiss="modal" class="btn btn-dark  btn-rounded  btn-labeled" type="button"><i class="btn-label ion-close"></i><span class="bold" data-translate="_close">ပိတ်မည်</span></button>
 
 
                 </div>

@@ -44,7 +44,7 @@
             <li class="list-divider"></li>
             <li id="menu_system_program"><a href="programs"><span data-translate="">Programs</span></a></li>
             <li id="menu_system_menu"><a href="menus"><span data-translate="">Menus</span></a></li>
-            <li id="menu_system_role"><a href="roles"><span data-translate="">User Roles</span></a></li>
+            <li id="menu_system_role"><a href="roles"><span data-translate="">သုံးစွဲခွင့် ကုဒ်</span></a></li>
         </ul>
     </li>
 </asp:Content>

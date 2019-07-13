@@ -163,7 +163,7 @@
                                 </label>
                                 <form>
                                     <div class="search-container collapse" id="nav-searchbox">
-                                        <input id="tb_search_text" type="text" class="form-control" placeholder="Type for search...">
+                                        <input id="tb_search_text" type="text" class="form-control" placeholder="ရှာဖွေရန်">
                                     </div>
                                 </form>
                             </div>
