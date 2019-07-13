@@ -6624,6 +6624,10 @@ namespace NPT_DC_App.LINQs
 		
 		private string _InvoiceType;
 		
+		private string _DepartmentName;
+		
+		private string _DepartmentID;
+		
 		public SYS_UserView()
 		{
 		}
@@ -7072,6 +7076,38 @@ namespace NPT_DC_App.LINQs
 				if ((this._InvoiceType != value))
 				{
 					this._InvoiceType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartmentName", DbType="NVarChar(500)")]
+		public string DepartmentName
+		{
+			get
+			{
+				return this._DepartmentName;
+			}
+			set
+			{
+				if ((this._DepartmentName != value))
+				{
+					this._DepartmentName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartmentID", DbType="NVarChar(50)")]
+		public string DepartmentID
+		{
+			get
+			{
+				return this._DepartmentID;
+			}
+			set
+			{
+				if ((this._DepartmentID != value))
+				{
+					this._DepartmentID = value;
 				}
 			}
 		}

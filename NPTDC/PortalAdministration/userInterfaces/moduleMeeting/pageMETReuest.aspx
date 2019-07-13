@@ -171,6 +171,18 @@
                                             <div class="panel  ">
 
                                                 <div class="panel-body">
+                                                         <div id="gc_RequestItems"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                         <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="panel  ">
+
+                                                <div class="panel-body">
+                                                         <div id="gc_RequestDescription"></div>
                                                 </div>
                                             </div>
                                         </div>

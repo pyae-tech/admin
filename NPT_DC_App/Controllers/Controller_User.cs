@@ -187,5 +187,26 @@ namespace NPT_DC_App.Controllers
             LINQ_SystemDataContext dc = new LINQ_SystemDataContext();
             return (from c in dc.SYS_UserViews where c.UserID == userID && c.Active == true select c).FirstOrDefault();
         }
+
+        public static string GetAllUserJson(string org_id, string RequestID)
+        {
+            //Security Check
+            if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, RequestID, "read")) throw new Exception("No Access.");
+
+            LINQ_SystemDataContext dc = new LINQ_SystemDataContext();
+            List<SYS_UserView> user_list = (from c in dc.SYS_UserViews
+                                            where c.Active == true && c.OrgID == org_id
+                                            orderby c.UserName
+                                            select new SYS_UserView
+                                            {
+                                                UserID = c.UserID,
+                                                UserCode = c.UserCode,
+                                                UserName = c.UserName
+
+                                            }).ToList();
+            string return_str = new JavaScriptSerializer().Serialize(user_list);
+            return return_str;
+        }
+
     }
 }

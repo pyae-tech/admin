@@ -391,6 +391,8 @@
       <Column Name="IsLoggedIn" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="OrgType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="InvoiceType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DepartmentName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="DepartmentID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.SYS_GetProgramRole" Method="SYS_GetProgramRole">

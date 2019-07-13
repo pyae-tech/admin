@@ -87,14 +87,8 @@ function do_login() {
                 $.cookie('orgID', data.d["OrgID"], { expires: 1, path: '/' });
                 $.cookie('orgType', data.d["OrgType"], { expires: 1, path: '/' });
                 $.cookie('orgCode', data.d["OrgCode"], { expires: 1, path: '/' });
-                $.cookie('InvoiceType', data.d["InvoiceType"], { expires: 1, path: '/' });
-                
-
-                //if (data.d["Ref_Type"] == 'Admin')
-                //    GotoPage("portal/users");   //dashboardSacouts  //dashboardAdmin //dashboardExpenses
-                ////GotoPage("portal/dashboardAdmin");  
-                ////GotoPage("portal/dashboardSacouts"); 
-                //else
+                $.cookie('DepartmentID', data.d["DepartmentID"], { expires: 1, path: '/' });
+                $.cookie('DepartmentName', data.d["DepartmentName"], { expires: 1, path: '/' });
 
                 CreateMenu();          //Build Menu according to user role      
                
@@ -112,7 +106,9 @@ function do_login() {
                 $.cookie('orgName', "", { expires: 1, path: '/' });
                 $.cookie('orgType', "", { expires: 1, path: '/' });
                 $.cookie('orgID', "", { expires: 1, path: '/' });
-                $.cookie('InvoiceType', "", { expires: 1, path: '/' });
+                $.cookie('DepartmentID', "", { expires: 1, path: '/' });
+                $.cookie('DepartmentName',"", { expires: 1, path: '/' });
+
                 ShowErrorMessage("User Name Or Password Is Wroung Please Check And Try Again! ");
             }
         },

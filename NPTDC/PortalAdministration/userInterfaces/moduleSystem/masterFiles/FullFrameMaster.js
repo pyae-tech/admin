@@ -235,8 +235,11 @@ function get_current_organization_title() {
     return $.cookie('orgCode') + " | ";
 }
 
-function get_current_organization_InvoiceType() {
-    return $.cookie('InvoiceType');
+function get_current_user_DepartmentID() {
+    return $.cookie('DepartmentID');
+}
+function get_current_user_DepartmentName() {
+    return $.cookie('DepartmentName');
 }
 
 populate_user_menu();

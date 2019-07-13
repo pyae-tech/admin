@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 38.5, 12.5" name="LINQ_System">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 38.5, 13" name="LINQ_System">
   <DataContextMoniker Name="/LINQ_SystemDataContext" />
   <nestedChildShapes>
     <classShape Id="75034557-16ec-42dc-8e4b-88d57301e131" absoluteBounds="2.625, 1, 2, 4.4631168619791666">
@@ -140,10 +140,10 @@
         <elementListCompartment Id="3c539569-a030-4d58-ab01-eef2a4bdd729" absoluteBounds="36.265, 1.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="186d2836-8028-4179-9768-216d51ec1b27" absoluteBounds="3, 5.75, 2, 6.1938297526041657">
+    <classShape Id="08673cdd-24bb-4957-a99c-7a55cde50ee4" absoluteBounds="2.625, 6.125, 2, 6.5784326171875">
       <DataClassMoniker Name="/LINQ_SystemDataContext/SYS_UserView" />
       <nestedChildShapes>
-        <elementListCompartment Id="26c91236-158e-46bd-b401-bea962df9dc2" absoluteBounds="3.0149999999999997, 6.21, 1.9700000000000002, 5.6338297526041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="81517213-a498-48ce-8e8c-53eff9d9353d" absoluteBounds="2.64, 6.585, 1.9700000000000002, 6.0184326171875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

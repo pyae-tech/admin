@@ -68,5 +68,13 @@ namespace NPT_DC_App.WebServices
         {
             return Controllers.Controller_User.GetProfileUser(userID);
         }
+
+        [WebMethod]
+        public string  GetAllUserJson(string org_id, string RequestID)
+        {
+
+            return Controllers.Controller_User.GetAllUserJson(org_id, RequestID);
+        }
+
     }
 }

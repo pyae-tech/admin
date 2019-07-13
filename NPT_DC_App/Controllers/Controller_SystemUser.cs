@@ -12,31 +12,7 @@ namespace NPT_DC_App.Controllers
             LINQ_SystemDataContext dc = new LINQ_SystemDataContext();
             string encryptpassword = Controller_TextEncryption.Encrypt(password, "");
             var the_userview =(from c in dc.SYS_UserViews where (c.Email.ToLower() == usercode.ToLower() || c.UserCode.ToLower() == usercode.ToLower() || c.Email == usercode) && c.Active == true && c.Password == encryptpassword select c).FirstOrDefault();
-            
-            //if (the_userview != null)
-            //{
-            //    var the_user = (from u in dc.SYS_Users where u.UserID == the_userview.UserID select u).FirstOrDefault();
-
-            //    //passed his pwd and code
-            //    if (!isAlreadyLoggedIn(the_user))
-            //    {
-            //        HttpContext.Current.Session["userid"] = the_user.UserID;
-            //        the_user.IsLoggedIn = true;
-            //        the_user.LastLogin = DateTime.Now;
-            //        dc.SubmitChanges();
-            //        //update isloggedin to true
-            //        the_userview.Note = "Success";
-            //        return the_userview;
-            //    }
-            //    else
-            //    {//this user is already logged in
-            //        the_userview.Note = "This User Is Currently Logged In!";
-            //    }
-            //}
-            //else {
-            //    the_userview = new SYS_UserView();
-            //    the_userview.Note = "Wrong Username and Password. Please try again.";
-            //}
+           
             return the_userview;          
            
         }        
