@@ -88,9 +88,8 @@ namespace NPT_DC_App.Controllers
             return (from c in dc.SYS_UserViews where c.UserID == record_id && c.Active == true select c).FirstOrDefault();
         }
         public static string SaveUser(
-            string record_id, string user_id, string user_code, string org_id, string user_name,
-            string user_email, string password, string contactinfo, string note, string role_id,
-            string user_type,
+            string record_id, string user_id, string user_code,string user_name,
+            string user_email, string password, string contactinfo,string ref_type, string note, string role_id,string org_id,string dep_id,string pos_id,
             string RequestID)
         {
             try
@@ -117,7 +116,9 @@ namespace NPT_DC_App.Controllers
                             CreatedOn = DateTime.Now,
                             Active = true,
                             UserID = Guid.NewGuid().ToString(),
-                            LastAction = Guid.NewGuid().ToString()
+                            LastAction = Guid.NewGuid().ToString(),
+                            Ref_ID = "",
+                            IsLoggedIn = true,
                         };
                         dc.SYS_Users.InsertOnSubmit(the_record);
                     }
@@ -135,16 +136,16 @@ namespace NPT_DC_App.Controllers
                 the_record.ModifiedBy = user_id;
                 the_record.ModifiedOn = DateTime.Now;
                 the_record.LastAction = Guid.NewGuid().ToString();
-                the_record.RoleID = role_id;
                 the_record.UserName = user_name;
                 the_record.UserCode = user_code;
                 the_record.Email = user_email;
                 the_record.ContactInfo = contactinfo;
                 the_record.Note = note;
-                the_record.Ref_Type = user_type;
+                the_record.Ref_Type = ref_type;
+                the_record.RoleID = role_id;
                 the_record.OrgID = org_id;
-                the_record.Ref_ID = "";
-
+                the_record.DepartmentID = dep_id;
+                the_record.PositionID = pos_id;
                 dc.SubmitChanges();
                 return "Success~" + the_record.UserID;
 
@@ -201,7 +202,11 @@ namespace NPT_DC_App.Controllers
                                             {
                                                 UserID = c.UserID,
                                                 UserCode = c.UserCode,
-                                                UserName = c.UserName
+                                                UserName = c.UserName,
+                                                RoleName = c.RoleName,
+                                                Email = c.Email,
+                                                PositionName = c.PositionName,
+                                                DepartmentName = c.DepartmentName
 
                                             }).ToList();
             string return_str = new JavaScriptSerializer().Serialize(user_list);

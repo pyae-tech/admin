@@ -18,7 +18,7 @@ namespace SBSPortal3
             RouteTable.Routes.MapPageRoute("portal/changepassword", "portal/changepassword", "~/PortalAdministration/userInterfaces/moduleSystem/login/pagechangePassword.aspx");
             RouteTable.Routes.MapPageRoute("portal/modules", "portal/modules", "~/PortalAdministration/userInterfaces/moduleSystem/masterFiles/pageModules.aspx");
             RouteTable.Routes.MapPageRoute("portal/companyprofile", "portal/companyprofile", "~/PortalAdministration/userInterfaces/moduleSystem/systemCompanyProfile/pageCompanyProfile.aspx");
-
+            RouteTable.Routes.MapPageRoute("portal/userdetail", "portal/userdetail", "~/PortalAdministration/userInterfaces/moduleSystem/systemUsers/pageSystemUserDetail.aspx");
             RouteTable.Routes.MapPageRoute("portal/users", "portal/users", "~/PortalAdministration/userInterfaces/moduleSystem/systemUsers/pageSystemUsers.aspx");
             RouteTable.Routes.MapPageRoute("portal/roles", "portal/roles", "~/PortalAdministration/userInterfaces/moduleSystem/systemUserRoles/pageSystemUserRoles.aspx"); 
             RouteTable.Routes.MapPageRoute("portal/programs", "portal/programs", "~/PortalAdministration/userInterfaces/moduleSystem/systemProgram/pageSystemProgram.aspx");
@@ -31,9 +31,10 @@ namespace SBSPortal3
 
             //meeting
             RouteTable.Routes.MapPageRoute("portal/request", "portal/request", "~/PortalAdministration/userInterfaces/moduleMeeting/pageMETReuest.aspx");
+            RouteTable.Routes.MapPageRoute("portal/requests", "portal/requests", "~/PortalAdministration/userInterfaces/moduleMeeting/pageMETRequests.aspx");
             //Master
             RouteTable.Routes.MapPageRoute("portal/departments", "portal/departments", "~/PortalAdministration/userInterfaces/moduleMaster/masterDepartment/pageDepartment.aspx");
-            //RouteTable.Routes.MapPageRoute("portal/departments", "portal/positions", "~/PortalAdministration/userInterfaces/moduleMaster/masterPosition/pagePosition.aspx");
+            RouteTable.Routes.MapPageRoute("portal/positions", "portal/positions", "~/PortalAdministration/userInterfaces/moduleMaster/masterPosition/pagePosition.aspx");
             DevExpress.XtraReports.Web.ASPxWebDocumentViewer.StaticInitialize();
             DevExpress.XtraReports.Web.ASPxReportDesigner.StaticInitialize();
         }

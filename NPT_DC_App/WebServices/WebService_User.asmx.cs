@@ -49,13 +49,11 @@ namespace NPT_DC_App.WebServices
             return Controllers.Controller_User.GetUser(record_id, RequestID);
         }
         [WebMethod]
-        public string SaveUser(string record_id, string user_id, string user_code, string org_id,
-            string user_name, string user_email, string password,
-            string contactinfo, string note, string role_id,
-            string user_type,
+        public string SaveUser(string record_id, string user_id, string user_code,string user_name,
+            string user_email, string password, string contactinfo,string ref_type, string note, string role_id,string org_id,string dep_id,string pos_id,
             string RequestID)
         {
-            return Controllers.Controller_User.SaveUser(record_id, user_id, user_code, org_id, user_name, user_email, password, contactinfo, note, role_id, user_type, RequestID);
+            return Controllers.Controller_User.SaveUser(record_id, user_id, user_code,user_name, user_email, password, contactinfo, ref_type, note,role_id,org_id,dep_id,pos_id, RequestID);
         }
         [WebMethod]
         public string DeleteUser(string record_id, string user_id, string RequestID)

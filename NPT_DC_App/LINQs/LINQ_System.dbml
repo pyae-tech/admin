@@ -1,28 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SS_NPTDC" Class="LINQ_SystemDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=systematic-svr;Initial Catalog=SS_NPTDC;User ID=rgbdeveloper" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SS_NPTDC_APP_ConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.SYS_User" Member="SYS_Users">
-    <Type Name="SYS_User">
-      <Column Name="UserID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="UserCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Email" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Password" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="ContactInfo" Type="System.String" DbType="NVarChar(1000) NOT NULL" CanBeNull="false" />
-      <Column Name="Ref_Type" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Ref_ID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="LastLogin" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Note" Type="System.String" DbType="NVarChar(1000) NOT NULL" CanBeNull="false" />
-      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="ModifiedBy" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="LastAction" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="RoleID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="OrgID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="IsLoggedIn" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
+  <Connection Mode="WebSettings" ConnectionString="Data Source=Systematic-svr;Initial Catalog=SS_NPTDC;User ID=rgbdeveloper" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SS_NPTDC_APP_ConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.SYS_UserRoleProgramView" Member="SYS_UserRoleProgramViews">
     <Type Name="SYS_UserRoleProgramView">
       <Column Name="RoleProgramID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
@@ -361,6 +338,31 @@
       <Column Name="DefaultEmailPassword" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.SYS_User" Member="SYS_Users">
+    <Type Name="SYS_User">
+      <Column Name="UserID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="ContactInfo" Type="System.String" DbType="NVarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="Ref_Type" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ref_ID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastLogin" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastAction" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RoleID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OrgID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsLoggedIn" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DepartmentID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PositionID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.SYS_UserView" Member="SYS_UserViews">
     <Type Name="SYS_UserView">
       <Column Name="UserID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
@@ -393,6 +395,9 @@
       <Column Name="InvoiceType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="DepartmentName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
       <Column Name="DepartmentID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PositionCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PositionName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="PositionID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.SYS_GetProgramRole" Method="SYS_GetProgramRole">

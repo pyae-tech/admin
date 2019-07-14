@@ -1,25 +1,18 @@
-﻿$('title').html(get_current_organization_title() + "System Users");
+﻿$('title').html(get_current_organization_title() + "Request");
 
-$('#menu_system').addClass('active-sub');
-$('#menu_system_group').addClass('in');
-$('#menu_system_user').addClass('active-link');
-
-
+$('#menu_request').addClass('active-sub');
+$('#menu_meeting_group').addClass('in');
+$('#menu_request_letter').addClass('active-link');
 $("#tab-main").tabs();
 
-
-
-
-
-Load_List();
-
-function Load_List() {
+getRequestList();
+function getRequestList() {
     $('#panel_list_background').loading();
     Pace.start();
     $.ajax({
-        url: baseUrl() + "WebServices/WebService_User.asmx/GetAllUserJson",
+        url: baseUrl() + "WebServices/WebService_Request.asmx/GetAllRequestJSON",
         data: "{ " +
-            "'org_id':'" + get_current_user_org_id() + "' " +
+            "'search_text':'" + "" + "' " +
             ",'RequestID':'" + get_current_user_id() + "' " +
             " }",
         dataType: 'json',
@@ -37,19 +30,55 @@ function Load_List() {
         }
     });
 }
+var Columns = [];
+function Build_ColumnHeader() {
+    Columns = [
+        {
+            dataField: "RequestTitle",
+            caption: "Title",
+        },
+        {
+            dataField: "RequestType",
+            caption: "Type",
+        },
+        {
+            dataField: "RequestStatus",
+            caption: "Status",
+          
+        },
+        {
+            dataField: "RequestOn",
+            caption: "RequestOn",
+            dataType: "date",
+            format: 'dd-MM-yyyy'
+        },
+        {
+            dataField: "RequestUserName",
+            caption: "RequestBy",
+
+        }
+        //{
+        //    dataField: "DepartmentName",
+        //    caption: "[DepartmentName]",
+        //    allowHeaderFiltering: false
+        //}
+    ];
+}
+
 function BindTable(data) {
     Build_ColumnHeader();
     var result = JSON.parse(data);
-    var dataGrid = $("#gridContainer").dxDataGrid({
+
+    var dataGrid = $("#gc_requestList").dxDataGrid({
         dataSource: result,
         showBorders: true,
-        keyExpr: "UserID",
+        keyExpr: "RequestID",
         selection: {
             mode: "single"
         },
         "export": {
             enabled: true,
-            fileName: "User",
+            fileName: "Request",
             allowExportSelectedData: false
         },
         headerFilter: {
@@ -90,7 +119,7 @@ function BindTable(data) {
         onSelectionChanged: function (selectedItems) {
             var data = selectedItems.selectedRowsData[0];
             if (data) {
-                GoUser(data.UserID);
+                GetRequest(data.RequestID);
             }
         }
     }).dxDataGrid("instance");
@@ -99,64 +128,13 @@ function BindTable(data) {
         text: "Expand All Groups",
         onValueChanged: function (data) {
             dataGrid.option("grouping.autoExpandAll", data.value);
-            dataGrid.clearSelection();
         }
     });
 }
-var Columns = [];
-function Build_ColumnHeader() {
-    Columns = [
-        {
-            dataField: "UserName",
-            caption: "User Name",
-        },
-        {
-            dataField: "UserCode",
-            caption: "Code",
 
-        },
-        {
-            dataField: "RoleName",
-            caption: "Role",
-        },
-        {
-            dataField: "Email",
-            caption: "Email",
-           
-        },
-        {
-            dataField: "DepartmentName",
-            caption: "Department",
-
-        },
-        {
-            dataField: "PositionName",
-            caption: "Position",
-           
-        },
-       
-    ];
+function GetRequest(id) {
+    window.open('request?id=' + id, '_blank');
 }
-
-function GoUser(id) {
-    GotoPage('Portal/userdetail?id=' + id);
+function NewRequest() {
+    window.open('request?id=', '_blank');
 }
-
-
-
-
-
-
-
-
-//#region User Role Drop Down
-
-
-
-
-
-
-
-
-
-
