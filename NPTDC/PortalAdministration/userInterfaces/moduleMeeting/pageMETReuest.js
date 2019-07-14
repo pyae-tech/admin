@@ -92,7 +92,7 @@ function GetAllUser() {
 
                         return item.UserName;
                     },
-                    placeholder: "Select Request By",
+                    placeholder: "တင်ပြသူ ရွေးချယ်ရန်။",
 
                     showPopupTitle: false,
                     onValueChanged: function (e) {
@@ -166,7 +166,7 @@ function Bind_RequestItems(data) {
         columns: [
             {
                 dataField: "RequestItem",
-                caption: "Request Item"
+                caption: "အကြောင်းအရာ"
             },
             {
                 dataField: "Seq",
@@ -261,7 +261,8 @@ function Bind_RequestDecisions(data) {
         columns: [
             {
                 dataField: "Description",
-                caption: "Description"
+                caption: "ဆုံးဖြတ်ရန်အချက်",
+                height:400
             },
             {
                 dataField: "Seq",
@@ -442,4 +443,14 @@ function GetRequest(id) {
 
         }
     });
+}
+
+
+function GoToLog() {
+
+    if ($("#tb_id").val() == "") {
+        window.open('logs?id=', '_blank');
+    } else {
+        window.open('logs?id=' + $("#tb_id").val(), '_blank');
+    }
 }
