@@ -250,8 +250,8 @@ function GetUser(id) {
                     $("#tb_user_type").val(data.d["Ref_Type"]);
                     $("#tb_contact_info").val(data.d["ContactInfo"]);
                     $("#tb_note").val(data.d["Note"]);
-                    $("#lbl_created").text("Created By : " + data.d["CreatedByCode"] + " on " + moment(data.d["CreatedOn"]).format('DD / MM / YYYY HH:mm'));
-                    $("#lbl_modified").text("Modified By : " + data.d["ModifiedByCode"] + " on " + moment(data.d["ModifiedOn"]).format('DD / MM / YYYY HH:mm'));
+                    $("#lbl_created").text("စာရင်းသွင်းသူ : " + data.d["CreatedByCode"] + " on " + moment(data.d["CreatedOn"]).format('DD / MM / YYYY HH:mm'));
+                    $("#lbl_modified").text("ပြင်ဆင်သူ : " + data.d["ModifiedByCode"] + " on " + moment(data.d["ModifiedOn"]).format('DD / MM / YYYY HH:mm'));
                     getImage(id);
 
                     $("#lookup_role").dxLookup('instance').option('value', $("#tb_role_id").val());
@@ -439,7 +439,7 @@ Load_Department_List();
 
                             return item.DepartmentName;
                         },
-                        placeholder: "Select Department",
+                        placeholder: "ဌာန ရွှေးချယ်ပေးပါ။",
 
                         showPopupTitle: false,
                         onValueChanged: function (e) {
@@ -493,7 +493,7 @@ Load_Department_List();
 
                             return item.PositionName;
                         },
-                        placeholder: "Select Position",
+                        placeholder: "ရာထူး ရွှေးချယ်ပေးပါ။",
 
                         showPopupTitle: false,
                         onValueChanged: function (e) {
