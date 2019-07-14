@@ -14,7 +14,7 @@
     <!--Page Title-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <div id="page-title">
-         <h1 class="page-header text-overflow"><i class="ion-home"></i> ရာထူးများ</h1>
+         <h1 class="page-header text-overflow"><i class="ion-ribbon-b"></i> ရာထူးများ</h1>
     </div>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--End page title-->
@@ -136,7 +136,7 @@
                                                         <div class="form-group">
                                                             <label for="tb_remark" class="col-md-3 control-label" data-translate="">မှတ်ချက်</label>
                                                             <div class="col-md-9">
-                                                                <textarea class="form-control" rows="3" placeholder="Enter Remark" id="tb_remark"></textarea>
+                                                                <textarea class="form-control" rows="3" placeholder="မှတ်ချက်ရေးရန်" id="tb_remark"></textarea>
                                                             </div>
                                                         </div>
                   
