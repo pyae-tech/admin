@@ -10,6 +10,7 @@ if (GetURLData('id') != null && GetURLData('id') != "") {
     GetRequest(GetURLData('id'));
 }
 else {
+   
     LoadNew();
 
 }
@@ -41,8 +42,7 @@ function ConvertDate(sdate) {
 
 //#region New Record
 function LoadNew() {
-    Pace.start();
-
+    GetAllUser();
     $("#tb_meeting_title").focus();
     $("#tb_id").val("");
     $("#ddl_meetingtype").val("");
@@ -59,9 +59,14 @@ function LoadNew() {
 
     $("#tb_department_name").val(get_current_user_DepartmentName());
     var request_on_date = ConvertDate(new Date());
-    Load_Request_Item("");
-    Load_Request_Decisions("");
-
+    $("#dt_requeston").dxDateBox({
+        type: "date",
+        value: request_on_date
+    });
+    Bind_RequestItems("");
+    Bind_RequestDecisions("");
+    $("#hf_requestbyId").val("");
+    $("#ddl_requestby").dxLookup('instance').option('value', $("#hf_requestbyId").val());
 }
 
 GetAllUser();
@@ -148,7 +153,7 @@ function Load_Request_Item(req_id) {
 }
 
 function Bind_RequestItems(data) {
-    if (data == undefined) { data = []; }
+    if (data == undefined || data=="") { data = []; }
 
     $("#gc_RequestItems").dxDataGrid({
         dataSource: data,
@@ -243,7 +248,7 @@ function Load_Request_Decisions(req_id) {
 }
 
 function Bind_RequestDecisions(data) {
-    if (data == undefined) { data = []; }
+    if (data == undefined || data == "") { data = []; }
 
     $("#gc_RequestDescription").dxDataGrid({
         dataSource: data,
@@ -443,3 +448,52 @@ function GetRequest(id) {
         }
     });
 }
+
+function GoToLog() {
+
+    if ($("#tb_id").val() == "") {
+        window.open('request?id=', '_blank');
+    }
+    else {
+        window.open('request?id=' + $("#tb_id").val(), '_blank');
+    }
+}
+
+//#region Delete
+
+function DeleteRecordConfirmation() {
+    ShowConfirmation("Are you sure you want to delete?", "DeleteRequest");
+}
+function DeleteRequest() {
+    Pace.start();
+    $.ajax({     
+        url: baseUrl() + "WebServices/WebService_Request.asmx/DeleteRequest",
+        data: "{ " +
+            "'meetingreq_id':'" + $("#tb_id").val() + "' " +
+            ",'user_id':'" + get_current_user_id() + "' " +
+            ",'RequestID':'" + get_current_user_id() + "' " +
+            " }",
+        dataType: 'json',
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+            if (data.d.toString().split('~')[0] == "Success") {
+                LoadNew();
+                ShowSuccessMessage("Deleted.");
+            }
+            else {
+                ShowBoxMessage("Oops, we can't save. " + data.d.toString().split('~')[1]);
+            }
+
+        },
+        error: function (xhr, msg) {
+            LogJSError('Web Service Fail: ' + msg + '\n' + xhr.responseText);
+
+        }
+    });
+
+
+}
+
+//#endregion
+

@@ -63,9 +63,9 @@
     </Reference>
     <Reference Include="DevExpress.Charts.v17.2.Core, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.CodeParser.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Data.Portions, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.Data.Portions, Version=0.0.0.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      
+      <HintPath>bin\DevExpress.Data.Portions.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Data.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.DataAccess.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -80,7 +80,7 @@
     <Reference Include="DevExpress.Web.Bootstrap.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.DemoData.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      
+      <HintPath>bin\DevExpress.Web.DemoData.v17.2.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Web.Resources.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -1665,12 +1665,8 @@
     <Content Include="PortalAdministration\plugins\x-editable\README.md" />
     <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterDepartment\pageDepartment.aspx" />
     <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterDepartment\pageDepartment.js" />
-    <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterDepartment\pageDepartmentDetail.aspx" />
-    <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterDepartment\pageDepartmentDetail.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterPosition\pagePosition.aspx" />
     <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterPosition\pagePosition.js" />
-    <Content Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETRequests.aspx" />
-    <Content Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETRequests.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETReuest.aspx" />
     <Content Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETReuest.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\crmActivityPlugin\controlActivity.ascx" />
@@ -4519,8 +4515,6 @@
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemProgram\pageSystemProgram.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemUserRoles\pageSystemUserRoles.aspx" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemUserRoles\pageSystemUserRoles.js" />
-    <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemUsers\pageSystemUserDetail.aspx" />
-    <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemUsers\pageSystemUserDetail.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemUsers\pageSystemUsers.aspx" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemUsers\pageSystemUsers.js" />
     <Content Include="Web.config">
@@ -4544,26 +4538,12 @@
     <Compile Include="PortalAdministration\userInterfaces\moduleMaster\masterDepartment\pageDepartment.aspx.designer.cs">
       <DependentUpon>pageDepartment.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PortalAdministration\userInterfaces\moduleMaster\masterDepartment\pageDepartmentDetail.aspx.cs">
-      <DependentUpon>pageDepartmentDetail.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PortalAdministration\userInterfaces\moduleMaster\masterDepartment\pageDepartmentDetail.aspx.designer.cs">
-      <DependentUpon>pageDepartmentDetail.aspx</DependentUpon>
-    </Compile>
     <Compile Include="PortalAdministration\userInterfaces\moduleMaster\masterPosition\pagePosition.aspx.cs">
       <DependentUpon>pagePosition.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PortalAdministration\userInterfaces\moduleMaster\masterPosition\pagePosition.aspx.designer.cs">
       <DependentUpon>pagePosition.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETRequests.aspx.cs">
-      <DependentUpon>pageMETRequests.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETRequests.aspx.designer.cs">
-      <DependentUpon>pageMETRequests.aspx</DependentUpon>
     </Compile>
     <Compile Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETReuest.aspx.cs">
       <DependentUpon>pageMETReuest.aspx</DependentUpon>
@@ -4816,13 +4796,6 @@
     </Compile>
     <Compile Include="PortalAdministration\userInterfaces\moduleSystem\systemUserRoles\pageSystemUserRoles.aspx.designer.cs">
       <DependentUpon>pageSystemUserRoles.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PortalAdministration\userInterfaces\moduleSystem\systemUsers\pageSystemUserDetail.aspx.cs">
-      <DependentUpon>pageSystemUserDetail.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PortalAdministration\userInterfaces\moduleSystem\systemUsers\pageSystemUserDetail.aspx.designer.cs">
-      <DependentUpon>pageSystemUserDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="PortalAdministration\userInterfaces\moduleSystem\systemUsers\pageSystemUsers.aspx.cs">
       <DependentUpon>pageSystemUsers.aspx</DependentUpon>

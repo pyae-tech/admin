@@ -80,7 +80,13 @@ namespace NPT_DC_App.WebServices
         public MET_RequestView GetRequestByID(string meeting_reqID, string RequestID)
         {
             return Controllers.Controller_Request.GetRequestByID(meeting_reqID, RequestID);
-         }
+        }
+
+        [WebMethod]
+        public string DeleteRequest(string meetingreq_id, string user_id, string RequestID)
+        {
+            return Controllers.Controller_Request.DeleteRequest(meetingreq_id, user_id,RequestID);
+        }
 
         
 
