@@ -62,7 +62,11 @@ namespace NPT_DC_App.WebServices
             return Controllers.Controller_UserRole.GetUserRoleMenu(RoleID);
         }
 
-
+        [WebMethod]
+        public string GetAllUserRoleJSON(string RequestID)
+        {
+            return Controllers.Controller_UserRole.GetAllUserRoleJSON(RequestID);
+        }
 
 
 
