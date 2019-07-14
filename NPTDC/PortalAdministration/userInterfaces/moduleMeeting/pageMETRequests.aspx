@@ -44,7 +44,7 @@
                             </div>
 
                         </div>
-                        <h3><i class="ion-person">&nbsp</i><span data-translate="Customer">Customer</span></h3>
+                        <h3><i class="ion-compose">&nbsp</i><span data-translate="">အမှာစာများ</span></h3>
                         <!--Panel body-->
                         <div class="panel-body" id="backdetect">
                             <div class="tab-content">

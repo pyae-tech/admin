@@ -35,9 +35,25 @@ namespace NPT_DC_App.Controllers
                                                        orderby c.CreatedOn descending
                                                        select c
                                                        ).ToList();
+            var lists = new Newtonsoft.Json.Linq.JArray() as dynamic;
 
-            string return_str = new JavaScriptSerializer().Serialize(the_requestlist);
-            return return_str;
+            foreach (var row in the_requestlist)
+            {             
+                dynamic request = new Newtonsoft.Json.Linq.JObject();
+
+                request.RequestID = row.RequestID;
+                request.DepartmentID = row.DepartmentID;
+                request.RequestType = row.RequestType;
+                request.RequestNo = row.RequestNo;
+                request.RequestUserName = row.RequestUserName;
+                request.RequestTitle = row.RequestTitle;
+                request.RequestStatus = row.RequestStatus;
+                request.RequestOn = row.RequestOn;
+                lists.Add(request);
+            }
+
+            return lists.ToString();
+          
         }
 
         public static string GetAllRequestItemsJson(string meeting_requsetID,string org_id, string RequestID)

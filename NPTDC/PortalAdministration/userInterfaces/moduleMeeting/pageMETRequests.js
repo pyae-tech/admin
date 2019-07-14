@@ -35,11 +35,11 @@ function Build_ColumnHeader() {
     Columns = [
         {
             dataField: "RequestTitle",
-            caption: "Title",
+            caption: "ခေါင်းစဉ်",
         },
         {
             dataField: "RequestType",
-            caption: "Type",
+            caption: "အမျိုးအစား",
         },
         {
             dataField: "RequestStatus",
@@ -48,13 +48,13 @@ function Build_ColumnHeader() {
         },
         {
             dataField: "RequestOn",
-            caption: "RequestOn",
+            caption: "တင်ပြချိန်",
             dataType: "date",
             format: 'dd-MM-yyyy'
         },
         {
             dataField: "RequestUserName",
-            caption: "RequestBy",
+            caption: "တင်ပြသူ",
 
         }
         //{
