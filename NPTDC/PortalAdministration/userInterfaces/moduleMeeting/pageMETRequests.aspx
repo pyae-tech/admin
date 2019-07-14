@@ -21,7 +21,7 @@
         <li><a href="#" data-translate="_materbook"><span data-translate="">အစည်းအဝေးများ</span></a></li>
         <li class="active"><span data-translate="">အမှာစာ ပြုစုခြင်း</span></li>
         <li class="active">
-            <button class="btn btn-mint  btn-rounded  btn-labeled" type="button" onclick="GotoPage('portal/request');return false;"><i class="btn-label ion-plus-round"></i><span class="bold" data-translate="_new">New</span></button>
+            <button class="btn btn-mint  btn-rounded  btn-labeled" type="button" onclick="NewRequest();return false;"><i class="btn-label ion-plus-round"></i><span class="bold" data-translate="_new">New</span></button>
        </ol>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--End breadcrumb-->
