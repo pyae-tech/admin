@@ -26,7 +26,7 @@
             <button class="btn btn-danger  btn-rounded btn-labeled" type="button" onclick="DeleteRecordConfirmation();return false;">
                 <i class="btn-label ion-trash-b"></i><span class="bold" data-translate="_delete">ဖျတ်ရန်</span></button>
             <button class="btn btn-mint  btn-rounded  btn-labeled" type="button" onclick="GoToLog();return false;"><i class="btn-label ion-clock"></i><span class="bold" data-translate="_log">Log</span></button>
-            <button data-dismiss="modal" class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="GotoPage('portal/request');return false;"><i class="btn-label ion-close"></i><span class="bold" data-translate="_close">ပိတ်မည်</span></button></li>
+            <button data-dismiss="modal" class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="window.close();return false;"><i class="btn-label ion-close"></i><span class="bold" data-translate="_close">ပိတ်မည်</span></button></li>
     </ol>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--End breadcrumb-->
@@ -199,6 +199,16 @@
                                             </div>
                                         </div>
 
+                                    </div>
+
+                                    <div class="form-group  pull-right">
+                                        <%--<label for="tb_note" class="col-md-2 control-label"></label>--%>
+                                        <div class="col-md-12">
+                                            <small><span id="lbl_created"></span></small>
+                                            <br />
+                                            <small><span id="lbl_modified"></span></small>
+                                            <br />
+                                        </div>
                                     </div>
                                 </div>
 

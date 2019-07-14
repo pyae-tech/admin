@@ -413,8 +413,8 @@ function GetRequest(id) {
                 $("#tb_request_no").val(data.d["RequestNo"]);
                 $("#dt_requeston").val(data.d["RequestOn"]);
                 $("#ddl_requeststatus").val(data.d["RequestStatus"]);
-                $("#lbl_created").text("Created By : " + data.d["CUserCode"] + " on " + JsonDateToFormat(data.d["CreatedOn"], 'DD/MM/YYYY HH:mm'));
-                $("#lbl_modified").text("Modified By : " + data.d["MUserCode"] + " on " + JsonDateToFormat(data.d["ModifiedOn"], 'DD/MM/YYYY HH:mm'));
+                $("#lbl_created").text("စာရင်းသွင်းသူ : " + data.d["CUserCode"] + " on " + JsonDateToFormat(data.d["CreatedOn"], 'DD/MM/YYYY HH:mm'));
+                $("#lbl_modified").text("ပြင်ဆင်သူ : " + data.d["MUserCode"] + " on " + JsonDateToFormat(data.d["ModifiedOn"], 'DD/MM/YYYY HH:mm'));
                             
 
                 var req_on = new Date(JsonDateToFormat(data.d["RequestOn"], 'YYYY-MM-DD'));

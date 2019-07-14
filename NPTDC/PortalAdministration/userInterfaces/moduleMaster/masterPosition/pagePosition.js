@@ -179,8 +179,8 @@ function GetPosition(id) {
                 $("#tb_protocol").val(data.d["Protocol"]);
                 $("#tb_description").val(data.d["Description"]);
                 $("#tb_remark").val(data.d["Remark"]);
-                $("#lbl_created").text("Created By : " + data.d["CreatedByCode"] + " on " + JsonDateToFormat(data.d["CreatedOn"], 'DD/MM/YYYY HH:mm'));
-                $("#lbl_modified").text("Modified By : " + data.d["ModifiedByCode"] + " on " + JsonDateToFormat(data.d["ModifiedOn"], 'DD/MM/YYYY HH:mm'));
+                $("#lbl_created").text("စာရင်းသွင်းသူ : " + data.d["CreatedByCode"] + " on " + JsonDateToFormat(data.d["CreatedOn"], 'DD/MM/YYYY HH:mm'));
+                $("#lbl_modified").text("ပြင်ဆင်သူ : " + data.d["ModifiedByCode"] + " on " + JsonDateToFormat(data.d["ModifiedOn"], 'DD/MM/YYYY HH:mm'));
                
                 ShowSuccessMessage("Loaded.");
                 $('#dialogBox_Detail_Form').modal('show');
@@ -290,11 +290,11 @@ function Build_ColumnHeader() {
     Columns = [
         {
             dataField: "PositionName",
-            caption: "Position Name",
+            caption: "ရာထူး",
         },
         {
             dataField: "PositionCode",
-            caption: "Code",
+            caption: "ကုဒ်",
 
         },
         {
@@ -308,7 +308,7 @@ function Build_ColumnHeader() {
         },
         {
             dataField: "Description",
-            caption: "Description",
+            caption: "ဖော်ပြချက်",
             allowHeaderFiltering: false
         },
       

@@ -9,7 +9,7 @@
     <!--Page Title-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <div id="page-title">
-        <h1 class="page-header text-overflow">Detail Information Of Log</h1> 
+        <h1 class="page-header text-overflow">မှတ်တမ်း - အသေးစိတ်အချက်အလက်များ</h1> 
     </div>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--End page title-->
@@ -32,7 +32,7 @@
                                     <li class="tab-menu" id="tab_list_menu"><a href="#tab-list" data-toggle="tab">Listing <span class="pull-right badge badge-primary list_count">0</span></a></li> 
                                 </ul>
                             </div>
-                            <h3><i class="ion-clock"></i> System Log Detail</h3>
+                            <h3><i class="ion-clock"></i> &nbsp; မှတ်တမ်း</h3>
                         </div>
 
                         <!--Panel body-->
@@ -44,7 +44,7 @@
                                       <div id="panel_summary">
                                         <div class="row">
                                             <div class="col-md-5">
-                                                <div class="panel-heading"><span>ျပင္ဆင္သည့္ အခ်ိန္</span></div>
+                                                <div class="panel-heading"><span>ပြင်ဆင်သည့် အချိန်</span></div>
                                                  <table style="display: none">
                                                     <tbody id="template_table_log">
                                                         
@@ -59,8 +59,8 @@
                                                         <thead>
                                                             <tr>
 
-                                                               <th class="col-md-3"> ျပင္သူ</th>
-                                                               <th class="col-md-2">ျပင္သည့္အခ်ိန္</th>
+                                                               <th class="col-md-3"> ပြင်ဆင်သူ</th>
+                                                               <th class="col-md-2">ပြင်ဆင်ချိန်</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody id="table_list_log">
@@ -89,7 +89,7 @@
 
 
                                             <div class="col-md-7">
-                                                <div class="panel-heading">ျပင္ဆင္သည့္ အေသးစိတ္</div>
+                                                <div class="panel-heading">ပြင်ဆင်သည့် အချက်အလက်များ</div>
                                                 <table style="display: none">
                                                     <tbody id="template_row">
                                                         <tr style="cursor: pointer;">
@@ -107,9 +107,9 @@
                                                         <thead>
                                                             <tr>
 
-                                                               <th>ျပင္သည့္ စာရင္း</th>
-                                                              <th>မူလ အေၾကာင္းအရာ</th>
-                                                               <th>အသစ္ အေၾကာင္းအရာ</th>
+                                                               <th>ပြင်ဆင်သည့် စာရင်း</th>
+                                                              <th>မူလအကြောင်းအရာ</th>
+                                                               <th>အကြောင်းအရာအသစ်</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody id="table_list">
