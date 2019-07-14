@@ -67,12 +67,12 @@
                                                 <div class="form-group">
                                                       <label for="tb_name" class="  col-md-2  control-label">အမည်</label>
                             <div class=" col-md-4">
-                                <input type="text" class="form-control" id="tb_name" placeholder="Enter Name Of The User">
+                                <input type="text" class="form-control" id="tb_name" placeholder="အမည်">
                             </div>
 
                             <label for="tb_code" class="col-md-2 control-label">ကုဒ်နံပါတ်</label>
                             <div class="col-md-4">
-                                <input type="text" class="form-control" id="tb_code" placeholder="Enter User Code For The User">
+                                <input type="text" class="form-control" id="tb_code" placeholder="ကုဒ်နံပါတ်">
                             </div>
                                                    
                                                 </div>
@@ -86,23 +86,23 @@
 
                             <label for="tb_user_email" class="col-md-2 control-label">အီးမေး(လ်)</label>
                             <div class="col-md-4">
-                                <input type="text" class="form-control" id="tb_user_email" placeholder="Email Address Of The User">
+                                <input type="text" class="form-control" id="tb_user_email" placeholder="အီးမေး(လ်)">
                             </div>
 
                         </div>
 
 
                         <div class="form-group">
-                            <label for="tb_user_type" class="col-md-2 control-label">User Type</label>
+                            <label for="tb_user_type" class="col-md-2 control-label">အမျိုးအစား</label>
                             <div class="col-md-4">
-                                <select class="form-control" id="tb_user_type" placeholder="Is Admin or Agent ?">
+                                <select class="form-control" id="tb_user_type">
                                     <option value="Admin">Admin</option>
                                     <option value="Agent">Agent</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="tb_org_name" class="col-md-2 control-label">Org Name</label>
+                            <label for="tb_org_name" class="col-md-2 control-label">အဖွဲ့အစည်း</label>
                             <div class="col-md-4">
                                 <input type="hidden" id="hf_org_id" />
                                 <select class="form-control" id="tb_org_name"></select>
@@ -111,14 +111,14 @@
                         </div>
 
                     <div id="pnl_password" class="form-group">
-                            <label for="tb_password" class="col-md-2 control-label">Password</label>
+                            <label for="tb_password" class="col-md-2 control-label">လျှိုဝှက် နံပါတ်</label>
                             <div class="col-md-10">
-                                <input type="password" class="form-control" id="tb_password" placeholder="Enter Password">
+                                <input type="password" class="form-control" id="tb_password" placeholder="လျှိုဝှက် နံပါတ်">
                             </div>
                         </div>
 
                         <div id="pnl_confirmpassword" class="form-group">
-                            <label for="tb_confirm_password" class="col-md-2 control-label">Confirm</label>
+                            <label for="tb_confirm_password" class="col-md-2 control-label">Confirm Pasword</label>
                             <div class="col-md-10">
                                 <input type="password" class="form-control" id="tb_confirm_password" placeholder="Enter Confirm Password">
                             </div>
@@ -130,7 +130,7 @@
                                  <input type="hidden" id="tb_position_id" value="" />
                               <div id="lookup_position"></div>
                             </div>
-                             <label for="lookup_department" class="col-md-2 control-label">ဠာန</label>
+                             <label for="lookup_department" class="col-md-2 control-label">ဌာန</label>
                             <div>
                                 <div class="col-md-4">
                                      <input type="hidden" id="tb_department_id" value="" />
@@ -142,13 +142,13 @@
                         <div class="form-group">
                             <label for="tb_contact_info" class="col-md-2 control-label">ဆက်သွယ်ရန်</label>
                             <div class="col-md-10">
-                                <textarea class="form-control" rows="3" placeholder="Enter Detail Contact Information Of User" id="tb_contact_info"></textarea>
+                                <textarea class="form-control" rows="3" placeholder="ဆက်သွယ်ရန်" id="tb_contact_info"></textarea>
                             </div>
                         </div>
                                               <div class="form-group">
                             <label for="tb_note" class="col-md-2 control-label">မှတ်ချက်</label>
                             <div class="col-md-6">
-                                <textarea class="form-control" rows="7" placeholder="Enter Note For User" id="tb_note"></textarea>
+                                <textarea class="form-control" rows="7" placeholder="မှတ်ချက်" id="tb_note"></textarea>
                             </div>
                             <div class="col-md-4">
                            
@@ -158,15 +158,15 @@
                                                    <input type="hidden" id="tb_imageid" value="" />
                                                    <input type="hidden" id="Ref_type" value="" />
                                                 <div id="image_item" style="display: none;">
-                                                        <label class="col-md-12">Upload User's Signature</label>
+                                                        <label class="col-md-12">လက်မှတ်တင်ရန်</label>
                                                     <img id="bind_item_image_src" src='' style="width: 100%; height: 100%;" /><br />
                                                     <br>
-                                                    <button id="btn_changeImage" class="btn btn-dark btn-icon btn-sm btn-rounded" onclick="changeItemImage();return false;"><i class="demo-psi-pen-5 icon-lg"></i>&nbsp; <span class="bold" data-translate="_edit">Edit</span></button>
+                                                    <button id="btn_changeImage" class="btn btn-dark btn-icon btn-sm btn-rounded" onclick="changeItemImage();return false;"><i class="demo-psi-pen-5 icon-lg"></i>&nbsp; <span class="bold" data-translate="_edit">ပြင်ရန်</span></button>
                                                     &nbsp &nbsp
-                                                    <button id="btn_deleteImage" class="btn btn-dark btn-icon btn-sm btn-rounded " onclick="deleteImage();return false;"><i class="ion-close-circled icon-lg"></i>&nbsp;<span class="bold" data-translate="_delete">Delete</span></button>
+                                                    <button id="btn_deleteImage" class="btn btn-dark btn-icon btn-sm btn-rounded " onclick="deleteImage();return false;"><i class="ion-close-circled icon-lg"></i>&nbsp;<span class="bold" data-translate="_delete">ဖျက်ရန်</span></button>
                                                 </div>
                                                 <div id="Image_drop_zone" style="display: none;">
-                                                    <label class="col-md-12">Upload User's Signature</label>
+                                                    <label class="col-md-12">လက်မှတ်တင်ရန်</label>
                                                     <button id="btn_uploadImage" class="btn btn-dark btn-icon btn-sm btn-rounded" onclick="UploadItemImage1();return false;" style="padding-left: 3px;"><i class="ion-upload icon-lg"></i>&nbsp;<span class="bold" data-translate="_upload">Upload</span></button>
                                                 </div>
                                           

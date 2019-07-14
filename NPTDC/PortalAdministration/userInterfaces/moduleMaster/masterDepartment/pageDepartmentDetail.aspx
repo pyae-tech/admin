@@ -55,32 +55,32 @@
                                                 <div class="form-group">
                                                             <label for="tb_name" class="col-md-3 control-label">ဌာန အမည်</label>
                                                             <div class="col-md-9">
-                                                                <input type="text" class="form-control" id="tb_name" placeholder="Enter Department Name">
+                                                                <input type="text" class="form-control" id="tb_name" placeholder="ဌာန အမည်">
                                                             </div>
                                                         </div>
                                        <div class="form-group">
                                        <label for="tb_address" class="col-md-3 control-label">အီးမေး(လ်)</label>
                                       <div class="col-md-9">
-                                          <input type="text" class="form-control" id="tb_notifyemail" placeholder="Enter Notify Email"/>
+                                          <input type="text" class="form-control" id="tb_notifyemail" placeholder="အီးမေး(လ်)"/>
                                       </div>
                           
                                         </div>
                            <div class="form-group">
                                                             <label for="tb_remark" class="col-md-3 control-label">Protocol</label>
                                                             <div class="col-md-9">
-                                                                <input type="text" class="form-control" placeholder="Enter Protocol" id="tb_protocol"/>
+                                                                <input type="text" class="form-control" placeholder="Protocol" id="tb_protocol"/>
                                                             </div>
                                                         </div>
                                   <div class="form-group">
                                                             <label for="tb_remark" class="col-md-3 control-label">အကြောင်းအရာ</label>
                                                             <div class="col-md-9">
-                                                                <input type="text" class="form-control" placeholder="Enter Description" id="tb_description"/>
+                                                                <input type="text" class="form-control" placeholder="အကြောင်းအရာ" id="tb_description"/>
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="tb_remark" class="col-md-3 control-label">မှတ်ချက်</label>
                                                             <div class="col-md-9">
-                                                                <textarea class="form-control" rows="5" placeholder="Enter Remark" id="tb_remark"></textarea>
+                                                                <textarea class="form-control" rows="5" placeholder="မှတ်ချက်" id="tb_remark"></textarea>
                                                             </div>
                                                         </div>
 
