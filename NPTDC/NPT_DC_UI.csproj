@@ -1665,6 +1665,8 @@
     <Content Include="PortalAdministration\plugins\x-editable\README.md" />
     <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterDepartment\pageDepartment.aspx" />
     <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterDepartment\pageDepartment.js" />
+    <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterDepartment\pageDepartmentDetail.aspx" />
+    <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterDepartment\pageDepartmentDetail.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterPosition\pagePosition.aspx" />
     <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterPosition\pagePosition.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETRequests.aspx" />
@@ -4541,6 +4543,13 @@
     </Compile>
     <Compile Include="PortalAdministration\userInterfaces\moduleMaster\masterDepartment\pageDepartment.aspx.designer.cs">
       <DependentUpon>pageDepartment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PortalAdministration\userInterfaces\moduleMaster\masterDepartment\pageDepartmentDetail.aspx.cs">
+      <DependentUpon>pageDepartmentDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PortalAdministration\userInterfaces\moduleMaster\masterDepartment\pageDepartmentDetail.aspx.designer.cs">
+      <DependentUpon>pageDepartmentDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="PortalAdministration\userInterfaces\moduleMaster\masterPosition\pagePosition.aspx.cs">
       <DependentUpon>pagePosition.aspx</DependentUpon>

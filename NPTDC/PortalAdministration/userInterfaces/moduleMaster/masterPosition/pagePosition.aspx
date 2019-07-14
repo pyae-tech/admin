@@ -14,7 +14,7 @@
     <!--Page Title-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <div id="page-title">
-        <h1 class="page-header text-overflow"><span data-translate="Position">Position</span></h1>
+         <h1 class="page-header text-overflow"><i class="ion-home"></i> ရာထူးများ</h1>
     </div>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--End page title-->
@@ -23,10 +23,10 @@
     <!--Breadcrumb-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <ol class="breadcrumb">
-        <li><a href="#"><i class="demo-pli-home"></i></a></li>
-        <li><a href="#"><span data-translate="_materbook">Master</span></a></li>
-        <li class="active"><span data-translate="Position">Positions</span></li>
-          <li class="active"> <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="LoadNew();return false;"><i class="btn-label ion-plus-round"></i><span class="bold" data-translate="_new">New</span></button>
+       <li><a href="#"><i class="demo-pli-home"></i></a></li>
+        <li><a href="#">စနစ် စီမံခြင်း </a></li>
+        <li class="active">ရာထူးများ</li>
+          <li class="active"> <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="LoadNew();return false;"><i class="btn-label ion-plus-round"></i><span class="bold">အသစ်</span></button>
       
     </ol>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -55,7 +55,7 @@
                             </div>
                            
                         </div>
-                         <h3><i class="ion-person-stalker">&nbsp;</i><span data-translate="Position">Positions</span></h3>
+                       <%--  <h3><i class="ion-person-stalker">&nbsp;</i><span data-translate="">ရာထူးများ</span></h3>--%>
                         <!--Panel body-->
                         <div class="panel-body">
                             <div class="tab-content">
@@ -99,7 +99,7 @@
                 <!--Modal header-->
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-                    <h4 class="modal-title"><span data-translate="PositionDetail">Position - Detail Infromation</span></h4>
+                    <h4 class="modal-title"><span data-translate="PositionDetail">ရာထူး - အသေးစိတ်အချက်အလက်</span></h4>
                 </div>
 
                 <!--Modal body-->
@@ -109,11 +109,11 @@
                        
                      
                                                         <div class="form-group">
-                                                            <label for="tb_name" class="col-md-3 control-label" data-translate="PositionName">Position Name</label>
+                                                            <label for="tb_name" class="col-md-3 control-label" data-translate="PositionName">ရာထူး အမည်</label>
                                                             <div class="col-md-5">
                                                                 <input type="text" class="form-control" id="tb_name" placeholder="Enter Position Name">
                                                             </div>
-                                                             <label for="tb_position_code" class="col-md-1 control-label" data-translate="Code">Code</label>
+                                                             <label for="tb_position_code" class="col-md-1 control-label" data-translate="Code">ကုဒ်</label>
                                                             <div class="col-md-3">
                                                                 <input type="text" class="form-control" id="tb_position_code" placeholder="Enter Position Code">
                                                             </div>
@@ -128,13 +128,13 @@
 
 
                                                         <div class="form-group">
-                                                            <label for="tb_DOTRate" class="col-md-3 control-label" data-translate="">Description</label>
+                                                            <label for="tb_DOTRate" class="col-md-3 control-label" data-translate="">အကြောင်းအရာ</label>
                                                             <div class="col-md-9">
                                                                 <textarea  class="form-control" rows="3"  id="tb_description" placeholder="Enter Description"></textarea>
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="tb_remark" class="col-md-3 control-label" data-translate="">Remark</label>
+                                                            <label for="tb_remark" class="col-md-3 control-label" data-translate="">မှတ်ချက်</label>
                                                             <div class="col-md-9">
                                                                 <textarea class="form-control" rows="3" placeholder="Enter Remark" id="tb_remark"></textarea>
                                                             </div>
@@ -153,11 +153,11 @@
                 </div>
                 <!--Modal footer-->
                 <div class="modal-footer">
-                    <button class="btn btn-primary  btn-rounded  btn-labeled" type="button" onclick="SavePosition();return false;"><i class="btn-label ion-checkmark"></i><span class="bold" data-translate="_save">Save</span></button>
+                    <button class="btn btn-primary  btn-rounded  btn-labeled" type="button" onclick="SavePosition();return false;"><i class="btn-label ion-checkmark"></i><span class="bold" data-translate="">စာရင်းသိမ်းရန်</span></button>
                     <button class="btn btn-danger  btn-rounded btn-labeled" type="button" onclick="DeleteRecordConfirmation();return false;">
-                        <i class="btn-label ion-trash-b"></i><span class="bold" data-translate="_delete">Delete</span></button>
-                    <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="LoadNew();return false;"><i class="btn-label ion-plus-round"></i><span class="bold" data-translate="_new">New</span></button>
-                         <button  data-dismiss="modal" class="btn btn-dark  btn-rounded  btn-labeled" type="button" ><i class="btn-label ion-close"></i><span class="bold" data-translate="_close">Close</span></button>
+                        <i class="btn-label ion-trash-b"></i><span class="bold" data-translate="_delete">ဖျက်ရန်</span></button>
+                    <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="LoadNew();return false;"><i class="btn-label ion-plus-round"></i><span class="bold" data-translate="_new">အသစ်</span></button>
+                         <button  data-dismiss="modal" class="btn btn-dark  btn-rounded  btn-labeled" type="button" ><i class="btn-label ion-close"></i><span class="bold" data-translate="_close">ပိတ်ရန်</span></button>
 
                      
                 </div>

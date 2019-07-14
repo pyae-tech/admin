@@ -26,7 +26,7 @@
         <li><a href="#"><i class="demo-pli-home"></i></a></li>
         <li><a href="#">စနစ် စီမံခြင်း </a></li>
         <li class="active">ဌာနများ</li>
-          <li class="active"> <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="LoadNew();return false;"><i class="btn-label ion-plus-round"></i><span class="bold">New</span></button>
+          <li class="active"> <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="GotoPage('Portal/departmentdetail');return false;"><i class="btn-label ion-plus-round"></i><span class="bold">အသစ်</span></button>
       
     </ol>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -55,7 +55,7 @@
                             </div>
                            
                         </div>
-                        
+                         <%-- <h3><i class="ion-home">&nbsp;</i><span data-translate="">ဌာနများ</span></h3>--%>
                         <!--Panel body-->
                         <div class="panel-body">
                             <div class="tab-content">
@@ -84,78 +84,7 @@
 
 
 
-    <div class="modal fade" id="dialogBox_Detail_Form" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-
-                <!--Modal header-->
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-                    <h4 class="modal-title">Department - Detail Infromation</h4>
-                </div>
-
-                <!--Modal body-->
-                <div class="modal-body">
-                    <form class="form-horizontal">
-                        <input type="hidden" id="tb_id" value="" />
-                       
-                     
-                                                        <div class="form-group">
-                                                            <label for="tb_name" class="col-md-3 control-label">Department Name</label>
-                                                            <div class="col-md-9">
-                                                                <input type="text" class="form-control" id="tb_name" placeholder="Enter Department Name">
-                                                            </div>
-                                                        </div>
-                                       <div class="form-group">
-                                       <label for="tb_address" class="col-md-3 control-label">Email</label>
-                                      <div class="col-md-9">
-                                          <input type="text" class="form-control" id="tb_notifyemail" placeholder="Enter Notify Email"/>
-                                      </div>
-                          
-                                        </div>
-                           <div class="form-group">
-                                                            <label for="tb_remark" class="col-md-3 control-label">Protocol</label>
-                                                            <div class="col-md-9">
-                                                                <input type="text" class="form-control" placeholder="Enter Protocol" id="tb_protocol"/>
-                                                            </div>
-                                                        </div>
-                                  <div class="form-group">
-                                                            <label for="tb_remark" class="col-md-3 control-label">Description</label>
-                                                            <div class="col-md-9">
-                                                                <input type="text" class="form-control" placeholder="Enter Description" id="tb_description"/>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="tb_remark" class="col-md-3 control-label">Remark</label>
-                                                            <div class="col-md-9">
-                                                                <textarea class="form-control" rows="5" placeholder="Enter Remark" id="tb_remark"></textarea>
-                                                            </div>
-                                                        </div>
-                  
-                        <div class="form-group">
-                                <label for="tb_note" class="col-md-3 control-label"></label>
-                            <div class="col-md-9" >
-                                <small><span id="lbl_created"></span></small>
-                                <br />
-                                <small><span id="lbl_modified"></span></small>
-                                <br />
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <!--Modal footer-->
-                <div class="modal-footer">
-                    <button class="btn btn-primary  btn-rounded  btn-labeled" type="button" onclick="SaveDepartment();return false;"><i class="btn-label ion-checkmark"></i><span class="bold">Save</span></button>
-                    <button class="btn btn-danger  btn-rounded btn-labeled" type="button" onclick="DeleteRecordConfirmation();return false;">
-                        <i class="btn-label ion-trash-b"></i><span class="bold">Delete</span></button>
-                    <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="LoadNew();return false;"><i class="btn-label ion-plus-round"></i><span class="bold">New</span></button>
-                         <button  data-dismiss="modal" class="btn btn-dark  btn-rounded  btn-labeled" type="button" ><i class="btn-label ion-close"></i><span class="bold">Close</span></button>
-
-                     
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
 
 

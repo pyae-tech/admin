@@ -108,30 +108,30 @@ function Build_ColumnHeader() {
     Columns = [
         {
             dataField: "UserName",
-            caption: "User Name",
+            caption: "အမည်",
         },
         {
             dataField: "UserCode",
-            caption: "Code",
+            caption: "ကုဒ်နံပါတ်",
 
         },
         {
             dataField: "RoleName",
-            caption: "Role",
+            caption: "သုံးစွဲခွင့်",
         },
         {
             dataField: "Email",
-            caption: "Email",
+            caption: "အီးမေး(လ်)",
            
         },
         {
             dataField: "DepartmentName",
-            caption: "Department",
+            caption: "ရာထူး",
 
         },
         {
             dataField: "PositionName",
-            caption: "Position",
+            caption: "ဠာန",
            
         },
        

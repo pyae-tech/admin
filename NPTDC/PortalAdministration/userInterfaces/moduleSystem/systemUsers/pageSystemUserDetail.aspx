@@ -49,7 +49,7 @@
                                     <li class="tab-menu" id="tab_search_menu"><a href="#tab-search" data-toggle="tab">Search</a></li>
                                 </ul>
                             </div>
-                            <h3><i class="ion-briefcase"></i>&nbsp;<span data-translate="">ဝန်ထမ်း  - အချက်အလက် အသေးစိတ်</span></h3>
+                            <h3><i class="ion-briefcase"></i>&nbsp;<span data-translate="">၀န်ထမ်း - အချက်အလက် အသေးစိတ်</span></h3>
 
                         </div>
 
@@ -79,6 +79,7 @@
                                                 <div class="form-group">
                             <label for="tb_role" class="col-md-2 control-label">သုံးစွဲခွင့်</label>
                             <div class="col-md-4">
+                                 <input type="hidden" id="tb_role_id" value="" />
                                 <div id="lookup_role"></div>
                             </div>
 
@@ -109,21 +110,30 @@
                             </div>
                         </div>
 
-                        <div id="pnl_password" class="form-group">
+                    <div id="pnl_password" class="form-group">
                             <label for="tb_password" class="col-md-2 control-label">Password</label>
                             <div class="col-md-10">
                                 <input type="password" class="form-control" id="tb_password" placeholder="Enter Password">
                             </div>
                         </div>
 
+                        <div id="pnl_confirmpassword" class="form-group">
+                            <label for="tb_confirm_password" class="col-md-2 control-label">Confirm</label>
+                            <div class="col-md-10">
+                                <input type="password" class="form-control" id="tb_confirm_password" placeholder="Enter Confirm Password">
+                            </div>
+                        </div>
+
                         <div class="form-group">
-                            <label for="lookup_position" class="col-md-2 control-label">Position</label>
+                            <label for="lookup_position" class="col-md-2 control-label">ရာထူး</label>
                             <div class="col-md-4">
+                                 <input type="hidden" id="tb_position_id" value="" />
                               <div id="lookup_position"></div>
                             </div>
-                             <label for="lookup_department" class="col-md-2 control-label">Department</label>
+                             <label for="lookup_department" class="col-md-2 control-label">ဠာန</label>
                             <div>
                                 <div class="col-md-4">
+                                     <input type="hidden" id="tb_department_id" value="" />
                                 <div id="lookup_department"></div>
                                     </div>
                             </div>
@@ -136,26 +146,27 @@
                             </div>
                         </div>
                                               <div class="form-group">
-                            <label for="tb_note" class="col-md-2 control-label">Note</label>
-                            <div class="col-md-4">
+                            <label for="tb_note" class="col-md-2 control-label">မှတ်ချက်</label>
+                            <div class="col-md-6">
                                 <textarea class="form-control" rows="7" placeholder="Enter Note For User" id="tb_note"></textarea>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                            
                             
                                             <div class="col-md-12 ImageContainer" id="item_image_zone" >
-                                                <label class="col-md-12">Upload User's Signature</label>
+                                             
                                                    <input type="hidden" id="tb_imageid" value="" />
                                                    <input type="hidden" id="Ref_type" value="" />
                                                 <div id="image_item" style="display: none;">
-
+                                                        <label class="col-md-12">Upload User's Signature</label>
                                                     <img id="bind_item_image_src" src='' style="width: 100%; height: 100%;" /><br />
                                                     <br>
                                                     <button id="btn_changeImage" class="btn btn-dark btn-icon btn-sm btn-rounded" onclick="changeItemImage();return false;"><i class="demo-psi-pen-5 icon-lg"></i>&nbsp; <span class="bold" data-translate="_edit">Edit</span></button>
                                                     &nbsp &nbsp
                                                     <button id="btn_deleteImage" class="btn btn-dark btn-icon btn-sm btn-rounded " onclick="deleteImage();return false;"><i class="ion-close-circled icon-lg"></i>&nbsp;<span class="bold" data-translate="_delete">Delete</span></button>
                                                 </div>
-                                                <div id="Image_drop_zone" style="display: block;">
+                                                <div id="Image_drop_zone" style="display: none;">
+                                                    <label class="col-md-12">Upload User's Signature</label>
                                                     <button id="btn_uploadImage" class="btn btn-dark btn-icon btn-sm btn-rounded" onclick="UploadItemImage1();return false;" style="padding-left: 3px;"><i class="ion-upload icon-lg"></i>&nbsp;<span class="bold" data-translate="_upload">Upload</span></button>
                                                 </div>
                                           
@@ -176,9 +187,9 @@
 
                                                 <div class="form-group">
                                                     <label class="col-md-2"></label>
-                                                    <button class="btn btn-primary  btn-rounded  btn-labeled" type="button" onclick="SaveUser();return false;"><i class="btn-label ion-checkmark"></i><span class="bold" data-translate="_save">စာရင်းသိမ်း</span></button>
+                                                    <button class="btn btn-primary  btn-rounded  btn-labeled" type="button" onclick="SaveUser();return false;"><i class="btn-label ion-checkmark"></i><span class="bold" data-translate="_save">စာရင်းသိမ်းရန်</span></button>
                     <button class="btn btn-danger  btn-rounded btn-labeled" type="button" onclick="DeleteRecordConfirmation();return false;">
-                        <i class="btn-label ion-trash-b"></i><span class="bold" data-translate="_delete">ဖျတ်ရန်</span></button>
+                        <i class="btn-label ion-trash-b"></i><span class="bold" data-translate="_delete">ဖျက်ရန်</span></button>
                     <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="LoadNew();return false;"><i class="btn-label ion-plus-round"></i><span class="bold" data-translate="_new">အသစ်</span></button>
                     <button data-dismiss="modal" class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="GotoPage('Portal/users');return false;"><i class="btn-label ion-close"></i><span class="bold" data-translate="_close">ပိတ်မည်</span></button>
                                                       <button class="btn btn-success btn-rounded  btn-labeled" type="button" onclick="RefreshItem();return false;"><i class="btn-label ion-refresh"></i><span class="bold" data-translate="_reflesh">Reflesh</span></button>
