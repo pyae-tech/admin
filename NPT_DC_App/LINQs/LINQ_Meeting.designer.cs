@@ -110,6 +110,14 @@ namespace NPT_DC_App.LINQs
 				return this.GetTable<MET_RequestDecisionView>();
 			}
 		}
+		
+		public System.Data.Linq.Table<MET_RequestView> MET_RequestViews
+		{
+			get
+			{
+				return this.GetTable<MET_RequestView>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MET_Request")]
@@ -1853,6 +1861,519 @@ namespace NPT_DC_App.LINQs
 				if ((this._MUserCode != value))
 				{
 					this._MUserCode = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MET_RequestView")]
+	public partial class MET_RequestView
+	{
+		
+		private string _RequestID;
+		
+		private string _DepartmentID;
+		
+		private string _RequestType;
+		
+		private string _RequestNo;
+		
+		private string _RequestTitle;
+		
+		private string _RequestStatus;
+		
+		private System.DateTime _RequestOn;
+		
+		private string _MeetingID;
+		
+		private string _Remark;
+		
+		private string _ApprovedBy;
+		
+		private System.DateTime _ApprovedOn;
+		
+		private string _ApprovedRemark;
+		
+		private string _ApprovalStatus;
+		
+		private string _Description;
+		
+		private bool _Active;
+		
+		private string _CreatedBy;
+		
+		private System.DateTime _CreatedOn;
+		
+		private string _ModifiedBy;
+		
+		private System.DateTime _ModifiedOn;
+		
+		private string _LastAction;
+		
+		private string _DepartmentName;
+		
+		private string _CUserCode;
+		
+		private string _OrgID;
+		
+		private string _OrgCode;
+		
+		private string _MUserCode;
+		
+		private string _RequestUserCode;
+		
+		private string _RequestUserName;
+		
+		private string _RequestBy;
+		
+		public MET_RequestView()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string RequestID
+		{
+			get
+			{
+				return this._RequestID;
+			}
+			set
+			{
+				if ((this._RequestID != value))
+				{
+					this._RequestID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartmentID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string DepartmentID
+		{
+			get
+			{
+				return this._DepartmentID;
+			}
+			set
+			{
+				if ((this._DepartmentID != value))
+				{
+					this._DepartmentID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestType", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string RequestType
+		{
+			get
+			{
+				return this._RequestType;
+			}
+			set
+			{
+				if ((this._RequestType != value))
+				{
+					this._RequestType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestNo", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string RequestNo
+		{
+			get
+			{
+				return this._RequestNo;
+			}
+			set
+			{
+				if ((this._RequestNo != value))
+				{
+					this._RequestNo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestTitle", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string RequestTitle
+		{
+			get
+			{
+				return this._RequestTitle;
+			}
+			set
+			{
+				if ((this._RequestTitle != value))
+				{
+					this._RequestTitle = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestStatus", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string RequestStatus
+		{
+			get
+			{
+				return this._RequestStatus;
+			}
+			set
+			{
+				if ((this._RequestStatus != value))
+				{
+					this._RequestStatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestOn", DbType="DateTime NOT NULL")]
+		public System.DateTime RequestOn
+		{
+			get
+			{
+				return this._RequestOn;
+			}
+			set
+			{
+				if ((this._RequestOn != value))
+				{
+					this._RequestOn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MeetingID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string MeetingID
+		{
+			get
+			{
+				return this._MeetingID;
+			}
+			set
+			{
+				if ((this._MeetingID != value))
+				{
+					this._MeetingID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Remark", DbType="NVarChar(3000) NOT NULL", CanBeNull=false)]
+		public string Remark
+		{
+			get
+			{
+				return this._Remark;
+			}
+			set
+			{
+				if ((this._Remark != value))
+				{
+					this._Remark = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovedBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string ApprovedBy
+		{
+			get
+			{
+				return this._ApprovedBy;
+			}
+			set
+			{
+				if ((this._ApprovedBy != value))
+				{
+					this._ApprovedBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovedOn", DbType="DateTime NOT NULL")]
+		public System.DateTime ApprovedOn
+		{
+			get
+			{
+				return this._ApprovedOn;
+			}
+			set
+			{
+				if ((this._ApprovedOn != value))
+				{
+					this._ApprovedOn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovedRemark", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string ApprovedRemark
+		{
+			get
+			{
+				return this._ApprovedRemark;
+			}
+			set
+			{
+				if ((this._ApprovedRemark != value))
+				{
+					this._ApprovedRemark = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovalStatus", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string ApprovalStatus
+		{
+			get
+			{
+				return this._ApprovalStatus;
+			}
+			set
+			{
+				if ((this._ApprovalStatus != value))
+				{
+					this._ApprovalStatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Active", DbType="Bit NOT NULL")]
+		public bool Active
+		{
+			get
+			{
+				return this._Active;
+			}
+			set
+			{
+				if ((this._Active != value))
+				{
+					this._Active = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string CreatedBy
+		{
+			get
+			{
+				return this._CreatedBy;
+			}
+			set
+			{
+				if ((this._CreatedBy != value))
+				{
+					this._CreatedBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedOn", DbType="DateTime NOT NULL")]
+		public System.DateTime CreatedOn
+		{
+			get
+			{
+				return this._CreatedOn;
+			}
+			set
+			{
+				if ((this._CreatedOn != value))
+				{
+					this._CreatedOn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string ModifiedBy
+		{
+			get
+			{
+				return this._ModifiedBy;
+			}
+			set
+			{
+				if ((this._ModifiedBy != value))
+				{
+					this._ModifiedBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedOn", DbType="DateTime NOT NULL")]
+		public System.DateTime ModifiedOn
+		{
+			get
+			{
+				return this._ModifiedOn;
+			}
+			set
+			{
+				if ((this._ModifiedOn != value))
+				{
+					this._ModifiedOn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastAction", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string LastAction
+		{
+			get
+			{
+				return this._LastAction;
+			}
+			set
+			{
+				if ((this._LastAction != value))
+				{
+					this._LastAction = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartmentName", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
+		public string DepartmentName
+		{
+			get
+			{
+				return this._DepartmentName;
+			}
+			set
+			{
+				if ((this._DepartmentName != value))
+				{
+					this._DepartmentName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CUserCode", DbType="NVarChar(50)")]
+		public string CUserCode
+		{
+			get
+			{
+				return this._CUserCode;
+			}
+			set
+			{
+				if ((this._CUserCode != value))
+				{
+					this._CUserCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrgID", DbType="NVarChar(50)")]
+		public string OrgID
+		{
+			get
+			{
+				return this._OrgID;
+			}
+			set
+			{
+				if ((this._OrgID != value))
+				{
+					this._OrgID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrgCode", DbType="NVarChar(50)")]
+		public string OrgCode
+		{
+			get
+			{
+				return this._OrgCode;
+			}
+			set
+			{
+				if ((this._OrgCode != value))
+				{
+					this._OrgCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MUserCode", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string MUserCode
+		{
+			get
+			{
+				return this._MUserCode;
+			}
+			set
+			{
+				if ((this._MUserCode != value))
+				{
+					this._MUserCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestUserCode", DbType="NVarChar(50)")]
+		public string RequestUserCode
+		{
+			get
+			{
+				return this._RequestUserCode;
+			}
+			set
+			{
+				if ((this._RequestUserCode != value))
+				{
+					this._RequestUserCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestUserName", DbType="NVarChar(50)")]
+		public string RequestUserName
+		{
+			get
+			{
+				return this._RequestUserName;
+			}
+			set
+			{
+				if ((this._RequestUserName != value))
+				{
+					this._RequestUserName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string RequestBy
+		{
+			get
+			{
+				return this._RequestBy;
+			}
+			set
+			{
+				if ((this._RequestBy != value))
+				{
+					this._RequestBy = value;
 				}
 			}
 		}

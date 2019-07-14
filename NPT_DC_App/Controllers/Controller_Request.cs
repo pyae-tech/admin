@@ -10,6 +10,35 @@ namespace NPT_DC_App.Controllers
     public class Controller_Request
     {
         static string AccessProgramCode = "UserControl";
+
+        public static string GetAllRequestJSON(string search_text, string RequestID)
+        {
+            //Security Check
+            if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, RequestID, "read")) throw new Exception("No Access.");
+            //Get current user info
+            SYS_UserView current_user = Controller_User.GetUser(RequestID, RequestID);
+            LINQ_MeetingDataContext dc = new LINQ_MeetingDataContext();
+
+            List<MET_RequestView> the_requestlist = (from c in dc.MET_RequestViews
+                                                     where c.Active == true && c.OrgID == current_user.OrgID &&
+                                                       ((search_text == "") ||
+                                                       (search_text != "" && (
+
+                                                     c.RequestNo.Contains(search_text) ||
+                                                     c.RequestStatus.Contains(search_text) ||
+                                                     c.RequestTitle.Contains(search_text) ||
+                                                     c.RequestType.Contains(search_text) ||
+                                                      c.Description.Contains(search_text) ||
+                                                      c.Remark.Contains(search_text) ||
+                                                      c.DepartmentName.Contains(search_text))))
+                                                       orderby c.CreatedOn descending
+                                                       select c
+                                                       ).ToList();
+
+            string return_str = new JavaScriptSerializer().Serialize(the_requestlist);
+            return return_str;
+        }
+
         public static string GetAllRequestItemsJson(string meeting_requsetID,string org_id, string RequestID)
         {
             //Security Check
@@ -218,6 +247,16 @@ namespace NPT_DC_App.Controllers
                 return "Error~" + ex.Message;
             }
         }
+
+        public static MET_RequestView GetRequestByID(string meeting_reqID, string RequestID)
+        {
+            //Security Check
+            if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, RequestID, "read")) throw new Exception("No Access.");
+
+            LINQ_MeetingDataContext dc = new LINQ_MeetingDataContext();
+            return (from c in dc.MET_RequestViews where c.RequestID == meeting_reqID && c.Active == true select c).FirstOrDefault();
+        }
+
 
         static decimal convertToDecimal(string value)
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NPT_DC_App.LINQs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,12 @@ namespace NPT_DC_App.WebServices
     [System.Web.Script.Services.ScriptService]
     public class WebService_Request : System.Web.Services.WebService
     {
+
+        [WebMethod]
+        public string GetAllRequestJSON(string search_text,string RequestID)
+        {
+            return Controllers.Controller_Request.GetAllRequestJSON(search_text, RequestID);
+        }
 
         [WebMethod]
         public string GetAllRequestItemsJson(string meeting_reqID, string org_id, string RequestID)
@@ -68,6 +75,14 @@ namespace NPT_DC_App.WebServices
             Requestitems,
             RequestDecisions);
         }
+
+        [WebMethod]
+        public MET_RequestView GetRequestByID(string meeting_reqID, string RequestID)
+        {
+            return Controllers.Controller_Request.GetRequestByID(meeting_reqID, RequestID);
+         }
+
         
+
     }
 }

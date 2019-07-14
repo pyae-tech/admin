@@ -5,6 +5,16 @@ $('#menu_meeting_group').addClass('in');
 $('#menu_request_letter').addClass('active-link');
 $("#tab-main").tabs();
 
+
+if (GetURLData('id') != null && GetURLData('id') != "") {
+    GetRequest(GetURLData('id'));
+}
+else {
+    LoadNew();
+
+}
+
+//#endregion
 $("#tb_department_name").val(get_current_user_DepartmentName());
 var request_on_date = ConvertDate(new Date());
 $("#dt_requeston").dxDateBox({
@@ -15,9 +25,10 @@ $("#dt_requeston").dxDateBox({
     max: new Date(),
     min: new Date(1900, 0, 1),
     onValueChanged: function (data) {
-        request_on_date=ConvertDate($("#dt_requeston").dxDateBox('instance').option('value'));
+        request_on_date = ConvertDate($("#dt_requeston").dxDateBox('instance').option('value'));
     }
 });
+
 function ConvertDate(sdate) {
     const date = new Date(sdate);
     var month = date.getMonth() + 1;
@@ -27,6 +38,32 @@ function ConvertDate(sdate) {
         (month < 10 ? '0' : '') + month + '/' + (dd < 10 ? '0' : '') + dd;
     return output;
 }
+
+//#region New Record
+function LoadNew() {
+    Pace.start();
+
+    $("#tb_meeting_title").focus();
+    $("#tb_id").val("");
+    $("#ddl_meetingtype").val("");
+    $("#tb_meeting_title").val("");
+    $("#tb_Description").val("");
+    $("#tb_Remark").val("");
+    $("#tb_request_no").val("");
+    $("#dt_requeston").val("");
+    $("#ddl_requeststatus").val("");
+    $('#ddl_requestby').val("");
+
+    arr_request_item = [];
+    arr_request_decision = [];
+
+    $("#tb_department_name").val(get_current_user_DepartmentName());
+    var request_on_date = ConvertDate(new Date());
+    Load_Request_Item("");
+    Load_Request_Decisions("");
+
+}
+
 GetAllUser();
 var requestby_id = "";
 function GetAllUser() {
@@ -69,24 +106,28 @@ function GetAllUser() {
 
 
                 });
+
+                if ($("#hf_requestbyId").val() != null || $("#hf_requestbyId").val() != "") {
+                    $("#ddl_requestby").dxLookup('instance').option('value', $("#hf_requestbyId").val());
+                }
             }
         },
         error: function (xhr, msg) {
             LogJSError('Web Service Fail: ' + msg + '\n' + xhr.responseText);
 
-        }
-    });
+        }       
+    });   
 }
 
 //#region Request Items
-Load_Request_Item();
-function Load_Request_Item() {
+
+function Load_Request_Item(req_id) {
     Pace.start();
     $.ajax({
 
         url: baseUrl() + "WebServices/WebService_Request.asmx/GetAllRequestItemsJson",
         data: "{ " +
-            "'meeting_reqID':'" + $("tb_id").val() + "' " +
+            "'meeting_reqID':'" + req_id + "' " +
             ",'org_id':'" + get_current_user_org_id() + "' " +
             ",'RequestID':'" + get_current_user_id() + "' " +
             " }",
@@ -174,14 +215,14 @@ function delete_request_item(new_request) {
 //#endregion 
 
 //#region Request Items
-Load_Request_Decisions();
-function Load_Request_Decisions() {
+
+function Load_Request_Decisions(req_id) {
     Pace.start();
     $.ajax({
 
         url: baseUrl() + "WebServices/WebService_Request.asmx/GetAllRequestDecisionJson",
         data: "{ " +
-            "'meeting_reqID':'" + $("tb_id").val() + "' " +
+            "'meeting_reqID':'" + req_id + "' " +
             ",'org_id':'" + get_current_user_org_id() + "' " +
             ",'RequestID':'" + get_current_user_id() + "' " +
             " }",
@@ -288,7 +329,7 @@ function SaveRequest() {
     Pace.start();
     if (SaveRecordVerification() == false)
         return;
-    
+
     var item_requests = '';
     var decisions = '';
     $.each(arr_request_item, function (key, val) {
@@ -319,12 +360,12 @@ function SaveRequest() {
             ",'MeetingID':'" + "" + "' " +
             ",'Remark':'" + esc_quot($('#tb_Remark').val()) + "' " +
             ",'ApprovedBy':'" + "" + "' " +
-            ",'ApprovedOn':'" + ""+ "' " +
+            ",'ApprovedOn':'" + "" + "' " +
             ",'ApprovedRemark':'" + "" + "' " +
             ",'Description':'" + esc_quot($('#tb_Description').val()) + "' " +
             ",'UserID':'" + get_current_user_id() + "' " +
-            ",'Requestitems':'" + item_requests + "' " + 
-            ",'RequestDecisions':'" + decisions + "' " + 
+            ",'Requestitems':'" + item_requests + "' " +
+            ",'RequestDecisions':'" + decisions + "' " +
             " }",
         dataType: 'json',
         type: "POST",
@@ -339,6 +380,62 @@ function SaveRequest() {
             else {
                 ShowBoxMessage("Oops. " + data.d.toString().split('~')[1]);
             }
+        },
+        error: function (xhr, msg) {
+            LogJSError('Web Service Fail: ' + msg + '\n' + xhr.responseText);
+
+        }
+    });
+}
+
+function GetRequest(id) {
+    Pace.start();
+    $.ajax({
+        url: baseUrl() + "WebServices/WebService_Request.asmx/GetRequestByID",
+        data: "{ " +
+            "'meeting_reqID':'" + id + "' " +
+            ",'RequestID':'" + get_current_user_id() + "' " +
+            " }",
+        dataType: 'json',
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+            if (data.d != null) {
+
+                $("#tb_id").val(data.d["RequestID"]);
+                $("#tab_detail_header").html(data.d["RequestNo"]);
+                $("#tb_department_name").val(data.d["DepartmentName"]);
+                $("#ddl_meetingtype").val(data.d["RequestType"]);
+                $("#tb_meeting_title").val(data.d["RequestTitle"]);
+                $("#tb_Description").val(data.d["Description"]);
+                $("#tb_Remark").val(data.d["Remark"]);
+                $("#tb_request_no").val(data.d["RequestNo"]);
+                $("#dt_requeston").val(data.d["RequestOn"]);
+                $("#ddl_requeststatus").val(data.d["RequestStatus"]);
+                $("#lbl_created").text("Created By : " + data.d["CUserCode"] + " on " + JsonDateToFormat(data.d["CreatedOn"], 'DD/MM/YYYY HH:mm'));
+                $("#lbl_modified").text("Modified By : " + data.d["MUserCode"] + " on " + JsonDateToFormat(data.d["ModifiedOn"], 'DD/MM/YYYY HH:mm'));
+                            
+
+                var req_on = new Date(JsonDateToFormat(data.d["RequestOn"], 'YYYY-MM-DD'));
+                $("#dt_requeston").dxDateBox({
+                    type: "date",
+                    value: req_on,
+                });
+
+                Load_Request_Item(data.d["RequestID"]);
+                Load_Request_Decisions(data.d["RequestID"]);
+
+
+                $("#hf_requestbyId").val(data.d["RequestBy"]);
+                $("#ddl_requestby").dxLookup('instance').option('value', $("#hf_requestbyId").val());
+
+                ShowSuccessMessage("Loaded.");
+
+            }
+            else {
+                ShowBoxMessage("Oops, we can't find the record. ");
+            }
+
         },
         error: function (xhr, msg) {
             LogJSError('Web Service Fail: ' + msg + '\n' + xhr.responseText);

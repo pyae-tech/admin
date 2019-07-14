@@ -1667,6 +1667,8 @@
     <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterDepartment\pageDepartment.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterPosition\pagePosition.aspx" />
     <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterPosition\pagePosition.js" />
+    <Content Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETRequests.aspx" />
+    <Content Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETRequests.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETReuest.aspx" />
     <Content Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETReuest.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\crmActivityPlugin\controlActivity.ascx" />
@@ -4544,6 +4546,13 @@
     </Compile>
     <Compile Include="PortalAdministration\userInterfaces\moduleMaster\masterPosition\pagePosition.aspx.designer.cs">
       <DependentUpon>pagePosition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETRequests.aspx.cs">
+      <DependentUpon>pageMETRequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETRequests.aspx.designer.cs">
+      <DependentUpon>pageMETRequests.aspx</DependentUpon>
     </Compile>
     <Compile Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETReuest.aspx.cs">
       <DependentUpon>pageMETReuest.aspx</DependentUpon>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LINQ_Meeting">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 12.5" name="LINQ_Meeting">
   <DataContextMoniker Name="/LINQ_MeetingDataContext" />
   <nestedChildShapes>
     <classShape Id="fac38373-2d70-43e4-aa92-f4c55b06e679" absoluteBounds="1.125, 0.75, 2, 4.8477197265625">
@@ -30,6 +30,12 @@
       <DataClassMoniker Name="/LINQ_MeetingDataContext/MET_RequestDecisionView" />
       <nestedChildShapes>
         <elementListCompartment Id="8f3aea59-a3cf-40b9-9e56-908fd90bfe7b" absoluteBounds="3.64, 4.335, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="26cf0e51-f232-49ad-84d9-7abf16f31ebe" absoluteBounds="1, 6, 2, 6.1938297526041657">
+      <DataClassMoniker Name="/LINQ_MeetingDataContext/MET_RequestView" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cdf3e505-8221-43e8-8d35-a34f19e22b18" absoluteBounds="1.0150000000000001, 6.46, 1.9700000000000002, 5.6338297526041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
