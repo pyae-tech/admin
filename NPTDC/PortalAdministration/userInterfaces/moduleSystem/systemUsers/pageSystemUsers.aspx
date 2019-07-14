@@ -14,7 +14,7 @@
     <!--Page Title-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <div id="page-title">
-        <h1 class="page-header text-overflow">ဝန်ထမ်းများ</h1>
+        <h1 class="page-header text-overflow"><i class="ion-person-stalker"></i> ဝန်ထမ်းများ</h1>
     </div>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--End page title-->

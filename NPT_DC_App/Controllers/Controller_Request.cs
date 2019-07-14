@@ -1,6 +1,7 @@
 ﻿using NPT_DC_App.LINQs;
 using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 using System.Web;
 using System.Web.Script.Serialization;
@@ -273,6 +274,53 @@ namespace NPT_DC_App.Controllers
             return (from c in dc.MET_RequestViews where c.RequestID == meeting_reqID && c.Active == true select c).FirstOrDefault();
         }
 
+        public static string DeleteRequest(string meetingreq_id, string user_id, string RequestID)
+        {
+            //Security Check
+            if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, RequestID, "delete")) throw new Exception("No Access.");
+
+            LINQ_MeetingDataContext dc = new LINQ_MeetingDataContext();
+            try
+            {
+                MET_Request request_record = new MET_Request();
+                request_record = (from c in dc.MET_Requests where c.RequestID == meetingreq_id && c.Active == true select c).FirstOrDefault();
+                if (request_record == null)
+                    return "Error~We can't find";
+                request_record.Active = false;
+                request_record.ModifiedOn = DateTime.Now;
+                request_record.ModifiedBy = user_id;
+                request_record.LastAction = Guid.NewGuid().ToString();
+
+                #region Request Item
+                List<MET_RequestItem> item_list = new List<MET_RequestItem>();
+                item_list = (from c in dc.MET_RequestItems where c.RequestID == meetingreq_id && c.Active == true select c).ToList();
+                foreach (MET_RequestItem i in item_list)
+                {
+                    i.Active = false;
+                    i.ModifiedBy = RequestID;
+                    i.ModifiedOn = DateTime.Now;
+                }
+                #endregion
+
+                #region Request Decision
+                List<MET_RequestDecision> decision_list = new List<MET_RequestDecision>();
+                decision_list = (from c in dc.MET_RequestDecisions where c.RequestID == meetingreq_id && c.Active == true select c).ToList();
+                foreach (MET_RequestDecision i in decision_list)
+                {
+                    i.Active = false;
+                    i.ModifiedBy = RequestID;
+                    i.ModifiedOn = DateTime.Now;
+                }
+                #endregion
+
+                dc.SubmitChanges(ConflictMode.ContinueOnConflict);
+                return "Success~";
+            }
+            catch (ChangeConflictException ex)
+            {
+                return "Success~";
+            }
+        }
 
         static decimal convertToDecimal(string value)
         {
