@@ -60,11 +60,8 @@
 
                                                 <label for="ddl_meetingtype" class="col-md-3 control-label" data-translate="">အစည်းအဝေး</label>
                                                 <div class="col-md-9">
-                                                    <select id="ddl_meetingtype" class="form-control">
-                                                        <option selected>EC</option>
-                                                        <option>Management</option>
-                                                        <option>Other Type</option>
-                                                    </select>
+                                                       <input type="hidden" id="hf_meetingtype" value="" />
+                                                    <div id="ddl_meetingtype"></div>
                                                 </div>
                                             </div>
 
@@ -86,11 +83,8 @@
 
                                                 <label for="ddl_requeststatus" class="col-md-3 control-label" data-translate="">အခြေအနေ</label>
                                                 <div class="col-md-9">
-                                                    <select id="ddl_requeststatus" class="form-control">
-                                                        <option>New</option>
-                                                        <option>Pending</option>
-                                                        <option>Complete</option>
-                                                    </select>
+                                                        <input type="hidden" id="hf_requeststatus" value="" />
+                                                    <div id="ddl_requeststatus"></div>
 
                                                 </div>
                                             </div>

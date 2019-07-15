@@ -196,7 +196,7 @@ namespace NPT_DC_App.Controllers
 
             LINQ_SystemDataContext dc = new LINQ_SystemDataContext();
             List<SYS_UserView> user_list = (from c in dc.SYS_UserViews
-                                            where c.Active == true && c.OrgID == org_id
+                                            where c.Active == true /*&& c.OrgID == org_id*/
                                             orderby c.UserName
                                             select new SYS_UserView
                                             {

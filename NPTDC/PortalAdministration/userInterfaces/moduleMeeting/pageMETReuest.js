@@ -30,6 +30,38 @@ $("#dt_requeston").dxDateBox({
     }
 });
 
+var meeting_type_list = ["EC", "Management", "Other Type"];
+$("#ddl_meetingtype").dxLookup({
+    items: meeting_type_list,
+    value: meeting_type_list[0],
+    showPopupTitle: false,
+    onValueChanged: function (e) {
+        if (e.value === "null" || e.value == null) {
+            $("#hf_meetingtype").val("");
+        }
+        else {
+            $("#hf_meetingtype").val($("#ddl_meetingtype").dxLookup("instance").option('value'));
+           
+        }
+    }
+});
+
+var request_status = ["New", "Pending", "Agenda"];
+$("#ddl_requeststatus").dxLookup({
+    items: request_status,
+    value: request_status[0],
+    showPopupTitle: false,
+    onValueChanged: function (e) {
+        if (e.value === "null" || e.value == null) {
+            $("#hf_requeststatus").val("");
+        }
+        else {
+            $("#hf_requeststatus").val($("#ddl_requeststatus").dxLookup("instance").option('value'));
+
+        }
+    }
+});
+
 function ConvertDate(sdate) {
     const date = new Date(sdate);
     var month = date.getMonth() + 1;
@@ -52,9 +84,8 @@ function LoadNew() {
     $("#tb_Remark").val("");
     $("#tb_request_no").val("");
     $("#dt_requeston").val("");
-    $("#ddl_requeststatus").val("");
     $('#ddl_requestby').val("");
-
+    
     arr_request_item = [];
     arr_request_decision = [];
 
@@ -62,6 +93,15 @@ function LoadNew() {
     var request_on_date = ConvertDate(new Date());
     Load_Request_Item("");
     Load_Request_Decisions("");
+
+    $("#hf_requestbyId").val(get_current_user_id());
+    $("#ddl_requestby").dxLookup('instance').option('value', $("#hf_requestbyId").val());
+    
+    $("#hf_requeststatus").val("New");
+    $("#ddl_requeststatus").dxLookup('instance').option('value', $("#hf_requeststatus").val());
+    
+    $("#hf_meetingtype").val("EC");
+    $("#ddl_meetingtype").dxLookup('instance').option('value', $("#hf_meetingtype").val());
 
 }
 
@@ -423,11 +463,11 @@ function SaveRequest() {
         data: "{ " +
             "'RequestID':'" + $("#tb_id").val() + "' " +
             ",'DepartmentID':'" + get_current_user_DepartmentID() + "' " +
-            ",'RequestType':'" + $("#ddl_meetingtype").val() + "' " +
+            ",'RequestType':'" + $("#hf_meetingtype").val() + "' " +
             ",'RequestNo':'" + $("#tb_request_no").val() + "' " +
             ",'RequestBy':'" + requestby_id + "' " +
             ",'RequestTitle':'" + $('#tb_meeting_title').val() + "' " +
-            ",'RequestStatus':'" + $('#ddl_requeststatus').val() + "' " +
+            ",'RequestStatus':'" + $("#hf_requeststatus").val() + "' " +
             ",'RequestOn':'" + request_on_date + "' " +
             ",'MeetingID':'" + "" + "' " +
             ",'Remark':'" + esc_quot($('#tb_Remark').val()) + "' " +
@@ -477,13 +517,13 @@ function GetRequest(id) {
                 $("#tb_id").val(data.d["RequestID"]);
                 $("#tab_detail_header").html(data.d["RequestNo"]);
                 $("#tb_department_name").val(data.d["DepartmentName"]);
-                $("#ddl_meetingtype").val(data.d["RequestType"]);
+                $("#ddl_meetingtype").val();
                 $("#tb_meeting_title").val(data.d["RequestTitle"]);
                 $("#tb_Description").val(data.d["Description"]);
                 $("#tb_Remark").val(data.d["Remark"]);
                 $("#tb_request_no").val(data.d["RequestNo"]);
                 $("#dt_requeston").val(data.d["RequestOn"]);
-                $("#ddl_requeststatus").val(data.d["RequestStatus"]);
+                $("#ddl_requeststatus").val();
                 $("#lbl_created").text("စာရင်းသွင်းသူ : " + data.d["CUserCode"] + " on " + JsonDateToFormat(data.d["CreatedOn"], 'DD/MM/YYYY HH:mm'));
                 $("#lbl_modified").text("ပြင်ဆင်သူ : " + data.d["MUserCode"] + " on " + JsonDateToFormat(data.d["ModifiedOn"], 'DD/MM/YYYY HH:mm'));
                             
@@ -497,6 +537,11 @@ function GetRequest(id) {
                 Load_Request_Item(data.d["RequestID"]);
                 Load_Request_Decisions(data.d["RequestID"]);
 
+                $("#hf_requeststatus").val(data.d["RequestStatus"]);
+                $("#ddl_requeststatus").dxLookup('instance').option('value', $("#hf_requeststatus").val());
+
+                $("#hf_meetingtype").val(data.d["RequestType"]);
+                $("#ddl_meetingtype").dxLookup('instance').option('value', $("#hf_meetingtype").val());
 
                 $("#hf_requestbyId").val(data.d["RequestBy"]);
                 $("#ddl_requestby").dxLookup('instance').option('value', $("#hf_requestbyId").val());
