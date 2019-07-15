@@ -1,17 +1,17 @@
-﻿//$.cookie('userid', '', { expires: 1, path: '/' });
-//$.cookie('usercode', '', { expires: 1, path: '/' });
-//$.cookie('username', '', { expires: 1, path: '/' });
-//$.cookie('refid', '', { expires: 1, path: '/' });
-//$.cookie('reftype', '', { expires: 1, path: '/' });
-//$.cookie('StoreName', '', { expires: 1, path: '/' });
-//$.cookie('StoreCode', '', { expires: 1, path: '/' });
+﻿$.cookie('userid', '', { expires: 1, path: '/' });
+$.cookie('usercode', '', { expires: 1, path: '/' });
+$.cookie('username', '', { expires: 1, path: '/' });
+$.cookie('refid', '', { expires: 1, path: '/' });
+$.cookie('reftype', '', { expires: 1, path: '/' });
+$.cookie('StoreName', '', { expires: 1, path: '/' });
+$.cookie('StoreCode', '', { expires: 1, path: '/' });
 
-//$.cookie('roleid', "", { expires: 1, path: '/' });
-//$.cookie('rolename', "", { expires: 1, path: '/' });
-//$.cookie('rolemenu', "", { expires: 1, path: '/' });
-//$.cookie('orgName', "", { expires: 1, path: '/' });
-//$.cookie('orgID', "", { expires: 1, path: '/' });
-//$.cookie('orgCode', "", { expires: 1, path: '/' });
+$.cookie('roleid', "", { expires: 1, path: '/' });
+$.cookie('rolename', "", { expires: 1, path: '/' });
+$.cookie('rolemenu', "", { expires: 1, path: '/' });
+$.cookie('orgName', "", { expires: 1, path: '/' });
+$.cookie('orgID', "", { expires: 1, path: '/' });
+$.cookie('orgCode', "", { expires: 1, path: '/' });
 
 $('title').html("Login");
 $('#usercode').focus();
@@ -152,7 +152,7 @@ function ForgotPassword() {
     }
     else {
         $.ajax({
-            url: baseUrl() + "WebServices/WebService_ForgtPassword.asmx/ForgotPassword",
+            url: baseUrl() + "WebServices/WebService_System.asmx/ForgotPassword",
             data: "{ " +
             "'to_mail':'" + $('#forgot_mail').val() + "' " +
             " }",
