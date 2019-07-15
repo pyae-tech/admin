@@ -10,6 +10,38 @@ if (GetURLData('id') != null && GetURLData('id') != "") {
     GetRequest(GetURLData('id'));
 }
 else {
+    var meeting_type_list = ["EC", "Management", "Other Type"];
+    $("#ddl_meetingtype").dxLookup({
+        items: meeting_type_list,
+        value: meeting_type_list[0],
+        showPopupTitle: false,
+        onValueChanged: function (e) {
+            if (e.value === "null" || e.value == null) {
+                $("#hf_meetingtype").val("");
+            }
+            else {
+                $("#hf_meetingtype").val($("#ddl_meetingtype").dxLookup("instance").option('value'));
+
+            }
+        }
+    });
+
+    var request_status = ["New", "Pending", "Agenda"];
+    $("#ddl_requeststatus").dxLookup({
+        items: request_status,
+        value: request_status[0],
+        showPopupTitle: false,
+        onValueChanged: function (e) {
+            if (e.value === "null" || e.value == null) {
+                $("#hf_requeststatus").val("");
+            }
+            else {
+                $("#hf_requeststatus").val($("#ddl_requeststatus").dxLookup("instance").option('value'));
+
+            }
+        }
+    });
+
     LoadNew();
 
 }
@@ -95,7 +127,7 @@ function LoadNew() {
     Load_Request_Decisions("");
 
     $("#hf_requestbyId").val(get_current_user_id());
-    $("#ddl_requestby").dxLookup('instance').option('value', $("#hf_requestbyId").val());
+    //$("#ddl_requestby").dxLookup('instance').option('value', $("#hf_requestbyId").val());
     
     $("#hf_requeststatus").val("New");
     $("#ddl_requeststatus").dxLookup('instance').option('value', $("#hf_requeststatus").val());
