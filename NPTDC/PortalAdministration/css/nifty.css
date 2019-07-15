@@ -5759,6 +5759,7 @@ button.list-group-item .list-group-item-heading {
     background-color: #fff !important;
     border-color: transparent !important;
     color: #1976d2 !important;
+    font-size:15px !important;
 }
 .list-group-item.active .list-group-item-text,
 .list-group-item.active:hover .list-group-item-text,
