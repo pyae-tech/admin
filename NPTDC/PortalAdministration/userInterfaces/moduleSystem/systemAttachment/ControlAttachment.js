@@ -7,15 +7,11 @@
 }
 function UploadAttachment() {
     switch (request_attachment_type) {
-       case "Daily Expense":
-            window.open('attachment?id=' + request_attachment_id + '&No=' + request_attachment_no+ '&UserId=' + get_current_user_id() + '&refType=expense', '_blank');
+       case "Request":
+            window.open('attachment?id=' + request_attachment_id + '&No=' + request_attachment_no+ '&UserId=' + get_current_user_id() + '&refType=request', '_blank');
              break;
 
-        case "Daily Income":
-            window.open('attachment?id=' + request_attachment_id + '&No=' + request_attachment_no+ '&UserId=' + get_current_user_id() + '&refType=income', '_blank');
-            break;
-
-        case "Assess":
+       case "Assess":
             window.open('attachment?id=' + request_attachment_id + '&No=' + request_attachment_no + '&UserId=' + get_current_user_id() + '&refType=assess', '_blank');
             break;
 
@@ -122,16 +118,14 @@ function generate_Attachment_list(records) {
         rowindex++;
         
         the_template = $('#template_Attachment_row').html();
-        //if (records[key]['ImageName'].split('/')[1] != undefined) {
-        //    $("#img_plugin").append("<option  data-img-src='http://" + records[key]['Path']+"' value='"+ data.d[key]['ItemTypeID'] + "'>" + records[key]['ImageName'].split('/')[0] + "</option>");
-           
+       
         allCardsCode += the_template.replace()
             //.replace("[Path]", records[key]['Path'].substring(records[key]['Path'].indexOf('/'), records[key]['Path'].length))
             .replace("[Path]", "https://" + records[key]['Path'])
             .replace("[Path]", "https://" + records[key]['Path'])            //.replace("[Path]", "http://" + records[key]['Path'])
             .replace("[ID]", records[key]['ID'])
-            .replace("[File]", records[key]['ImageName'].split('/')[0]);
-                //.replace("[Size]", records[key]['ImageName'].split('/')[1] == "" ? "" : records[key]['ImageName'].split('/')[1]);
+            .replace("[File]", records[key]['ImageName'].split('/')[0])
+            .replace("[Size]", records[key]['ImageName'].split('/')[1] == "" ? "" : records[key]['ImageName'].split('/')[1]);
         //}
     });
 
@@ -140,38 +134,40 @@ function generate_Attachment_list(records) {
     }
     else {
         $('#attachment_box_header').show();
+        $('#attach_pdf').css("display","bolck");
 
     }
 
     $('#table_attachment_list').empty();
     $('#table_attachment_list').append(allCardsCode);
 
-    $(".image-checkbox").each(function () {
-        if ($(this).find('input[type="checkbox"]').first().attr("checked")) {
-            $(this).addClass('image-checkbox-checked');
-        }
-        else {
-            $(this).removeClass('image-checkbox-checked');
-        }
-    });   
-    $(".image-checkbox").on("click", function (e) {
-        $(this).toggleClass('image-checkbox-checked');
-        var $checkbox = $(this).find('input[type="checkbox"]');
-        $checkbox.prop("checked", !$checkbox.prop("checked"));
-        var id = e.currentTarget.id;
-        if ($checkbox.prop("checked")) {
-            Images.push(e.currentTarget.children[0].currentSrc);
-        }
-        else {
-            for (var i = 0; i < Images.length; i++) {
-                if (Images[i] === e.currentTarget.children[0].currentSrc) {
-                    Images.splice(i, 1);
-                }
-            }
-        }
+    //$(".image-checkbox").each(function () {
+    //    if ($(this).find('input[type="checkbox"]').first().attr("checked")) {
+    //        $(this).addClass('image-checkbox-checked');
+    //    }
+    //    else {
+    //        $(this).removeClass('image-checkbox-checked');
+    //    }
+    //});   
+    //$(".image-checkbox").on("click", function (e) {
+    //    $(this).toggleClass('image-checkbox-checked');
+    //    var $checkbox = $(this).find('input[type="checkbox"]');
+    //    $checkbox.prop("checked", !$checkbox.prop("checked"));
+    //    var id = e.currentTarget.id;
+    //    if ($checkbox.prop("checked")) {
+    //        Images.push(e.currentTarget.children[0].currentSrc);
+    //    }
+    //    else {
+    //        for (var i = 0; i < Images.length; i++) {
+    //            if (Images[i] === e.currentTarget.children[0].currentSrc) {
+    //                Images.splice(i, 1);
+    //            }
+    //        }
+    //    }
         
-        e.preventDefault();
-    });
+    //    e.preventDefault();
+    //});
+
     //$("#demo_img").unitegallery({
     //    tile_border_color: "#7a7a7a",
     //    tile_outline_color: "#8B8B8B",

@@ -1668,10 +1668,10 @@
     <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterDepartment\pageDepartmentDetail.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterPosition\pagePosition.aspx" />
     <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterPosition\pagePosition.js" />
-    <Content Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETRequests.aspx" />
-    <Content Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETRequests.js" />
-    <Content Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETReuest.aspx" />
-    <Content Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETReuest.js" />
+    <Content Include="PortalAdministration\userInterfaces\moduleMeeting\meetingRequest\pageMETRequests.aspx" />
+    <Content Include="PortalAdministration\userInterfaces\moduleMeeting\meetingRequest\pageMETRequests.js" />
+    <Content Include="PortalAdministration\userInterfaces\moduleMeeting\meetingRequest\pageMETReuest.aspx" />
+    <Content Include="PortalAdministration\userInterfaces\moduleMeeting\meetingRequest\pageMETReuest.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\crmActivityPlugin\controlActivity.ascx" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\crmActivityPlugin\controlActivity.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\login\pagechangePassword.js" />
@@ -4557,18 +4557,18 @@
     <Compile Include="PortalAdministration\userInterfaces\moduleMaster\masterPosition\pagePosition.aspx.designer.cs">
       <DependentUpon>pagePosition.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETRequests.aspx.cs">
+    <Compile Include="PortalAdministration\userInterfaces\moduleMeeting\meetingRequest\pageMETRequests.aspx.cs">
       <DependentUpon>pageMETRequests.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETRequests.aspx.designer.cs">
+    <Compile Include="PortalAdministration\userInterfaces\moduleMeeting\meetingRequest\pageMETRequests.aspx.designer.cs">
       <DependentUpon>pageMETRequests.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETReuest.aspx.cs">
+    <Compile Include="PortalAdministration\userInterfaces\moduleMeeting\meetingRequest\pageMETReuest.aspx.cs">
       <DependentUpon>pageMETReuest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PortalAdministration\userInterfaces\moduleMeeting\pageMETReuest.aspx.designer.cs">
+    <Compile Include="PortalAdministration\userInterfaces\moduleMeeting\meetingRequest\pageMETReuest.aspx.designer.cs">
       <DependentUpon>pageMETReuest.aspx</DependentUpon>
     </Compile>
     <Compile Include="PortalAdministration\userInterfaces\moduleSystem\crmActivityPlugin\controlActivity.ascx.cs">
@@ -4847,6 +4847,7 @@
     <Folder Include="PortalAdministration\img\ItemType_Images\" />
     <Folder Include="PortalAdministration\img\Item_Barcode\" />
     <Folder Include="PortalAdministration\img\Item_Images\" />
+    <Folder Include="PortalAdministration\img\Request_Attachment\" />
     <Folder Include="PortalAdministration\img\Service_Images\" />
     <Folder Include="PortalAdministration\img\User_Images\" />
     <Folder Include="PortalAdministration\plugins\flot-charts\examples\gauge\" />
@@ -4860,6 +4861,7 @@
     <Folder Include="PortalAdministration\plugins\moment\src\lib\utils\" />
     <Folder Include="PortalAdministration\plugins\moment\src\locale\" />
     <Folder Include="PortalAdministration\plugins\moment\templates\" />
+    <Folder Include="PortalAdministration\userInterfaces\moduleMeeting\meetingAgenda\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

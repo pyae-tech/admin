@@ -102,7 +102,7 @@ function LoadNew() {
     
     $("#hf_meetingtype").val("EC");
     $("#ddl_meetingtype").dxLookup('instance').option('value', $("#hf_meetingtype").val());
-
+    new_Attachment();
 }
 
 GetAllUser();
@@ -533,10 +533,14 @@ function GetRequest(id) {
                     type: "date",
                     value: req_on,
                 });
+                request_attachment_id = data.d["RequestID"];
+                request_attachment_type = "request";
+                request_attachment_no = data.d["RequestNo"];
+                Load_Attachment();
 
                 Load_Request_Item(data.d["RequestID"]);
                 Load_Request_Decisions(data.d["RequestID"]);
-
+               
                 $("#hf_requeststatus").val(data.d["RequestStatus"]);
                 $("#ddl_requeststatus").dxLookup('instance').option('value', $("#hf_requeststatus").val());
 
@@ -546,6 +550,8 @@ function GetRequest(id) {
                 $("#hf_requestbyId").val(data.d["RequestBy"]);
                 $("#ddl_requestby").dxLookup('instance').option('value', $("#hf_requestbyId").val());
 
+                //Attachment-----------------------------------------
+                
                 ShowSuccessMessage("Loaded.");
 
             }
@@ -569,4 +575,8 @@ function GoToLog() {
     } else {
         window.open('logs?id=' + $("#tb_id").val(), '_blank');
     }
+}
+
+function UploadAttachment() {
+    window.open('attachment?id=' + $("#tb_id").val() + '&No=' + $('#tb_request_no').val() + '&UserId=' + get_current_user_id() + '&refType=request', '_blank');
 }
