@@ -29,6 +29,7 @@ namespace NPT_DC_App.Controllers
                     case "department":
                         delete_result = DeleteImages(RefID, RefType, UserID);
                         break;
+                   
                     default:
                         delete_result = "Success~";
                         break;

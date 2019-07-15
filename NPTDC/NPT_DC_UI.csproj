@@ -4847,6 +4847,7 @@
     <Folder Include="PortalAdministration\img\ItemType_Images\" />
     <Folder Include="PortalAdministration\img\Item_Barcode\" />
     <Folder Include="PortalAdministration\img\Item_Images\" />
+    <Folder Include="PortalAdministration\img\Request_Attachment\" />
     <Folder Include="PortalAdministration\img\Service_Images\" />
     <Folder Include="PortalAdministration\img\User_Images\" />
     <Folder Include="PortalAdministration\plugins\flot-charts\examples\gauge\" />
