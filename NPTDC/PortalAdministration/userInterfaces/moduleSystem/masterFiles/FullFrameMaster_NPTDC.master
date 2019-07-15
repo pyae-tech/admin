@@ -28,7 +28,7 @@
         <!--Submenu-->
         <ul class="collapse" id="menu_meeting_group">
             <li id="menu_request_letter"><a href="requests"><span data-translate="">အမှာစာ ပြုစုခြင်း</span></a></li>
-            <li id="menu_agenda"><a href="departments"><span data-translate="">အမှာစာ စုစည်းခြင်း</span></a></li>
+            <li id="menu_agenda"><a href="agenda"><span data-translate="">အမှာစာ စုစည်းခြင်း</span></a></li>
             <li id="menu_meetings"><a href="positions"><span data-translate="">အစည်းအဝေး မှတ်တမ်း</span></a></li>
             <li class="list-divider"></li>
             <li id="menu_notification"><a href="programs"><span data-translate="">Notification</span></a></li>
