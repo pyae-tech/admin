@@ -1,4 +1,7 @@
 ﻿$('title').html(get_current_organization_title() + "Change Password");
+$('#profile-nav').addClass('in');
+$('#menu_system_change_password').addClass('active');
+
 
 function ChangePassword() {
     
@@ -21,7 +24,9 @@ function ChangePassword() {
             success: function (data) {
 
                 if (data.d.toString().split('~')[0] == "Success") {
+                    $.cookie('usercode', "", { expires: 1, path: '/' });
                     ShowSuccessMessage("Successfully changed password");
+                   
                     GotoPage('Portal/login');
 
                 }

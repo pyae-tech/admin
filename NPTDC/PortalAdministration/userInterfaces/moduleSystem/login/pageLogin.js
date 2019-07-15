@@ -152,7 +152,7 @@ function ForgotPassword() {
     }
     else {
         $.ajax({
-            url: baseUrl() + "WebServices/WebService_ForgtPassword.asmx/ForgotPassword",
+            url: baseUrl() + "WebServices/WebService_System.asmx/ForgotPassword",
             data: "{ " +
             "'to_mail':'" + $('#forgot_mail').val() + "' " +
             " }",
