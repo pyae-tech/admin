@@ -4,8 +4,8 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_CSS" runat="server">
-    <link href='<%=ResolveUrl("../../plugins/WidgetsGallery/css/dx.common.css")%>' rel="stylesheet" />
-    <link href='<%=ResolveUrl("../../plugins/WidgetsGallery/css/dx.light.css")%>' rel="stylesheet" />
+    <link href='<%=ResolveUrl("../../../plugins/WidgetsGallery/css/dx.common.css")%>' rel="stylesheet" />
+    <link href='<%=ResolveUrl("../../../plugins/WidgetsGallery/css/dx.light.css")%>' rel="stylesheet" />
 
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder_TopLeftMenu" runat="server">
@@ -187,11 +187,12 @@
 
         </div>
     </div>
+ 
 
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder_JS" runat="server">
-    <script src='<%=ResolveUrl("../../plugins/WidgetsGallery/js/jszip.min.js")%>'></script>
-    <script src='<%=ResolveUrl("../../plugins/WidgetsGallery/js/dx.all.js")%>'></script>
-    <script src='<%= ResolveUrl("../moduleSystem/systemAttachment/ControlAttachment.js")%>'></script>
+    <script src='<%=ResolveUrl("../../../plugins/WidgetsGallery/js/jszip.min.js")%>'></script>
+    <script src='<%=ResolveUrl("../../../plugins/WidgetsGallery/js/dx.all.js")%>'></script>
+    <script src='<%= ResolveUrl("../../moduleSystem/systemAttachment/ControlAttachment.js")%>'></script>
     <script src='<%= ResolveUrl("pageMETReuest.js")%>'></script>
 </asp:Content>

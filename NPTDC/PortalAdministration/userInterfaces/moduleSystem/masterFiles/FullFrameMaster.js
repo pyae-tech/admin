@@ -89,7 +89,7 @@ if ($.cookie('userid') == null ||
 else {
     $('.lbl_shopname').html($.cookie('StoreName'));
     $('.username').html($.cookie('username'));
-    $('.useremail').html($.cookie('orgName'));
+    $('.useremail').html($.cookie('DepartmentName'));
     $('.usertype').html($.cookie('reftype'));
     $('.orgname').html($.cookie('orgName'));
     $('.user').html($.cookie('username'));
