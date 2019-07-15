@@ -20,6 +20,7 @@ var request_on_date = ConvertDate(new Date());
 $("#dt_requeston").dxDateBox({
     applyValueMode: "useButtons",
     displayFormat: "yyyy/MM/dd",
+ 
     type: "date",
     value: new Date(),
     max: new Date(),
@@ -151,9 +152,18 @@ function Bind_RequestItems(data) {
     if (data == undefined) { data = []; }
 
     $("#gc_RequestItems").dxDataGrid({
+        rowAlternationEnabled: true,
         dataSource: data,
+        height: 300,
+
+        searchPanel: true,
         keyExpr: "RequestItemID",
         showBorders: true,
+        showRowLines: true,
+        wordWrapEnabled: true,
+        loadPanel: {
+            enabled: true
+        },  
         paging: {
             enabled: false
         },
@@ -161,16 +171,28 @@ function Bind_RequestItems(data) {
             mode: "row",
             allowUpdating: true,
             allowDeleting: true,
-            allowAdding: true
+            allowAdding: true,
+            useIcons: true
         },
         columns: [
+            
             {
-                dataField: "RequestItem",
-                caption: "အကြောင်းအရာ"
+                dataField: "Seq",  
+                width: 50,
+                caption: "စဉ်",
+                cssClass: 'cls' 
             },
             {
-                dataField: "Seq",
-                width: 130
+                dataField: "RequestItem",
+                caption: "အကြောင်းအရာ အချက်အလက်များ ရေးပါ။",
+                
+                cssClass: 'cls' 
+            },
+            {
+                type: "buttons",
+                width: 110,
+                cssClass: 'cls',
+                caption: "..."
             }
         ],
         onRowInserted: function (e) {
@@ -181,6 +203,21 @@ function Bind_RequestItems(data) {
         },
         onRowRemoving: function (e) {
             delete_request_item(e.data);
+        },
+        onEditorPreparing(e) {
+            //https://www.devexpress.com/Support/Center/Question/Details/T745986/datagrid-how-to-enable-word-wrap-for-an-editor
+            //https://www.devexpress.com/Support/Center/Question/Details/T719445/datagrid-dxtextarea-does-not-allow-an-end-user-to-enter-a-new-line
+            if (e.dataField == "RequestItem") {
+                e.editorName = "dxTextArea";
+                e.editorOptions.height = 100;
+                e.editorOptions.onKeyDown = function (e) {
+                    var event = e.event;
+                    if (event.key === "Enter" && !event.shiftKey) {
+                        event.stopPropagation();
+                    }
+                };
+            }
+
         }
     });
 }
@@ -248,7 +285,15 @@ function Bind_RequestDecisions(data) {
     $("#gc_RequestDescription").dxDataGrid({
         dataSource: data,
         keyExpr: "RequestDecisionID",
+        searchPanel: true,
+        height: 300,
+        wordWrapEnabled: true,
         showBorders: true,
+        showRowLines: true,
+        loadPanel: {
+            enabled: true
+        }, 
+        rowAlternationEnabled: true,
         paging: {
             enabled: false
         },
@@ -256,18 +301,29 @@ function Bind_RequestDecisions(data) {
             mode: "row",
             allowUpdating: true,
             allowDeleting: true,
-            allowAdding: true
+            allowAdding: true,
+            useIcons: true
         },
         columns: [
             {
+                dataField: "Seq",
+                width: 50,
+                caption: "စဉ်",
+                cssClass: 'cls' 
+            } ,
+            {
                 dataField: "Description",
-                caption: "ဆုံးဖြတ်ရန်အချက်",
-                height:400
+                caption: "ဆုံးဖြတ်ရန် အချက်များ ရေးပါ။",
+                cssClass: 'cls' 
+                
             },
             {
-                dataField: "Seq",
-                width: 130
-            }
+                type: "buttons",
+                width: 110,
+                cssClass: 'cls',
+                caption: "...",
+            },
+            
         ],
         onRowInserted: function (e) {
             add_request_decision(e.data);
@@ -277,6 +333,21 @@ function Bind_RequestDecisions(data) {
         },
         onRowRemoving: function (e) {
             delete_request_decision(e.data);
+        },
+        onEditorPreparing(e) {
+            //https://www.devexpress.com/Support/Center/Question/Details/T745986/datagrid-how-to-enable-word-wrap-for-an-editor
+            //https://www.devexpress.com/Support/Center/Question/Details/T719445/datagrid-dxtextarea-does-not-allow-an-end-user-to-enter-a-new-line
+            if (e.dataField == "Description") {
+                e.editorName = "dxTextArea";
+                e.editorOptions.height = 100;
+                e.editorOptions.onKeyDown = function (e) {
+                    var event = e.event;
+                    if (event.key === "Enter" && !event.shiftKey) {
+                        event.stopPropagation();
+                    }
+                };
+            }
+           
         }
     });
 }

@@ -22,6 +22,15 @@ namespace SBSPortal3.PortalAdministration.userInterfaces.moduleSystem.masterFile
         protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder_CSS;
         
         /// <summary>
+        /// ContentPlaceHolder_TopLeftMenu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder_TopLeftMenu;
+        
+        /// <summary>
         /// ContentPlaceHolder_Header control.
         /// </summary>
         /// <remarks>

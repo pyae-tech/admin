@@ -140,7 +140,7 @@
                                     <div class="col-sm-4 col-md-2">
                                         <div id="ffm_Sale_Book" style="display: none"></div>
                                         <div id="ffm_marketing" style="display: none"></div>
-                                        <div id="ffm_account" style="display: none"> </div>
+                                        <div id="ffm_account" style="display: none"></div>
                                     </div>
                                     <div class="col-sm-4 col-md-2" id="ffm_VanSale" style="display: none"></div>
                                     <div class="col-sm-4 col-md-2" id="ffm_master" style="display: none"></div>
@@ -153,7 +153,8 @@
                                         </div>
                                         <a href="https://www.systematic-solution.com/" class="btn btn-block btn-primary" target="_blank">www.systematic-solution.com</a>
                                     </div>
-                                </div>  <%-- end_row_menu--%>
+                                </div>
+                                <%-- end_row_menu--%>
                             </div>
                         </li>
                         <li>
@@ -175,12 +176,16 @@
                     </ul>
 
                     <%--#region_meun_list_drop_down--%>
-                    <ul class="nav navbar-top-links">                                                
-                         
+                
+                    <ul class="nav navbar-top-links">
+                          <li style="margin-top:15px;">
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder_TopLeftMenu" runat="server">
+                        </asp:ContentPlaceHolder>
+                              </li>
                         <li class="dropdown">
                             <a href="#" data-toggle="dropdown" class="dropdown-toggle">
                                 <i class="ti-info"></i>&nbsp;Notification                             
-                            </a>                           
+                            </a>
                             <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
                                 <div class="nano scrollable">
                                     <div class="nano-content">
@@ -339,14 +344,14 @@
                                 </div>
                             </div>
                         </li>
-                       
+
                         <li id="menu_setting">
                             <a href="#" class="aside-toggle">
                                 <i class="demo-pli-dot-vertical"></i>
                             </a>
                         </li>
                     </ul>
-                   <%-- #region end--%>
+                    <%-- #region end--%>
                 </div>
                 <!--================================-->
                 <!--End Navbar Dropdown-->
@@ -821,7 +826,7 @@
             <!-- Visible when footer positions are static -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <div class="hide-fixed pull-right pad-rgt">
-          နေပြည်တော် စည်ပင်သာယာရေး ကော်မတီ
+                နေပြည်တော် စည်ပင်သာယာရေး ကော်မတီ
             </div>
 
 
@@ -1012,7 +1017,7 @@
                 gutter: 15
             });
         });
- 
+
         function show_more_menu() {
             $('#dialogBox_Detail_Form').modal('show');
         }

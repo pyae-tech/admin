@@ -13556,3 +13556,13 @@
 .dx-diagram-toolbar .dx-format-active:not(.dx-color-format):not(.dx-background-format).dx-button-danger {
   background-color: #c9302c;
 }
+/*Added ruby systematic*/
+.dx-datagrid-headers .cls {
+    color: #fff;
+    background-color: #1976d2;
+    height: 30px;
+}
+
+.dx-datagrid-text-content {
+    padding: 5px;
+}

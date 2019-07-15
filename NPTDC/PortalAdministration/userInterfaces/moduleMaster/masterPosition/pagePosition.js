@@ -250,8 +250,10 @@ function BindTable(data) {
 
         allowColumnReordering: true,
         allowColumnResizing: true,
+        rowAlternationEnabled: true,
         columnResizingMode: "nextColumn",
         columnMinWidth: 50,
+        height: 600,
         columnAutoWidth: true,
         grouping: {
             autoExpandAll: true
@@ -291,10 +293,12 @@ function Build_ColumnHeader() {
         {
             dataField: "PositionName",
             caption: "ရာထူး",
+            cssClass: 'cls',
         },
         {
             dataField: "PositionCode",
             caption: "ကုဒ်",
+            cssClass: 'cls',
 
         },
         {
@@ -304,12 +308,14 @@ function Build_ColumnHeader() {
                 type: "fixedPoint",
                 precision: 0
             },
-            allowHeaderFiltering: false
+            allowHeaderFiltering: false,
+             cssClass: 'cls',
         },
         {
             dataField: "Description",
             caption: "ဖော်ပြချက်",
-            allowHeaderFiltering: false
+            allowHeaderFiltering: false,
+             cssClass: 'cls',
         },
       
     ];

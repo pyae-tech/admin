@@ -36,25 +36,29 @@ function Build_ColumnHeader() {
         {
             dataField: "RequestTitle",
             caption: "ခေါင်းစဉ်",
+            cssClass: 'cls',
         },
         {
             dataField: "RequestType",
             caption: "အမျိုးအစား",
+            cssClass: 'cls',
         },
         {
             dataField: "RequestStatus",
             caption: "Status",
-          
+            cssClass: 'cls',
         },
         {
             dataField: "RequestOn",
             caption: "တင်ပြချိန်",
             dataType: "date",
-            format: 'dd-MM-yyyy'
+            format: 'dd-MM-yyyy',
+            cssClass: 'cls',
         },
         {
             dataField: "RequestUserName",
             caption: "တင်ပြသူ",
+            cssClass: 'cls',
 
         }
         //{
@@ -72,6 +76,12 @@ function BindTable(data) {
     var dataGrid = $("#gc_requestList").dxDataGrid({
         dataSource: result,
         showBorders: true,
+        rowAlternationEnabled: true,
+        showRowLines: true, 
+        height: 500,
+        loadPanel: {
+            enabled: true
+        },   
         keyExpr: "RequestID",
         selection: {
             mode: "single"

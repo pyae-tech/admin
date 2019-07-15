@@ -4,6 +4,11 @@
     <asp:ContentPlaceHolder ID="ContentPlaceHolder_CSS" runat="server">
     </asp:ContentPlaceHolder>
 </asp:Content>
+
+<asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder_TopLeftMenu" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_TopLeftMenu" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Header" runat="server">
     <asp:ContentPlaceHolder ID="ContentPlaceHolder_Header" runat="server">
     </asp:ContentPlaceHolder>

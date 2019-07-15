@@ -52,7 +52,13 @@ function BindTable(data) {
     var result = JSON.parse(data);
     var dataGrid = $("#gridContainer").dxDataGrid({
         dataSource: result,
+        rowAlternationEnabled: true,
+        showRowLines: true,
+        loadPanel: {
+            enabled: true
+        },   
         showBorders: true,
+        focusedRowEnabled: true,
         keyExpr: "DepartmentID",
         selection: {
             mode: "single"
@@ -74,7 +80,7 @@ function BindTable(data) {
             allowedPageSizes: [20, 40, 60],
             showInfo: true
         },
-
+        height: 700,
         allowColumnReordering: true,
         allowColumnResizing: true,
         columnResizingMode: "nextColumn",
@@ -118,20 +124,24 @@ function Build_ColumnHeader() {
         {
             dataField: "DepartmentName",
             caption: "ဌာန အမည်",
+            cssClass: 'cls',
         },
         {
             dataField: "NotifyEmail",
             caption: "အီးမေး(လ်)",
+            cssClass: 'cls',
 
         },
         {
             dataField: "Protocol",
             caption: "Protocol",
+            cssClass: 'cls',
         },
         {
             dataField: "Description",
             caption: "အကြောင်းအရာ",
-            allowHeaderFiltering: false
+            allowHeaderFiltering: false,
+             cssClass: 'cls',
         },
     ];
 }

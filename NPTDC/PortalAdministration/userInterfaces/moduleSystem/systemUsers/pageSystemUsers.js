@@ -43,6 +43,12 @@ function BindTable(data) {
     var dataGrid = $("#gridContainer").dxDataGrid({
         dataSource: result,
         showBorders: true,
+        rowAlternationEnabled: true,
+        showRowLines: true, 
+        focusedRowEnabled: true,
+        loadPanel: {
+            enabled: true
+        },   
         keyExpr: "UserID",
         selection: {
             mode: "single"
@@ -109,29 +115,35 @@ function Build_ColumnHeader() {
         {
             dataField: "UserName",
             caption: "အမည်",
+            cssClass: 'cls',
         },
         {
             dataField: "UserCode",
             caption: "ကုဒ်နံပါတ်",
+            cssClass: 'cls',
 
         },
         {
             dataField: "RoleName",
             caption: "သုံးစွဲခွင့်",
+            cssClass: 'cls',
         },
         {
             dataField: "Email",
             caption: "အီးမေး(လ်)",
+            cssClass: 'cls',
            
         },
         {
             dataField: "DepartmentName",
             caption: "ရာထူး",
+            cssClass: 'cls',
 
         },
         {
             dataField: "PositionName",
             caption: "ဠာန",
+            cssClass: 'cls',
            
         },
        
