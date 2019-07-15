@@ -1670,6 +1670,8 @@
     <Content Include="PortalAdministration\userInterfaces\moduleMaster\masterPosition\pagePosition.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleMeeting\meetingAgenda\pageMeetingAgenda.aspx" />
     <Content Include="PortalAdministration\userInterfaces\moduleMeeting\meetingAgenda\pageMeetingAgenda.js" />
+    <Content Include="PortalAdministration\userInterfaces\moduleMeeting\meetingAgenda\pageMeetingAgendas.aspx" />
+    <Content Include="PortalAdministration\userInterfaces\moduleMeeting\meetingAgenda\pageMeetingAgendas.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleMeeting\meetingRequest\pageMETRequests.aspx" />
     <Content Include="PortalAdministration\userInterfaces\moduleMeeting\meetingRequest\pageMETRequests.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleMeeting\meetingRequest\pageMETReuest.aspx" />
@@ -4565,6 +4567,13 @@
     </Compile>
     <Compile Include="PortalAdministration\userInterfaces\moduleMeeting\meetingAgenda\pageMeetingAgenda.aspx.designer.cs">
       <DependentUpon>pageMeetingAgenda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PortalAdministration\userInterfaces\moduleMeeting\meetingAgenda\pageMeetingAgendas.aspx.cs">
+      <DependentUpon>pageMeetingAgendas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PortalAdministration\userInterfaces\moduleMeeting\meetingAgenda\pageMeetingAgendas.aspx.designer.cs">
+      <DependentUpon>pageMeetingAgendas.aspx</DependentUpon>
     </Compile>
     <Compile Include="PortalAdministration\userInterfaces\moduleMeeting\meetingRequest\pageMETRequests.aspx.cs">
       <DependentUpon>pageMETRequests.aspx</DependentUpon>
