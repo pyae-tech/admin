@@ -52,6 +52,12 @@ namespace NPT_DC_App.WebServices
         {
             return Controllers.Controller_SystemUser.do_logout(isclicklogout,userid);
         }
-      
+
+        [WebMethod]
+        public string ForgotPassword(string to_mail)
+        {
+            return Controllers.Controller_SystemUser.ForgotPassword(to_mail);
+        }
+
     }
 }

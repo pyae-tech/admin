@@ -23,10 +23,13 @@ namespace NPT_DC_App.Controllers
                 string delete_result = "";
                 switch (RefType)
                 {
-                    case "User":
+                    case "user":
                         delete_result = DeleteImages(RefID, RefType, UserID);
                         break;
-                      
+                    case "department":
+                        delete_result = DeleteImages(RefID, RefType, UserID);
+                        break;
+                   
                     default:
                         delete_result = "Success~";
                         break;

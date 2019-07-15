@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PortalAdministration/userInterfaces/moduleSystem/masterFiles/FullFrameMaster_NPTDC.master" AutoEventWireup="true" CodeBehind="pageMETReuest.aspx.cs" Inherits="SBSPortal3.PortalAdministration.userInterfaces.moduleMeeting.pageMETReuest" %>
 
+<%@ Register Src="~/PortalAdministration/userInterfaces/moduleSystem/systemAttachment/ControlAttachment.ascx" TagPrefix="uc1" TagName="ControlAttachment" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_CSS" runat="server">
     <link href='<%=ResolveUrl("../../plugins/WidgetsGallery/css/dx.common.css")%>' rel="stylesheet" />
     <link href='<%=ResolveUrl("../../plugins/WidgetsGallery/css/dx.light.css")%>' rel="stylesheet" />
@@ -60,11 +63,8 @@
 
                                                 <label for="ddl_meetingtype" class="col-md-3 control-label" data-translate="">အစည်းအဝေး</label>
                                                 <div class="col-md-9">
-                                                    <select id="ddl_meetingtype" class="form-control">
-                                                        <option selected>EC</option>
-                                                        <option>Management</option>
-                                                        <option>Other Type</option>
-                                                    </select>
+                                                       <input type="hidden" id="hf_meetingtype" value="" />
+                                                    <div id="ddl_meetingtype"></div>
                                                 </div>
                                             </div>
 
@@ -86,11 +86,8 @@
 
                                                 <label for="ddl_requeststatus" class="col-md-3 control-label" data-translate="">အခြေအနေ</label>
                                                 <div class="col-md-9">
-                                                    <select id="ddl_requeststatus" class="form-control">
-                                                        <option>New</option>
-                                                        <option>Pending</option>
-                                                        <option>Complete</option>
-                                                    </select>
+                                                        <input type="hidden" id="hf_requeststatus" value="" />
+                                                    <div id="ddl_requeststatus"></div>
 
                                                 </div>
                                             </div>
@@ -121,7 +118,7 @@
                             </div>
                         </div>
                     </div>
-                      <div class="col-md-8">
+                    <div class="col-md-8">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="panel  ">
@@ -143,7 +140,7 @@
 
 
                                                 <div class="col-md-12">
-                                                    <input type="text" class="form-control" id="tb_meeting_title" style="font-weight:bold" placeholder="အကြောင်းအရာ ရေးပါ။">
+                                                    <input type="text" class="form-control" id="tb_meeting_title" style="font-weight: bold" placeholder="အကြောင်းအရာ ရေးပါ။">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -157,7 +154,7 @@
                                                     <div id="gc_RequestDescription"></div>
                                                 </div>
                                             </div>
-                                          
+
                                         </form>
 
                                     </div>
@@ -167,7 +164,13 @@
                         </div>
                     </div>
                 </div>
-
+                <div class="row">
+                  
+                    <div class="col-md-12 ">
+                        <uc1:ControlAttachment runat="server" ID="ControlAttachment" />
+                    </div>
+                
+                </div>
 
                 <div class="form-group  pull-right">
                     <%--<label for="tb_note" class="col-md-2 control-label"></label>--%>
@@ -189,5 +192,6 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder_JS" runat="server">
     <script src='<%=ResolveUrl("../../plugins/WidgetsGallery/js/jszip.min.js")%>'></script>
     <script src='<%=ResolveUrl("../../plugins/WidgetsGallery/js/dx.all.js")%>'></script>
+    <script src='<%= ResolveUrl("../moduleSystem/systemAttachment/ControlAttachment.js")%>'></script>
     <script src='<%= ResolveUrl("pageMETReuest.js")%>'></script>
 </asp:Content>

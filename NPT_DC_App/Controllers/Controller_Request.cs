@@ -145,7 +145,7 @@ namespace NPT_DC_App.Controllers
 
                 the_request.RequestStatus = RequestStatus;
                 the_request.RequestOn = request_on;
-                the_request.MeetingID = MeetingID;
+                the_request.AgendaID = MeetingID;
                 the_request.Remark = Remark.Replace("%27", ""); 
                 the_request.Description = Description.Replace("%27", ""); 
 

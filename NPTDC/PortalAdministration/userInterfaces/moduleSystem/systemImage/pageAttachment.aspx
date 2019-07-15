@@ -65,12 +65,12 @@
                                     <div id="file-uploader"></div>
                                     <div class="content" id="selected-files">
                                         <div>
-                                            <h4>တင်မည့် ဖိုင်လ် ရွှေးချယ်ပါ။</h4>
+                                            <h4>တင်မည့် ဖိုင်လ် ရွေးချယ်ပါ။</h4>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="options">
-                                    <div class="caption">အခြားရွှေးချယ်ခြင်း</div>
+                                    <div class="caption">အခြားရွေးချယ်ခြင်း</div>
                                     <div class="option">
                                         <span>ဖိုင်လ် အမျိုးအစား</span>
                                         <div id="accept-option"></div>

@@ -12,7 +12,9 @@ namespace SBSPortal3.PortalAdministration.userInterfaces.moduleSystem.systemImag
 {
     public partial class pageAttachment : System.Web.UI.Page
     {
-        const string UploadUserDirectory = "~/PortalAdministration/img/User_Images/"; 
+        const string UploadUserDirectory = "~/PortalAdministration/img/User_Images/";
+        const string UploadDepartmentDirectory = "~/PortalAdministration/img/Department_Imges/";
+        const string UploadRequestDirectory = "~/PortalAdministration/img/Request_Attachment/";
         protected void Page_Load(object sender, EventArgs e)
 {
             string img_name = Request.QueryString["id"];
@@ -52,6 +54,7 @@ namespace SBSPortal3.PortalAdministration.userInterfaces.moduleSystem.systemImag
             string img_name= Request.QueryString["id"];
             string ref_type = Request.QueryString["refType"];
             string userID= Request.QueryString["UserId"];
+            string img_name_with_no = Request.QueryString["No"];
             string[] get_data = new string[4];
 
             string name = filename;// e.UploadedFile.FileName;           
@@ -64,7 +67,21 @@ namespace SBSPortal3.PortalAdministration.userInterfaces.moduleSystem.systemImag
                      get_data=SaveImageWithName(img_name, UploadUserDirectory, filename, file);
                     SR_ImageController.WebService_ImageControllerSoapClient the_image_controller = new SR_ImageController.WebService_ImageControllerSoapClient();
                     the_image_controller.SaveImage(get_data[0], get_data[3], get_data[1], img_name, "user", userID);
-                    break; 
+                    break;
+
+                case "department":
+                    get_data = SaveImageWithName(img_name,UploadDepartmentDirectory, filename, file);
+                    SR_ImageController.WebService_ImageControllerSoapClient the_image_controler = new SR_ImageController.WebService_ImageControllerSoapClient();
+                    the_image_controler.SaveImage(get_data[0], get_data[3], get_data[1], img_name, "department", userID);
+                    break;
+
+                case "request":
+                    get_data = SaveImageWithName(img_name_with_no, UploadRequestDirectory, filename, file);
+                    SR_ImageController.WebService_ImageControllerSoapClient the_request_controller = new SR_ImageController.WebService_ImageControllerSoapClient();
+                    the_request_controller.SaveImage(get_data[0], get_data[3], get_data[1] + " / " + sizeText, img_name, "request", userID);
+                    break;
+
+
                 default:
                     break;
             }

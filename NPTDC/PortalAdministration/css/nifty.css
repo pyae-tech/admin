@@ -1107,7 +1107,7 @@ h6,
   color: #4d627b;
   opacity: 1;
   margin-bottom: 7px;
-  max-height: 350px;
+  max-height: 360px;
   overflow: hidden;
 }
 .mainnav-profile .mnp-name {
@@ -1286,6 +1286,10 @@ h6,
 .menu-popover .sub-menu ul .active-link a {
   font-weight: 700;
   color: #25476a;
+}
+
+.a_active {
+    color: #25476a;
 }
 @media (min-width: 1200px) {
   #mainnav-menu ul a,
@@ -5693,14 +5697,20 @@ hr {
   border-color: transparent;
   color: inherit;
 }
+
 .list-group.bg-trans .list-group-item .disabled {
-  opacity: 0.5;
+    opacity: 0.5;
 }
 .list-group.bg-trans a.list-group-item:hover:not(.active) {
   background-color: rgba(0, 0, 0, 0.05);
 }
+
+/*#profile-nav.a:active {
+    background-color: red;
+}*/
+
 .list-group.bord-no .list-group-item {
-  border-color: transparent;
+    border-color: transparent;
 }
 .list-group .list-divider {
   display: block;
@@ -5746,9 +5756,9 @@ button.list-group-item .list-group-item-heading {
 .list-group-item.active,
 .list-group-item.active:hover,
 .list-group-item.active:focus {
-  background-color: #25476a !important;
-  border-color: #25476a;
-  color: #fff;
+    background-color: #fff !important;
+    border-color: transparent !important;
+    color: #1976d2 !important;
 }
 .list-group-item.active .list-group-item-text,
 .list-group-item.active:hover .list-group-item-text,
@@ -5757,7 +5767,7 @@ button.list-group-item .list-group-item-heading {
 }
 a.list-group-item-primary,
 .list-group-item-primary {
-  background-color: #2e5984;
+  background-color: #1976d2;
   border-color: transparent;
   color: #fff;
 }
@@ -9700,13 +9710,13 @@ body,
 }
 /* LIST GROUP */
 /*======================================*/
-.list-group-item.active,
+/*.list-group-item.active,
 .list-group-item.active:hover,
 .list-group-item.active:focus {
     background-color: #1976d2 !important;
     border-color: #1976d2;
     color: #fff;
-}
+}*/
 
     .list-group-item.active .list-group-item-text,
     .list-group-item.active:hover .list-group-item-text,

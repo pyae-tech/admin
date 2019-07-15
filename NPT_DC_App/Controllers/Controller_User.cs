@@ -89,7 +89,7 @@ namespace NPT_DC_App.Controllers
         }
         public static string SaveUser(
             string record_id, string user_id, string user_code,string user_name,
-            string user_email, string password, string contactinfo,string ref_type, string note, string role_id,string org_id,string dep_id,string pos_id,
+            string user_email, string password, string contactinfo,string note, string role_id,string dep_id,string pos_id,
             string RequestID)
         {
             try
@@ -100,7 +100,7 @@ namespace NPT_DC_App.Controllers
                 SYS_UserView the_view = new SYS_UserView();
                 if (record_id == "" || record_id == null)
                 {
-                    the_record = (from c in dc.SYS_Users where c.UserCode == user_code && c.Active == true select c).FirstOrDefault();
+                    the_record = (from c in dc.SYS_Users where c.UserCode == user_code && c.Active == true && ((user_id == "") || (user_id != "" && c.UserID != user_id)) select c).FirstOrDefault();
                     if (the_record == null)
                     {
                         //Security Check
@@ -119,6 +119,8 @@ namespace NPT_DC_App.Controllers
                             LastAction = Guid.NewGuid().ToString(),
                             Ref_ID = "",
                             IsLoggedIn = true,
+                            Ref_Type = "",
+                            OrgID = "",
                         };
                         dc.SYS_Users.InsertOnSubmit(the_record);
                     }
@@ -141,9 +143,7 @@ namespace NPT_DC_App.Controllers
                 the_record.Email = user_email;
                 the_record.ContactInfo = contactinfo;
                 the_record.Note = note;
-                the_record.Ref_Type = ref_type;
                 the_record.RoleID = role_id;
-                the_record.OrgID = org_id;
                 the_record.DepartmentID = dep_id;
                 the_record.PositionID = pos_id;
                 dc.SubmitChanges();
@@ -189,14 +189,14 @@ namespace NPT_DC_App.Controllers
             return (from c in dc.SYS_UserViews where c.UserID == userID && c.Active == true select c).FirstOrDefault();
         }
 
-        public static string GetAllUserJson(string org_id, string RequestID)
+        public static string GetAllUserJson(string RequestID)
         {
             //Security Check
             if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, RequestID, "read")) throw new Exception("No Access.");
 
             LINQ_SystemDataContext dc = new LINQ_SystemDataContext();
             List<SYS_UserView> user_list = (from c in dc.SYS_UserViews
-                                            where c.Active == true && c.OrgID == org_id
+                                            where c.Active == true 
                                             orderby c.UserName
                                             select new SYS_UserView
                                             {

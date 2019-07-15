@@ -33,7 +33,7 @@
 
 
         <div class="row" id="attachment_box_header">
-           <%-- <div class="panel" id="attach_pdf" style="display:none;">
+            <%--<div class="panel" id="attach_pdf" style="display:none;">--%>
             <table style="display: none">
                 <tbody id="template_Attachment_row">
 
@@ -53,8 +53,8 @@
                 </table>
                    
             </div>
-                  </div>--%>
-               <style>
+                  <%--</div>--%>
+          <%--     <style>
                 .nopad {
 	                padding-left: 0 !important;
 	                padding-right: 0 !important;
@@ -93,10 +93,10 @@
                    div#attachment_box_header {
                        background-color:#eee;padding: 30px 0;
                    }
-            </style>
+            </style>--%>
             <%--<div class="panel" id="attach_images" style="display:block;">--%>
            
-                 <div id="template_Attachment_row" style="display:none;">    
+               <%--  <div id="template_Attachment_row" style="display:none;">    
                     <div class="col-md-3 nopad">
                             <label class="image-checkbox" id="[ID]" data-img-src="[Path]">
                               <img  src='[Path]' style="width:220px;height:256px;" class="img-responsive"/>
@@ -104,11 +104,11 @@
                               <i class="ti-check hidden"></i>
                             </label>
                         </div>                
-                </div>
-                <div id="attach_images">
+                </div>--%>
+               <%-- <div id="attach_images">
                       <span>&nbsp;&nbsp;&nbsp;<i>Select to print!</i></span>
                 <div class="picker" id="table_attachment_list" style="min-height:auto;">    
-                    
+                    --%>
                   
                
                    <%-- <div class="col-md-3 nopad">
@@ -155,7 +155,7 @@
             </div>
         </div>
 
-    </div>
+    <%--</div>--%>
 
 <!--Unite Gallery [ OPTIONAL ]-->
 <link href='<%=ResolveUrl("../../../plugins/image-picker/image-picker.css")%>' rel="stylesheet">
