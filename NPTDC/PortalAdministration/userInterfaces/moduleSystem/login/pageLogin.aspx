@@ -84,27 +84,13 @@
 		                    <input type="password" class="form-control" placeholder="Password" id="password">
 		                </div>
 		                <div class="checkbox pad-btm text-left">
-                             <a href="forget" class="btn-link mar-rgt">Forgot password ?</a>
+                             <a href="forget" class="btn-link mar-rgt">လျှိုဝှက်ကုဒ် မေ့နေပါသလား?</a>
 		         
 		                </div>
-		                <button class="btn btn-primary btn-lg btn-block" onclick="do_login();return false;">Sign In</button>
+		                <button class="btn btn-primary btn-lg btn-block" onclick="do_login();return false;">ဝင်ရောက်မည်။</button>
 		            </form>
 		        </div>
-	     <%--   <div class="pad-all">
-		           <a href="forget" class="btn-link mar-rgt">Forgot password ?</a>
-		            <a href="signup" class="btn-link mar-lft">Create a new account</a>
-		
-		        <div class="media pad-top bord-top">
-		                <div class="pull-right">
-		                    <a href="#" class="pad-rgt" onclick="facebook_authen();"><i class="demo-psi-facebook icon-lg text-primary"></i></a>
-		                    <a href="#" class="pad-rgt" onclick="twitter_authen();"><i class="demo-psi-twitter icon-lg text-info"></i></a>
-		                    <a href="#" class="pad-rgt" onclick="show_orgmodal();"><i class="demo-psi-google-plus icon-lg text-danger"></i></a>
-		                </div>
-		                <div class="media-body text-left text-bold text-main">
-		                    Login with
-		                </div>
-		            </div>
-		        </div>--%>
+	    
 		    </div>
 		</div>
 		<!--===================================================-->
