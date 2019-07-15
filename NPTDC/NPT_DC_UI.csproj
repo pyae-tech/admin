@@ -65,7 +65,6 @@
     <Reference Include="DevExpress.CodeParser.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Portions, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      
     </Reference>
     <Reference Include="DevExpress.Data.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.DataAccess.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -80,7 +79,6 @@
     <Reference Include="DevExpress.Web.Bootstrap.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.DemoData.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      
     </Reference>
     <Reference Include="DevExpress.Web.Resources.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -422,6 +420,7 @@
     <Content Include="PortalAdministration\img\Brand_Attachment\test%283%29.JPG" />
     <Content Include="PortalAdministration\img\Brand_Attachment\test%284%29.JPG" />
     <Content Include="PortalAdministration\img\Brand_Attachment\test.JPG" />
+    <Content Include="PortalAdministration\img\Department_Imges\a91f913d-8a56-40a6-97fd-7652afa9fcaa.jpg" />
     <Content Include="PortalAdministration\img\Expense_Attachment\1ec5b997-945f-4765-befe-20ba84b3c1ed.png" />
     <Content Include="PortalAdministration\img\Expense_Attachment\LIPEREXA000103.JPG" />
     <Content Include="PortalAdministration\img\Expense_Attachment\LIPEREXA000107.JPG" />

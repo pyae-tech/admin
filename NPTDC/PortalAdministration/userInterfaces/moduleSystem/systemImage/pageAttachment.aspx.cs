@@ -12,7 +12,8 @@ namespace SBSPortal3.PortalAdministration.userInterfaces.moduleSystem.systemImag
 {
     public partial class pageAttachment : System.Web.UI.Page
     {
-        const string UploadUserDirectory = "~/PortalAdministration/img/User_Images/"; 
+        const string UploadUserDirectory = "~/PortalAdministration/img/User_Images/";
+        const string UploadDepartmentDirectory = "~/PortalAdministration/img/Department_Imges/";
         protected void Page_Load(object sender, EventArgs e)
 {
             string img_name = Request.QueryString["id"];
@@ -64,7 +65,14 @@ namespace SBSPortal3.PortalAdministration.userInterfaces.moduleSystem.systemImag
                      get_data=SaveImageWithName(img_name, UploadUserDirectory, filename, file);
                     SR_ImageController.WebService_ImageControllerSoapClient the_image_controller = new SR_ImageController.WebService_ImageControllerSoapClient();
                     the_image_controller.SaveImage(get_data[0], get_data[3], get_data[1], img_name, "user", userID);
-                    break; 
+                    break;
+
+                case "department":
+                    get_data = SaveImageWithName(img_name,UploadDepartmentDirectory, filename, file);
+                    SR_ImageController.WebService_ImageControllerSoapClient the_image_controler = new SR_ImageController.WebService_ImageControllerSoapClient();
+                    the_image_controler.SaveImage(get_data[0], get_data[3], get_data[1], img_name, "department", userID);
+                    break;
+
                 default:
                     break;
             }

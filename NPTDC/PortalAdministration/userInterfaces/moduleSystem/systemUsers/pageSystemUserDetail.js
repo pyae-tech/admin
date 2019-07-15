@@ -30,19 +30,12 @@ function SaveRecordVerification() {
         if (error_message != "") error_message += "\n";
         error_message += "Require Name Of The User"
     }
-    //if ($("#tb_role option:selected").text() == "") {
-    //    if (error_message != "") error_message += "\n";
-    //    error_message += "Require User Role "
-    //}
+   
     if ($("#tb_code").val() == "") {
         if (error_message != "") error_message += "\n";
         error_message += "Require Code Of The User";
     }
 
-    if ($("#tb_org_name option:selected").text() == "") {
-        if (error_message != "") error_message += "\n";
-        error_message += "Require Org Name";
-    }
 
     if ($("#tb_user_email").val() == "") {
         if (error_message != "") error_message += "\n";
@@ -94,11 +87,8 @@ function SaveUser() {
             ",'user_email':'" + $("#tb_user_email").val() + "' " +
             ",'password':'" + $("#tb_password").val() + "' " +
             ",'contactinfo':'" + $("#tb_contact_info").val() + "' " +
-            ",'ref_type':'" + $("#tb_user_type").val() + "' " +
             ",'note':'" + $("#tb_note").val() + "' " +
             ",'role_id':'" + role_id+ "' " +
-            //",'org_id':'" + $("#tb_org_name option:selected").text() + "' " +
-            ",'org_id':'" + $("#tb_org_name").val() + "' " +
             ",'dep_id':'" + department_id + "' " +
             ",'pos_id':'" + position_id + "' " +
             ",'RequestID':'" + get_current_user_id() + "' " +
@@ -110,7 +100,7 @@ function SaveUser() {
         success: function (data) {
             if (data.d.toString().split('~')[0] == "Success") {
                 ShowSuccessMessage("Saved.");
-
+                GetUser(data.d.toString().split('~')[1]);
                 $("#image_item").css("display","none");
                 $("#Image_drop_zone").css("display","block");
                 scrollToDiv('#tab-main');
@@ -242,12 +232,9 @@ function GetUser(id) {
                     $("#tb_password").attr("disabled","disabled");
                     $("#tb_confirm_password").val(data.d["Password"]);
                     $("#tb_confirm_password").attr("disabled","disabled");
-                    $("#tb_org_name").val(data.d["OrgID"]);
-                    $("#hf_org_id").val(data.d["OrgID"]);
                     $("#tb_role_id").val(data.d["RoleID"]);
                     $("#tb_position_id").val(data.d["PositionID"]);
                     $("#tb_department_id").val(data.d["DepartmentID"]);                  
-                    $("#tb_user_type").val(data.d["Ref_Type"]);
                     $("#tb_contact_info").val(data.d["ContactInfo"]);
                     $("#tb_note").val(data.d["Note"]);
                     $("#lbl_created").text("စာရင်းသွင်းသူ : " + data.d["CreatedByCode"] + " on " + moment(data.d["CreatedOn"]).format('DD / MM / YYYY HH:mm'));
@@ -330,32 +317,32 @@ Load_User_Role_List();
 
     }
 
-Load_Org_Name();
-    function Load_Org_Name() {
-        Pace.start();
-        $.ajax({
+//Load_Org_Name();
+//    function Load_Org_Name() {
+//        Pace.start();
+//        $.ajax({
 
-            url: baseUrl() + "WebServices/WebService_SYS_Organization.asmx/GetOrganizationByID",
-            data: "{ " +
-                "'org_id':'" + get_current_user_org_id() + "' " +
-                ",'RequestID':'" + get_current_user_id() + "' " +
-                " }",
-            dataType: 'json',
-            type: "POST",
-            contentType: "application/json; charset=utf-8",
-            success: function (data) {
-                if (data.d != null) {
-                    $("#tb_org_name").empty();
-                    $.each(data.d, function (key, val) {
-                        $("#tb_org_name").append("<option value=" + data.d[key]['OrgID'] + ">" + data.d[key]['OrgName'] + "</option>")
-                    })
-                }
-            },
-            error: function (xhr, msg) {
-                LogJSError('Web Service Fail: ' + msg + '\n' + xhr.responseText);
-            }
-        });
-    }
+//            url: baseUrl() + "WebServices/WebService_SYS_Organization.asmx/GetOrganizationByID",
+//            data: "{ " +
+//                "'org_id':'" + get_current_user_org_id() + "' " +
+//                ",'RequestID':'" + get_current_user_id() + "' " +
+//                " }",
+//            dataType: 'json',
+//            type: "POST",
+//            contentType: "application/json; charset=utf-8",
+//            success: function (data) {
+//                if (data.d != null) {
+//                    $("#tb_org_name").empty();
+//                    $.each(data.d, function (key, val) {
+//                        $("#tb_org_name").append("<option value=" + data.d[key]['OrgID'] + ">" + data.d[key]['OrgName'] + "</option>")
+//                    })
+//                }
+//            },
+//            error: function (xhr, msg) {
+//                LogJSError('Web Service Fail: ' + msg + '\n' + xhr.responseText);
+//            }
+//        });
+//    }
 
 
     function UploadItemImage1() {
@@ -527,16 +514,6 @@ function changeItemImage() {
 }
 function RefreshItem() { GetUser(GetURLData('id')); }
 
-
-function deleteImage() {
-    if ($("#tb_id").val() == "") {
-        ShowBoxMessage("Oops, There is no data. ");
-    }
-    else {
-        ShowConfirmation("Are you sure you want to delete?", "DeleteImage");
-    }
-}
-
 function DeleteImage() {
 
     $.ajax({
@@ -566,4 +543,14 @@ function DeleteImage() {
         }
     });
 
+}
+
+
+function deleteImage() {
+    if ($("#tb_id").val() == "") {
+        ShowBoxMessage("Oops, There is no data. ");
+    }
+    else {
+        ShowConfirmation("Are you sure you want to delete?", "DeleteImage");
+    }
 }

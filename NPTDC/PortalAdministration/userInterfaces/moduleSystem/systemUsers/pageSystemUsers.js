@@ -19,8 +19,7 @@ function Load_List() {
     $.ajax({
         url: baseUrl() + "WebServices/WebService_User.asmx/GetAllUserJson",
         data: "{ " +
-            "'org_id':'" + get_current_user_org_id() + "' " +
-            ",'RequestID':'" + get_current_user_id() + "' " +
+            "'RequestID':'" + get_current_user_id() + "' " +
             " }",
         dataType: 'json',
         type: "POST",

@@ -60,7 +60,7 @@
                                      <div class="modal-body">
 
 
-                                        <div class="col-md-9">
+                                        <div class="col-md-12">
                                             <form id="form" class="form-horizontal">
                                                 <input type="hidden" id="tb_id" value="" />
 
@@ -92,7 +92,7 @@
                         </div>
 
 
-                        <div class="form-group">
+                        <div class="form-group" style="display:none;">
                             <label for="tb_user_type" class="col-md-2 control-label">အမျိုးအစား</label>
                             <div class="col-md-4">
                                 <select class="form-control" id="tb_user_type">
@@ -101,7 +101,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" style="display:none;">
                             <label for="tb_org_name" class="col-md-2 control-label">အဖွဲ့အစည်း</label>
                             <div class="col-md-4">
                                 <input type="hidden" id="hf_org_id" />
@@ -125,17 +125,17 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="lookup_position" class="col-md-2 control-label">ရာထူး</label>
-                            <div class="col-md-4">
-                                 <input type="hidden" id="tb_position_id" value="" />
-                              <div id="lookup_position"></div>
-                            </div>
-                             <label for="lookup_department" class="col-md-2 control-label">ဌာန</label>
+                            <label for="lookup_department" class="col-md-2 control-label">ဌာန</label>
                             <div>
                                 <div class="col-md-4">
                                      <input type="hidden" id="tb_department_id" value="" />
                                 <div id="lookup_department"></div>
                                     </div>
+                            </div>
+                            <label for="lookup_position" class="col-md-2 control-label">ရာထူး</label>
+                            <div class="col-md-4">
+                                 <input type="hidden" id="tb_position_id" value="" />
+                              <div id="lookup_position"></div>
                             </div>
                         </div>
 
