@@ -1,6 +1,11 @@
 ﻿$('title').html(get_current_organization_title() + "Change Password");
 $('#profile-nav').addClass('in');
 $('#menu_system_change_password').addClass('active');
+$("#tab-main").tabs();
+
+$("#tab-main").tabs("option", "active", 0);
+$(".tab-menu").removeClass("active");
+$("#tab_list_menu").addClass("active");
 
 
 function ChangePassword() {

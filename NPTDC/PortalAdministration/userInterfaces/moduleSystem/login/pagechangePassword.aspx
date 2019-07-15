@@ -31,40 +31,44 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder_Body" runat="server">
 
     <div id="page-content">
-
-        <div class="row">
-
-
-           
-            <div class="col-md-12">
-
-                <div class="panel  ">
-                    <div class="panel-heading">
+                <div class="panel">
+                    <div class="panel-body">
+                          <div class="panel">
+                   <div class="tabs-container" id="tab-main">
+                         <div class="panel-heading">
                         <div class="panel-control">
                         </div>
-                        <h3 class="panel-title">လျှိုဝှက် နံပါတ် ပြောင်းရန်</h3>
+                         <h3><i class="demo-pli-gear"></i>&nbsp;<span data-translate="">လျှိုဝှက် နံပါတ် ပြောင်းရန်</span></h3>
+                        <h3 class="panel-title"></h3>
                     </div>
-                    <div class="panel-body">
-                        <form class="form-horizontal">
-                             <input type="hidden" id="tb_id" value="" />
+
+                           <div class="panel-body">
+                           
+                                <div>
+                                     <div class="modal-body">
+
+
+                                        <div class="col-md-12">
+                                          <form class="form-horizontal">
+                            
                             <div class="form-group">
                                 <label for="tb_code" class="col-md-3 control-label">လျှိုဝှက် နံပါတ် အဟောင်း</label>
-                                <div class="col-md-2">
+                                <div class="col-md-4">
                                     <input type="password" class="form-control" id="tb_old_password" placeholder="လျှိုဝှက် နံပါတ် အဟောင်း">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="tb_code" class="col-md-3 control-label">လျှိုဝှက် နံပါတ် အသစ်</label>
-                                <div class="col-md-2">
+                                <div class="col-md-4">
                                       <input type="password" class="form-control" id="tb_new_password" placeholder="လျှိုဝှက် နံပါတ် အသစ်">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="tb_code" class="col-md-3 control-label">အတည်ပြုပါ</label>
-                                <div class="col-md-2">
-                                    <input type="password" class="form-control" id="tb_confirm_password" placeholder="ထပ်မံ အတည်ပြုရန်" >
+                                <div class="col-md-4">
+                                    <input type="password" class="form-control" id="tb_confirm_password" placeholder="အတည်ပြုပါ" >
                                 </div>
                             </div>
                             <div class="form-group"></div>
@@ -81,22 +85,28 @@
                                  
                         </form>
 
+                                        </div>
+
+                                       
+
+                                        
+
+                                    </div>
+
+                            </div>
+                        </div>
                     </div>
+                   </div>
+                        
+
+                   
+                        </div>
+                    </div>
+                  
+                   
                 </div>
-
-               
-
-
-            </div>
-
-
-
-
-
-        </div>
-
        
-    </div>
+  
 
  
 </asp:Content>
