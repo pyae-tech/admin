@@ -30,8 +30,8 @@ namespace SBSPortal3
             RouteTable.Routes.MapPageRoute("portal/Attachment", "portal/Attachment", "~/PortalAdministration/userInterfaces/moduleSystem/systemImage/pageAttachment.aspx");
 
             //meeting
-            RouteTable.Routes.MapPageRoute("portal/request", "portal/request", "~/PortalAdministration/userInterfaces/moduleMeeting/pageMETReuest.aspx");
-            RouteTable.Routes.MapPageRoute("portal/requests", "portal/requests", "~/PortalAdministration/userInterfaces/moduleMeeting/pageMETRequests.aspx");
+            RouteTable.Routes.MapPageRoute("portal/request", "portal/request", "~/PortalAdministration/userInterfaces/moduleMeeting/meetingRequest/pageMETRequest.aspx");
+            RouteTable.Routes.MapPageRoute("portal/requests", "portal/requests", "~/PortalAdministration/userInterfaces/moduleMeeting/meetingRequest/pageMETRequests.aspx");
             //Master
             RouteTable.Routes.MapPageRoute("portal/departments", "portal/departments", "~/PortalAdministration/userInterfaces/moduleMaster/masterDepartment/pageDepartment.aspx");
             RouteTable.Routes.MapPageRoute("portal/departmentdetail", "portal/departmentdetail", "~/PortalAdministration/userInterfaces/moduleMaster/masterDepartment/pageDepartmentDetail.aspx");
