@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NPT_DC_App.LINQs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -41,5 +42,23 @@ namespace NPT_DC_App.WebServices
         {
             return Controllers.Controller_Agenda.GetAllAgendaJSON(search_text, RequestID);
         }
+
+        [WebMethod]
+        public MET_AgendaView GetAgendaByID(string agendaID, string RequestID)
+        {
+            return Controllers.Controller_Agenda.GetAgendaByID(agendaID, RequestID);
+        }
+        [WebMethod]
+        public string DeleteAgenda(string agendaID, string user_id, string RequestID)
+        {
+            return Controllers.Controller_Agenda.DeleteAgenda(agendaID, user_id, RequestID);
+        }
+
+        [WebMethod]
+        public string AddRequestToAgenda(string agendaID, string user_id)
+        {
+            return Controllers.Controller_Agenda.AddRequestToAgenda(agendaID, user_id);
+        }
+
     }
 }

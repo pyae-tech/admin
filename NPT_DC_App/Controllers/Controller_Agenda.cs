@@ -39,11 +39,11 @@ namespace NPT_DC_App.Controllers
             {
                 dynamic agenda = new Newtonsoft.Json.Linq.JObject();
 
-                agenda.RequestID = row.AgendaID;
-                agenda.DepartmentID = row.AgendaNo;
-                agenda.RequestType = row.AgendaDate.ToString();
-                agenda.RequestNo = row.AgendaRemark;
-                agenda.RequestUserName = row.AgendaStatus;
+                agenda.AgendaID = row.AgendaID;
+                agenda.AgendaNo = row.AgendaNo;
+                agenda.AgendaDate = row.AgendaDate.ToString();
+                agenda.AgendaRemark = row.AgendaRemark;
+                agenda.AgendaStatus = row.AgendaStatus;
                 lists.Add(agenda);
             }
 
@@ -94,6 +94,7 @@ namespace NPT_DC_App.Controllers
                 the_agenda.AgendaStatus = AgendaStatus;
                 the_agenda.AgendaHistory = AgendaHistory;
                 the_agenda.AgendaRemark = AgendaRemark;
+                the_agenda.AgendaDate = agenda_date;
 
                 the_agenda.ModifiedBy = UserID;
                 the_agenda.ModifiedOn = DateTime.Now;
@@ -124,5 +125,90 @@ namespace NPT_DC_App.Controllers
             }
         }
 
+        public static MET_AgendaView GetAgendaByID(string agendaID, string RequestID)
+        {
+            //Security Check
+            if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, RequestID, "read")) throw new Exception("No Access.");
+
+            LINQ_MeetingDataContext dc = new LINQ_MeetingDataContext();
+            return (from c in dc.MET_AgendaViews where c.AgendaID == agendaID && c.Active == true select c).FirstOrDefault();
+        }
+
+        public static string DeleteAgenda(string agendaID, string user_id, string RequestID)
+        {
+            //Security Check
+            if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, RequestID, "delete")) throw new Exception("No Access.");
+
+            LINQ_MeetingDataContext dc = new LINQ_MeetingDataContext();
+            try
+            {
+                MET_Agenda agenda_record = new MET_Agenda();
+                agenda_record = (from c in dc.MET_Agendas where c.AgendaID == agendaID && c.Active == true select c).FirstOrDefault();
+                if (agenda_record == null)
+                    return "Error~We can't find";
+                agenda_record.Active = false;
+                agenda_record.ModifiedOn = DateTime.Now;
+                agenda_record.ModifiedBy = user_id;
+                agenda_record.LastAction = Guid.NewGuid().ToString();
+
+                #region Request in agenda
+                List<MET_Request> req_list = new List<MET_Request>();
+                req_list = (from c in dc.MET_Requests where c.AgendaID == agendaID && c.Active == true select c).ToList();
+                foreach (MET_Request i in req_list)
+                {
+                    i.AgendaID = "";
+                    i.ModifiedBy = RequestID;
+                    i.ModifiedOn = DateTime.Now;
+                }
+                #endregion
+           
+                dc.SubmitChanges(ConflictMode.ContinueOnConflict);
+                return "Success~";
+            }
+            catch (ChangeConflictException ex)
+            {
+                return "Success~";
+            }
+        }
+
+        public static string AddRequestToAgenda(string agendaID, string user_id)
+        {
+            ////Security Check
+            //if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, user_id, "select")) throw new Exception("No Access.");
+
+            LINQ_MeetingDataContext dc = new LINQ_MeetingDataContext();
+            try
+            {
+                MET_Agenda agenda_record = new MET_Agenda();
+                agenda_record = (from c in dc.MET_Agendas where c.AgendaID == agendaID && c.Active == true select c).FirstOrDefault();
+                if (agenda_record == null)
+                    return "Error~We can't find";
+               
+
+                #region Request in agenda
+                List<MET_Request> req_list = new List<MET_Request>();
+                req_list = (from c in dc.MET_Requests where c.RequestStatus=="Approved" && c.Active == true select c).ToList();
+                foreach (MET_Request i in req_list)
+                {
+                    i.AgendaID = agenda_record.AgendaID;
+                    i.RequestStatus = "Agenda";
+                    i.ModifiedBy = user_id;
+                    i.ModifiedOn = DateTime.Now;
+                }
+                #endregion
+
+                dc.SubmitChanges(ConflictMode.ContinueOnConflict);
+
+                //List<MET_RequestView> reqitems_list = (from c in dc.MET_RequestViews
+                //                                       where c.Active == true && c.AgendaID == agendaID
+                //                                           orderby c.RequestOn
+                //                                           select c).ToList();
+                return "Success~";
+            }
+            catch (ChangeConflictException ex)
+            {
+                return "Success~";
+            }
+        }
     }
 }

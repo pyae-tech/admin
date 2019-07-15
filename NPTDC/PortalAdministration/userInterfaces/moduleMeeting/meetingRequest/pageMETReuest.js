@@ -78,7 +78,7 @@ $("#ddl_meetingtype").dxLookup({
     }
 });
 
-var request_status = ["New", "Pending", "Agenda"];
+var request_status = ["New", "Pending", "Agenda","Approved"];
 $("#ddl_requeststatus").dxLookup({
     items: request_status,
     value: request_status[0],
@@ -117,7 +117,8 @@ function LoadNew() {
     $("#tb_request_no").val("");
     $("#dt_requeston").val("");
     $('#ddl_requestby').val("");
-    
+    $("#lbl_created").html("");
+    $("#lbl_modified").html("");
     arr_request_item = [];
     arr_request_decision = [];
 
@@ -135,6 +136,8 @@ function LoadNew() {
     $("#hf_meetingtype").val("EC");
     $("#ddl_meetingtype").dxLookup('instance').option('value', $("#hf_meetingtype").val());
     new_Attachment();
+    window.history.replaceState({}, document.title, "request");
+
 }
 
 GetAllUser();
@@ -611,4 +614,46 @@ function GoToLog() {
 
 function UploadAttachment() {
     window.open('attachment?id=' + $("#tb_id").val() + '&No=' + $('#tb_request_no').val() + '&UserId=' + get_current_user_id() + '&refType=request', '_blank');
+}
+
+function DeleteRecordConfirmation() {
+
+    if ($("#tb_id").val() == "") {
+        ShowBoxMessage("Oops, There is no data. ");
+    }
+    else {
+        ShowConfirmation("Are you sure you want to delete?", "DeleteRequest");
+    }
+}
+
+
+//#region Delete Item
+function DeleteRequest() {
+  
+    $.ajax({
+        url: baseUrl() + "WebServices/WebService_Request.asmx/DeleteRequest",
+
+        data: JSON.stringify({
+            meetingreq_id: $("#tb_id").val(),
+            user_id: get_current_user_id(),
+            RequestID: get_current_user_id(),
+        }),
+        dataType: 'json',
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+            if (data.d.toString().split('~')[0] == 'Success') {
+                LoadNew();
+                ShowSuccessMessage("Deleted.");
+            }
+            else {
+                ShowBoxMessage("Oops. " + data.d.toString().split('~')[1]);
+            }
+
+        },
+        error: function (xhr, msg) {
+            LogJSError('Web Service Fail: ' + msg + '\n' + xhr.responseText);
+        }
+    });
+
 }

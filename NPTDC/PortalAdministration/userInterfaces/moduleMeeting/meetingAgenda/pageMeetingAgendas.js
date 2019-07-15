@@ -113,7 +113,7 @@ function BindTable(data) {
         onSelectionChanged: function (selectedItems) {
             var data = selectedItems.selectedRowsData[0];
             if (data) {
-                GetAgenda(data.RequestID);
+                GetAgenda(data.AgendaID);
             }
         }
     }).dxDataGrid("instance");

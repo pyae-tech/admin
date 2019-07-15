@@ -5,28 +5,61 @@ $('#menu_meeting_group').addClass('in');
 $('#menu_agenda').addClass('active-link');
 $("#tab-main").tabs();
 
-$("#btn_request_add").dxButton({
-    icon: "plus",
-    type: "success",
-    text: "Add Request",
-    onClick: function (e) {
-        DevExpress.ui.notify("The Done button was clicked");
-    }
-});
+SetUP();
 var agenda_date = ConvertDate(new Date());
-$("#dt_agenda_date").dxDateBox({
-    applyValueMode: "useButtons",
-    displayFormat: "yyyy/MM/dd",
+function SetUP() {
 
-    type: "date",
-    value: new Date(),
-    max: new Date(),
-    min: new Date(1900, 0, 1),
-    onValueChanged: function (data) {
-        agenda_date = ConvertDate($("#dt_requeston").dxDateBox('instance').option('value'));
-    }
-});
+    $("#btn_request_add").dxButton({
+        icon: "plus",
+        type: "success",
+        text: "Add Request",
+        onClick: function (e) {
+            AddRequestToAgenda();
+        }
+    });
 
+
+    $("#dt_agenda_date").dxDateBox({
+        applyValueMode: "useButtons",
+        displayFormat: "yyyy/MM/dd",
+
+        type: "date",
+        value: new Date(),
+        max: new Date(),
+        min: new Date(1900, 0, 1),
+        onValueChanged: function (data) {
+            agenda_date = ConvertDate($("#dt_agenda_date").dxDateBox('instance').option('value'));
+        }
+    });
+
+    var request_status = ["New", "Pending", "Complete"];
+    //$("#hf_agenda_status").val("New");
+    $("#ddl_agenda_status").dxLookup({
+        items: request_status,
+        value: request_status[0],
+        showPopupTitle: false,
+        onValueChanged: function (e) {
+            if (e.value === "null" || e.value == null) {
+                $("#hf_agenda_status").val("New");
+            }
+            else {
+                $("#hf_agenda_status").val($("#ddl_agenda_status").dxLookup("instance").option('value'));
+
+            }
+        }
+    });
+
+}
+
+if (GetURLData('id') != null && GetURLData('id') != "") {
+    SetUP();
+    GetAgenda(GetURLData('id'));
+}
+else {
+    SetUP();
+    LoadNew();
+
+}
 function ConvertDate(sdate) {
     const date = new Date(sdate);
     var month = date.getMonth() + 1;
@@ -37,21 +70,6 @@ function ConvertDate(sdate) {
     return output;
 }
 
-var request_status = ["New", "Pending", "Complete"];
-$("#ddl_agenda_status").dxLookup({
-    items: request_status,
-    value: request_status[0],
-    showPopupTitle: false,
-    onValueChanged: function (e) {
-        if (e.value === "null" || e.value == null) {
-            $("#hf_agenda_status").val("");
-        }
-        else {
-            $("#hf_agenda_status").val($("#ddl_agenda_status").dxLookup("instance").option('value'));
-
-        }
-    }
-});
 
 function SaveRecordVerification() {
     error_message = "";
@@ -64,7 +82,7 @@ function SaveRecordVerification() {
 
 }
 
-function SaveRequest() {
+function SaveAgenda() {
     Pace.start();
     if (SaveRecordVerification() == false)
         return;
@@ -85,7 +103,7 @@ function SaveRequest() {
         contentType: "application/json; charset=utf-8",
         success: function (data) {
             if (data.d.toString().split('~')[0] == "Success") {
-                $("#tb_request_no").val(data.d.toString().split('~')[2]);
+                $("#tb_agenda_no").val(data.d.toString().split('~')[2]);
                 $("#tb_id").val(data.d.toString().split('~')[1]);
                 ShowSuccessMessage("Saved.");
                 scrollToDiv('#tab-main');
@@ -99,4 +117,157 @@ function SaveRequest() {
 
         }
     });
+}
+
+//#region New Record
+function LoadNew() {
+    Pace.start();
+
+    $("#tb_Remark").focus();
+    $("#tb_id").val("");   
+    $("#tb_agenda_no").val("");
+    $("#tb_Remark").val("");
+
+    $("#tb_department_name").val(get_current_user_DepartmentName());
+    var agenda_date = ConvertDate(new Date());
+    $("#lbl_created").html("");
+    $("#lbl_modified").html("");
+
+    $("#hf_agenda_status").val("");
+    window.history.replaceState({}, document.title, "agenda");
+   
+}
+
+function GetAgenda(id) {
+    Pace.start();
+    $.ajax({
+        url: baseUrl() + "WebServices/WebService_Agenda.asmx/GetAgendaByID",
+        data: "{ " +
+        "'agendaID':'" + id + "' " +
+        ",'RequestID':'" + get_current_user_id() + "' " +
+        " }",
+        dataType: 'json',
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+            if (data.d != null) {
+
+                $("#tb_id").val(data.d["AgendaID"]);
+                $("#tab_detail_header").html(data.d["AgendaNo"]);
+                //$("#tb_department_name").val(data.d["DepartmentName"]);
+                $("#tb_Remark").val(data.d["AgendaRemark"]);
+                 $("#tb_agenda_no").val(data.d["AgendaNo"]);
+              
+                $("#lbl_created").text("စာရင်းသွင်းသူ : " + data.d["CUserCode"] + " on " + JsonDateToFormat(data.d["CreatedOn"], 'DD/MM/YYYY HH:mm'));
+                $("#lbl_modified").text("ပြင်ဆင်သူ : " + data.d["MUserCode"] + " on " + JsonDateToFormat(data.d["ModifiedOn"], 'DD/MM/YYYY HH:mm'));
+
+                var angeda_date = new Date(JsonDateToFormat(data.d["AgendaDate"], 'YYYY-MM-DD'));
+                $("#dt_agenda_date").dxDateBox({
+                    type: "date",
+                    value: angeda_date,
+                });
+              
+
+                $("#hf_agenda_status").val(data.d["AgendaStatus"]);
+                $("#ddl_agenda_status").dxLookup({
+                    items: ["New", "Pending", "Complete"],
+                    value: $("#hf_agenda_status").val(),
+                    showPopupTitle: false,
+                    onValueChanged: function (e) {
+                        if (e.value === "null" || e.value == null) {
+                            $("#hf_agenda_status").val("New");
+                        }
+                        else {
+                            $("#hf_agenda_status").val($("#ddl_agenda_status").dxLookup("instance").option('value'));
+
+                        }
+                    }
+                });
+               
+                ShowSuccessMessage("Loaded.");
+
+            }
+            else {
+                ShowBoxMessage("Oops, we can't find the record. ");
+            }
+
+        },
+        error: function (xhr, msg) {
+            LogJSError('Web Service Fail: ' + msg + '\n' + xhr.responseText);
+
+        }
+    });
+}
+
+function DeleteRecordConfirmation() {
+
+    if ($("#tb_id").val() == "") {
+        ShowBoxMessage("Oops, There is no data. ");
+    }
+    else {
+        ShowConfirmation("Are you sure you want to delete?", "DeleteAgenda");
+    }
+}
+
+
+//#region Delete
+function DeleteAgenda() {
+
+    $.ajax({
+        url: baseUrl() + "WebServices/WebService_Agenda.asmx/DeleteAgenda",
+
+        data: JSON.stringify({
+            agendaID: $("#tb_id").val(),
+            user_id: get_current_user_id(),
+            RequestID: get_current_user_id(),
+        }),
+        dataType: 'json',
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+            if (data.d.toString().split('~')[0] == 'Success') {
+                LoadNew();
+          
+                ShowSuccessMessage("Deleted.");
+            }
+            else {
+                ShowBoxMessage("Oops. " + data.d.toString().split('~')[1]);
+            }
+
+        },
+        error: function (xhr, msg) {
+            LogJSError('Web Service Fail: ' + msg + '\n' + xhr.responseText);
+        }
+    });
+
+}
+
+function AddRequestToAgenda() {
+
+    $.ajax({
+        url: baseUrl() + "WebServices/WebService_Agenda.asmx/AddRequestToAgenda",
+
+        data: JSON.stringify({
+            agendaID: $("#tb_id").val(),
+            user_id: get_current_user_id()
+        }),
+        dataType: 'json',
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+            if (data.d.toString().split('~')[0] == 'Success') {
+               
+
+                ShowSuccessMessage("Success Added.");
+            }
+            else {
+                ShowBoxMessage("Oops. " + data.d.toString().split('~')[1]);
+            }
+
+        },
+        error: function (xhr, msg) {
+            LogJSError('Web Service Fail: ' + msg + '\n' + xhr.responseText);
+        }
+    });
+
 }
