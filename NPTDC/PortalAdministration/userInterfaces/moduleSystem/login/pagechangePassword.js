@@ -1,4 +1,6 @@
-﻿function ChangePassword() {
+﻿$('title').html(get_current_organization_title() + "Change Password");
+
+function ChangePassword() {
     
 
     if ($("#tb_new_password").val() == '' || $("#tb_confirm_password").val() == '') {
