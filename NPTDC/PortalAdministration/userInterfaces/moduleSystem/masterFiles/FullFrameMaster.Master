@@ -603,7 +603,7 @@
                                             <i class="demo-pli-information icon-lg icon-fw"></i>View Company
                                         </a>
                                           <a href="changepassword" class="list-group-item" id="menu_system_change_password">
-                                            <i class="demo-pli-gear icon-lg icon-fw"></i>Change Password
+                                            <i class="demo-pli-gear icon-lg icon-fw"></i>
                                         </a>
                                         <%-- <a href="#" class="list-group-item">
                                             <i class="demo-pli-information icon-lg icon-fw"></i>Help

@@ -288,7 +288,7 @@ Load_User_Role_List();
 
                             return item.RoleName;
                         },
-                        placeholder: "Select User Role",
+                        placeholder: "သုံးစွဲခွင့် ရွေးချယ်ပေးပါ။",
 
                         showPopupTitle: false,
                         onValueChanged: function (e) {
@@ -426,7 +426,7 @@ Load_Department_List();
 
                             return item.DepartmentName;
                         },
-                        placeholder: "ဌာန ရွှေးချယ်ပေးပါ။",
+                        placeholder: "ဌာန ရွေးချယ်ပေးပါ။",
 
                         showPopupTitle: false,
                         onValueChanged: function (e) {
@@ -480,7 +480,7 @@ Load_Department_List();
 
                             return item.PositionName;
                         },
-                        placeholder: "ရာထူး ရွှေးချယ်ပေးပါ။",
+                        placeholder: "ရာထူး ရွေးချယ်ပေးပါ။",
 
                         showPopupTitle: false,
                         onValueChanged: function (e) {

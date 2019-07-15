@@ -18,8 +18,8 @@
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <ol class="breadcrumb">
         <li><a href="#"><i class="demo-pli-home"></i></a></li>
-        <li><a href="#">System</a></li>
-        <li class="active">Change Password</li>
+        <li><a href="#">စနစ်</a></li>
+        <li class="active">လျှိုဝှက် နံပါတ် ပြောင်းရန်</li>
         <li class="active">
         </li>
     </ol>
@@ -42,29 +42,29 @@
                     <div class="panel-heading">
                         <div class="panel-control">
                         </div>
-                        <h3 class="panel-title">Change Password</h3>
+                        <h3 class="panel-title">လျှိုဝှက် နံပါတ် ပြောင်းရန်</h3>
                     </div>
                     <div class="panel-body">
                         <form class="form-horizontal">
                              <input type="hidden" id="tb_id" value="" />
                             <div class="form-group">
-                                <label for="tb_code" class="col-md-3 control-label">Old Password</label>
+                                <label for="tb_code" class="col-md-3 control-label">လျှိုဝှက် နံပါတ် အဟောင်း</label>
                                 <div class="col-md-2">
-                                    <input type="password" class="form-control" id="tb_old_password" placeholder="Enter Old Password">
+                                    <input type="password" class="form-control" id="tb_old_password" placeholder="လျှိုဝှက် နံပါတ် အဟောင်း">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="tb_code" class="col-md-3 control-label">New Password</label>
+                                <label for="tb_code" class="col-md-3 control-label">လျှိုဝှက် နံပါတ် အသစ်</label>
                                 <div class="col-md-2">
-                                      <input type="password" class="form-control" id="tb_new_password" placeholder="Enter Old Password">
+                                      <input type="password" class="form-control" id="tb_new_password" placeholder="လျှိုဝှက် နံပါတ် အသစ်">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="tb_code" class="col-md-3 control-label">Confirm Password</label>
+                                <label for="tb_code" class="col-md-3 control-label">အတည်ပြုပါ</label>
                                 <div class="col-md-2">
-                                    <input type="password" class="form-control" id="tb_confirm_password" placeholder="Enter Confirm Password" >
+                                    <input type="password" class="form-control" id="tb_confirm_password" placeholder="ထပ်မံ အတည်ပြုရန်" >
                                 </div>
                             </div>
                             <div class="form-group"></div>
@@ -72,7 +72,7 @@
                                 <label for="tb_code" class="col-md-3 control-label"></label>
                                 <div class="col-md-2">
                                      <button class="btn btn-danger  btn-rounded btn-labeled" type="button" onclick="ChangePassword();return false;">
-                                    <span class="bold">Change Password</span></button>
+                                    <span class="bold">လျှိုဝှက် နံပါတ် ပြောင်းရန်</span></button>
                                 </div>
                             </div>
 

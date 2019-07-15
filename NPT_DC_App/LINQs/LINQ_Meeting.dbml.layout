@@ -44,5 +44,11 @@
         <elementListCompartment Id="9780e09f-ee5f-46c0-8368-33e943c4918f" absoluteBounds="1.2650000000000001, 6.085, 1.9700000000000002, 5.6338297526041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="b3c7e878-6ade-4592-abf8-e73935a03b73" absoluteBounds="8.375, 4.25, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/LINQ_MeetingDataContext/MET_AgendaView" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c1006468-0a1a-44c6-9120-0e771dd74798" absoluteBounds="8.39, 4.71, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>
