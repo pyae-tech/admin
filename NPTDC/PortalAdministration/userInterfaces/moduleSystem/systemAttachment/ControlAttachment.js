@@ -121,8 +121,8 @@ function generate_Attachment_list(records) {
        
         allCardsCode += the_template.replace()
             //.replace("[Path]", records[key]['Path'].substring(records[key]['Path'].indexOf('/'), records[key]['Path'].length))
-            .replace("[Path]", "https://" + records[key]['Path'])
-            .replace("[Path]", "https://" + records[key]['Path'])            //.replace("[Path]", "http://" + records[key]['Path'])
+            .replace("[Path]", "http://" + records[key]['Path'])
+            .replace("[Path]", "http://" + records[key]['Path'])            //.replace("[Path]", "http://" + records[key]['Path'])
             .replace("[ID]", records[key]['ID'])
             .replace("[File]", records[key]['ImageName'].split('/')[0])
             .replace("[Size]", records[key]['ImageName'].split('/')[1] == "" ? "" : records[key]['ImageName'].split('/')[1]);

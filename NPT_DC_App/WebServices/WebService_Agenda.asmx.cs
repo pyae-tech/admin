@@ -35,5 +35,11 @@ namespace NPT_DC_App.WebServices
            AgendaRemark,
            UserID);
         }
+
+        [WebMethod]
+        public string GetAllAgendaJSON(string search_text, string RequestID)
+        {
+            return Controllers.Controller_Agenda.GetAllAgendaJSON(search_text, RequestID);
+        }
     }
 }

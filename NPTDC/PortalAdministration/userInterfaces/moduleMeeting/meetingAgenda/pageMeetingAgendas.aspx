@@ -1,15 +1,20 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PortalAdministration/userInterfaces/moduleSystem/masterFiles/FullFrameMaster_NPTDC.master" AutoEventWireup="true" CodeBehind="pageMETRequests.aspx.cs" Inherits="SBSPortal3.PortalAdministration.userInterfaces.moduleMeeting.pageMETRequests" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PortalAdministration/userInterfaces/moduleSystem/masterFiles/FullFrameMaster_NPTDC.master" AutoEventWireup="true" CodeBehind="pageMeetingAgendas.aspx.cs" Inherits="SBSPortal3.PortalAdministration.userInterfaces.moduleMeeting.meetingAgenda.pageMeetingAgendas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_CSS" runat="server">
-    <link href='<%=ResolveUrl("../../../plugins/WidgetsGallery/css/dx.common.css")%>' rel="stylesheet" />
-    <link href='<%=ResolveUrl("../../../plugins/WidgetsGallery/css/dx.light.css")%>' rel="stylesheet" />
+ <link href='<%=ResolveUrl("../../../plugins/WidgetsGallery/css/dx.common.css")%>' rel="stylesheet" />
+ <link href='<%=ResolveUrl("../../../plugins/WidgetsGallery/css/dx.light.css")%>' rel="stylesheet" />
 
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Header" runat="server">
-    <!--Page Title-->
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_TopLeftMenu" runat="server">
+ 
+            <button class="btn btn-mint  btn-rounded  btn-labeled" type="button" onclick="NewAgenda();return false;"><i class="btn-label ion-plus-round"></i><span class="bold" data-translate="_new">New</span></button>
+    
+
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder_Header" runat="server">
+  <!--Page Title-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <div id="page-title">
-        <h1 class="page-header text-overflow"><span data-translate="">အမှာစာ ပြုစုခြင်း</span></h1>
+        <h1 class="page-header text-overflow"><span data-translate="">အမှာစာ စုစည်းခြင်း</span></h1>
     </div>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--End page title-->
@@ -20,16 +25,15 @@
     <ol class="breadcrumb">
         <li><a href="#"><i class="demo-pli-home"></i></a></li>
         <li><a href="#" data-translate="_materbook"><span data-translate="">အစည်းအဝေးများ</span></a></li>
-        <li class="active"><span data-translate="">အမှာစာ ပြုစုခြင်း</span></li>
+        <li class="active"><span data-translate="">အမှာစာ စုစည်းခြင်းများ</span></li>
         <li class="active">
-            <button class="btn btn-mint  btn-rounded  btn-labeled" type="button" onclick="NewRequest();return false;"><i class="btn-label ion-plus-round"></i><span class="bold" data-translate="_new">New</span></button>
+            <button class="btn btn-mint  btn-rounded  btn-labeled" type="button" onclick="NewAgenda();return false;"><i class="btn-label ion-plus-round"></i><span class="bold" data-translate="_new">New</span></button>
     </ol>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--End breadcrumb-->
-
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder_Body" runat="server">
-    <div id="page-content">
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder_Body" runat="server">
+     <div id="page-content">
 
         <div class="panel">
             <div class="panel-body">
@@ -45,7 +49,7 @@
                             </div>
 
                         </div>
-                        <h3><i class="ion-compose">&nbsp</i><span data-translate="">အမှာစာများ</span></h3>
+                        <h3><i class="ion-compose">&nbsp</i><span data-translate="">အမှာစာ စုစည်းခြင်းများ</span></h3>
                         <!--Panel body-->
                         <div class="panel-body" id="backdetect">
                             <div class="tab-content">
@@ -54,8 +58,8 @@
 
                                     <div class="dx-viewport demo-container" id="panel_list_background" style="min-height: 300px;">
 
-
-                                        <div id="gc_requestList"></div>
+                                        
+                                        <div id="gc_agendaList"></div>
                                         <div class="options">
 
                                             <div class="option">
@@ -66,7 +70,7 @@
 
                                 </div>
 
-
+                                
                             </div>
                         </div>
                     </div>
@@ -76,11 +80,10 @@
             </div>
         </div>
     </div>
-
-
 </asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder_JS" runat="server">
-    <script src='<%=ResolveUrl("../../../plugins/WidgetsGallery/js/jszip.min.js")%>'></script>
+<asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder_JS" runat="server">
+     <script src='<%=ResolveUrl("../../../plugins/WidgetsGallery/js/jszip.min.js")%>'></script>
     <script src='<%=ResolveUrl("../../../plugins/WidgetsGallery/js/dx.all.js")%>'></script>
-    <script src='<%= ResolveUrl("pageMETRequests.js")%>'></script>
+    <script src='<%= ResolveUrl("pageMeetingAgendas.js")%>'></script>
+
 </asp:Content>
