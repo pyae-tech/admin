@@ -14,7 +14,7 @@ function SetUP() {
         type: "success",
         text: "Add Request",
         onClick: function (e) {
-            AddRequestToAgenda();
+            var msg = AddRequestToAgenda();           
         }
     });
 
@@ -271,13 +271,13 @@ function AddRequestToAgenda() {
         type: "POST",
         contentType: "application/json; charset=utf-8",
         success: function (data) {
-            if (data.d.toString().split('~')[0] == 'Success') {
-                ShowSuccessMessage("Success Added.");
+            if (data.d.toString().split('~')[0] == 'Success') {               
                 var result = JSON.parse(data.d.toString().split('~')[1]);
                 Bind_AgendaList(result);
+                DevExpress.ui.notify("Added Success","success", 600);
             }
             else {
-                alert("Oops. " + data.d.toString().split('~')[1]);
+                DevExpress.ui.notify(data.d.toString().split('~')[1], "error", 600);
             }
 
         },
