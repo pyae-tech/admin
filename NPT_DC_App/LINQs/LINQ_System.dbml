@@ -1,21 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SS_NPTDC" Class="LINQ_SystemDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=Systematic-svr;Initial Catalog=SS_NPTDC;User ID=rgbdeveloper" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SS_NPTDC_APP_ConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.SYS_UserRoleProgramView" Member="SYS_UserRoleProgramViews">
-    <Type Name="SYS_UserRoleProgramView">
-      <Column Name="RoleProgramID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="RoleID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ProgramID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="AllowView" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="AllowDelete" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="AllowUpdate" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="AllowCreate" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Scope" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ProgramCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ProgramName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="RoleCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="RoleName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
+  <Connection Mode="WebSettings" ConnectionString="Data Source=systematic-svr;Initial Catalog=SS_NPTDC;User ID=rgbdeveloper" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SS_NPTDC_APP_ConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.SYS_UserRoleView" Member="SYS_UserRoleViews">
     <Type Name="SYS_UserRoleView">
       <Column Name="RoleCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
@@ -115,18 +99,6 @@
       <Column Name="RoleMenuID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="RoleID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="MenuID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.SYS_UserRoleProgram" Member="SYS_UserRolePrograms">
-    <Type Name="SYS_UserRoleProgram">
-      <Column Name="RoleProgramID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="RoleID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ProgramID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="AllowView" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="AllowDelete" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="AllowUpdate" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="AllowCreate" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Scope" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.SYS_OrganizationView" Member="SYS_OrganizationViews">
@@ -400,20 +372,38 @@
       <Column Name="PositionID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Function Name="dbo.SYS_GetProgramRole" Method="SYS_GetProgramRole">
-    <Parameter Name="roleid" Type="System.String" DbType="NVarChar(50)" />
-    <ElementType Name="SYS_GetProgramRoleResult">
-      <Column Name="RoleID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="RoleProgramID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+  <Table Name="dbo.SYS_UserRoleProgram" Member="SYS_UserRolePrograms">
+    <Type Name="SYS_UserRoleProgram">
+      <Column Name="RoleProgramID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="ProgramID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ProgramName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="ProgramCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="AllowCreate" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="AllowUpdate" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="AllowDelete" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="AllowView" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
+      <Column Name="AllowDelete" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AllowUpdate" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AllowCreate" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Scope" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AllowDecision" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AllowAllDepartment" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SYS_UserRoleProgramView" Member="SYS_UserRoleProgramViews">
+    <Type Name="SYS_UserRoleProgramView">
+      <Column Name="RoleProgramID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RoleID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ProgramID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AllowView" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AllowDelete" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AllowUpdate" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AllowCreate" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Scope" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ProgramCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ProgramName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="RoleCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RoleName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="AllowDecision" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AllowAllDepartment" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.SYS_GetOrganizationMenuGroup" Method="SYS_GetOrganizationMenuGroup">
     <Parameter Name="orgid" Type="System.String" DbType="NVarChar(50)" />
     <ElementType Name="SYS_GetOrganizationMenuGroupResult">
@@ -450,6 +440,22 @@
       <Column Name="RoleID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="RoleName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="RoleMenu" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SYS_GetProgramRole" Method="SYS_GetProgramRole">
+    <Parameter Name="roleid" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="SYS_GetProgramRoleResult">
+      <Column Name="RoleID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RoleProgramID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ProgramID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ProgramName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="ProgramCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AllowCreate" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AllowUpdate" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AllowDelete" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AllowView" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AllowDecision" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AllowAllDepartment" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

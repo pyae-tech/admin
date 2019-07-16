@@ -39,9 +39,6 @@ namespace NPT_DC_App.LINQs
     partial void InsertSYS_UserRoleMenu(SYS_UserRoleMenu instance);
     partial void UpdateSYS_UserRoleMenu(SYS_UserRoleMenu instance);
     partial void DeleteSYS_UserRoleMenu(SYS_UserRoleMenu instance);
-    partial void InsertSYS_UserRoleProgram(SYS_UserRoleProgram instance);
-    partial void UpdateSYS_UserRoleProgram(SYS_UserRoleProgram instance);
-    partial void DeleteSYS_UserRoleProgram(SYS_UserRoleProgram instance);
     partial void InsertSYS_OrganizationMenuGroup(SYS_OrganizationMenuGroup instance);
     partial void UpdateSYS_OrganizationMenuGroup(SYS_OrganizationMenuGroup instance);
     partial void DeleteSYS_OrganizationMenuGroup(SYS_OrganizationMenuGroup instance);
@@ -69,6 +66,9 @@ namespace NPT_DC_App.LINQs
     partial void InsertSYS_User(SYS_User instance);
     partial void UpdateSYS_User(SYS_User instance);
     partial void DeleteSYS_User(SYS_User instance);
+    partial void InsertSYS_UserRoleProgram(SYS_UserRoleProgram instance);
+    partial void UpdateSYS_UserRoleProgram(SYS_UserRoleProgram instance);
+    partial void DeleteSYS_UserRoleProgram(SYS_UserRoleProgram instance);
     #endregion
 		
 		public LINQ_SystemDataContext() : 
@@ -99,14 +99,6 @@ namespace NPT_DC_App.LINQs
 				base(connection, mappingSource)
 		{
 			OnCreated();
-		}
-		
-		public System.Data.Linq.Table<SYS_UserRoleProgramView> SYS_UserRoleProgramViews
-		{
-			get
-			{
-				return this.GetTable<SYS_UserRoleProgramView>();
-			}
 		}
 		
 		public System.Data.Linq.Table<SYS_UserRoleView> SYS_UserRoleViews
@@ -170,14 +162,6 @@ namespace NPT_DC_App.LINQs
 			get
 			{
 				return this.GetTable<SYS_UserRoleMenu>();
-			}
-		}
-		
-		public System.Data.Linq.Table<SYS_UserRoleProgram> SYS_UserRolePrograms
-		{
-			get
-			{
-				return this.GetTable<SYS_UserRoleProgram>();
 			}
 		}
 		
@@ -293,11 +277,20 @@ namespace NPT_DC_App.LINQs
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SYS_GetProgramRole")]
-		public ISingleResult<SYS_GetProgramRoleResult> SYS_GetProgramRole([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string roleid)
+		public System.Data.Linq.Table<SYS_UserRoleProgram> SYS_UserRolePrograms
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), roleid);
-			return ((ISingleResult<SYS_GetProgramRoleResult>)(result.ReturnValue));
+			get
+			{
+				return this.GetTable<SYS_UserRoleProgram>();
+			}
+		}
+		
+		public System.Data.Linq.Table<SYS_UserRoleProgramView> SYS_UserRoleProgramViews
+		{
+			get
+			{
+				return this.GetTable<SYS_UserRoleProgramView>();
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SYS_GetOrganizationMenuGroup")]
@@ -320,230 +313,12 @@ namespace NPT_DC_App.LINQs
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usercode, password);
 			return ((ISingleResult<Sys_Do_LoginResult>)(result.ReturnValue));
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SYS_UserRoleProgramView")]
-	public partial class SYS_UserRoleProgramView
-	{
 		
-		private string _RoleProgramID;
-		
-		private string _RoleID;
-		
-		private string _ProgramID;
-		
-		private bool _AllowView;
-		
-		private bool _AllowDelete;
-		
-		private bool _AllowUpdate;
-		
-		private bool _AllowCreate;
-		
-		private string _Scope;
-		
-		private string _ProgramCode;
-		
-		private string _ProgramName;
-		
-		private string _RoleCode;
-		
-		private string _RoleName;
-		
-		public SYS_UserRoleProgramView()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SYS_GetProgramRole")]
+		public ISingleResult<SYS_GetProgramRoleResult> SYS_GetProgramRole([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string roleid)
 		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleProgramID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string RoleProgramID
-		{
-			get
-			{
-				return this._RoleProgramID;
-			}
-			set
-			{
-				if ((this._RoleProgramID != value))
-				{
-					this._RoleProgramID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string RoleID
-		{
-			get
-			{
-				return this._RoleID;
-			}
-			set
-			{
-				if ((this._RoleID != value))
-				{
-					this._RoleID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProgramID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string ProgramID
-		{
-			get
-			{
-				return this._ProgramID;
-			}
-			set
-			{
-				if ((this._ProgramID != value))
-				{
-					this._ProgramID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowView", DbType="Bit NOT NULL")]
-		public bool AllowView
-		{
-			get
-			{
-				return this._AllowView;
-			}
-			set
-			{
-				if ((this._AllowView != value))
-				{
-					this._AllowView = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowDelete", DbType="Bit NOT NULL")]
-		public bool AllowDelete
-		{
-			get
-			{
-				return this._AllowDelete;
-			}
-			set
-			{
-				if ((this._AllowDelete != value))
-				{
-					this._AllowDelete = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowUpdate", DbType="Bit NOT NULL")]
-		public bool AllowUpdate
-		{
-			get
-			{
-				return this._AllowUpdate;
-			}
-			set
-			{
-				if ((this._AllowUpdate != value))
-				{
-					this._AllowUpdate = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowCreate", DbType="Bit NOT NULL")]
-		public bool AllowCreate
-		{
-			get
-			{
-				return this._AllowCreate;
-			}
-			set
-			{
-				if ((this._AllowCreate != value))
-				{
-					this._AllowCreate = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Scope", DbType="NVarChar(50)")]
-		public string Scope
-		{
-			get
-			{
-				return this._Scope;
-			}
-			set
-			{
-				if ((this._Scope != value))
-				{
-					this._Scope = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProgramCode", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string ProgramCode
-		{
-			get
-			{
-				return this._ProgramCode;
-			}
-			set
-			{
-				if ((this._ProgramCode != value))
-				{
-					this._ProgramCode = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProgramName", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
-		public string ProgramName
-		{
-			get
-			{
-				return this._ProgramName;
-			}
-			set
-			{
-				if ((this._ProgramName != value))
-				{
-					this._ProgramName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleCode", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string RoleCode
-		{
-			get
-			{
-				return this._RoleCode;
-			}
-			set
-			{
-				if ((this._RoleCode != value))
-				{
-					this._RoleCode = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string RoleName
-		{
-			get
-			{
-				return this._RoleName;
-			}
-			set
-			{
-				if ((this._RoleName != value))
-				{
-					this._RoleName = value;
-				}
-			}
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), roleid);
+			return ((ISingleResult<SYS_GetProgramRoleResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -2055,236 +1830,6 @@ namespace NPT_DC_App.LINQs
 					this._MenuID = value;
 					this.SendPropertyChanged("MenuID");
 					this.OnMenuIDChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SYS_UserRoleProgram")]
-	public partial class SYS_UserRoleProgram : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _RoleProgramID;
-		
-		private string _RoleID;
-		
-		private string _ProgramID;
-		
-		private bool _AllowView;
-		
-		private bool _AllowDelete;
-		
-		private bool _AllowUpdate;
-		
-		private bool _AllowCreate;
-		
-		private string _Scope;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnRoleProgramIDChanging(string value);
-    partial void OnRoleProgramIDChanged();
-    partial void OnRoleIDChanging(string value);
-    partial void OnRoleIDChanged();
-    partial void OnProgramIDChanging(string value);
-    partial void OnProgramIDChanged();
-    partial void OnAllowViewChanging(bool value);
-    partial void OnAllowViewChanged();
-    partial void OnAllowDeleteChanging(bool value);
-    partial void OnAllowDeleteChanged();
-    partial void OnAllowUpdateChanging(bool value);
-    partial void OnAllowUpdateChanged();
-    partial void OnAllowCreateChanging(bool value);
-    partial void OnAllowCreateChanged();
-    partial void OnScopeChanging(string value);
-    partial void OnScopeChanged();
-    #endregion
-		
-		public SYS_UserRoleProgram()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleProgramID", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string RoleProgramID
-		{
-			get
-			{
-				return this._RoleProgramID;
-			}
-			set
-			{
-				if ((this._RoleProgramID != value))
-				{
-					this.OnRoleProgramIDChanging(value);
-					this.SendPropertyChanging();
-					this._RoleProgramID = value;
-					this.SendPropertyChanged("RoleProgramID");
-					this.OnRoleProgramIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string RoleID
-		{
-			get
-			{
-				return this._RoleID;
-			}
-			set
-			{
-				if ((this._RoleID != value))
-				{
-					this.OnRoleIDChanging(value);
-					this.SendPropertyChanging();
-					this._RoleID = value;
-					this.SendPropertyChanged("RoleID");
-					this.OnRoleIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProgramID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string ProgramID
-		{
-			get
-			{
-				return this._ProgramID;
-			}
-			set
-			{
-				if ((this._ProgramID != value))
-				{
-					this.OnProgramIDChanging(value);
-					this.SendPropertyChanging();
-					this._ProgramID = value;
-					this.SendPropertyChanged("ProgramID");
-					this.OnProgramIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowView", DbType="Bit NOT NULL")]
-		public bool AllowView
-		{
-			get
-			{
-				return this._AllowView;
-			}
-			set
-			{
-				if ((this._AllowView != value))
-				{
-					this.OnAllowViewChanging(value);
-					this.SendPropertyChanging();
-					this._AllowView = value;
-					this.SendPropertyChanged("AllowView");
-					this.OnAllowViewChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowDelete", DbType="Bit NOT NULL")]
-		public bool AllowDelete
-		{
-			get
-			{
-				return this._AllowDelete;
-			}
-			set
-			{
-				if ((this._AllowDelete != value))
-				{
-					this.OnAllowDeleteChanging(value);
-					this.SendPropertyChanging();
-					this._AllowDelete = value;
-					this.SendPropertyChanged("AllowDelete");
-					this.OnAllowDeleteChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowUpdate", DbType="Bit NOT NULL")]
-		public bool AllowUpdate
-		{
-			get
-			{
-				return this._AllowUpdate;
-			}
-			set
-			{
-				if ((this._AllowUpdate != value))
-				{
-					this.OnAllowUpdateChanging(value);
-					this.SendPropertyChanging();
-					this._AllowUpdate = value;
-					this.SendPropertyChanged("AllowUpdate");
-					this.OnAllowUpdateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowCreate", DbType="Bit NOT NULL")]
-		public bool AllowCreate
-		{
-			get
-			{
-				return this._AllowCreate;
-			}
-			set
-			{
-				if ((this._AllowCreate != value))
-				{
-					this.OnAllowCreateChanging(value);
-					this.SendPropertyChanging();
-					this._AllowCreate = value;
-					this.SendPropertyChanged("AllowCreate");
-					this.OnAllowCreateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Scope", DbType="NVarChar(50)")]
-		public string Scope
-		{
-			get
-			{
-				return this._Scope;
-			}
-			set
-			{
-				if ((this._Scope != value))
-				{
-					this.OnScopeChanging(value);
-					this.SendPropertyChanging();
-					this._Scope = value;
-					this.SendPropertyChanged("Scope");
-					this.OnScopeChanged();
 				}
 			}
 		}
@@ -7215,32 +6760,84 @@ namespace NPT_DC_App.LINQs
 		}
 	}
 	
-	public partial class SYS_GetProgramRoleResult
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SYS_UserRoleProgram")]
+	public partial class SYS_UserRoleProgram : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
-		private string _RoleID;
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private string _RoleProgramID;
 		
+		private string _RoleID;
+		
 		private string _ProgramID;
-		
-		private string _ProgramName;
-		
-		private string _ProgramCode;
-		
-		private bool _AllowCreate;
-		
-		private bool _AllowUpdate;
-		
-		private bool _AllowDelete;
 		
 		private bool _AllowView;
 		
-		public SYS_GetProgramRoleResult()
+		private bool _AllowDelete;
+		
+		private bool _AllowUpdate;
+		
+		private bool _AllowCreate;
+		
+		private string _Scope;
+		
+		private System.Nullable<bool> _AllowDecision;
+		
+		private System.Nullable<bool> _AllowAllDepartment;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnRoleProgramIDChanging(string value);
+    partial void OnRoleProgramIDChanged();
+    partial void OnRoleIDChanging(string value);
+    partial void OnRoleIDChanged();
+    partial void OnProgramIDChanging(string value);
+    partial void OnProgramIDChanged();
+    partial void OnAllowViewChanging(bool value);
+    partial void OnAllowViewChanged();
+    partial void OnAllowDeleteChanging(bool value);
+    partial void OnAllowDeleteChanged();
+    partial void OnAllowUpdateChanging(bool value);
+    partial void OnAllowUpdateChanged();
+    partial void OnAllowCreateChanging(bool value);
+    partial void OnAllowCreateChanged();
+    partial void OnScopeChanging(string value);
+    partial void OnScopeChanged();
+    partial void OnAllowDecisionChanging(System.Nullable<bool> value);
+    partial void OnAllowDecisionChanged();
+    partial void OnAllowAllDepartmentChanging(System.Nullable<bool> value);
+    partial void OnAllowAllDepartmentChanged();
+    #endregion
+		
+		public SYS_UserRoleProgram()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleID", DbType="NVarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleProgramID", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string RoleProgramID
+		{
+			get
+			{
+				return this._RoleProgramID;
+			}
+			set
+			{
+				if ((this._RoleProgramID != value))
+				{
+					this.OnRoleProgramIDChanging(value);
+					this.SendPropertyChanging();
+					this._RoleProgramID = value;
+					this.SendPropertyChanged("RoleProgramID");
+					this.OnRoleProgramIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
 		public string RoleID
 		{
 			get
@@ -7251,12 +6848,233 @@ namespace NPT_DC_App.LINQs
 			{
 				if ((this._RoleID != value))
 				{
+					this.OnRoleIDChanging(value);
+					this.SendPropertyChanging();
 					this._RoleID = value;
+					this.SendPropertyChanged("RoleID");
+					this.OnRoleIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleProgramID", DbType="NVarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProgramID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string ProgramID
+		{
+			get
+			{
+				return this._ProgramID;
+			}
+			set
+			{
+				if ((this._ProgramID != value))
+				{
+					this.OnProgramIDChanging(value);
+					this.SendPropertyChanging();
+					this._ProgramID = value;
+					this.SendPropertyChanged("ProgramID");
+					this.OnProgramIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowView", DbType="Bit NOT NULL")]
+		public bool AllowView
+		{
+			get
+			{
+				return this._AllowView;
+			}
+			set
+			{
+				if ((this._AllowView != value))
+				{
+					this.OnAllowViewChanging(value);
+					this.SendPropertyChanging();
+					this._AllowView = value;
+					this.SendPropertyChanged("AllowView");
+					this.OnAllowViewChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowDelete", DbType="Bit NOT NULL")]
+		public bool AllowDelete
+		{
+			get
+			{
+				return this._AllowDelete;
+			}
+			set
+			{
+				if ((this._AllowDelete != value))
+				{
+					this.OnAllowDeleteChanging(value);
+					this.SendPropertyChanging();
+					this._AllowDelete = value;
+					this.SendPropertyChanged("AllowDelete");
+					this.OnAllowDeleteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowUpdate", DbType="Bit NOT NULL")]
+		public bool AllowUpdate
+		{
+			get
+			{
+				return this._AllowUpdate;
+			}
+			set
+			{
+				if ((this._AllowUpdate != value))
+				{
+					this.OnAllowUpdateChanging(value);
+					this.SendPropertyChanging();
+					this._AllowUpdate = value;
+					this.SendPropertyChanged("AllowUpdate");
+					this.OnAllowUpdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowCreate", DbType="Bit NOT NULL")]
+		public bool AllowCreate
+		{
+			get
+			{
+				return this._AllowCreate;
+			}
+			set
+			{
+				if ((this._AllowCreate != value))
+				{
+					this.OnAllowCreateChanging(value);
+					this.SendPropertyChanging();
+					this._AllowCreate = value;
+					this.SendPropertyChanged("AllowCreate");
+					this.OnAllowCreateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Scope", DbType="NVarChar(50)")]
+		public string Scope
+		{
+			get
+			{
+				return this._Scope;
+			}
+			set
+			{
+				if ((this._Scope != value))
+				{
+					this.OnScopeChanging(value);
+					this.SendPropertyChanging();
+					this._Scope = value;
+					this.SendPropertyChanged("Scope");
+					this.OnScopeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowDecision", DbType="Bit")]
+		public System.Nullable<bool> AllowDecision
+		{
+			get
+			{
+				return this._AllowDecision;
+			}
+			set
+			{
+				if ((this._AllowDecision != value))
+				{
+					this.OnAllowDecisionChanging(value);
+					this.SendPropertyChanging();
+					this._AllowDecision = value;
+					this.SendPropertyChanged("AllowDecision");
+					this.OnAllowDecisionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowAllDepartment", DbType="Bit")]
+		public System.Nullable<bool> AllowAllDepartment
+		{
+			get
+			{
+				return this._AllowAllDepartment;
+			}
+			set
+			{
+				if ((this._AllowAllDepartment != value))
+				{
+					this.OnAllowAllDepartmentChanging(value);
+					this.SendPropertyChanging();
+					this._AllowAllDepartment = value;
+					this.SendPropertyChanged("AllowAllDepartment");
+					this.OnAllowAllDepartmentChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SYS_UserRoleProgramView")]
+	public partial class SYS_UserRoleProgramView
+	{
+		
+		private string _RoleProgramID;
+		
+		private string _RoleID;
+		
+		private string _ProgramID;
+		
+		private bool _AllowView;
+		
+		private bool _AllowDelete;
+		
+		private bool _AllowUpdate;
+		
+		private bool _AllowCreate;
+		
+		private string _Scope;
+		
+		private string _ProgramCode;
+		
+		private string _ProgramName;
+		
+		private string _RoleCode;
+		
+		private string _RoleName;
+		
+		private System.Nullable<bool> _AllowDecision;
+		
+		private System.Nullable<bool> _AllowAllDepartment;
+		
+		public SYS_UserRoleProgramView()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleProgramID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
 		public string RoleProgramID
 		{
 			get
@@ -7268,6 +7086,22 @@ namespace NPT_DC_App.LINQs
 				if ((this._RoleProgramID != value))
 				{
 					this._RoleProgramID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string RoleID
+		{
+			get
+			{
+				return this._RoleID;
+			}
+			set
+			{
+				if ((this._RoleID != value))
+				{
+					this._RoleID = value;
 				}
 			}
 		}
@@ -7288,66 +7122,18 @@ namespace NPT_DC_App.LINQs
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProgramName", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
-		public string ProgramName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowView", DbType="Bit NOT NULL")]
+		public bool AllowView
 		{
 			get
 			{
-				return this._ProgramName;
+				return this._AllowView;
 			}
 			set
 			{
-				if ((this._ProgramName != value))
+				if ((this._AllowView != value))
 				{
-					this._ProgramName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProgramCode", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string ProgramCode
-		{
-			get
-			{
-				return this._ProgramCode;
-			}
-			set
-			{
-				if ((this._ProgramCode != value))
-				{
-					this._ProgramCode = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowCreate", DbType="Bit NOT NULL")]
-		public bool AllowCreate
-		{
-			get
-			{
-				return this._AllowCreate;
-			}
-			set
-			{
-				if ((this._AllowCreate != value))
-				{
-					this._AllowCreate = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowUpdate", DbType="Bit NOT NULL")]
-		public bool AllowUpdate
-		{
-			get
-			{
-				return this._AllowUpdate;
-			}
-			set
-			{
-				if ((this._AllowUpdate != value))
-				{
-					this._AllowUpdate = value;
+					this._AllowView = value;
 				}
 			}
 		}
@@ -7368,18 +7154,146 @@ namespace NPT_DC_App.LINQs
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowView", DbType="Bit NOT NULL")]
-		public bool AllowView
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowUpdate", DbType="Bit NOT NULL")]
+		public bool AllowUpdate
 		{
 			get
 			{
-				return this._AllowView;
+				return this._AllowUpdate;
 			}
 			set
 			{
-				if ((this._AllowView != value))
+				if ((this._AllowUpdate != value))
 				{
-					this._AllowView = value;
+					this._AllowUpdate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowCreate", DbType="Bit NOT NULL")]
+		public bool AllowCreate
+		{
+			get
+			{
+				return this._AllowCreate;
+			}
+			set
+			{
+				if ((this._AllowCreate != value))
+				{
+					this._AllowCreate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Scope", DbType="NVarChar(50)")]
+		public string Scope
+		{
+			get
+			{
+				return this._Scope;
+			}
+			set
+			{
+				if ((this._Scope != value))
+				{
+					this._Scope = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProgramCode", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string ProgramCode
+		{
+			get
+			{
+				return this._ProgramCode;
+			}
+			set
+			{
+				if ((this._ProgramCode != value))
+				{
+					this._ProgramCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProgramName", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string ProgramName
+		{
+			get
+			{
+				return this._ProgramName;
+			}
+			set
+			{
+				if ((this._ProgramName != value))
+				{
+					this._ProgramName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleCode", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string RoleCode
+		{
+			get
+			{
+				return this._RoleCode;
+			}
+			set
+			{
+				if ((this._RoleCode != value))
+				{
+					this._RoleCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string RoleName
+		{
+			get
+			{
+				return this._RoleName;
+			}
+			set
+			{
+				if ((this._RoleName != value))
+				{
+					this._RoleName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowDecision", DbType="Bit")]
+		public System.Nullable<bool> AllowDecision
+		{
+			get
+			{
+				return this._AllowDecision;
+			}
+			set
+			{
+				if ((this._AllowDecision != value))
+				{
+					this._AllowDecision = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowAllDepartment", DbType="Bit")]
+		public System.Nullable<bool> AllowAllDepartment
+		{
+			get
+			{
+				return this._AllowAllDepartment;
+			}
+			set
+			{
+				if ((this._AllowAllDepartment != value))
+				{
+					this._AllowAllDepartment = value;
 				}
 			}
 		}
@@ -7800,6 +7714,212 @@ namespace NPT_DC_App.LINQs
 				if ((this._RoleMenu != value))
 				{
 					this._RoleMenu = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SYS_GetProgramRoleResult
+	{
+		
+		private string _RoleID;
+		
+		private string _RoleProgramID;
+		
+		private string _ProgramID;
+		
+		private string _ProgramName;
+		
+		private string _ProgramCode;
+		
+		private bool _AllowCreate;
+		
+		private bool _AllowUpdate;
+		
+		private bool _AllowDelete;
+		
+		private bool _AllowView;
+		
+		private bool _AllowDecision;
+		
+		private bool _AllowAllDepartment;
+		
+		public SYS_GetProgramRoleResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleID", DbType="NVarChar(50)")]
+		public string RoleID
+		{
+			get
+			{
+				return this._RoleID;
+			}
+			set
+			{
+				if ((this._RoleID != value))
+				{
+					this._RoleID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleProgramID", DbType="NVarChar(50)")]
+		public string RoleProgramID
+		{
+			get
+			{
+				return this._RoleProgramID;
+			}
+			set
+			{
+				if ((this._RoleProgramID != value))
+				{
+					this._RoleProgramID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProgramID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string ProgramID
+		{
+			get
+			{
+				return this._ProgramID;
+			}
+			set
+			{
+				if ((this._ProgramID != value))
+				{
+					this._ProgramID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProgramName", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string ProgramName
+		{
+			get
+			{
+				return this._ProgramName;
+			}
+			set
+			{
+				if ((this._ProgramName != value))
+				{
+					this._ProgramName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProgramCode", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string ProgramCode
+		{
+			get
+			{
+				return this._ProgramCode;
+			}
+			set
+			{
+				if ((this._ProgramCode != value))
+				{
+					this._ProgramCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowCreate", DbType="Bit NOT NULL")]
+		public bool AllowCreate
+		{
+			get
+			{
+				return this._AllowCreate;
+			}
+			set
+			{
+				if ((this._AllowCreate != value))
+				{
+					this._AllowCreate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowUpdate", DbType="Bit NOT NULL")]
+		public bool AllowUpdate
+		{
+			get
+			{
+				return this._AllowUpdate;
+			}
+			set
+			{
+				if ((this._AllowUpdate != value))
+				{
+					this._AllowUpdate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowDelete", DbType="Bit NOT NULL")]
+		public bool AllowDelete
+		{
+			get
+			{
+				return this._AllowDelete;
+			}
+			set
+			{
+				if ((this._AllowDelete != value))
+				{
+					this._AllowDelete = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowView", DbType="Bit NOT NULL")]
+		public bool AllowView
+		{
+			get
+			{
+				return this._AllowView;
+			}
+			set
+			{
+				if ((this._AllowView != value))
+				{
+					this._AllowView = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowDecision", DbType="Bit NOT NULL")]
+		public bool AllowDecision
+		{
+			get
+			{
+				return this._AllowDecision;
+			}
+			set
+			{
+				if ((this._AllowDecision != value))
+				{
+					this._AllowDecision = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowAllDepartment", DbType="Bit NOT NULL")]
+		public bool AllowAllDepartment
+		{
+			get
+			{
+				return this._AllowAllDepartment;
+			}
+			set
+			{
+				if ((this._AllowAllDepartment != value))
+				{
+					this._AllowAllDepartment = value;
 				}
 			}
 		}

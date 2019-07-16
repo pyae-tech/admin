@@ -42,11 +42,13 @@ function Build_ColumnHeader() {
             dataField: "RequestType",
             caption: "အမျိုးအစား",
             cssClass: 'cls',
+            width:130,
         },
         {
             dataField: "RequestStatus",
             caption: "Status",
             cssClass: 'cls',
+            width: 130,
         },
         {
             dataField: "RequestOn",
@@ -54,18 +56,20 @@ function Build_ColumnHeader() {
             dataType: "date",
             format: 'dd-MM-yyyy',
             cssClass: 'cls',
+            width: 130,
         },
         {
             dataField: "RequestUserName",
             caption: "တင်ပြသူ",
             cssClass: 'cls',
 
+        },
+        {
+            dataField: "DepartmentName",
+            caption: "ဌာန",
+            //allowHeaderFiltering: false,
+            cssClass: 'cls',
         }
-        //{
-        //    dataField: "DepartmentName",
-        //    caption: "[DepartmentName]",
-        //    allowHeaderFiltering: false
-        //}
     ];
 }
 

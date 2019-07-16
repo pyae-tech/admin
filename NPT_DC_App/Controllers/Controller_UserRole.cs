@@ -214,9 +214,21 @@ namespace NPT_DC_App.Controllers
                 }
                 else if (type == "delete")
                 {
-                    if (data == "true") the_record.AllowDelete = true;
+                    if (data == "true") the_record.AllowDecision = true;
                     else the_record.AllowDelete = false;
                 }
+                else if (type == "decision")
+                {
+                    if (data == "true") the_record.AllowDecision = true;
+                    else the_record.AllowDecision = false;
+                }
+
+                else if (type == "alldepartment")
+                {
+                    if (data == "true") the_record.AllowAllDepartment = true;
+                    else the_record.AllowAllDepartment = false;
+                }
+
 
                 dc.SubmitChanges();
                 return "Success~";
