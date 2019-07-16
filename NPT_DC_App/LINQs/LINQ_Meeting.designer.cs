@@ -36,12 +36,12 @@ namespace NPT_DC_App.LINQs
     partial void InsertMET_RequestItem(MET_RequestItem instance);
     partial void UpdateMET_RequestItem(MET_RequestItem instance);
     partial void DeleteMET_RequestItem(MET_RequestItem instance);
-    partial void InsertMET_Request(MET_Request instance);
-    partial void UpdateMET_Request(MET_Request instance);
-    partial void DeleteMET_Request(MET_Request instance);
     partial void InsertMET_Agenda(MET_Agenda instance);
     partial void UpdateMET_Agenda(MET_Agenda instance);
     partial void DeleteMET_Agenda(MET_Agenda instance);
+    partial void InsertMET_Request(MET_Request instance);
+    partial void UpdateMET_Request(MET_Request instance);
+    partial void DeleteMET_Request(MET_Request instance);
     #endregion
 		
 		public LINQ_MeetingDataContext() : 
@@ -106,22 +106,6 @@ namespace NPT_DC_App.LINQs
 			}
 		}
 		
-		public System.Data.Linq.Table<MET_Request> MET_Requests
-		{
-			get
-			{
-				return this.GetTable<MET_Request>();
-			}
-		}
-		
-		public System.Data.Linq.Table<MET_RequestView> MET_RequestViews
-		{
-			get
-			{
-				return this.GetTable<MET_RequestView>();
-			}
-		}
-		
 		public System.Data.Linq.Table<MET_AgendaView> MET_AgendaViews
 		{
 			get
@@ -135,6 +119,22 @@ namespace NPT_DC_App.LINQs
 			get
 			{
 				return this.GetTable<MET_Agenda>();
+			}
+		}
+		
+		public System.Data.Linq.Table<MET_Request> MET_Requests
+		{
+			get
+			{
+				return this.GetTable<MET_Request>();
+			}
+		}
+		
+		public System.Data.Linq.Table<MET_RequestView> MET_RequestViews
+		{
+			get
+			{
+				return this.GetTable<MET_RequestView>();
 			}
 		}
 		
@@ -1350,1121 +1350,6 @@ namespace NPT_DC_App.LINQs
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MET_Request")]
-	public partial class MET_Request : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _RequestID;
-		
-		private string _DepartmentID;
-		
-		private string _RequestType;
-		
-		private string _RequestNo;
-		
-		private string _RequestBy;
-		
-		private string _RequestTitle;
-		
-		private string _RequestStatus;
-		
-		private System.DateTime _RequestOn;
-		
-		private string _AgendaID;
-		
-		private string _Remark;
-		
-		private string _ApprovedBy;
-		
-		private System.DateTime _ApprovedOn;
-		
-		private string _ApprovedRemark;
-		
-		private string _ApprovalStatus;
-		
-		private string _Description;
-		
-		private bool _Active;
-		
-		private string _CreatedBy;
-		
-		private System.DateTime _CreatedOn;
-		
-		private string _ModifiedBy;
-		
-		private System.DateTime _ModifiedOn;
-		
-		private string _LastAction;
-		
-		private string _CombineDecision;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnRequestIDChanging(string value);
-    partial void OnRequestIDChanged();
-    partial void OnDepartmentIDChanging(string value);
-    partial void OnDepartmentIDChanged();
-    partial void OnRequestTypeChanging(string value);
-    partial void OnRequestTypeChanged();
-    partial void OnRequestNoChanging(string value);
-    partial void OnRequestNoChanged();
-    partial void OnRequestByChanging(string value);
-    partial void OnRequestByChanged();
-    partial void OnRequestTitleChanging(string value);
-    partial void OnRequestTitleChanged();
-    partial void OnRequestStatusChanging(string value);
-    partial void OnRequestStatusChanged();
-    partial void OnRequestOnChanging(System.DateTime value);
-    partial void OnRequestOnChanged();
-    partial void OnAgendaIDChanging(string value);
-    partial void OnAgendaIDChanged();
-    partial void OnRemarkChanging(string value);
-    partial void OnRemarkChanged();
-    partial void OnApprovedByChanging(string value);
-    partial void OnApprovedByChanged();
-    partial void OnApprovedOnChanging(System.DateTime value);
-    partial void OnApprovedOnChanged();
-    partial void OnApprovedRemarkChanging(string value);
-    partial void OnApprovedRemarkChanged();
-    partial void OnApprovalStatusChanging(string value);
-    partial void OnApprovalStatusChanged();
-    partial void OnDescriptionChanging(string value);
-    partial void OnDescriptionChanged();
-    partial void OnActiveChanging(bool value);
-    partial void OnActiveChanged();
-    partial void OnCreatedByChanging(string value);
-    partial void OnCreatedByChanged();
-    partial void OnCreatedOnChanging(System.DateTime value);
-    partial void OnCreatedOnChanged();
-    partial void OnModifiedByChanging(string value);
-    partial void OnModifiedByChanged();
-    partial void OnModifiedOnChanging(System.DateTime value);
-    partial void OnModifiedOnChanged();
-    partial void OnLastActionChanging(string value);
-    partial void OnLastActionChanged();
-    partial void OnCombineDecisionChanging(string value);
-    partial void OnCombineDecisionChanged();
-    #endregion
-		
-		public MET_Request()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestID", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string RequestID
-		{
-			get
-			{
-				return this._RequestID;
-			}
-			set
-			{
-				if ((this._RequestID != value))
-				{
-					this.OnRequestIDChanging(value);
-					this.SendPropertyChanging();
-					this._RequestID = value;
-					this.SendPropertyChanged("RequestID");
-					this.OnRequestIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartmentID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string DepartmentID
-		{
-			get
-			{
-				return this._DepartmentID;
-			}
-			set
-			{
-				if ((this._DepartmentID != value))
-				{
-					this.OnDepartmentIDChanging(value);
-					this.SendPropertyChanging();
-					this._DepartmentID = value;
-					this.SendPropertyChanged("DepartmentID");
-					this.OnDepartmentIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestType", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string RequestType
-		{
-			get
-			{
-				return this._RequestType;
-			}
-			set
-			{
-				if ((this._RequestType != value))
-				{
-					this.OnRequestTypeChanging(value);
-					this.SendPropertyChanging();
-					this._RequestType = value;
-					this.SendPropertyChanged("RequestType");
-					this.OnRequestTypeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestNo", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string RequestNo
-		{
-			get
-			{
-				return this._RequestNo;
-			}
-			set
-			{
-				if ((this._RequestNo != value))
-				{
-					this.OnRequestNoChanging(value);
-					this.SendPropertyChanging();
-					this._RequestNo = value;
-					this.SendPropertyChanged("RequestNo");
-					this.OnRequestNoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string RequestBy
-		{
-			get
-			{
-				return this._RequestBy;
-			}
-			set
-			{
-				if ((this._RequestBy != value))
-				{
-					this.OnRequestByChanging(value);
-					this.SendPropertyChanging();
-					this._RequestBy = value;
-					this.SendPropertyChanged("RequestBy");
-					this.OnRequestByChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestTitle", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
-		public string RequestTitle
-		{
-			get
-			{
-				return this._RequestTitle;
-			}
-			set
-			{
-				if ((this._RequestTitle != value))
-				{
-					this.OnRequestTitleChanging(value);
-					this.SendPropertyChanging();
-					this._RequestTitle = value;
-					this.SendPropertyChanged("RequestTitle");
-					this.OnRequestTitleChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestStatus", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string RequestStatus
-		{
-			get
-			{
-				return this._RequestStatus;
-			}
-			set
-			{
-				if ((this._RequestStatus != value))
-				{
-					this.OnRequestStatusChanging(value);
-					this.SendPropertyChanging();
-					this._RequestStatus = value;
-					this.SendPropertyChanged("RequestStatus");
-					this.OnRequestStatusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestOn", DbType="DateTime NOT NULL")]
-		public System.DateTime RequestOn
-		{
-			get
-			{
-				return this._RequestOn;
-			}
-			set
-			{
-				if ((this._RequestOn != value))
-				{
-					this.OnRequestOnChanging(value);
-					this.SendPropertyChanging();
-					this._RequestOn = value;
-					this.SendPropertyChanged("RequestOn");
-					this.OnRequestOnChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgendaID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string AgendaID
-		{
-			get
-			{
-				return this._AgendaID;
-			}
-			set
-			{
-				if ((this._AgendaID != value))
-				{
-					this.OnAgendaIDChanging(value);
-					this.SendPropertyChanging();
-					this._AgendaID = value;
-					this.SendPropertyChanged("AgendaID");
-					this.OnAgendaIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Remark", DbType="NVarChar(3000) NOT NULL", CanBeNull=false)]
-		public string Remark
-		{
-			get
-			{
-				return this._Remark;
-			}
-			set
-			{
-				if ((this._Remark != value))
-				{
-					this.OnRemarkChanging(value);
-					this.SendPropertyChanging();
-					this._Remark = value;
-					this.SendPropertyChanged("Remark");
-					this.OnRemarkChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovedBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string ApprovedBy
-		{
-			get
-			{
-				return this._ApprovedBy;
-			}
-			set
-			{
-				if ((this._ApprovedBy != value))
-				{
-					this.OnApprovedByChanging(value);
-					this.SendPropertyChanging();
-					this._ApprovedBy = value;
-					this.SendPropertyChanged("ApprovedBy");
-					this.OnApprovedByChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovedOn", DbType="DateTime NOT NULL")]
-		public System.DateTime ApprovedOn
-		{
-			get
-			{
-				return this._ApprovedOn;
-			}
-			set
-			{
-				if ((this._ApprovedOn != value))
-				{
-					this.OnApprovedOnChanging(value);
-					this.SendPropertyChanging();
-					this._ApprovedOn = value;
-					this.SendPropertyChanged("ApprovedOn");
-					this.OnApprovedOnChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovedRemark", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string ApprovedRemark
-		{
-			get
-			{
-				return this._ApprovedRemark;
-			}
-			set
-			{
-				if ((this._ApprovedRemark != value))
-				{
-					this.OnApprovedRemarkChanging(value);
-					this.SendPropertyChanging();
-					this._ApprovedRemark = value;
-					this.SendPropertyChanged("ApprovedRemark");
-					this.OnApprovedRemarkChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovalStatus", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string ApprovalStatus
-		{
-			get
-			{
-				return this._ApprovalStatus;
-			}
-			set
-			{
-				if ((this._ApprovalStatus != value))
-				{
-					this.OnApprovalStatusChanging(value);
-					this.SendPropertyChanging();
-					this._ApprovalStatus = value;
-					this.SendPropertyChanged("ApprovalStatus");
-					this.OnApprovalStatusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
-		public string Description
-		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this.OnDescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._Description = value;
-					this.SendPropertyChanged("Description");
-					this.OnDescriptionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Active", DbType="Bit NOT NULL")]
-		public bool Active
-		{
-			get
-			{
-				return this._Active;
-			}
-			set
-			{
-				if ((this._Active != value))
-				{
-					this.OnActiveChanging(value);
-					this.SendPropertyChanging();
-					this._Active = value;
-					this.SendPropertyChanged("Active");
-					this.OnActiveChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string CreatedBy
-		{
-			get
-			{
-				return this._CreatedBy;
-			}
-			set
-			{
-				if ((this._CreatedBy != value))
-				{
-					this.OnCreatedByChanging(value);
-					this.SendPropertyChanging();
-					this._CreatedBy = value;
-					this.SendPropertyChanged("CreatedBy");
-					this.OnCreatedByChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedOn", DbType="DateTime NOT NULL")]
-		public System.DateTime CreatedOn
-		{
-			get
-			{
-				return this._CreatedOn;
-			}
-			set
-			{
-				if ((this._CreatedOn != value))
-				{
-					this.OnCreatedOnChanging(value);
-					this.SendPropertyChanging();
-					this._CreatedOn = value;
-					this.SendPropertyChanged("CreatedOn");
-					this.OnCreatedOnChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string ModifiedBy
-		{
-			get
-			{
-				return this._ModifiedBy;
-			}
-			set
-			{
-				if ((this._ModifiedBy != value))
-				{
-					this.OnModifiedByChanging(value);
-					this.SendPropertyChanging();
-					this._ModifiedBy = value;
-					this.SendPropertyChanged("ModifiedBy");
-					this.OnModifiedByChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedOn", DbType="DateTime NOT NULL")]
-		public System.DateTime ModifiedOn
-		{
-			get
-			{
-				return this._ModifiedOn;
-			}
-			set
-			{
-				if ((this._ModifiedOn != value))
-				{
-					this.OnModifiedOnChanging(value);
-					this.SendPropertyChanging();
-					this._ModifiedOn = value;
-					this.SendPropertyChanged("ModifiedOn");
-					this.OnModifiedOnChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastAction", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string LastAction
-		{
-			get
-			{
-				return this._LastAction;
-			}
-			set
-			{
-				if ((this._LastAction != value))
-				{
-					this.OnLastActionChanging(value);
-					this.SendPropertyChanging();
-					this._LastAction = value;
-					this.SendPropertyChanged("LastAction");
-					this.OnLastActionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CombineDecision", DbType="NVarChar(MAX)")]
-		public string CombineDecision
-		{
-			get
-			{
-				return this._CombineDecision;
-			}
-			set
-			{
-				if ((this._CombineDecision != value))
-				{
-					this.OnCombineDecisionChanging(value);
-					this.SendPropertyChanging();
-					this._CombineDecision = value;
-					this.SendPropertyChanged("CombineDecision");
-					this.OnCombineDecisionChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MET_RequestView")]
-	public partial class MET_RequestView
-	{
-		
-		private string _RequestID;
-		
-		private string _DepartmentID;
-		
-		private string _RequestType;
-		
-		private string _RequestNo;
-		
-		private string _RequestTitle;
-		
-		private string _RequestStatus;
-		
-		private System.DateTime _RequestOn;
-		
-		private string _Remark;
-		
-		private string _ApprovedBy;
-		
-		private System.DateTime _ApprovedOn;
-		
-		private string _ApprovedRemark;
-		
-		private string _ApprovalStatus;
-		
-		private string _Description;
-		
-		private bool _Active;
-		
-		private string _CreatedBy;
-		
-		private System.DateTime _CreatedOn;
-		
-		private string _ModifiedBy;
-		
-		private System.DateTime _ModifiedOn;
-		
-		private string _LastAction;
-		
-		private string _DepartmentName;
-		
-		private string _CUserCode;
-		
-		private string _OrgID;
-		
-		private string _OrgCode;
-		
-		private string _MUserCode;
-		
-		private string _RequestUserCode;
-		
-		private string _RequestUserName;
-		
-		private string _RequestBy;
-		
-		private string _AgendaID;
-		
-		private string _CombineDecision;
-		
-		private decimal _Protocol;
-		
-		public MET_RequestView()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string RequestID
-		{
-			get
-			{
-				return this._RequestID;
-			}
-			set
-			{
-				if ((this._RequestID != value))
-				{
-					this._RequestID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartmentID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string DepartmentID
-		{
-			get
-			{
-				return this._DepartmentID;
-			}
-			set
-			{
-				if ((this._DepartmentID != value))
-				{
-					this._DepartmentID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestType", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string RequestType
-		{
-			get
-			{
-				return this._RequestType;
-			}
-			set
-			{
-				if ((this._RequestType != value))
-				{
-					this._RequestType = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestNo", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string RequestNo
-		{
-			get
-			{
-				return this._RequestNo;
-			}
-			set
-			{
-				if ((this._RequestNo != value))
-				{
-					this._RequestNo = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestTitle", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
-		public string RequestTitle
-		{
-			get
-			{
-				return this._RequestTitle;
-			}
-			set
-			{
-				if ((this._RequestTitle != value))
-				{
-					this._RequestTitle = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestStatus", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string RequestStatus
-		{
-			get
-			{
-				return this._RequestStatus;
-			}
-			set
-			{
-				if ((this._RequestStatus != value))
-				{
-					this._RequestStatus = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestOn", DbType="DateTime NOT NULL")]
-		public System.DateTime RequestOn
-		{
-			get
-			{
-				return this._RequestOn;
-			}
-			set
-			{
-				if ((this._RequestOn != value))
-				{
-					this._RequestOn = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Remark", DbType="NVarChar(3000) NOT NULL", CanBeNull=false)]
-		public string Remark
-		{
-			get
-			{
-				return this._Remark;
-			}
-			set
-			{
-				if ((this._Remark != value))
-				{
-					this._Remark = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovedBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string ApprovedBy
-		{
-			get
-			{
-				return this._ApprovedBy;
-			}
-			set
-			{
-				if ((this._ApprovedBy != value))
-				{
-					this._ApprovedBy = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovedOn", DbType="DateTime NOT NULL")]
-		public System.DateTime ApprovedOn
-		{
-			get
-			{
-				return this._ApprovedOn;
-			}
-			set
-			{
-				if ((this._ApprovedOn != value))
-				{
-					this._ApprovedOn = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovedRemark", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string ApprovedRemark
-		{
-			get
-			{
-				return this._ApprovedRemark;
-			}
-			set
-			{
-				if ((this._ApprovedRemark != value))
-				{
-					this._ApprovedRemark = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovalStatus", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string ApprovalStatus
-		{
-			get
-			{
-				return this._ApprovalStatus;
-			}
-			set
-			{
-				if ((this._ApprovalStatus != value))
-				{
-					this._ApprovalStatus = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
-		public string Description
-		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this._Description = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Active", DbType="Bit NOT NULL")]
-		public bool Active
-		{
-			get
-			{
-				return this._Active;
-			}
-			set
-			{
-				if ((this._Active != value))
-				{
-					this._Active = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string CreatedBy
-		{
-			get
-			{
-				return this._CreatedBy;
-			}
-			set
-			{
-				if ((this._CreatedBy != value))
-				{
-					this._CreatedBy = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedOn", DbType="DateTime NOT NULL")]
-		public System.DateTime CreatedOn
-		{
-			get
-			{
-				return this._CreatedOn;
-			}
-			set
-			{
-				if ((this._CreatedOn != value))
-				{
-					this._CreatedOn = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string ModifiedBy
-		{
-			get
-			{
-				return this._ModifiedBy;
-			}
-			set
-			{
-				if ((this._ModifiedBy != value))
-				{
-					this._ModifiedBy = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedOn", DbType="DateTime NOT NULL")]
-		public System.DateTime ModifiedOn
-		{
-			get
-			{
-				return this._ModifiedOn;
-			}
-			set
-			{
-				if ((this._ModifiedOn != value))
-				{
-					this._ModifiedOn = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastAction", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string LastAction
-		{
-			get
-			{
-				return this._LastAction;
-			}
-			set
-			{
-				if ((this._LastAction != value))
-				{
-					this._LastAction = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartmentName", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
-		public string DepartmentName
-		{
-			get
-			{
-				return this._DepartmentName;
-			}
-			set
-			{
-				if ((this._DepartmentName != value))
-				{
-					this._DepartmentName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CUserCode", DbType="NVarChar(50)")]
-		public string CUserCode
-		{
-			get
-			{
-				return this._CUserCode;
-			}
-			set
-			{
-				if ((this._CUserCode != value))
-				{
-					this._CUserCode = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrgID", DbType="NVarChar(50)")]
-		public string OrgID
-		{
-			get
-			{
-				return this._OrgID;
-			}
-			set
-			{
-				if ((this._OrgID != value))
-				{
-					this._OrgID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrgCode", DbType="NVarChar(50)")]
-		public string OrgCode
-		{
-			get
-			{
-				return this._OrgCode;
-			}
-			set
-			{
-				if ((this._OrgCode != value))
-				{
-					this._OrgCode = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MUserCode", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string MUserCode
-		{
-			get
-			{
-				return this._MUserCode;
-			}
-			set
-			{
-				if ((this._MUserCode != value))
-				{
-					this._MUserCode = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestUserCode", DbType="NVarChar(50)")]
-		public string RequestUserCode
-		{
-			get
-			{
-				return this._RequestUserCode;
-			}
-			set
-			{
-				if ((this._RequestUserCode != value))
-				{
-					this._RequestUserCode = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestUserName", DbType="NVarChar(50)")]
-		public string RequestUserName
-		{
-			get
-			{
-				return this._RequestUserName;
-			}
-			set
-			{
-				if ((this._RequestUserName != value))
-				{
-					this._RequestUserName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string RequestBy
-		{
-			get
-			{
-				return this._RequestBy;
-			}
-			set
-			{
-				if ((this._RequestBy != value))
-				{
-					this._RequestBy = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgendaID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string AgendaID
-		{
-			get
-			{
-				return this._AgendaID;
-			}
-			set
-			{
-				if ((this._AgendaID != value))
-				{
-					this._AgendaID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CombineDecision", DbType="NVarChar(MAX)")]
-		public string CombineDecision
-		{
-			get
-			{
-				return this._CombineDecision;
-			}
-			set
-			{
-				if ((this._CombineDecision != value))
-				{
-					this._CombineDecision = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Protocol", DbType="Decimal(18,2) NOT NULL")]
-		public decimal Protocol
-		{
-			get
-			{
-				return this._Protocol;
-			}
-			set
-			{
-				if ((this._Protocol != value))
-				{
-					this._Protocol = value;
-				}
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MET_AgendaView")]
 	public partial class MET_AgendaView
 	{
@@ -3090,6 +1975,1163 @@ namespace NPT_DC_App.LINQs
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MET_Request")]
+	public partial class MET_Request : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _RequestID;
+		
+		private string _DepartmentID;
+		
+		private string _RequestType;
+		
+		private string _RequestNo;
+		
+		private string _RequestBy;
+		
+		private string _RequestTitle;
+		
+		private string _RequestStatus;
+		
+		private System.DateTime _RequestOn;
+		
+		private string _AgendaID;
+		
+		private string _Remark;
+		
+		private string _ApprovedBy;
+		
+		private System.DateTime _ApprovedOn;
+		
+		private string _ApprovedRemark;
+		
+		private string _ApprovalStatus;
+		
+		private string _Description;
+		
+		private bool _Active;
+		
+		private string _CreatedBy;
+		
+		private System.DateTime _CreatedOn;
+		
+		private string _ModifiedBy;
+		
+		private System.DateTime _ModifiedOn;
+		
+		private string _LastAction;
+		
+		private string _CombineDecision;
+		
+		private string _PrintDescription;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnRequestIDChanging(string value);
+    partial void OnRequestIDChanged();
+    partial void OnDepartmentIDChanging(string value);
+    partial void OnDepartmentIDChanged();
+    partial void OnRequestTypeChanging(string value);
+    partial void OnRequestTypeChanged();
+    partial void OnRequestNoChanging(string value);
+    partial void OnRequestNoChanged();
+    partial void OnRequestByChanging(string value);
+    partial void OnRequestByChanged();
+    partial void OnRequestTitleChanging(string value);
+    partial void OnRequestTitleChanged();
+    partial void OnRequestStatusChanging(string value);
+    partial void OnRequestStatusChanged();
+    partial void OnRequestOnChanging(System.DateTime value);
+    partial void OnRequestOnChanged();
+    partial void OnAgendaIDChanging(string value);
+    partial void OnAgendaIDChanged();
+    partial void OnRemarkChanging(string value);
+    partial void OnRemarkChanged();
+    partial void OnApprovedByChanging(string value);
+    partial void OnApprovedByChanged();
+    partial void OnApprovedOnChanging(System.DateTime value);
+    partial void OnApprovedOnChanged();
+    partial void OnApprovedRemarkChanging(string value);
+    partial void OnApprovedRemarkChanged();
+    partial void OnApprovalStatusChanging(string value);
+    partial void OnApprovalStatusChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnActiveChanging(bool value);
+    partial void OnActiveChanged();
+    partial void OnCreatedByChanging(string value);
+    partial void OnCreatedByChanged();
+    partial void OnCreatedOnChanging(System.DateTime value);
+    partial void OnCreatedOnChanged();
+    partial void OnModifiedByChanging(string value);
+    partial void OnModifiedByChanged();
+    partial void OnModifiedOnChanging(System.DateTime value);
+    partial void OnModifiedOnChanged();
+    partial void OnLastActionChanging(string value);
+    partial void OnLastActionChanged();
+    partial void OnCombineDecisionChanging(string value);
+    partial void OnCombineDecisionChanged();
+    partial void OnPrintDescriptionChanging(string value);
+    partial void OnPrintDescriptionChanged();
+    #endregion
+		
+		public MET_Request()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestID", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string RequestID
+		{
+			get
+			{
+				return this._RequestID;
+			}
+			set
+			{
+				if ((this._RequestID != value))
+				{
+					this.OnRequestIDChanging(value);
+					this.SendPropertyChanging();
+					this._RequestID = value;
+					this.SendPropertyChanged("RequestID");
+					this.OnRequestIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartmentID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string DepartmentID
+		{
+			get
+			{
+				return this._DepartmentID;
+			}
+			set
+			{
+				if ((this._DepartmentID != value))
+				{
+					this.OnDepartmentIDChanging(value);
+					this.SendPropertyChanging();
+					this._DepartmentID = value;
+					this.SendPropertyChanged("DepartmentID");
+					this.OnDepartmentIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestType", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string RequestType
+		{
+			get
+			{
+				return this._RequestType;
+			}
+			set
+			{
+				if ((this._RequestType != value))
+				{
+					this.OnRequestTypeChanging(value);
+					this.SendPropertyChanging();
+					this._RequestType = value;
+					this.SendPropertyChanged("RequestType");
+					this.OnRequestTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestNo", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string RequestNo
+		{
+			get
+			{
+				return this._RequestNo;
+			}
+			set
+			{
+				if ((this._RequestNo != value))
+				{
+					this.OnRequestNoChanging(value);
+					this.SendPropertyChanging();
+					this._RequestNo = value;
+					this.SendPropertyChanged("RequestNo");
+					this.OnRequestNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string RequestBy
+		{
+			get
+			{
+				return this._RequestBy;
+			}
+			set
+			{
+				if ((this._RequestBy != value))
+				{
+					this.OnRequestByChanging(value);
+					this.SendPropertyChanging();
+					this._RequestBy = value;
+					this.SendPropertyChanged("RequestBy");
+					this.OnRequestByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestTitle", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string RequestTitle
+		{
+			get
+			{
+				return this._RequestTitle;
+			}
+			set
+			{
+				if ((this._RequestTitle != value))
+				{
+					this.OnRequestTitleChanging(value);
+					this.SendPropertyChanging();
+					this._RequestTitle = value;
+					this.SendPropertyChanged("RequestTitle");
+					this.OnRequestTitleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestStatus", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string RequestStatus
+		{
+			get
+			{
+				return this._RequestStatus;
+			}
+			set
+			{
+				if ((this._RequestStatus != value))
+				{
+					this.OnRequestStatusChanging(value);
+					this.SendPropertyChanging();
+					this._RequestStatus = value;
+					this.SendPropertyChanged("RequestStatus");
+					this.OnRequestStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestOn", DbType="DateTime NOT NULL")]
+		public System.DateTime RequestOn
+		{
+			get
+			{
+				return this._RequestOn;
+			}
+			set
+			{
+				if ((this._RequestOn != value))
+				{
+					this.OnRequestOnChanging(value);
+					this.SendPropertyChanging();
+					this._RequestOn = value;
+					this.SendPropertyChanged("RequestOn");
+					this.OnRequestOnChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgendaID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string AgendaID
+		{
+			get
+			{
+				return this._AgendaID;
+			}
+			set
+			{
+				if ((this._AgendaID != value))
+				{
+					this.OnAgendaIDChanging(value);
+					this.SendPropertyChanging();
+					this._AgendaID = value;
+					this.SendPropertyChanged("AgendaID");
+					this.OnAgendaIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Remark", DbType="NVarChar(3000) NOT NULL", CanBeNull=false)]
+		public string Remark
+		{
+			get
+			{
+				return this._Remark;
+			}
+			set
+			{
+				if ((this._Remark != value))
+				{
+					this.OnRemarkChanging(value);
+					this.SendPropertyChanging();
+					this._Remark = value;
+					this.SendPropertyChanged("Remark");
+					this.OnRemarkChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovedBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string ApprovedBy
+		{
+			get
+			{
+				return this._ApprovedBy;
+			}
+			set
+			{
+				if ((this._ApprovedBy != value))
+				{
+					this.OnApprovedByChanging(value);
+					this.SendPropertyChanging();
+					this._ApprovedBy = value;
+					this.SendPropertyChanged("ApprovedBy");
+					this.OnApprovedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovedOn", DbType="DateTime NOT NULL")]
+		public System.DateTime ApprovedOn
+		{
+			get
+			{
+				return this._ApprovedOn;
+			}
+			set
+			{
+				if ((this._ApprovedOn != value))
+				{
+					this.OnApprovedOnChanging(value);
+					this.SendPropertyChanging();
+					this._ApprovedOn = value;
+					this.SendPropertyChanged("ApprovedOn");
+					this.OnApprovedOnChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovedRemark", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string ApprovedRemark
+		{
+			get
+			{
+				return this._ApprovedRemark;
+			}
+			set
+			{
+				if ((this._ApprovedRemark != value))
+				{
+					this.OnApprovedRemarkChanging(value);
+					this.SendPropertyChanging();
+					this._ApprovedRemark = value;
+					this.SendPropertyChanged("ApprovedRemark");
+					this.OnApprovedRemarkChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovalStatus", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string ApprovalStatus
+		{
+			get
+			{
+				return this._ApprovalStatus;
+			}
+			set
+			{
+				if ((this._ApprovalStatus != value))
+				{
+					this.OnApprovalStatusChanging(value);
+					this.SendPropertyChanging();
+					this._ApprovalStatus = value;
+					this.SendPropertyChanged("ApprovalStatus");
+					this.OnApprovalStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Active", DbType="Bit NOT NULL")]
+		public bool Active
+		{
+			get
+			{
+				return this._Active;
+			}
+			set
+			{
+				if ((this._Active != value))
+				{
+					this.OnActiveChanging(value);
+					this.SendPropertyChanging();
+					this._Active = value;
+					this.SendPropertyChanged("Active");
+					this.OnActiveChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string CreatedBy
+		{
+			get
+			{
+				return this._CreatedBy;
+			}
+			set
+			{
+				if ((this._CreatedBy != value))
+				{
+					this.OnCreatedByChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedBy = value;
+					this.SendPropertyChanged("CreatedBy");
+					this.OnCreatedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedOn", DbType="DateTime NOT NULL")]
+		public System.DateTime CreatedOn
+		{
+			get
+			{
+				return this._CreatedOn;
+			}
+			set
+			{
+				if ((this._CreatedOn != value))
+				{
+					this.OnCreatedOnChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedOn = value;
+					this.SendPropertyChanged("CreatedOn");
+					this.OnCreatedOnChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string ModifiedBy
+		{
+			get
+			{
+				return this._ModifiedBy;
+			}
+			set
+			{
+				if ((this._ModifiedBy != value))
+				{
+					this.OnModifiedByChanging(value);
+					this.SendPropertyChanging();
+					this._ModifiedBy = value;
+					this.SendPropertyChanged("ModifiedBy");
+					this.OnModifiedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedOn", DbType="DateTime NOT NULL")]
+		public System.DateTime ModifiedOn
+		{
+			get
+			{
+				return this._ModifiedOn;
+			}
+			set
+			{
+				if ((this._ModifiedOn != value))
+				{
+					this.OnModifiedOnChanging(value);
+					this.SendPropertyChanging();
+					this._ModifiedOn = value;
+					this.SendPropertyChanged("ModifiedOn");
+					this.OnModifiedOnChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastAction", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string LastAction
+		{
+			get
+			{
+				return this._LastAction;
+			}
+			set
+			{
+				if ((this._LastAction != value))
+				{
+					this.OnLastActionChanging(value);
+					this.SendPropertyChanging();
+					this._LastAction = value;
+					this.SendPropertyChanged("LastAction");
+					this.OnLastActionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CombineDecision", DbType="NVarChar(MAX)")]
+		public string CombineDecision
+		{
+			get
+			{
+				return this._CombineDecision;
+			}
+			set
+			{
+				if ((this._CombineDecision != value))
+				{
+					this.OnCombineDecisionChanging(value);
+					this.SendPropertyChanging();
+					this._CombineDecision = value;
+					this.SendPropertyChanged("CombineDecision");
+					this.OnCombineDecisionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrintDescription", DbType="NVarChar(MAX)")]
+		public string PrintDescription
+		{
+			get
+			{
+				return this._PrintDescription;
+			}
+			set
+			{
+				if ((this._PrintDescription != value))
+				{
+					this.OnPrintDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._PrintDescription = value;
+					this.SendPropertyChanged("PrintDescription");
+					this.OnPrintDescriptionChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MET_RequestView")]
+	public partial class MET_RequestView
+	{
+		
+		private string _RequestID;
+		
+		private string _DepartmentID;
+		
+		private string _RequestType;
+		
+		private string _RequestNo;
+		
+		private string _RequestTitle;
+		
+		private string _RequestStatus;
+		
+		private System.DateTime _RequestOn;
+		
+		private string _Remark;
+		
+		private string _ApprovedBy;
+		
+		private System.DateTime _ApprovedOn;
+		
+		private string _ApprovedRemark;
+		
+		private string _ApprovalStatus;
+		
+		private string _Description;
+		
+		private bool _Active;
+		
+		private string _CreatedBy;
+		
+		private System.DateTime _CreatedOn;
+		
+		private string _ModifiedBy;
+		
+		private System.DateTime _ModifiedOn;
+		
+		private string _LastAction;
+		
+		private string _DepartmentName;
+		
+		private string _CUserCode;
+		
+		private string _OrgID;
+		
+		private string _OrgCode;
+		
+		private string _MUserCode;
+		
+		private string _RequestUserCode;
+		
+		private string _RequestUserName;
+		
+		private string _RequestBy;
+		
+		private string _AgendaID;
+		
+		private string _CombineDecision;
+		
+		private decimal _Protocol;
+		
+		private string _PrintDescription;
+		
+		public MET_RequestView()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string RequestID
+		{
+			get
+			{
+				return this._RequestID;
+			}
+			set
+			{
+				if ((this._RequestID != value))
+				{
+					this._RequestID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartmentID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string DepartmentID
+		{
+			get
+			{
+				return this._DepartmentID;
+			}
+			set
+			{
+				if ((this._DepartmentID != value))
+				{
+					this._DepartmentID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestType", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string RequestType
+		{
+			get
+			{
+				return this._RequestType;
+			}
+			set
+			{
+				if ((this._RequestType != value))
+				{
+					this._RequestType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestNo", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string RequestNo
+		{
+			get
+			{
+				return this._RequestNo;
+			}
+			set
+			{
+				if ((this._RequestNo != value))
+				{
+					this._RequestNo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestTitle", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string RequestTitle
+		{
+			get
+			{
+				return this._RequestTitle;
+			}
+			set
+			{
+				if ((this._RequestTitle != value))
+				{
+					this._RequestTitle = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestStatus", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string RequestStatus
+		{
+			get
+			{
+				return this._RequestStatus;
+			}
+			set
+			{
+				if ((this._RequestStatus != value))
+				{
+					this._RequestStatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestOn", DbType="DateTime NOT NULL")]
+		public System.DateTime RequestOn
+		{
+			get
+			{
+				return this._RequestOn;
+			}
+			set
+			{
+				if ((this._RequestOn != value))
+				{
+					this._RequestOn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Remark", DbType="NVarChar(3000) NOT NULL", CanBeNull=false)]
+		public string Remark
+		{
+			get
+			{
+				return this._Remark;
+			}
+			set
+			{
+				if ((this._Remark != value))
+				{
+					this._Remark = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovedBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string ApprovedBy
+		{
+			get
+			{
+				return this._ApprovedBy;
+			}
+			set
+			{
+				if ((this._ApprovedBy != value))
+				{
+					this._ApprovedBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovedOn", DbType="DateTime NOT NULL")]
+		public System.DateTime ApprovedOn
+		{
+			get
+			{
+				return this._ApprovedOn;
+			}
+			set
+			{
+				if ((this._ApprovedOn != value))
+				{
+					this._ApprovedOn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovedRemark", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string ApprovedRemark
+		{
+			get
+			{
+				return this._ApprovedRemark;
+			}
+			set
+			{
+				if ((this._ApprovedRemark != value))
+				{
+					this._ApprovedRemark = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovalStatus", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string ApprovalStatus
+		{
+			get
+			{
+				return this._ApprovalStatus;
+			}
+			set
+			{
+				if ((this._ApprovalStatus != value))
+				{
+					this._ApprovalStatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Active", DbType="Bit NOT NULL")]
+		public bool Active
+		{
+			get
+			{
+				return this._Active;
+			}
+			set
+			{
+				if ((this._Active != value))
+				{
+					this._Active = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string CreatedBy
+		{
+			get
+			{
+				return this._CreatedBy;
+			}
+			set
+			{
+				if ((this._CreatedBy != value))
+				{
+					this._CreatedBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedOn", DbType="DateTime NOT NULL")]
+		public System.DateTime CreatedOn
+		{
+			get
+			{
+				return this._CreatedOn;
+			}
+			set
+			{
+				if ((this._CreatedOn != value))
+				{
+					this._CreatedOn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string ModifiedBy
+		{
+			get
+			{
+				return this._ModifiedBy;
+			}
+			set
+			{
+				if ((this._ModifiedBy != value))
+				{
+					this._ModifiedBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedOn", DbType="DateTime NOT NULL")]
+		public System.DateTime ModifiedOn
+		{
+			get
+			{
+				return this._ModifiedOn;
+			}
+			set
+			{
+				if ((this._ModifiedOn != value))
+				{
+					this._ModifiedOn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastAction", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string LastAction
+		{
+			get
+			{
+				return this._LastAction;
+			}
+			set
+			{
+				if ((this._LastAction != value))
+				{
+					this._LastAction = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartmentName", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
+		public string DepartmentName
+		{
+			get
+			{
+				return this._DepartmentName;
+			}
+			set
+			{
+				if ((this._DepartmentName != value))
+				{
+					this._DepartmentName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CUserCode", DbType="NVarChar(50)")]
+		public string CUserCode
+		{
+			get
+			{
+				return this._CUserCode;
+			}
+			set
+			{
+				if ((this._CUserCode != value))
+				{
+					this._CUserCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrgID", DbType="NVarChar(50)")]
+		public string OrgID
+		{
+			get
+			{
+				return this._OrgID;
+			}
+			set
+			{
+				if ((this._OrgID != value))
+				{
+					this._OrgID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrgCode", DbType="NVarChar(50)")]
+		public string OrgCode
+		{
+			get
+			{
+				return this._OrgCode;
+			}
+			set
+			{
+				if ((this._OrgCode != value))
+				{
+					this._OrgCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MUserCode", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string MUserCode
+		{
+			get
+			{
+				return this._MUserCode;
+			}
+			set
+			{
+				if ((this._MUserCode != value))
+				{
+					this._MUserCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestUserCode", DbType="NVarChar(50)")]
+		public string RequestUserCode
+		{
+			get
+			{
+				return this._RequestUserCode;
+			}
+			set
+			{
+				if ((this._RequestUserCode != value))
+				{
+					this._RequestUserCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestUserName", DbType="NVarChar(50)")]
+		public string RequestUserName
+		{
+			get
+			{
+				return this._RequestUserName;
+			}
+			set
+			{
+				if ((this._RequestUserName != value))
+				{
+					this._RequestUserName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string RequestBy
+		{
+			get
+			{
+				return this._RequestBy;
+			}
+			set
+			{
+				if ((this._RequestBy != value))
+				{
+					this._RequestBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgendaID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string AgendaID
+		{
+			get
+			{
+				return this._AgendaID;
+			}
+			set
+			{
+				if ((this._AgendaID != value))
+				{
+					this._AgendaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CombineDecision", DbType="NVarChar(MAX)")]
+		public string CombineDecision
+		{
+			get
+			{
+				return this._CombineDecision;
+			}
+			set
+			{
+				if ((this._CombineDecision != value))
+				{
+					this._CombineDecision = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Protocol", DbType="Decimal(18,2) NOT NULL")]
+		public decimal Protocol
+		{
+			get
+			{
+				return this._Protocol;
+			}
+			set
+			{
+				if ((this._Protocol != value))
+				{
+					this._Protocol = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrintDescription", DbType="NVarChar(MAX)")]
+		public string PrintDescription
+		{
+			get
+			{
+				return this._PrintDescription;
+			}
+			set
+			{
+				if ((this._PrintDescription != value))
+				{
+					this._PrintDescription = value;
+				}
 			}
 		}
 	}

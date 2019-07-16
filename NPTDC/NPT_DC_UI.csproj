@@ -4597,18 +4597,6 @@
     <Compile Include="PortalAdministration\userInterfaces\moduleReport\requsetreport\PageRequestReport.aspx.designer.cs">
       <DependentUpon>PageRequestReport.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PortalAdministration\userInterfaces\moduleReport\requsetreport\rpt_report_request_item.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="PortalAdministration\userInterfaces\moduleReport\requsetreport\rpt_report_request_item.Designer.cs">
-      <DependentUpon>rpt_report_request_item.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PortalAdministration\userInterfaces\moduleReport\requsetreport\rpt_request_item_report.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="PortalAdministration\userInterfaces\moduleReport\requsetreport\rpt_request_item_report.Designer.cs">
-      <DependentUpon>rpt_request_item_report.cs</DependentUpon>
-    </Compile>
     <Compile Include="PortalAdministration\userInterfaces\moduleReport\requsetreport\rpt_request_report.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -4910,12 +4898,6 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="PortalAdministration\userInterfaces\moduleReport\requsetreport\rpt_report_request_item.resx">
-      <DependentUpon>rpt_report_request_item.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PortalAdministration\userInterfaces\moduleReport\requsetreport\rpt_request_item_report.resx">
-      <DependentUpon>rpt_request_item_report.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PortalAdministration\userInterfaces\moduleReport\requsetreport\rpt_request_report.resx">
       <DependentUpon>rpt_request_report.cs</DependentUpon>
     </EmbeddedResource>

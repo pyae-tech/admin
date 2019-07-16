@@ -12,6 +12,35 @@ namespace NPT_DC_App.Controllers
     {
         static string AccessProgramCode = "UserControl";
 
+
+        public static void do_populate_print_description(string RequestID)
+        {
+            LINQ_MeetingDataContext dc = new LINQ_MeetingDataContext();
+            MET_Request the_request=(from c in dc.MET_Requests where c.RequestID == RequestID && c.Active == true select c).FirstOrDefault();
+            if (the_request == null) throw new Exception("No recrod found");
+
+            string PrintDescription = "အကြောင်းအရာ။  <b>" + the_request.RequestTitle+ "</b><br/><br/>";
+
+
+           List< MET_RequestItem> the_items=(from c in dc.MET_RequestItems where c.RequestID == RequestID && c.Active == true orderby c.Seq select c).ToList();
+
+            int display_seq = 1;
+
+            foreach (MET_RequestItem item in the_items)
+            {
+                PrintDescription = PrintDescription +
+                    display_seq.ToString() + "။  " + item.RequestItem + "။<br/><br/>";
+
+                display_seq = display_seq + 1;
+
+            }
+
+
+            the_request.PrintDescription = PrintDescription;
+            dc.SubmitChanges();
+
+
+        }
         public static string GetAllRequestJSON(string search_text, string RequestID)
         {
             //Security Check
@@ -260,6 +289,8 @@ namespace NPT_DC_App.Controllers
                 }
                 #endregion
                 dc.SubmitChanges();
+
+                do_populate_print_description(the_request.RequestID);
 
                 //#region Conbine Decisions
                 //the_request.CombineDecision = dc.MET_CombineDecisionsOfRequest(the_request.RequestID).ToString();

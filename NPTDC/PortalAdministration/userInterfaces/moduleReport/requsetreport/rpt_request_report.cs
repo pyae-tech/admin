@@ -20,5 +20,30 @@ namespace SBSPortal3.PortalAdministration.userInterfaces.moduleReport.requsetrep
             sqlDataSource1.Fill();
         }
 
+        private void xrSubreport_item_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+           
+        }
+        private void CalcHeight(XRSubreport subreport)
+        {
+            var pi = subreport.ReportSource.GetType().GetProperty("DisplayableRowCount", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
+            var rows = Convert.ToInt32(pi.GetValue(subreport.ReportSource, null));
+            var rowHeight = subreport.ReportSource.Bands.GetBandByType(typeof(DetailBand)).HeightF;
+
+            var newHeight = rows * rowHeight;
+            xrTableCell3.HeightF = newHeight;
+            //if (subreport.Parent.HeightF < newHeight)
+            //{
+            //foreach (XRControl el in this.Detail.Controls)
+            //    {
+              
+            //    }
+           // }
+        }
+
+        private void xrTableCell3_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+           
+        }
     }
 }
