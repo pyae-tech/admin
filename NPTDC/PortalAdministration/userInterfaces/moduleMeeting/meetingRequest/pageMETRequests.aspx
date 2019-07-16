@@ -48,7 +48,7 @@
                             </div>
 
                         </div>
-                        <h3><i class="ion-compose">&nbsp</i><span data-translate="">အမှာစာများ</span></h3>
+                      
                         <!--Panel body-->
                         <div class="panel-body" id="backdetect">
                             <div class="tab-content">
