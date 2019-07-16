@@ -224,7 +224,9 @@ function Load_Request_Item(req_id) {
 }
 
 function Bind_RequestItems(data) {
+
     if (data == undefined) { data = []; }
+    arr_request_item = data;
 
     $("#gc_RequestItems").dxDataGrid({
         rowAlternationEnabled: true,
@@ -299,19 +301,24 @@ function Bind_RequestItems(data) {
 
 var arr_request_item = [];
 function add_request_item(new_request) {
+    var contain = false;
     if (arr_request_item.length == 0) {
         arr_request_item.push(new_request);
     }
     else {
-        $.each(arr_request_item, function (key, val) {
-            if (arr_request_item[key]['RequestItemID'] == new_request['RequestItemID']) {
-                arr_request_item[key]['RequestItem'] = new_request['RequestItem'];
-                arr_request_item[key]['Seq'] = new_request['Seq'];
+        for (i = 0; i < arr_request_item.length; i++)  {
+            if (arr_request_item[i]['RequestItemID'] == new_request['RequestItemID']) {
+                arr_request_item[i]['RequestItem'] = new_request['RequestItem'];
+                arr_request_item[i]['Seq'] = new_request['Seq'];
+                contain = true;
+                break; 
             }
             else {
-                arr_request_item.push(new_request);
+                
+                contain = false;
             }
-        });
+        };
+        if(!contain){arr_request_item.push(new_request);}
     }
     return false;
 }
@@ -356,7 +363,7 @@ function Load_Request_Decisions(req_id) {
 
 function Bind_RequestDecisions(data) {
     if (data == undefined) { data = []; }
-
+    arr_request_decision = data;
     $("#gc_RequestDescription").dxDataGrid({
         dataSource: data,
         keyExpr: "RequestDecisionID",
@@ -429,21 +436,30 @@ function Bind_RequestDecisions(data) {
 
 var arr_request_decision = [];
 function add_request_decision(new_decision) {
+    var contain = false;
     if (arr_request_decision.length == 0) {
         arr_request_decision.push(new_decision);
     }
     else {
-        $.each(arr_request_decision, function (key, val) {
-            if (arr_request_decision[key]['RequestItemID'] == new_decision['RequestItemID']) {
-                arr_request_decision[key]['RequestItem'] = new_decision['RequestItem'];
-                arr_request_decision[key]['Seq'] = new_decision['Seq'];
+        for (i = 0; i < arr_request_decision.length; i++) {
+            if (arr_request_decision[i]['RequestDecisionID'] == new_decision['RequestDecisionID']) {
+                arr_request_decision[i]['Description'] = new_decision['Description'];
+                arr_request_decision[i]['Seq'] = new_decision['Seq'];
+                contain = true;
+                break; 
             }
             else {
-                arr_request_decision.push(new_decision);
+                
+                contain = false;
             }
-        });
+        };
+        if(!contain)
+        {
+            arr_request_decision.push(new_decision);
+        }
     }
     return false;
+
 }
 function delete_request_decision(new_decision) {
     $.each(arr_request_decision, function (key, val) {
@@ -611,7 +627,9 @@ function GoToLog() {
         window.open('logs?id=' + $("#tb_id").val(), '_blank');
     }
 }
-
+function Refresh() {
+    GetRequest(GetURLData('id'));
+}
 function UploadAttachment() {
     window.open('attachment?id=' + $("#tb_id").val() + '&No=' + $('#tb_request_no').val() + '&UserId=' + get_current_user_id() + '&refType=request', '_blank');
 }

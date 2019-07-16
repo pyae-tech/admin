@@ -72,7 +72,7 @@ function do_login() {
         contentType: "application/json; charset=utf-8",
         success: function (data) {
             if (data.d != null) {
-                ShowSuccessMessage("Login Successful");
+                ShowSuccessMessage("စနစ် အတွင်းသို့ ဝင်ရောက်ပါမည်။");
                 $.cookie('userid', data.d["UserID"], { expires: 1, path: '/' });
                 $.cookie('usercode', data.d["UserCode"], { expires: 1, path: '/' });
                 $.cookie('username', data.d["UserName"], { expires: 1, path: '/' });
@@ -109,7 +109,7 @@ function do_login() {
                 $.cookie('DepartmentID', "", { expires: 1, path: '/' });
                 $.cookie('DepartmentName',"", { expires: 1, path: '/' });
 
-                ShowErrorMessage("User Name Or Password Is Wroung Please Check And Try Again! ");
+                ShowErrorMessage("အချက်အလက် မှားယွင်းနေပါသည်။ ");
             }
         },
         error: function (xhr, msg) {

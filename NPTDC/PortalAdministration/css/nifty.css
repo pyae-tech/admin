@@ -7254,9 +7254,9 @@ blockquote {
 }
 .btn-success,
 .btn-success:focus {
-  background-color: #92c755;
-  border-color: #8bc34a !important;
-  color: #fff;
+    background-color: #609127;
+    border-color: #8bc34a !important;
+    color: #fff;
 }
 .btn-success:hover,
 .btn-success:active,

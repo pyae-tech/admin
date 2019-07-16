@@ -20,18 +20,18 @@ namespace NPT_DC_App.Controllers
             LINQ_MeetingDataContext dc = new LINQ_MeetingDataContext();
 
             List<MET_AgendaView> the_agendalist = (from c in dc.MET_AgendaViews
-                                                   where c.Active == true && 
+                                                   where c.Active == true &&
                                                        ((search_text == "") ||
                                                        (search_text != "" && (
 
                                                      c.AgendaNo.Contains(search_text) ||
                                                      c.AgendaRemark.Contains(search_text) ||
-                                                     c.AgendaStatus.Contains(search_text)  ||                                                  
+                                                     c.AgendaStatus.Contains(search_text) ||
                                                      c.CUserCode.Contains(search_text) ||
                                                      c.MUserCode.Contains(search_text)
                                                       )))
-                                                     orderby c.CreatedOn descending
-                                                     select c
+                                                   orderby c.CreatedOn descending
+                                                   select c
                                                        ).ToList();
             var lists = new Newtonsoft.Json.Linq.JArray() as dynamic;
 
@@ -157,11 +157,12 @@ namespace NPT_DC_App.Controllers
                 foreach (MET_Request i in req_list)
                 {
                     i.AgendaID = "";
+                    i.RequestStatus = "Approved";
                     i.ModifiedBy = RequestID;
                     i.ModifiedOn = DateTime.Now;
                 }
                 #endregion
-           
+
                 dc.SubmitChanges(ConflictMode.ContinueOnConflict);
                 return "Success~";
             }
@@ -180,30 +181,44 @@ namespace NPT_DC_App.Controllers
             try
             {
                 MET_Agenda agenda_record = new MET_Agenda();
+                string return_str = "";
                 agenda_record = (from c in dc.MET_Agendas where c.AgendaID == agendaID && c.Active == true select c).FirstOrDefault();
                 if (agenda_record == null)
                     return "Error~We can't find";
-               
+
 
                 #region Request in agenda
                 List<MET_Request> req_list = new List<MET_Request>();
-                req_list = (from c in dc.MET_Requests where c.RequestStatus=="Approved" && c.Active == true select c).ToList();
-                foreach (MET_Request i in req_list)
+                req_list = (from c in dc.MET_Requests where c.RequestStatus == "Approved" && c.Active == true select c).ToList();
+                if (req_list.Count > 0)
                 {
-                    i.AgendaID = agenda_record.AgendaID;
-                    i.RequestStatus = "Agenda";
-                    i.ModifiedBy = user_id;
-                    i.ModifiedOn = DateTime.Now;
+                    foreach (MET_Request i in req_list)
+                    {
+                        i.AgendaID = agenda_record.AgendaID;
+                        i.RequestStatus = "Agenda";
+                        i.ModifiedBy = user_id;
+                        i.ModifiedOn = DateTime.Now;
+                    }
+
+                    dc.SubmitChanges(ConflictMode.ContinueOnConflict);
+                    #region get all request
+                    List<MET_RequestView> reqs_list = (from c in dc.MET_RequestViews
+                                                       where c.Active == true && c.AgendaID == agendaID
+                                                       orderby c.Protocol ascending
+                                                       select c).ToList();
+
+                     return_str = new JavaScriptSerializer().Serialize(reqs_list);
+                    #endregion
+                    return "Success~" + return_str;
+                }
+                else
+                {
+                    return "Error~" + "There is no approved requests!";
                 }
                 #endregion
 
-                dc.SubmitChanges(ConflictMode.ContinueOnConflict);
 
-                //List<MET_RequestView> reqitems_list = (from c in dc.MET_RequestViews
-                //                                       where c.Active == true && c.AgendaID == agendaID
-                //                                           orderby c.RequestOn
-                //                                           select c).ToList();
-                return "Success~";
+              
             }
             catch (ChangeConflictException ex)
             {

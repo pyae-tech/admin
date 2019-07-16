@@ -10,6 +10,10 @@
 
     </style>
 </asp:Content>
+<asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder_TopLeftMenu" runat="server">
+         <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="GotoPage('Portal/userdetail');return false;"><i class="btn-label ion-plus-round"></i><span class="bold">စာရင်း အသစ်သွင်းရန်</span></button>
+    
+    </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Header" runat="server">
     <!--Page Title-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -26,9 +30,8 @@
         <li><a href="#"><i class="demo-pli-home"></i></a></li>
         <li><a href="#">စနစ် စီမံခြင်း</a></li>
         <li class="active">ဝန်ထမ်းများ</li>
-        <li class="active">
-            <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="GotoPage('Portal/userdetail');return false;"><i class="btn-label ion-plus-round"></i><span class="bold">အသစ်</span></button>
-    </ol>
+        
+       </ol>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--End breadcrumb-->
 

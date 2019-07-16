@@ -12,6 +12,17 @@
    
     </style>
 </asp:Content>
+
+<asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder_TopLeftMenu" runat="server">
+     <button class="btn btn-success  btn-rounded  btn-labeled" type="button" onclick="SaveUser();return false;"><i class="btn-label ion-checkmark"></i><span class="bold" data-translate="_save">စာရင်းသိမ်းရန်</span></button>
+                    <button class="btn  btn-dark   btn-rounded btn-labeled" type="button" onclick="DeleteRecordConfirmation();return false;">
+                        <i class="btn-label ion-trash-b"></i><span class="bold" data-translate="_delete">ဖျက်ရန်</span></button>
+                    <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="LoadNew();return false;"><i class="btn-label ion-plus-round"></i><span class="bold" data-translate="_new">အသစ်</span></button>
+                                                      <button class="btn  btn-dark   btn-rounded  btn-labeled" type="button" onclick="RefreshItem();return false;"><i class="btn-label ion-refresh"></i><span class="bold" data-translate="_reflesh">ပြန်ဖွင့်</span></button>
+    <button data-dismiss="modal" class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="GotoPage('Portal/users');return false;"><i class="btn-label ion-close"></i><span class="bold" data-translate="_close">ပိတ်မည်</span></button>
+                    
+
+    </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Header" runat="server">
      <!--Page Title-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -26,10 +37,10 @@
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <ol class="breadcrumb">
         <li><a href="#"><i class="demo-pli-home"></i></a></li>
-        <li><a href="#">စနစ် စီမံခြင်း</a></li>
-        <li class="active">ဝန်ထမ်းများ</li>
-        <li class="active">
-            <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="LoadNew();return false;"><i class="btn-label ion-plus-round"></i><span class="bold">အသစ်</span></button>
+        <li>စနစ် စီမံခြင်</li>
+        <li><a href="users">ဝန်ထမ်းများ</a></li>
+        
+           
     </ol>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--End breadcrumb-->
@@ -39,25 +50,7 @@
         <div class="panel">
             <div class="panel-body">
 
-                <div class="panel">
-                    <div class="tabs-container" id="tab-main">
-                        <!--Panel heading-->
-                        <div class="panel-heading">
-                            <div class="panel-control" style="display: none;">
-                                <ul class="nav nav-tabs">
-                                    <li class="tab-menu" id="tab_list_menu"><a href="#tab-list" data-toggle="tab">Listing <span class="pull-right badge badge-primary list_count">0</span></a></li>
-                                    <li class="tab-menu" id="tab_search_menu"><a href="#tab-search" data-toggle="tab">Search</a></li>
-                                </ul>
-                            </div>
-                            <h3><i class="ion-briefcase"></i>&nbsp;<span data-translate="">၀န်ထမ်း - အချက်အလက် အသေးစိတ်</span></h3>
-
-                        </div>
-
-                        <!--Panel body-->
-                        <div class="panel-body">
-                            <div class="tab-content">
-                                <div class="tab-pane fade in " id="tab-list">
-                                     <div class="modal-body">
+                <div class="modal-body">
 
 
                                         <div class="col-md-12">
@@ -185,17 +178,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group">
-                                                    <label class="col-md-2"></label>
-                                                    <button class="btn btn-primary  btn-rounded  btn-labeled" type="button" onclick="SaveUser();return false;"><i class="btn-label ion-checkmark"></i><span class="bold" data-translate="_save">စာရင်းသိမ်းရန်</span></button>
-                    <button class="btn btn-danger  btn-rounded btn-labeled" type="button" onclick="DeleteRecordConfirmation();return false;">
-                        <i class="btn-label ion-trash-b"></i><span class="bold" data-translate="_delete">ဖျက်ရန်</span></button>
-                    <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="LoadNew();return false;"><i class="btn-label ion-plus-round"></i><span class="bold" data-translate="_new">အသစ်</span></button>
-                    <button data-dismiss="modal" class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="GotoPage('Portal/users');return false;"><i class="btn-label ion-close"></i><span class="bold" data-translate="_close">ပိတ်မည်</span></button>
-                                                      <button class="btn btn-success btn-rounded  btn-labeled" type="button" onclick="RefreshItem();return false;"><i class="btn-label ion-refresh"></i><span class="bold" data-translate="_reflesh">Reflesh</span></button>
-
-                                                </div>
-                                                
+                                         
                                             </form>                                
 
                                         </div>
@@ -205,14 +188,6 @@
                                         
 
                                     </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
         </div>
     </div>
         </div>

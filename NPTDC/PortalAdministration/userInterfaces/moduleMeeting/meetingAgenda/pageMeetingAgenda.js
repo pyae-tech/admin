@@ -14,7 +14,7 @@ function SetUP() {
         type: "success",
         text: "Add Request",
         onClick: function (e) {
-            AddRequestToAgenda();
+            var msg = AddRequestToAgenda();           
         }
     });
 
@@ -86,12 +86,12 @@ function SaveAgenda() {
     Pace.start();
     if (SaveRecordVerification() == false)
         return;
-  
+
     $.ajax({
         url: baseUrl() + "WebServices/WebService_Agenda.asmx/SaveAgenda",
         data: "{ " +
         "'AgendaID':'" + $("#tb_id").val() + "' " +
-        ",'AgendaDate':'" + agenda_date+ "' " +
+        ",'AgendaDate':'" + agenda_date + "' " +
         ",'AgendaNo':'" + $("#tb_agenda_no").val() + "' " +
         ",'AgendaStatus':'" + $("#hf_agenda_status").val() + "' " +
         ",'AgendaHistory':'" + "Testing" + "' " +
@@ -124,7 +124,7 @@ function LoadNew() {
     Pace.start();
 
     $("#tb_Remark").focus();
-    $("#tb_id").val("");   
+    $("#tb_id").val("");
     $("#tb_agenda_no").val("");
     $("#tb_Remark").val("");
 
@@ -133,9 +133,25 @@ function LoadNew() {
     $("#lbl_created").html("");
     $("#lbl_modified").html("");
 
-    $("#hf_agenda_status").val("");
     window.history.replaceState({}, document.title, "agenda");
-   
+
+    $("#hf_agenda_status").val("New");
+    $("#ddl_agenda_status").dxLookup({
+        items: ["New", "Pending", "Complete"],
+        value: $("#hf_agenda_status").val(),
+        showPopupTitle: false,
+        onValueChanged: function (e) {
+            if (e.value === "null" || e.value == null) {
+                $("#hf_agenda_status").val("New");
+            }
+            else {
+                $("#hf_agenda_status").val($("#ddl_agenda_status").dxLookup("instance").option('value'));
+
+            }
+        }
+    });
+    var grid = $('#gc_AgendaList').dxDataGrid('instance');
+    grid.option('dataSource', []);
 }
 
 function GetAgenda(id) {
@@ -156,8 +172,8 @@ function GetAgenda(id) {
                 $("#tab_detail_header").html(data.d["AgendaNo"]);
                 //$("#tb_department_name").val(data.d["DepartmentName"]);
                 $("#tb_Remark").val(data.d["AgendaRemark"]);
-                 $("#tb_agenda_no").val(data.d["AgendaNo"]);
-              
+                $("#tb_agenda_no").val(data.d["AgendaNo"]);
+
                 $("#lbl_created").text("စာရင်းသွင်းသူ : " + data.d["CUserCode"] + " on " + JsonDateToFormat(data.d["CreatedOn"], 'DD/MM/YYYY HH:mm'));
                 $("#lbl_modified").text("ပြင်ဆင်သူ : " + data.d["MUserCode"] + " on " + JsonDateToFormat(data.d["ModifiedOn"], 'DD/MM/YYYY HH:mm'));
 
@@ -166,7 +182,7 @@ function GetAgenda(id) {
                     type: "date",
                     value: angeda_date,
                 });
-              
+
 
                 $("#hf_agenda_status").val(data.d["AgendaStatus"]);
                 $("#ddl_agenda_status").dxLookup({
@@ -183,7 +199,7 @@ function GetAgenda(id) {
                         }
                     }
                 });
-               
+                LoadRequestByAgendaID(id);
                 ShowSuccessMessage("Loaded.");
 
             }
@@ -227,7 +243,7 @@ function DeleteAgenda() {
         success: function (data) {
             if (data.d.toString().split('~')[0] == 'Success') {
                 LoadNew();
-          
+
                 ShowSuccessMessage("Deleted.");
             }
             else {
@@ -255,10 +271,40 @@ function AddRequestToAgenda() {
         type: "POST",
         contentType: "application/json; charset=utf-8",
         success: function (data) {
-            if (data.d.toString().split('~')[0] == 'Success') {
-               
+            if (data.d.toString().split('~')[0] == 'Success') {               
+                var result = JSON.parse(data.d.toString().split('~')[1]);
+                Bind_AgendaList(result);
+                DevExpress.ui.notify("Added Success","success", 600);
+            }
+            else {
+                DevExpress.ui.notify(data.d.toString().split('~')[1], "error", 600);
+            }
 
-                ShowSuccessMessage("Success Added.");
+        },
+        error: function (xhr, msg) {
+            LogJSError('Web Service Fail: ' + msg + '\n' + xhr.responseText);
+        }
+    });
+
+}
+
+function LoadRequestByAgendaID(id) {
+
+    $.ajax({
+        url: baseUrl() + "WebServices/WebService_Request.asmx/LoadRequestByAgendaID",
+
+        data: JSON.stringify({
+            agendaID: id,
+            user_id: get_current_user_id()
+        }),
+        dataType: 'json',
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+            if (data.d.toString().split('~')[0] == 'Success') {
+
+                var result = JSON.parse(data.d.toString().split('~')[1]);
+                Bind_AgendaList(result);
             }
             else {
                 ShowBoxMessage("Oops. " + data.d.toString().split('~')[1]);
@@ -270,4 +316,133 @@ function AddRequestToAgenda() {
         }
     });
 
+}
+
+function Bind_AgendaList(data) {
+    if (data == undefined) { data = []; }
+
+    $("#gc_AgendaList").dxDataGrid({
+        rowAlternationEnabled: true,
+        dataSource: data,
+        height: 300,
+
+        searchPanel: true,
+        keyExpr: "RequestID",
+        showBorders: true,
+        showRowLines: true,
+        wordWrapEnabled: true,
+        loadPanel: {
+            enabled: true
+        },
+        paging: {
+            enabled: false
+        },
+        editing: {
+            mode: "row",
+            allowUpdating: true,
+            allowDeleting: true,
+            allowAdding: false,
+            useIcons: true
+        },
+        columns: [
+            {
+                allowEditing: false,
+                width: 50,
+                caption: "စဉ်",
+                cssClass: 'cls',
+                cellTemplate: function (cellElement, cellInfo) {
+                    cellElement.text(cellInfo.row.rowIndex + 1)
+                }
+            },
+            {
+                allowEditing: false,
+                dataField: "DepartmentName",
+                caption: "ဌာနအမည်",
+                cssClass: 'cls'
+            },
+            {
+                dataField: "CombineDecision",
+                caption: "တင်ပြချက်",
+
+                cssClass: 'cls'
+            },
+            {
+                allowEditing: false,
+                dataField: "Remark",
+                caption: "မှတ်ချက်",
+                cssClass: 'cls'
+            },
+            {
+                type: "buttons",
+                width: 110,
+                cssClass: 'cls',
+                caption: "...",
+            },
+
+        ],
+        onRowUpdated: function (e) {
+            ChangeCombineDecision(e.data);
+        },
+        onRowRemoving: function (e) {
+            delete_request_item(e.data);
+        },
+        //onContentReady: function (e) {
+        //    var selectedDatasUsers = e.component.getDataSource().items();
+        //    console.log(selectedDatasUsers);
+        //},
+        onEditorPreparing(e) {
+            if (e.dataField == "RequestItem") {
+                e.editorName = "dxTextArea";
+                e.editorOptions.height = 100;
+                e.editorOptions.onKeyDown = function (e) {
+                    var event = e.event;
+                    if (event.key === "Enter" && !event.shiftKey) {
+                        event.stopPropagation();
+                    }
+                };
+            }
+
+        }
+    });
+}
+
+function ChangeCombineDecision(editDecision) {
+    $.ajax({
+
+        url: baseUrl() + "WebServices/WebService_Request.asmx/ChangeCombineDecision",
+        data: JSON.stringify({
+            agendaID: editDecision['AgendaID'],
+            meetingreq_id: editDecision['RequestID'],
+            edited_decision: editDecision['CombineDecision'],
+            user_id: get_current_user_id()
+        }),
+        dataType: 'json',
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+            if (data.d.toString().split('~')[0] == 'Success') {
+
+                var result = JSON.parse(data.d.toString().split('~')[1]);
+                Bind_AgendaList(result);
+            }
+            else {
+                ShowBoxMessage("Oops. " + data.d.toString().split('~')[1]);
+            }
+
+        }
+    });
+}
+
+function GoToLog() {
+
+    if ($("#tb_id").val() == "") {
+        window.open('logs?id=', '_blank');
+    } else {
+        window.open('logs?id=' + $("#tb_id").val(), '_blank');
+    }
+}
+
+function Refresh()
+{
+    GetAgenda(GetURLData('id'));
 }

@@ -183,168 +183,7 @@
                             <asp:ContentPlaceHolder ID="ContentPlaceHolder_TopLeftMenu" runat="server">
                         </asp:ContentPlaceHolder>
                               </li>
-                        <li class="dropdown">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">
-                                <i class="ti-info"></i>&nbsp;Notification                             
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
-                                <div class="nano scrollable">
-                                    <div class="nano-content">
-                                        <ul class="head-list">
-                                            <li>
-                                                <a class="media" href="#">
-                                                    <div class="media-left">
-                                                        <i class="demo-pli-file-edit icon-2x"></i>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <p class="mar-no text-nowrap text-main text-semibold">Item</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="media" href="#">
-                                                    <div class="media-left">
-                                                        <i class="demo-pli-file-edit icon-2x"></i>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <p class="mar-no text-nowrap text-main text-semibold">Item Group</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="media" href="#">
-                                                    <div class="media-left">
-                                                        <i class="demo-pli-file-edit icon-2x"></i>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <p class="mar-no text-nowrap text-main text-semibold">Brand</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="media" href="#">
-                                                    <div class="media-left">
-                                                        <i class="demo-pli-file-edit icon-2x"></i>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <p class="mar-no text-nowrap text-main text-semibold">Supplier</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="media" href="#">
-                                                    <div class="media-left">
-                                                        <i class="demo-pli-file-edit icon-2x"></i>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <p class="mar-no text-nowrap text-main text-semibold">Customer</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="media" href="#">
-                                                    <div class="media-left">
-                                                        <i class="demo-pli-file-edit icon-2x"></i>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <p class="mar-no text-nowrap text-main text-semibold">Customer Group</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="media" href="#">
-                                                    <div class="media-left">
-                                                        <i class="demo-pli-file-edit icon-2x"></i>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <p class="mar-no text-nowrap text-main text-semibold">Customer Group's Pricing</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="media" href="#">
-                                                    <div class="media-left">
-                                                        <i class="demo-pli-file-edit icon-2x"></i>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <p class="mar-no text-nowrap text-main text-semibold">City</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="media" href="#">
-                                                    <div class="media-left">
-                                                        <i class="demo-pli-file-edit icon-2x"></i>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <p class="mar-no text-nowrap text-main text-semibold">Township</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="media" href="#">
-                                                    <div class="media-left">
-                                                        <i class="demo-pli-file-edit icon-2x"></i>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <p class="mar-no text-nowrap text-main text-semibold">Projects</p>
-                                                    </div>
-                                                </a>
-
-                                            </li>
-                                            <li>
-                                                <a class="media" href="#">
-                                                    <div class="media-left">
-                                                        <i class="demo-pli-file-edit icon-2x"></i>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <p class="mar-no text-nowrap text-main text-semibold">Sale Person</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="media" href="#">
-                                                    <div class="media-left">
-                                                        <i class="demo-pli-file-edit icon-2x"></i>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <p class="mar-no text-nowrap text-main text-semibold">Staff Department</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="media" href="#">
-                                                    <div class="media-left">
-                                                        <i class="demo-pli-file-edit icon-2x"></i>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <p class="mar-no text-nowrap text-main text-semibold">Staff Position</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="media" href="#">
-                                                    <div class="media-left">
-                                                        <i class="demo-pli-file-edit icon-2x"></i>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <p class="mar-no text-nowrap text-main text-semibold">Exchange Rate</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <!--Dropdown footer-->
-                                <div class="pad-all bord-top">
-                                    <a href="#" class="btn-link text-main box-block">
-                                        <i class="pci-chevron chevron-right pull-right"></i>More Detail....
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
+                      
 
                         <li id="menu_setting">
                             <a href="#" class="aside-toggle">
@@ -400,12 +239,12 @@
                             <ul class="nav nav-tabs nav-justified">
                                 <li class="active" id="menu_system">
                                     <a href="#demo-asd-tab-2" data-toggle="tab">
-                                        <i class="demo-pli-information icon-lg icon-fw"></i>Master
+                                        <i class="demo-pli-information icon-lg icon-fw"></i>အခြား
                                     </a>
                                 </li>
                                 <li id="menu_system_setting">
                                     <a href="#demo-asd-tab-3" data-toggle="tab">
-                                        <i class="demo-pli-wrench icon-lg icon-fw"></i>Settings
+                                        <i class="demo-pli-wrench icon-lg icon-fw"></i>စနစ်
                                     </a>
                                 </li>
                             </ul>
@@ -416,7 +255,7 @@
 
                             <!-- Tabs Content -->
                             <!--================================-->
-                            <div class="tab-content" id="setting_tab" style="display: none;">
+                            <div class="tab-content" id="setting_tab" >
 
 
 
@@ -426,33 +265,21 @@
                                 <div class="tab-pane fade in active" id="demo-asd-tab-2">
 
 
-                                    <asp:ContentPlaceHolder ID="cph_slider_general_bar" runat="server">
-                                    </asp:ContentPlaceHolder>
+                              
 
                                     <!--Monthly billing-->
-                                    <div class="pad-all">
-                                        <p class="pad-ver text-main text-sm text-uppercase text-bold">Billing &amp; reports</p>
-                                        <p>Get <strong class="text-main">$5.00</strong> off your next bill by making sure your full payment reaches us before August 5, 2018.</p>
-                                    </div>
-                                    <hr class="new-section-xs">
-                                    <div class="pad-all">
-                                        <span class="pad-ver text-main text-sm text-uppercase text-bold">Amount Due On</span>
-                                        <p class="text-sm">August 17, 2018</p>
-                                        <p class="text-2x text-thin text-main">$83.09</p>
-                                        <button class="btn btn-block btn-success mar-top">Pay Now</button>
-                                    </div>
-
-
-                                    <hr>
+                                   
 
                                     <p class="pad-all text-main text-sm text-uppercase text-bold">Additional Actions</p>
 
                                     <!--Simple Menu-->
                                     <div class="list-group bg-trans">
-                                        <a href="#" class="list-group-item"><i class="demo-pli-information icon-lg icon-fw"></i>Service Information</a>
+                                              <asp:ContentPlaceHolder ID="cph_slider_general_bar" runat="server">
+                                    </asp:ContentPlaceHolder>
+                                      <%--  <a href="#" class="list-group-item"><i class="demo-pli-information icon-lg icon-fw"></i>Service Information</a>
                                         <a href="#" class="list-group-item"><i class="demo-pli-mine icon-lg icon-fw"></i>Usage Profile</a>
                                         <a href="#" class="list-group-item"><span class="label label-info pull-right">New</span><i class="demo-pli-credit-card-2 icon-lg icon-fw"></i> Payment Options</a>
-                                        <a href="#" class="list-group-item"><i class="demo-pli-support icon-lg icon-fw"></i>Message Center</a>
+                                        <a href="#" class="list-group-item"><i class="demo-pli-support icon-lg icon-fw"></i>Message Center</a>--%>
                                     </div>
 
 
@@ -460,9 +287,10 @@
 
                                     <div class="text-center">
                                         <div><i class="demo-pli-old-telephone icon-3x"></i></div>
-                                        Questions?
-                                        <p class="text-lg text-semibold text-main">(415) 234-53454 </p>
-                                        <small><em>We are here 24/7</em></small>
+                                        <br />
+                                        ထောက်ပံပေးခြင်း
+                                        <p class="text-lg text-semibold text-main">(95) 9-799 123 456 </p>
+                                        <small><em>စနစ်အတွင်း အကူအညီလိုပါက ဆက်သွယ်ရန်</em></small>
                                     </div>
                                 </div>
                                 <!--End second tab (Custom layout)-->
@@ -472,26 +300,16 @@
                                 <!--Third tab (Settings)-->
                                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                                 <div class="tab-pane fade " id="demo-asd-tab-3">
+ 
 
                                     <p class="pad-all text-main text-sm text-uppercase text-bold">
                                         Access Control
                                     </p>
                                     <div class="list-group bg-trans">
-                                        <a href="users" class="list-group-item">
-                                            <div class="media-left pos-rel">
-                                                <i class="ion-person-stalker icon-2x"></i>
-
-                                            </div>
-                                            <div class="media-body">
-                                                <p class="mar-no text-main">User List</p>
-
-                                            </div>
-                                        </a>
+                                        
                                         <a href="roles" class="list-group-item">
                                             <div class="media-left pos-rel">
-                                                <i class="ion-wand icon-2x"></i>
-
-
+                                                <i class="ion-wand icon-2x"></i> 
                                             </div>
                                             <div class="media-body">
                                                 <p class="mar-no text-main">User Roles</p>
@@ -529,15 +347,7 @@
                                                 <p class="mar-no text-main">Menu Group</p>
                                             </div>
                                         </a>
-                                        <a href="organizations" class="list-group-item">
-                                            <div class="media-left pos-rel">
-                                                <i class="ion-cube icon-2x"></i>
-
-                                            </div>
-                                            <div class="media-body">
-                                                <p class="mar-no text-main">Company</p>
-                                            </div>
-                                        </a>
+                                        
                                     </div>
 
 
@@ -591,25 +401,20 @@
                                             <span class="pull-right dropdown-toggle">
                                                 <i class="dropdown-caret"></i>
                                             </span>
-                                            <p class="mnp-name user">Aaron Chavez</p>
-                                            <span class="mnp-desc useremail">aaron.cha@themeon.net</span>
+                                            <p class="mnp-name user">SYSTEMATIC</p>
+                                            <span class="mnp-desc useremail">Loading....</span>
                                         </a>
                                     </div>
                                     <div id="profile-nav" class="collapse list-group bg-trans">
-                                        <a href="#" onclick="profile()" class="list-group-item">
-                                            <i class="demo-pli-male icon-lg icon-fw"></i>View Profile
-                                        </a>
-                                        <a href="companyprofile" class="list-group-item">
-                                            <i class="demo-pli-information icon-lg icon-fw"></i>View Company
-                                        </a>
+                                       
                                           <a href="changepassword" class="list-group-item" id="menu_system_change_password">
-                                            <i class="demo-pli-gear icon-lg icon-fw"></i>&nbsp;Change Password
+                                            <i class="demo-pli-gear icon-lg icon-fw"></i>&nbsp;လျှို့ဝှက်ကုဒ် ပြောင်းမည်။
                                         </a>
                                         <%-- <a href="#" class="list-group-item">
                                             <i class="demo-pli-information icon-lg icon-fw"></i>Help
                                         </a>--%>
                                         <a href="login" class="list-group-item" onclick="logout('dologout');">
-                                            <i class="demo-pli-unlock icon-lg icon-fw"></i>Logout
+                                            <i class="demo-pli-unlock icon-lg icon-fw"></i>စနစ်မှ ထွက်မည်။
                                         </a>
                                     </div>
                                 </div>
