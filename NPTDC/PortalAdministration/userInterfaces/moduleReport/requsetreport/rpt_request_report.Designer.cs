@@ -37,7 +37,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rpt_request_report));
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.xrSubreport1 = new DevExpress.XtraReports.UI.XRSubreport();
-            this.parameter1 = new DevExpress.XtraReports.Parameters.Parameter();
             this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow2 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell2 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -67,6 +66,7 @@
             this.PageInfo = new DevExpress.XtraReports.UI.XRControlStyle();
             this.par_depID = new DevExpress.XtraReports.Parameters.Parameter();
             this.par_REQID = new DevExpress.XtraReports.Parameters.Parameter();
+            this.parameter1 = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -85,13 +85,7 @@
             // 
             this.xrSubreport1.LocationFloat = new DevExpress.Utils.PointFloat(287.5F, 0F);
             this.xrSubreport1.Name = "xrSubreport1";
-            this.xrSubreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("parameter1", this.parameter1));
-            this.xrSubreport1.ReportSource = new SBSPortal3.PortalAdministration.userInterfaces.moduleReport.requsetreport.rpt_report_request_item();
             this.xrSubreport1.SizeF = new System.Drawing.SizeF(261.4583F, 50.08332F);
-            // 
-            // parameter1
-            // 
-            this.parameter1.Name = "parameter1";
             // 
             // xrTable2
             // 
@@ -383,6 +377,10 @@
             // 
             this.par_REQID.Name = "par_REQID";
             // 
+            // parameter1
+            // 
+            this.parameter1.Name = "parameter1";
+            // 
             // rpt_request_report
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -445,7 +443,7 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel3;
         private DevExpress.XtraReports.UI.XRLabel xrLabel2;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell5;
-        private DevExpress.XtraReports.Parameters.Parameter parameter1;
         private DevExpress.XtraReports.UI.XRSubreport xrSubreport1;
+        private DevExpress.XtraReports.Parameters.Parameter parameter1;
     }
 }
