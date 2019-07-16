@@ -88,7 +88,16 @@ namespace NPT_DC_App.WebServices
             return Controllers.Controller_Request.DeleteRequest(meetingreq_id, user_id,RequestID);
         }
 
-        
+        [WebMethod]
+        public string LoadRequestByAgendaID(string agendaID, string user_id)
+        {
+            return Controllers.Controller_Request.LoadRequestByAgendaID(agendaID, user_id);
+        }
+        [WebMethod]
+        public string ChangeCombineDecision(string agendaID, string meetingreq_id, string edited_decision, string user_id)
+        {
+            return Controllers.Controller_Request.ChangeCombineDecision(agendaID,meetingreq_id, edited_decision, user_id);
+        }
 
     }
 }

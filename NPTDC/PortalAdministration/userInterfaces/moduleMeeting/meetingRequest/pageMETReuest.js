@@ -224,7 +224,9 @@ function Load_Request_Item(req_id) {
 }
 
 function Bind_RequestItems(data) {
+
     if (data == undefined) { data = []; }
+    arr_request_item = data;
 
     $("#gc_RequestItems").dxDataGrid({
         rowAlternationEnabled: true,
@@ -356,7 +358,7 @@ function Load_Request_Decisions(req_id) {
 
 function Bind_RequestDecisions(data) {
     if (data == undefined) { data = []; }
-
+    arr_request_decision = data;
     $("#gc_RequestDescription").dxDataGrid({
         dataSource: data,
         keyExpr: "RequestDecisionID",

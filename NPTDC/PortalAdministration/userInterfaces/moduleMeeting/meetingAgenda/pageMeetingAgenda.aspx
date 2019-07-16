@@ -15,7 +15,7 @@
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder_Header" runat="server">
- <!--Page Title-->
+    <!--Page Title-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <div id="page-title">
         <h1 class="page-header text-overflow"><span data-translate="">အမှာစာ ပြုစုခြင်း</span></h1>
@@ -30,87 +30,94 @@
         <li><a href="#"><i class="demo-pli-home"></i></a></li>
         <li><a href="#" data-translate="_materbook"><span data-translate="">အစည်းအဝေးများ</span></a></li>
         <li class="active"><span data-translate="">အမှာစာ ပြုစုခြင်း</span></li>
-     
+
     </ol>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--End breadcrumb-->
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder_Body" runat="server">
- <div id="page-content">
+    <div id="page-content">
         <div class="panel">
-            
+
             <div class="panel-body">
                 <div class="row">
-                  
-                    
-                            <div class="col-md-12">
-                                <div class="panel  ">
 
-                                    <div class="panel-body">
-                                        <form class="form-horizontal">
-                                              <input type="hidden" id="tb_id" value="" />
-                                            <div class="form-group">
-                                                <label for="tb_name" class="col-md-2 control-label" data-translate="">အမှတ်စဉ်</label>
-                                                <div class="col-md-3">
-                                                    <input type="text" class="form-control" id="tb_agenda_no" placeholder="အမှာစာအမှတ်စဉ်" readonly="true">
-                                                </div>
-                                                  <label for="tb_name" class="col-md-3 control-label" data-translate="">ရက်စွဲ</label>
-                                                <div class="col-md-3">
-                                                    <div id="dt_agenda_date" style="width: 100%"></div>
-                                                 </div>
-                                            </div>
-                                            <div class="form-group">
 
-                                                <label for="ddl_meetingtype" class="col-md-2 control-label" data-translate="">အခြေအနေ</label>
-                                                <div class="col-md-3">
-                                                       <input type="hidden" id="hf_agenda_status" value="" />
-                                                    <div id="ddl_agenda_status"></div>
-                                                </div>
-                                            </div>                
-                                        
-                                            <div class="form-group">
-                                                <label for="tb_Remark" class="col-md-2 control-label" data-translate="">မှတ်ချက်</label>
-                                                <div class="col-md-9">
-                                                    <textarea id="tb_Remark" rows="6" cols="50" class="form-control" placeholder="မှတ်ချက် ရေးပါ။"></textarea>
-                                                </div>
-                                            </div>
-                                              <div class="form-group">                                               
-                                                <div class="col-md-4">
-                                                    <%--<textarea id="tb_Description" rows="5" cols="50" class="form-control" placeholder="ဆုံးဖြတ်ချက် ရေးပါ။"></textarea>--%>
-                                                      <div id="btn_request_add"></div>
-                                                </div>
-                                            </div>
-                                            
-
-                                        </form>
-
-                                    </div>
-                                </div>
-                            </div>
-                 </div>
-            </div>
-                 
-                
-               
-                <div class="form-group  pull-right">
-               
                     <div class="col-md-12">
-                        <small><span id="lbl_created"></span></small>
+                        <div class="panel  ">
+
+                            <div class="panel-body">
+                                <form class="form-horizontal">
+                                    <input type="hidden" id="tb_id" value="" />
+                                    <div class="form-group">
+                                        <label for="tb_name" class="col-md-2 control-label" data-translate="">အမှတ်စဉ်</label>
+                                        <div class="col-md-3">
+                                            <input type="text" class="form-control" id="tb_agenda_no" placeholder="အမှာစာအမှတ်စဉ်" readonly="true">
+                                        </div>
+                                        <label for="tb_name" class="col-md-3 control-label" data-translate="">ရက်စွဲ</label>
+                                        <div class="col-md-3">
+                                            <div id="dt_agenda_date" style="width: 100%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+
+                                        <label for="ddl_meetingtype" class="col-md-2 control-label" data-translate="">အခြေအနေ</label>
+                                        <div class="col-md-3">
+                                            <input type="hidden" id="hf_agenda_status" value="" />
+                                            <div id="ddl_agenda_status"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="tb_Remark" class="col-md-2 control-label" data-translate="">မှတ်ချက်</label>
+                                        <div class="col-md-9">
+                                            <textarea id="tb_Remark" rows="6" cols="50" class="form-control" placeholder="မှတ်ချက် ရေးပါ။"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-4">
+                                            <%--<textarea id="tb_Description" rows="5" cols="50" class="form-control" placeholder="ဆုံးဖြတ်ချက် ရေးပါ။"></textarea>--%>
+                                            <div id="btn_request_add"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+
+                                        <div class="col-md-12">
+                                            <div id="gc_AgendaList"></div>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <br />
-                        <small><span id="lbl_modified"></span></small>
-                        <br />
+                        <div class="col-md-12">
+                            <small class="pull-left"><span id="lbl_created"></span></small>
+
+                            <small class="pull-right"><span id="lbl_modified"></span></small>
+                            <br />
+                        </div>
                     </div>
                 </div>
-
             </div>
+
+
+
 
 
         </div>
-    
+
+
+    </div>
+
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder_JS" runat="server">
     <script src='<%=ResolveUrl("../../../plugins/WidgetsGallery/js/jszip.min.js")%>'></script>
     <script src='<%=ResolveUrl("../../../plugins/WidgetsGallery/js/dx.all.js")%>'></script>
     <script src='<%= ResolveUrl("pageMeetingAgenda.js")%>'></script>
-   
+
 </asp:Content>

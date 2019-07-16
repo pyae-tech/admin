@@ -32,13 +32,13 @@ namespace NPT_DC_App.Controllers
                                                       c.Description.Contains(search_text) ||
                                                       c.Remark.Contains(search_text) ||
                                                       c.DepartmentName.Contains(search_text))))
-                                                       orderby c.CreatedOn descending
-                                                       select c
+                                                     orderby c.CreatedOn descending
+                                                     select c
                                                        ).ToList();
             var lists = new Newtonsoft.Json.Linq.JArray() as dynamic;
 
             foreach (var row in the_requestlist)
-            {             
+            {
                 dynamic request = new Newtonsoft.Json.Linq.JObject();
 
                 request.RequestID = row.RequestID;
@@ -53,19 +53,19 @@ namespace NPT_DC_App.Controllers
             }
 
             return lists.ToString();
-          
+
         }
 
-        public static string GetAllRequestItemsJson(string meeting_requsetID,string org_id, string RequestID)
+        public static string GetAllRequestItemsJson(string meeting_requsetID, string org_id, string RequestID)
         {
             //Security Check
             if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, RequestID, "read")) throw new Exception("No Access.");
 
             LINQ_MeetingDataContext dc = new LINQ_MeetingDataContext();
             List<MET_RequestItemView> reqitems_list = (from c in dc.MET_RequestItemViews
-                                               where c.Active == true && c.OrgID == org_id && c.RequestID==meeting_requsetID
-                                            orderby c.Seq
-                                            select c).ToList();
+                                                       where c.Active == true && c.OrgID == org_id && c.RequestID == meeting_requsetID
+                                                       orderby c.Seq
+                                                       select c).ToList();
             string return_str = new JavaScriptSerializer().Serialize(reqitems_list);
             return return_str;
         }
@@ -77,9 +77,9 @@ namespace NPT_DC_App.Controllers
 
             LINQ_MeetingDataContext dc = new LINQ_MeetingDataContext();
             List<MET_RequestDecisionView> reqdecision_list = (from c in dc.MET_RequestDecisionViews
-                                                           where c.Active == true && c.OrgID == org_id && c.RequestID== meeting_requsetID
-                                                           orderby c.Seq
-                                                       select c).ToList();
+                                                              where c.Active == true && c.OrgID == org_id && c.RequestID == meeting_requsetID
+                                                              orderby c.Seq
+                                                              select c).ToList();
             string return_str = new JavaScriptSerializer().Serialize(reqdecision_list);
             return return_str;
         }
@@ -110,7 +110,7 @@ namespace NPT_DC_App.Controllers
 
                 LINQ_MeetingDataContext dc = new LINQ_MeetingDataContext();
                 MET_Request the_request = new MET_Request();
-             
+
                 if (RequestID == "")
                 {
                     the_request = new MET_Request()
@@ -146,25 +146,25 @@ namespace NPT_DC_App.Controllers
                 the_request.RequestStatus = RequestStatus;
                 the_request.RequestOn = request_on;
                 the_request.AgendaID = MeetingID;
-                the_request.Remark = Remark.Replace("%27", ""); 
-                the_request.Description = Description.Replace("%27", ""); 
+                the_request.Remark = Remark.Replace("%27", "");
+                the_request.Description = Description.Replace("%27", "");
 
                 the_request.ModifiedBy = UserID;
                 the_request.ModifiedOn = DateTime.Now;
-                the_request.LastAction = Guid.NewGuid().ToString();               
+                the_request.LastAction = Guid.NewGuid().ToString();
 
 
                 #region Clear previous items
                 List<MET_RequestItem> req_old_items = (from c in dc.MET_RequestItems
-                                                           where c.RequestID == the_request.RequestID
-                                                           && c.Active == true
-                                                           select c).ToList();
+                                                       where c.RequestID == the_request.RequestID
+                                                       && c.Active == true
+                                                       select c).ToList();
                 if (req_old_items != null)
                 {
                     dc.MET_RequestItems.DeleteAllOnSubmit(req_old_items);
                 }
                 #endregion
-                
+
 
                 #region Request Items
 
@@ -177,7 +177,7 @@ namespace NPT_DC_App.Controllers
                         if (item != "")
                         {
                             List<string> itemInfo = item.Split('^').ToList();
-                           
+
                             request_items.Add(new MET_RequestItem()
                             {
                                 CreatedBy = UserID,
@@ -190,8 +190,8 @@ namespace NPT_DC_App.Controllers
                                 RequestItemID = itemInfo[0],
                                 RequestItem = itemInfo[1],
                                 Seq = convertToDecimal(itemInfo[2]),
-                                });
-                            
+                            });
+
                         }
                     }
                     dc.MET_RequestItems.InsertAllOnSubmit(request_items);
@@ -205,7 +205,7 @@ namespace NPT_DC_App.Controllers
                 List<MET_RequestDecision> req_old_decisions = (from c in dc.MET_RequestDecisions
                                                                where c.RequestID == the_request.RequestID
                                                        && c.Active == true
-                                                       select c).ToList();
+                                                               select c).ToList();
                 if (req_old_decisions != null)
                 {
                     dc.MET_RequestDecisions.DeleteAllOnSubmit(req_old_decisions);
@@ -215,8 +215,10 @@ namespace NPT_DC_App.Controllers
                 {
                     List<MET_RequestDecision> request_decisions = new List<MET_RequestDecision>();
                     List<string> decisions = RequestDecisions.Split('~').ToList();
+                    string[] combine_decisions = new string[decisions.Count];
+                    int count = 0;
                     foreach (string decision in decisions)
-                    {
+                    {                        
                         if (decision != "")
                         {
                             List<string> decisionInfo = decision.Split('^').ToList();
@@ -234,10 +236,14 @@ namespace NPT_DC_App.Controllers
                                 Description = decisionInfo[1],
                                 Seq = convertToDecimal(decisionInfo[2]),
                             });
+                            combine_decisions[count] = decisionInfo[1];
+                            count++;
 
                         }
                     }
+                    
                     dc.MET_RequestDecisions.InsertAllOnSubmit(request_decisions);
+                    the_request.CombineDecision = string.Join(",", combine_decisions); 
                 }
 
                 #endregion
@@ -253,9 +259,12 @@ namespace NPT_DC_App.Controllers
                     }
                 }
                 #endregion
+                dc.SubmitChanges();
 
-                dc.SubmitChanges();          
-
+                //#region Conbine Decisions
+                //the_request.CombineDecision = dc.MET_CombineDecisionsOfRequest(the_request.RequestID).ToString();
+                //#endregion
+                //dc.SubmitChanges();
 
                 return "Success~" + the_request.RequestID + "~" + the_request.RequestNo;
             }
@@ -315,6 +324,69 @@ namespace NPT_DC_App.Controllers
 
                 dc.SubmitChanges(ConflictMode.ContinueOnConflict);
                 return "Success~";
+            }
+            catch (ChangeConflictException ex)
+            {
+                return "Success~";
+            }
+        }
+
+
+        public static string LoadRequestByAgendaID(string agendaID, string user_id)
+        {
+            ////Security Check
+            //if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, user_id, "select")) throw new Exception("No Access.");
+
+            LINQ_MeetingDataContext dc = new LINQ_MeetingDataContext();
+            try
+            {
+                
+                #region get all request
+                List<MET_RequestView> reqs_list = (from c in dc.MET_RequestViews
+                                                   where c.Active == true && c.AgendaID == agendaID
+                                                   orderby c.Protocol ascending
+                                                   select c).ToList();
+
+                string return_str = new JavaScriptSerializer().Serialize(reqs_list);
+                #endregion
+
+
+                return "Success~" + return_str;
+            }
+            catch (Exception ex)
+            {
+                return "Success~";
+            }
+        }
+
+        public static string ChangeCombineDecision(string agendaID,string meetingreq_id,string edited_decision, string user_id)
+        {
+            //Security Check
+            if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, user_id, "update")) throw new Exception("No Access.");
+
+            LINQ_MeetingDataContext dc = new LINQ_MeetingDataContext();
+            try
+            {
+                MET_Request request_record = new MET_Request();
+                request_record = (from c in dc.MET_Requests where c.RequestID == meetingreq_id && c.Active == true select c).FirstOrDefault();
+                if (request_record == null)
+                    return "Error~We can't find";
+                request_record.CombineDecision = edited_decision;
+                request_record.ModifiedOn = DateTime.Now;
+                request_record.ModifiedBy = user_id;
+                request_record.LastAction = Guid.NewGuid().ToString();
+
+                dc.SubmitChanges(ConflictMode.ContinueOnConflict);
+
+                #region get all request
+                List<MET_RequestView> reqs_list = (from c in dc.MET_RequestViews
+                                                   where c.Active == true && c.AgendaID == agendaID
+                                                   orderby c.Protocol ascending
+                                                   select c).ToList();
+
+                string return_str = new JavaScriptSerializer().Serialize(reqs_list);
+                #endregion
+                return "Success~"+ return_str;
             }
             catch (ChangeConflictException ex)
             {

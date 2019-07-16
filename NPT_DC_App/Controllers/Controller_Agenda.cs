@@ -20,18 +20,18 @@ namespace NPT_DC_App.Controllers
             LINQ_MeetingDataContext dc = new LINQ_MeetingDataContext();
 
             List<MET_AgendaView> the_agendalist = (from c in dc.MET_AgendaViews
-                                                   where c.Active == true && 
+                                                   where c.Active == true &&
                                                        ((search_text == "") ||
                                                        (search_text != "" && (
 
                                                      c.AgendaNo.Contains(search_text) ||
                                                      c.AgendaRemark.Contains(search_text) ||
-                                                     c.AgendaStatus.Contains(search_text)  ||                                                  
+                                                     c.AgendaStatus.Contains(search_text) ||
                                                      c.CUserCode.Contains(search_text) ||
                                                      c.MUserCode.Contains(search_text)
                                                       )))
-                                                     orderby c.CreatedOn descending
-                                                     select c
+                                                   orderby c.CreatedOn descending
+                                                   select c
                                                        ).ToList();
             var lists = new Newtonsoft.Json.Linq.JArray() as dynamic;
 
@@ -157,11 +157,12 @@ namespace NPT_DC_App.Controllers
                 foreach (MET_Request i in req_list)
                 {
                     i.AgendaID = "";
+                    i.RequestStatus = "Approved";
                     i.ModifiedBy = RequestID;
                     i.ModifiedOn = DateTime.Now;
                 }
                 #endregion
-           
+
                 dc.SubmitChanges(ConflictMode.ContinueOnConflict);
                 return "Success~";
             }
@@ -183,11 +184,11 @@ namespace NPT_DC_App.Controllers
                 agenda_record = (from c in dc.MET_Agendas where c.AgendaID == agendaID && c.Active == true select c).FirstOrDefault();
                 if (agenda_record == null)
                     return "Error~We can't find";
-               
+
 
                 #region Request in agenda
                 List<MET_Request> req_list = new List<MET_Request>();
-                req_list = (from c in dc.MET_Requests where c.RequestStatus=="Approved" && c.Active == true select c).ToList();
+                req_list = (from c in dc.MET_Requests where c.RequestStatus == "Approved" && c.Active == true select c).ToList();
                 foreach (MET_Request i in req_list)
                 {
                     i.AgendaID = agenda_record.AgendaID;
@@ -198,12 +199,17 @@ namespace NPT_DC_App.Controllers
                 #endregion
 
                 dc.SubmitChanges(ConflictMode.ContinueOnConflict);
+                #region get all request
+                List<MET_RequestView> reqs_list = (from c in dc.MET_RequestViews
+                                                  where c.Active == true && c.AgendaID == agendaID
+                                                  orderby c.Protocol ascending                                                  
+                                                  select c).ToList();
 
-                //List<MET_RequestView> reqitems_list = (from c in dc.MET_RequestViews
-                //                                       where c.Active == true && c.AgendaID == agendaID
-                //                                           orderby c.RequestOn
-                //                                           select c).ToList();
-                return "Success~";
+                string return_str = new JavaScriptSerializer().Serialize(reqs_list); 
+                #endregion
+
+
+                return "Success~"+ return_str;
             }
             catch (ChangeConflictException ex)
             {
