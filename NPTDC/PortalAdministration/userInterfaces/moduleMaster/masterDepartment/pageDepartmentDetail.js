@@ -19,6 +19,15 @@ else {
     LoadNew();
 }
 
+function GoToLog() {
+
+    if ($("#tb_id").val() == "") {
+        window.open('logs?id=', '_blank');
+    } else {
+        window.open('logs?id=' + $("#tb_id").val(), '_blank');
+    }
+}
+
 $("#tab-main").tabs("option", "active", 0);
 $(".tab-menu").removeClass("active");
 $("#tab_list_menu").addClass("active");
