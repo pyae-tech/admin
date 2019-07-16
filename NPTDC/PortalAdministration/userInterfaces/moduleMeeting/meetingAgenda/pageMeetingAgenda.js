@@ -93,6 +93,7 @@ function SaveAgenda() {
         "'AgendaID':'" + $("#tb_id").val() + "' " +
         ",'AgendaDate':'" + agenda_date + "' " +
         ",'AgendaNo':'" + $("#tb_agenda_no").val() + "' " +
+        ",'AgendaNoLabel':'" + $("#tb_agenda_no_label").val() + "' " +
         ",'AgendaStatus':'" + $("#hf_agenda_status").val() + "' " +
         ",'AgendaHistory':'" + "Testing" + "' " +
         ",'AgendaRemark':'" + esc_quot($('#tb_Remark').val()) + "' " +
@@ -324,7 +325,7 @@ function Bind_AgendaList(data) {
     $("#gc_AgendaList").dxDataGrid({
         rowAlternationEnabled: true,
         dataSource: data,
-        height: 300,
+        //height: 300,
 
         searchPanel: true,
         keyExpr: "RequestID",
@@ -356,6 +357,7 @@ function Bind_AgendaList(data) {
             },
             {
                 allowEditing: false,
+                width: 150,
                 dataField: "DepartmentName",
                 caption: "ဌာနအမည်",
                 cssClass: 'cls'
@@ -368,6 +370,7 @@ function Bind_AgendaList(data) {
             },
             {
                 allowEditing: false,
+                width: 150,
                 dataField: "Remark",
                 caption: "မှတ်ချက်",
                 cssClass: 'cls'
@@ -390,10 +393,16 @@ function Bind_AgendaList(data) {
         //    var selectedDatasUsers = e.component.getDataSource().items();
         //    console.log(selectedDatasUsers);
         //},
+        //onSelectionChanged: function (selectedItems) {
+        //    var data = selectedItems.selectedRowsData[0];
+        //    if (data) {
+        //        GetRequest(data.RequestID);
+        //    }
+        //},
         onEditorPreparing(e) {
-            if (e.dataField == "RequestItem") {
+            if (e.dataField == "CombineDecision") {
                 e.editorName = "dxTextArea";
-                e.editorOptions.height = 100;
+                e.editorOptions.height = 200;
                 e.editorOptions.onKeyDown = function (e) {
                     var event = e.event;
                     if (event.key === "Enter" && !event.shiftKey) {
@@ -404,6 +413,10 @@ function Bind_AgendaList(data) {
 
         }
     });
+}
+
+function GetRequest(id) {
+    window.open('request?id=' + id, '_blank');
 }
 
 function ChangeCombineDecision(editDecision) {
