@@ -1676,6 +1676,7 @@
     <Content Include="PortalAdministration\userInterfaces\moduleMeeting\meetingRequest\pageMETRequests.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleMeeting\meetingRequest\pageMETReuest.aspx" />
     <Content Include="PortalAdministration\userInterfaces\moduleMeeting\meetingRequest\pageMETReuest.js" />
+    <Content Include="PortalAdministration\userInterfaces\moduleReport\requsetreport\PageRequestReport.aspx" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\crmActivityPlugin\controlActivity.ascx" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\crmActivityPlugin\controlActivity.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\login\pagechangePassword.js" />
@@ -4589,6 +4590,25 @@
     <Compile Include="PortalAdministration\userInterfaces\moduleMeeting\meetingRequest\pageMETReuest.aspx.designer.cs">
       <DependentUpon>pageMETReuest.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PortalAdministration\userInterfaces\moduleReport\requsetreport\PageRequestReport.aspx.cs">
+      <DependentUpon>PageRequestReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PortalAdministration\userInterfaces\moduleReport\requsetreport\PageRequestReport.aspx.designer.cs">
+      <DependentUpon>PageRequestReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PortalAdministration\userInterfaces\moduleReport\requsetreport\rpt_report_request_item.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PortalAdministration\userInterfaces\moduleReport\requsetreport\rpt_report_request_item.Designer.cs">
+      <DependentUpon>rpt_report_request_item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PortalAdministration\userInterfaces\moduleReport\requsetreport\rpt_request_report.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PortalAdministration\userInterfaces\moduleReport\requsetreport\rpt_request_report.Designer.cs">
+      <DependentUpon>rpt_request_report.cs</DependentUpon>
+    </Compile>
     <Compile Include="PortalAdministration\userInterfaces\moduleSystem\crmActivityPlugin\controlActivity.ascx.cs">
       <DependentUpon>controlActivity.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4884,6 +4904,12 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="PortalAdministration\userInterfaces\moduleReport\requsetreport\rpt_report_request_item.resx">
+      <DependentUpon>rpt_report_request_item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PortalAdministration\userInterfaces\moduleReport\requsetreport\rpt_request_report.resx">
+      <DependentUpon>rpt_request_report.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup>

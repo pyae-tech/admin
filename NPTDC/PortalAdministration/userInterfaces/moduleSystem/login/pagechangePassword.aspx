@@ -76,7 +76,7 @@
                                 <label for="tb_code" class="col-md-3 control-label"></label>
                                 <div class="col-md-2">
                                      <button class="btn btn-danger  btn-rounded btn-labeled" type="button" onclick="ChangePassword();return false;">
-                                    <span class="bold">လျှိုဝှက် နံပါတ် ပြောင်းရန်</span></button>
+                                    <i class="btn-label ion-checkmark"></i><span class="bold">လျှိုဝှက် နံပါတ် ပြောင်းရန်</span></button>
                                 </div>
                             </div>
 

@@ -272,15 +272,13 @@ function DeleteImage() {
         contentType: "application/json; charset=utf-8",
         success: function (data) {
             if (data.d.toString().split('~')[0] == 'Success') {
-                $("#item_image_zone").css("display", "block");
-                $("#image_item").css("display", "block");
-                GetUser($("#tb_id").val());
+                $("#image_item").css("display","none");
+                $("#Image_drop_zone").css("display","block");
                 ShowSuccessMessage("Deleted.");
             }
             else {
                 ShowBoxMessage("Oops. " + data.d.toString().split('~')[1]);
             }
-
         },
         error: function (xhr, msg) {
             LogJSError('Web Service Fail: ' + msg + '\n' + xhr.responseText);

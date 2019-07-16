@@ -657,3 +657,6 @@ function DeleteRequest() {
     });
 
 }
+function print_receipt() {
+    window.open('requestReport?id=' + $("#tb_id").val() +'&DepartmentId=' + get_current_user_DepartmentID(), '_blank');
+}

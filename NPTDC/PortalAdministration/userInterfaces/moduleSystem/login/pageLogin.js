@@ -166,6 +166,7 @@ function ForgotPassword() {
 
                 }
                 else if (data.d.toString().split('~')[0] == "success") {
+                    $.cookie('usercode', "", { expires: 1, path: '/' });
                     ShowSuccessMessage("We are already sent new password to your mail. Please link to your mail and get password.");
 
                 }
