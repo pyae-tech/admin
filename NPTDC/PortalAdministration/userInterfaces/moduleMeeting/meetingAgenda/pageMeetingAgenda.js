@@ -133,9 +133,25 @@ function LoadNew() {
     $("#lbl_created").html("");
     $("#lbl_modified").html("");
 
-    $("#hf_agenda_status").val("");
     window.history.replaceState({}, document.title, "agenda");
 
+    $("#hf_agenda_status").val("New");
+    $("#ddl_agenda_status").dxLookup({
+        items: ["New", "Pending", "Complete"],
+        value: $("#hf_agenda_status").val(),
+        showPopupTitle: false,
+        onValueChanged: function (e) {
+            if (e.value === "null" || e.value == null) {
+                $("#hf_agenda_status").val("New");
+            }
+            else {
+                $("#hf_agenda_status").val($("#ddl_agenda_status").dxLookup("instance").option('value'));
+
+            }
+        }
+    });
+    var grid = $('#gc_AgendaList').dxDataGrid('instance');
+    grid.option('dataSource', []);
 }
 
 function GetAgenda(id) {
@@ -261,7 +277,7 @@ function AddRequestToAgenda() {
                 Bind_AgendaList(result);
             }
             else {
-                ShowBoxMessage("Oops. " + data.d.toString().split('~')[1]);
+                alert("Oops. " + data.d.toString().split('~')[1]);
             }
 
         },
@@ -415,4 +431,18 @@ function ChangeCombineDecision(editDecision) {
 
         }
     });
+}
+
+function GoToLog() {
+
+    if ($("#tb_id").val() == "") {
+        window.open('logs?id=', '_blank');
+    } else {
+        window.open('logs?id=' + $("#tb_id").val(), '_blank');
+    }
+}
+
+function Refresh()
+{
+    GetAgenda(GetURLData('id'));
 }

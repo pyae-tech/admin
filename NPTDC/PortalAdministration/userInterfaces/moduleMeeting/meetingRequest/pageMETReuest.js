@@ -613,7 +613,9 @@ function GoToLog() {
         window.open('logs?id=' + $("#tb_id").val(), '_blank');
     }
 }
-
+function Refresh() {
+    GetRequest(GetURLData('id'));
+}
 function UploadAttachment() {
     window.open('attachment?id=' + $("#tb_id").val() + '&No=' + $('#tb_request_no').val() + '&UserId=' + get_current_user_id() + '&refType=request', '_blank');
 }

@@ -148,3 +148,8 @@ function GetRequest(id) {
 function NewRequest() {
     window.open('request?id=', '_blank');
 }
+
+
+function Refresh() {
+    getRequestList();
+}
