@@ -56,6 +56,7 @@ namespace NPT_DC_App.Controllers
           string AgendaID,
           string AgendaDate,
           string AgendaNo,
+          string AgendaNoLabel,
           string AgendaStatus,
           string AgendaHistory,
           string AgendaRemark,
@@ -95,6 +96,7 @@ namespace NPT_DC_App.Controllers
                 the_agenda.AgendaHistory = AgendaHistory;
                 the_agenda.AgendaRemark = AgendaRemark;
                 the_agenda.AgendaDate = agenda_date;
+                the_agenda.AgendaNoLable = AgendaNoLabel;
 
                 the_agenda.ModifiedBy = UserID;
                 the_agenda.ModifiedOn = DateTime.Now;

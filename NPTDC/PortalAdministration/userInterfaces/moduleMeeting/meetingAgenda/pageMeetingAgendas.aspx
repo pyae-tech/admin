@@ -6,7 +6,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_TopLeftMenu" runat="server">
  
- <button class="btn btn-mint  btn-rounded  btn-labeled" type="button" onclick="NewAgenda();return false;"><i class="btn-label ion-plus-round"></i>
+ <button class="btn  btn-dark   btn-rounded  btn-labeled" type="button" onclick="NewAgenda();return false;"><i class="btn-label ion-plus-round"></i>
              <span class="bold" data-translate="_new">စာရင်း အသစ်သွင်းရန်</span></button>
            <button class="btn  btn-dark   btn-rounded  btn-labeled" type="button" onclick="Refresh();return false;"><i class="btn-label ion-refresh"></i><span class="bold" data-translate="_reflesh">ပြန်ဖွင့်</span></button>
 
@@ -48,7 +48,7 @@
                             </div>
 
                         </div>
-                        <h3><i class="ion-compose">&nbsp</i><span data-translate="">အမှာစာ စုစည်းခြင်းများ</span></h3>
+                        <%--<h3><i class="ion-compose">&nbsp</i><span data-translate="">အမှာစာ စုစည်းခြင်းများ</span></h3>--%>
                         <!--Panel body-->
                         <div class="panel-body" id="backdetect">
                             <div class="tab-content">
