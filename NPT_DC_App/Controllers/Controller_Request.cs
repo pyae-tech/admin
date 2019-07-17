@@ -10,11 +10,15 @@ namespace NPT_DC_App.Controllers
 {
     public class Controller_Request
     {
-        static string AccessProgramCode = "UserControl";
+        static string AccessProgramCode = "MeetingRequest";
 
 
         public static void do_populate_print_description(string RequestID)
         {
+           
+            //Security Check
+            if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, RequestID, "read")) throw new Exception("No Access.");
+
             LINQ_MeetingDataContext dc = new LINQ_MeetingDataContext();
             MET_Request the_request=(from c in dc.MET_Requests where c.RequestID == RequestID && c.Active == true select c).FirstOrDefault();
             if (the_request == null) throw new Exception("No recrod found");

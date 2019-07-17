@@ -214,7 +214,7 @@ namespace NPT_DC_App.Controllers
                 }
                 else if (type == "delete")
                 {
-                    if (data == "true") the_record.AllowDecision = true;
+                    if (data == "true") the_record.AllowDelete = true;
                     else the_record.AllowDelete = false;
                 }
                 else if (type == "decision")
