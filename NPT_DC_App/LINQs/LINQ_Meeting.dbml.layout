@@ -26,12 +26,6 @@
         <elementListCompartment Id="8f3aea59-a3cf-40b9-9e56-908fd90bfe7b" absoluteBounds="3.64, 4.335, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="8f938573-ef0c-455b-8f53-2d7486f1b824" absoluteBounds="8.5, 3.625, 2, 3.6939111328124996">
-      <DataClassMoniker Name="/LINQ_MeetingDataContext/MET_AgendaView" />
-      <nestedChildShapes>
-        <elementListCompartment Id="2d51f20c-1577-4a34-b27d-c158873b0ec3" absoluteBounds="8.515, 4.085, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="901410ea-e014-45c3-a3f4-b9121c39513a" absoluteBounds="8.375, 0.625, 2, 3.3093082682291666">
       <DataClassMoniker Name="/LINQ_MeetingDataContext/MET_Agenda" />
       <nestedChildShapes>
@@ -48,6 +42,12 @@
       <DataClassMoniker Name="/LINQ_MeetingDataContext/MET_RequestView" />
       <nestedChildShapes>
         <elementListCompartment Id="111a8ead-6c80-4a40-8467-25a47302e17f" absoluteBounds="0.765, 6.71, 1.9700000000000002, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2e3566b5-9e75-4560-8a4c-6964d0430853" absoluteBounds="8.5, 4.125, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/LINQ_MeetingDataContext/MET_AgendaView" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4cb545c5-5200-4cf0-ad07-894154f6dc6f" absoluteBounds="8.515, 4.585, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

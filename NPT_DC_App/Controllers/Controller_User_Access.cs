@@ -17,32 +17,49 @@ namespace NPT_DC_App.Controllers
 
                 SYS_UserRoleProgramView the_access = (from c in dc.SYS_UserRoleProgramViews where c.RoleID == the_user.RoleID && c.ProgramCode == programCode select c).FirstOrDefault();
                 if (the_access == null) throw new Exception("System cannot find the access");
+                           
+                switch (accessType)
+                {
+                    case "all":
+                        if (the_access.AllowCreate && the_access.AllowDelete && the_access.AllowUpdate && the_access.AllowView)
+                           return true;                      
+                        break;
 
-                if (accessType == "all")
-                {
-                    if (the_access.AllowCreate && the_access.AllowDelete && the_access.AllowUpdate && the_access.AllowView)
-                        return true;
+                    case "read":
+                        if (the_access.AllowView)
+                            return true;
+                        break;
+
+                    case "delete":
+                        if (the_access.AllowDelete)
+                            return true;
+                        break;
+
+                    case "update":
+                        if (the_access.AllowUpdate)
+                            return true;
+                        break;
+
+                    case "create":
+                        if (the_access.AllowCreate)
+                            return true;
+                        break;
+
+                    case "decision":
+                        if (the_access.AllowDecision)
+                            return true;
+                        break;
+                    case "allDepartment":
+                        if (the_access.AllowAllDepartment)
+                            return true;
+                        break;
+
+                    default:
+                        return false;
+                        
                 }
-                else if (accessType == "read")
-                {
-                    if (the_access.AllowView)
-                        return true;
-                }
-                else if (accessType == "delete")
-                {
-                    if (the_access.AllowDelete)
-                        return true;
-                }
-                else if (accessType == "update")
-                {
-                    if (the_access.AllowUpdate)
-                        return true;
-                }
-                else if (accessType == "create")
-                {
-                    if (the_access.AllowCreate)
-                        return true;
-                }
+
+              
                 return false;
 
             }

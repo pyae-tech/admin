@@ -16,9 +16,17 @@ namespace NPT_DC_App.Controllers
             //Security Check
             if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, RequestID, "read")) throw new Exception("No Access.");
             SYS_UserView current_user = Controller_User.GetUser(RequestID, RequestID);
+           
+            //Security Check For AllDepartment
+            string departmentID = "";
+            if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, RequestID, "allDepartment"))
+            {
+                departmentID = current_user.DepartmentID;
+            }
+
             LINQ_MasterDataContext dc = new LINQ_MasterDataContext();
             return (from c in dc.Mst_DepartmentViews
-                    where c.Active == true 
+                    where c.Active == true && (departmentID == "" || (departmentID != "" && c.DepartmentID == departmentID))
                     orderby c.DepartmentName descending
                     select c).ToList();
         }
@@ -119,9 +127,15 @@ namespace NPT_DC_App.Controllers
             LINQ_MasterDataContext dc = new LINQ_MasterDataContext();
             //Get current user info
             SYS_UserView current_user = Controller_User.GetUser(RequestID, RequestID);
+            //Security Check For AllDepartment
+            string departmentID = "";
+            if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, RequestID, "allDepartment"))
+            {
+                departmentID = current_user.DepartmentID;
+            }
             //Add into Query Statment
             var Query = (from c in dc.Mst_DepartmentViews
-                         where c.Active == true
+                         where c.Active == true && (departmentID == "" || (departmentID != "" && c.DepartmentID == departmentID))
                          orderby c.DepartmentName 
                          select new Mst_DepartmentView
                          {

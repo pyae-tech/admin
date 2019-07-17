@@ -6782,9 +6782,9 @@ namespace NPT_DC_App.LINQs
 		
 		private string _Scope;
 		
-		private System.Nullable<bool> _AllowDecision;
+		private bool _AllowDecision;
 		
-		private System.Nullable<bool> _AllowAllDepartment;
+		private bool _AllowAllDepartment;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -6806,9 +6806,9 @@ namespace NPT_DC_App.LINQs
     partial void OnAllowCreateChanged();
     partial void OnScopeChanging(string value);
     partial void OnScopeChanged();
-    partial void OnAllowDecisionChanging(System.Nullable<bool> value);
+    partial void OnAllowDecisionChanging(bool value);
     partial void OnAllowDecisionChanged();
-    partial void OnAllowAllDepartmentChanging(System.Nullable<bool> value);
+    partial void OnAllowAllDepartmentChanging(bool value);
     partial void OnAllowAllDepartmentChanged();
     #endregion
 		
@@ -6977,8 +6977,8 @@ namespace NPT_DC_App.LINQs
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowDecision", DbType="Bit")]
-		public System.Nullable<bool> AllowDecision
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowDecision", DbType="Bit NOT NULL")]
+		public bool AllowDecision
 		{
 			get
 			{
@@ -6997,8 +6997,8 @@ namespace NPT_DC_App.LINQs
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowAllDepartment", DbType="Bit")]
-		public System.Nullable<bool> AllowAllDepartment
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowAllDepartment", DbType="Bit NOT NULL")]
+		public bool AllowAllDepartment
 		{
 			get
 			{
@@ -7066,9 +7066,9 @@ namespace NPT_DC_App.LINQs
 		
 		private string _RoleName;
 		
-		private System.Nullable<bool> _AllowDecision;
+		private bool _AllowDecision;
 		
-		private System.Nullable<bool> _AllowAllDepartment;
+		private bool _AllowAllDepartment;
 		
 		public SYS_UserRoleProgramView()
 		{
@@ -7266,8 +7266,8 @@ namespace NPT_DC_App.LINQs
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowDecision", DbType="Bit")]
-		public System.Nullable<bool> AllowDecision
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowDecision", DbType="Bit NOT NULL")]
+		public bool AllowDecision
 		{
 			get
 			{
@@ -7282,8 +7282,8 @@ namespace NPT_DC_App.LINQs
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowAllDepartment", DbType="Bit")]
-		public System.Nullable<bool> AllowAllDepartment
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowAllDepartment", DbType="Bit NOT NULL")]
+		public bool AllowAllDepartment
 		{
 			get
 			{

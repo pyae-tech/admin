@@ -63,10 +63,17 @@ namespace NPT_DC_App.Controllers
         {
             //Security Check
             if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, RequestID, "read")) throw new Exception("No Access.");
+            SYS_UserView current_user = Controller_User.GetUser(RequestID, RequestID);
+            //Security Check For AllDepartment
+            string departmentID = "";
+            if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, RequestID, "allDepartment"))
+            {
+                departmentID = current_user.DepartmentID;
+            }
 
             LINQ_SystemDataContext dc = new LINQ_SystemDataContext();
             return (from c in dc.SYS_UserViews
-                    where c.Active == true && c.OrgID == org_id &&
+                    where c.Active == true && (departmentID == "" || (departmentID != "" && c.DepartmentID == departmentID)) &&
 
                     ((search_text == "") ||
                     (search_text != "" && (
@@ -193,10 +200,17 @@ namespace NPT_DC_App.Controllers
         {
             //Security Check
             if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, RequestID, "read")) throw new Exception("No Access.");
+            SYS_UserView current_user = GetUser(RequestID, RequestID);
+            //Security Check For AllDepartment
+            string departmentID = "";
+            if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, RequestID, "allDepartment"))
+            {
+                departmentID = current_user.DepartmentID;
+            }
 
             LINQ_SystemDataContext dc = new LINQ_SystemDataContext();
             List<SYS_UserView> user_list = (from c in dc.SYS_UserViews
-                                            where c.Active == true 
+                                            where c.Active == true  && (departmentID == "" || (departmentID != "" && c.DepartmentID == departmentID))
                                             orderby c.UserName
                                             select new SYS_UserView
                                             {
