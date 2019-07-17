@@ -2,18 +2,125 @@
 using System.Linq;
 using System.Web;
 using NPT_DC_App.LINQs;
+using System.Collections.Generic;
+using static NPT_DC_App.Controllers.model;
 
 namespace NPT_DC_App.Controllers
 {
     public class Controller_SystemUser
-    {
-        public static SYS_UserView Do_Login(string usercode, string password)
+    {     
+        public static Return_login Do_Login(string usercode, string password)
         {            
             LINQ_SystemDataContext dc = new LINQ_SystemDataContext();
+            Return_login return_login = new Return_login();
             string encryptpassword = Controller_TextEncryption.Encrypt(password, "");
-            var the_userview =(from c in dc.SYS_UserViews where (c.Email.ToLower() == usercode.ToLower() || c.UserCode.ToLower() == usercode.ToLower() || c.Email == usercode) && c.Active == true && c.Password == encryptpassword select c).FirstOrDefault();
-           
-            return the_userview;          
+            var the_userview =(from c in dc.SYS_UserViews
+                               where (c.Email.ToLower() == usercode.ToLower() || c.UserCode.ToLower() == usercode.ToLower() || c.Email == usercode) && 
+                               c.Active == true && c.Password == encryptpassword
+                               select new SYS_UserView 
+                               {
+                                   UserID = c.UserID,
+                                   UserCode = c.UserCode,
+                                   UserName = c.UserName,
+                                   Email = c.Email,
+                                   Ref_Type = c.Ref_Type,
+                                   Ref_ID = c.Ref_ID,
+                                   RoleID = c.RoleID,
+                                   RoleCode = c.RoleCode,
+                                   DepartmentID = c.DepartmentID,
+                                   DepartmentName = c.DepartmentName
+                               }).FirstOrDefault();
+            return_login.user_data = the_userview;
+
+            if (the_userview != null)
+            {
+                SYS_UserRoleProgramView usercontrol= (from c in dc.SYS_UserRoleProgramViews
+                                                      where c.RoleID == the_userview.RoleID && c.ProgramCode == "UserControl"
+                                                     select c).FirstOrDefault();
+                if (usercontrol != null)
+                {
+                    Access usercontrol_access = new Access
+                    {
+                        AllowView = usercontrol.AllowView,
+                        AllowDelete = usercontrol.AllowDelete,
+                        AllowUpdate=usercontrol.AllowUpdate,
+                        AllowCreate = usercontrol.AllowCreate,
+                        AllowDecision = usercontrol.AllowDecision,
+                        AllowAllDepartment = usercontrol.AllowAllDepartment
+
+                    };
+                    return_login.UserControl = usercontrol_access;
+                }
+
+                SYS_UserRoleProgramView meetingrequst = (from c in dc.SYS_UserRoleProgramViews where c.RoleID == the_userview.RoleID && c.ProgramCode == "MeetingRequest" select c).FirstOrDefault();
+                if (meetingrequst != null)
+                {
+                    Access meetingrequst_access = new Access
+                    {
+                        AllowView = meetingrequst.AllowView,
+                        AllowDelete = meetingrequst.AllowDelete,
+                        AllowCreate = meetingrequst.AllowCreate,
+                        AllowUpdate = meetingrequst.AllowUpdate,
+                        AllowDecision = meetingrequst.AllowDecision,
+                        AllowAllDepartment = meetingrequst.AllowAllDepartment
+
+                    };
+                    return_login.MeetingRequest = meetingrequst_access;
+                }
+
+                SYS_UserRoleProgramView sysConfig = (from c in dc.SYS_UserRoleProgramViews where c.RoleID == the_userview.RoleID && c.ProgramCode == "SysConfig" select c).FirstOrDefault();
+                if (sysConfig != null)
+                {
+                    Access sysConfig_access = new Access
+                    {
+                        AllowView = sysConfig.AllowView,
+                        AllowDelete = sysConfig.AllowDelete,
+                        AllowCreate = sysConfig.AllowCreate,
+                        AllowUpdate = sysConfig.AllowUpdate,
+                        AllowDecision = sysConfig.AllowDecision,
+                        AllowAllDepartment = sysConfig.AllowAllDepartment
+
+                    };
+                    return_login.SysConfig = sysConfig_access;
+                }
+
+                SYS_UserRoleProgramView meetingAgenda = (from c in dc.SYS_UserRoleProgramViews where c.RoleID == the_userview.RoleID && c.ProgramCode == "MeetingAgenda" select c).FirstOrDefault();
+                if (meetingAgenda != null)
+                {
+                    Access meetingAgenda_access = new Access
+                    {
+                        AllowView = meetingAgenda.AllowView,
+                        AllowDelete = meetingAgenda.AllowDelete,
+                        AllowCreate = meetingAgenda.AllowCreate,
+                        AllowUpdate = meetingAgenda.AllowUpdate,
+                        AllowDecision = meetingAgenda.AllowDecision,
+                        AllowAllDepartment = meetingAgenda.AllowAllDepartment
+
+                    };
+                    return_login.MeetingAgenda = meetingAgenda_access;
+                }
+
+                SYS_UserRoleProgramView meetingMinute = (from c in dc.SYS_UserRoleProgramViews where c.RoleID == the_userview.RoleID && c.ProgramCode == "MeetingMinute" select c).FirstOrDefault();
+                if (meetingMinute != null)
+                {
+                    Access meetingMinute_access = new Access
+                    {
+                        AllowView = meetingMinute.AllowView,
+                        AllowDelete = meetingMinute.AllowDelete,
+                        AllowCreate = meetingMinute.AllowCreate,
+                        AllowUpdate = meetingMinute.AllowUpdate,
+                        AllowDecision = meetingMinute.AllowDecision,
+                        AllowAllDepartment = meetingMinute.AllowAllDepartment
+
+                    };
+                    return_login.MeetingMinute = meetingMinute_access;
+                }
+              
+            }
+
+
+
+            return return_login;          
            
         }        
 

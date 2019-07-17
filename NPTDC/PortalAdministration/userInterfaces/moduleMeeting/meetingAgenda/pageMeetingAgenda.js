@@ -5,6 +5,28 @@ $('#menu_meeting_group').addClass('in');
 $('#menu_agenda').addClass('active-link');
 $("#tab-main").tabs();
 
+//#region Security
+var agenda_Control = [];
+agenda_Control = JSON.parse(localStorage.getItem('MeetingAgenda'));
+if (agenda_Control != null) {
+    if (agenda_Control.AllowCreate) {
+        $(".agenda_create").css("display", "block");
+    }
+    //if (agenda_Control.AllowView) {
+    //    $(".request_create").css("display", "block");
+    //}
+    if (agenda_Control.AllowDelete) {
+        $(".agenda_delete").css("display", "block");
+    }
+    if (agenda_Control.AllowDecision) {
+        $(".agenda_decision").css("display", "block");
+    }   
+};
+if (JSON.parse(localStorage.getItem('MeetingRequest')).AllowUpdate) {
+    $(".request_update").css("display", "block");
+}
+//#regionend
+
 SetUP();
 var agenda_date = ConvertDate(new Date());
 function SetUP() {

@@ -404,7 +404,7 @@ namespace NPT_DC_App.Controllers
         public static string LoadRequestByAgendaID(string agendaID, string user_id)
         {
             //Security Check
-            if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, user_id, "select")) throw new Exception("No Access.");
+            if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, user_id, "read")) throw new Exception("No Access.");
 
             LINQ_MeetingDataContext dc = new LINQ_MeetingDataContext();
             try

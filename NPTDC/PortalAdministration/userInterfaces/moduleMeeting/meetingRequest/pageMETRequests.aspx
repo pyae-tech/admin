@@ -6,10 +6,14 @@
 
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder_TopLeftMenu" runat="server">
-         <button class="btn  btn-dark   btn-rounded  btn-labeled" type="button" onclick="NewRequest();return false;"><i class="btn-label ion-plus-round"></i>
-             <span class="bold" data-translate="_new">စာရင်း အသစ်သွင်းရန်</span></button>
-           <button class="btn  btn-dark   btn-rounded  btn-labeled" type="button" onclick="Refresh();return false;"><i class="btn-label ion-refresh"></i><span class="bold" data-translate="_reflesh">ပြန်ဖွင့်</span></button>
-    </asp:Content>
+ <ol class="menucrumb">
+        <li>
+    <button class="btn  btn-dark   btn-rounded  btn-labeled request_create" style="display:none;" type="button" onclick="NewRequest();return false;"><i class="btn-label ion-plus-round"></i>
+             <span class="bold" data-translate="_new">စာရင်း အသစ်သွင်းရန်</span></button></li>
+          <li>   <button class="btn  btn-dark   btn-rounded  btn-labeled" type="button" style="display:block;" onclick="Refresh();return false;"><i class="btn-label ion-refresh"></i><span class="bold" data-translate="_reflesh">ပြန်ဖွင့်</span></button></li>
+   </ol>
+
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Header" runat="server">
     <!--Page Title-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->

@@ -12,7 +12,7 @@
 </asp:Content>
 
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder_TopLeftMenu" runat="server">
-     <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="LoadNew();return false;"><i class="btn-label ion-plus-round"></i><span class="bold">စာရင်း အသစ်သွင်းရန်</span></button>
+     <button style="display:none;" class="btn btn-dark  btn-rounded  btn-labeled usercontrol_create" type="button" onclick="LoadNew();return false;"><i class="btn-label ion-plus-round"></i><span class="bold">စာရင်း အသစ်သွင်းရန်</span></button>
     </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Header" runat="server">
@@ -157,10 +157,10 @@
                 </div>
                 <!--Modal footer-->
                 <div class="modal-footer">
-                    <button class="btn btn-primary  btn-rounded  btn-labeled" type="button" onclick="SavePosition();return false;"><i class="btn-label ion-checkmark"></i><span class="bold" data-translate="">စာရင်းသိမ်းရန်</span></button>
-                    <button class="btn btn-danger  btn-rounded btn-labeled" type="button" onclick="DeleteRecordConfirmation();return false;">
+                    <button style="display: none;" class="btn btn-primary  btn-rounded  btn-labeled usercontrol_create" type="button" onclick="SavePosition();return false;"><i class="btn-label ion-checkmark"></i><span class="bold" data-translate="">စာရင်းသိမ်းရန်</span></button>
+                    <button style="display: none;" class="btn btn-danger  btn-rounded btn-labeled usercontrol_delete" type="button" onclick="DeleteRecordConfirmation();return false;">
                         <i class="btn-label ion-trash-b"></i><span class="bold" data-translate="_delete">ဖျက်ရန်</span></button>
-                    <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="LoadNew();return false;"><i class="btn-label ion-plus-round"></i><span class="bold" data-translate="_new">အသစ်</span></button>
+                    <button style="display: none;" class="btn btn-dark  btn-rounded  btn-labeled usercontrol_create" type="button" onclick="LoadNew();return false;"><i class="btn-label ion-plus-round"></i><span class="bold" data-translate="_new">အသစ်</span></button>
                          <button  data-dismiss="modal" class="btn btn-dark  btn-rounded  btn-labeled" type="button" ><i class="btn-label ion-close"></i><span class="bold" data-translate="_close">ပိတ်ရန်</span></button>
 
                      

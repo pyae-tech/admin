@@ -5,6 +5,27 @@ $('#menu_meeting_group').addClass('in');
 $('#menu_request_letter').addClass('active-link');
 $("#tab-main").tabs();
 
+//#region Security
+var request_Control = [];
+request_Control = JSON.parse(localStorage.getItem('MeetingRequest'));
+if (request_Control != null) {
+    if (request_Control.AllowCreate) {
+        $(".request_create").css("display", "block");
+    }
+    //if (request_Control.AllowView) {
+    //    $(".request_create").css("display", "block");
+    //}
+    if (request_Control.AllowDelete) {
+        $(".request_delete").css("display", "block");
+    }
+    if (request_Control.AllowDecision) {
+        $(".request_decision").css("display", "block");
+    }
+    //if (request_Control.AllowAllDepartment) {
+    //    $(".request_create").css("display", "block");
+    //}
+};
+//#regionend
 
 if (GetURLData('id') != null && GetURLData('id') != "") {
     GetRequest(GetURLData('id'));
@@ -52,7 +73,7 @@ var request_on_date = ConvertDate(new Date());
 $("#dt_requeston").dxDateBox({
     applyValueMode: "useButtons",
     displayFormat: "yyyy/MM/dd",
- 
+
     type: "date",
     value: new Date(),
     max: new Date(),
@@ -73,12 +94,12 @@ $("#ddl_meetingtype").dxLookup({
         }
         else {
             $("#hf_meetingtype").val($("#ddl_meetingtype").dxLookup("instance").option('value'));
-           
+
         }
     }
 });
 
-var request_status = ["New", "Pending", "Agenda","Approved"];
+var request_status = ["New", "Pending", "Agenda", "Approved"];
 $("#ddl_requeststatus").dxLookup({
     items: request_status,
     value: request_status[0],
@@ -129,10 +150,10 @@ function LoadNew() {
 
     $("#hf_requestbyId").val(get_current_user_id());
     //$("#ddl_requestby").dxLookup('instance').option('value', $("#hf_requestbyId").val());
-    
+
     $("#hf_requeststatus").val("New");
     $("#ddl_requeststatus").dxLookup('instance').option('value', $("#hf_requeststatus").val());
-    
+
     $("#hf_meetingtype").val("EC");
     $("#ddl_meetingtype").dxLookup('instance').option('value', $("#hf_meetingtype").val());
     new_Attachment();
@@ -191,8 +212,8 @@ function GetAllUser() {
         error: function (xhr, msg) {
             LogJSError('Web Service Fail: ' + msg + '\n' + xhr.responseText);
 
-        }       
-    });   
+        }
+    });
 }
 
 //#region Request Items
@@ -240,7 +261,7 @@ function Bind_RequestItems(data) {
         wordWrapEnabled: true,
         loadPanel: {
             enabled: true
-        },  
+        },
         paging: {
             enabled: false
         },
@@ -252,18 +273,18 @@ function Bind_RequestItems(data) {
             useIcons: true
         },
         columns: [
-            
+
             {
-                dataField: "Seq",  
+                dataField: "Seq",
                 width: 50,
                 caption: "စဉ်",
-                cssClass: 'cls' 
+                cssClass: 'cls'
             },
             {
                 dataField: "RequestItem",
                 caption: "အကြောင်းအရာ အချက်အလက်များ ရေးပါ။",
-                
-                cssClass: 'cls' 
+
+                cssClass: 'cls'
             },
             {
                 type: "buttons",
@@ -306,19 +327,19 @@ function add_request_item(new_request) {
         arr_request_item.push(new_request);
     }
     else {
-        for (i = 0; i < arr_request_item.length; i++)  {
+        for (i = 0; i < arr_request_item.length; i++) {
             if (arr_request_item[i]['RequestItemID'] == new_request['RequestItemID']) {
                 arr_request_item[i]['RequestItem'] = new_request['RequestItem'];
                 arr_request_item[i]['Seq'] = new_request['Seq'];
                 contain = true;
-                break; 
+                break;
             }
             else {
-                
+
                 contain = false;
             }
         };
-        if(!contain){arr_request_item.push(new_request);}
+        if (!contain) { arr_request_item.push(new_request); }
     }
     return false;
 }
@@ -374,7 +395,7 @@ function Bind_RequestDecisions(data) {
         showRowLines: true,
         loadPanel: {
             enabled: true
-        }, 
+        },
         rowAlternationEnabled: true,
         paging: {
             enabled: false
@@ -391,13 +412,13 @@ function Bind_RequestDecisions(data) {
                 dataField: "Seq",
                 width: 50,
                 caption: "စဉ်",
-                cssClass: 'cls' 
-            } ,
+                cssClass: 'cls'
+            },
             {
                 dataField: "Description",
                 caption: "ဆုံးဖြတ်ရန် အချက်များ ရေးပါ။",
-                cssClass: 'cls' 
-                
+                cssClass: 'cls'
+
             },
             {
                 type: "buttons",
@@ -405,7 +426,7 @@ function Bind_RequestDecisions(data) {
                 cssClass: 'cls',
                 caption: "...",
             },
-            
+
         ],
         onRowInserted: function (e) {
             add_request_decision(e.data);
@@ -429,7 +450,7 @@ function Bind_RequestDecisions(data) {
                     }
                 };
             }
-           
+
         }
     });
 }
@@ -446,15 +467,14 @@ function add_request_decision(new_decision) {
                 arr_request_decision[i]['Description'] = new_decision['Description'];
                 arr_request_decision[i]['Seq'] = new_decision['Seq'];
                 contain = true;
-                break; 
+                break;
             }
             else {
-                
+
                 contain = false;
             }
         };
-        if(!contain)
-        {
+        if (!contain) {
             arr_request_decision.push(new_decision);
         }
     }
@@ -577,7 +597,7 @@ function GetRequest(id) {
                 $("#ddl_requeststatus").val();
                 $("#lbl_created").text("စာရင်းသွင်းသူ : " + data.d["CUserCode"] + " on " + JsonDateToFormat(data.d["CreatedOn"], 'DD/MM/YYYY HH:mm'));
                 $("#lbl_modified").text("ပြင်ဆင်သူ : " + data.d["MUserCode"] + " on " + JsonDateToFormat(data.d["ModifiedOn"], 'DD/MM/YYYY HH:mm'));
-                            
+
 
                 var req_on = new Date(JsonDateToFormat(data.d["RequestOn"], 'YYYY-MM-DD'));
                 $("#dt_requeston").dxDateBox({
@@ -591,7 +611,7 @@ function GetRequest(id) {
 
                 Load_Request_Item(data.d["RequestID"]);
                 Load_Request_Decisions(data.d["RequestID"]);
-               
+
                 $("#hf_requeststatus").val(data.d["RequestStatus"]);
                 $("#ddl_requeststatus").dxLookup('instance').option('value', $("#hf_requeststatus").val());
 
@@ -602,7 +622,7 @@ function GetRequest(id) {
                 $("#ddl_requestby").dxLookup('instance').option('value', $("#hf_requestbyId").val());
 
                 //Attachment-----------------------------------------
-                
+
                 ShowSuccessMessage("Loaded.");
 
             }
@@ -647,7 +667,7 @@ function DeleteRecordConfirmation() {
 
 //#region Delete Item
 function DeleteRequest() {
-  
+
     $.ajax({
         url: baseUrl() + "WebServices/WebService_Request.asmx/DeleteRequest",
 
@@ -676,5 +696,5 @@ function DeleteRequest() {
 
 }
 function print_receipt() {
-    window.open('requestReport?id=' + $("#tb_id").val() +'&DepartmentId=' + get_current_user_DepartmentID(), '_blank');
+    window.open('requestReport?id=' + $("#tb_id").val() + '&DepartmentId=' + get_current_user_DepartmentID(), '_blank');
 }

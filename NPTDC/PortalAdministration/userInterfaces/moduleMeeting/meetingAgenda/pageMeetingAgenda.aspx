@@ -5,14 +5,30 @@
     <link href='<%=ResolveUrl("../../../plugins/WidgetsGallery/css/dx.light.css")%>' rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_TopLeftMenu" runat="server">
-    <button class="btn btn-success  btn-rounded  btn-labeled" type="button" onclick="SaveAgenda();return false;"><i class="btn-label ion-checkmark"></i><span class="bold" data-translate="_save">စာရင်းသိမ်းရန်</span></button>
-    <button class="btn  btn-dark   btn-rounded btn-labeled" type="button" onclick="DeleteRecordConfirmation();return false;">
-        <i class="btn-label ion-trash-b"></i><span class="bold" data-translate="_delete">ဖျက်ရန်</span></button>
-    <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="LoadNew();return false;"><i class="btn-label ion-plus-round"></i><span class="bold" data-translate="_new">အသစ်</span></button>
-    <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="GoToLog();return false;"><i class="btn-label ion-plus-round"></i><span class="bold" data-translate="">Log</span></button>
-    <button class="btn  btn-dark   btn-rounded  btn-labeled" type="button" onclick="Refresh();return false;"><i class="btn-label ion-refresh"></i><span class="bold" data-translate="_reflesh">ပြန်ဖွင့်</span></button>
-    <button data-dismiss="modal" class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="window.close();return false;"><i class="btn-label ion-close"></i><span class="bold" data-translate="_close">ပိတ်မည်</span></button>
-
+    <ol class="menucrumb">
+        <li>
+            <button class="btn btn-success  btn-rounded  btn-labeled agenda_decision" type="button" onclick="" style="display: none;"><i class="btn-label ion-checkmark"></i><span class="bold" data-translate="_save">ခွင့်ပြုသည်။</span></button></li>
+        <li>
+            <button class="btn btn-success  btn-rounded  btn-labeled agenda_decision" type="button" onclick="" style="display: none;"><i class="btn-label ion-checkmark"></i><span class="bold" data-translate="_save">ပယ်ဖျက်သည်။</span></button></li>
+        <li>
+            <button class="btn btn-success  btn-rounded  btn-labeled agenda_create" type="button" onclick="SaveAgenda();return false;" style="display: none;"><i class="btn-label ion-checkmark"></i><span class="bold" data-translate="_save">စာရင်းသိမ်းရန်</span></button></li>
+        <li>
+            <button class="btn  btn-dark   btn-rounded btn-labeled agenda_delete" type="button" onclick="DeleteRecordConfirmation();return false;" style="display: none;">
+                <i class="btn-label ion-trash-b"></i><span class="bold" data-translate="_delete">ဖျက်ရန်</span></button></li>
+        <li>
+            <button class="btn btn-dark  btn-rounded  btn-labeled agenda_create" type="button" onclick="LoadNew();return false;" style="display: none;"><i class="btn-label ion-plus-round"></i><span class="bold" data-translate="_new">အသစ်</span></button></li>
+        <li>
+            <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="GoToLog();return false;" style="display: block;"><i class="btn-label ion-plus-round"></i><span class="bold" data-translate="">Log</span></button></li>
+        <li>
+            <button class="btn  btn-dark   btn-rounded  btn-labeled" type="button" onclick="Refresh();return false;" style="display: block;"><i class="btn-label ion-refresh"></i><span class="bold" data-translate="_reflesh">ပြန်ဖွင့်</span></button></li>
+        <li>
+            <button data-dismiss="modal" class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="window.close();return false;" style="display: block;"><i class="btn-label ion-close"></i><span class="bold" data-translate="_close">ပိတ်မည်</span></button></li>
+        <li>
+            <button class="btn btn-purple  btn-rounded  btn-labeled" type="button" onclick="print_receipt();return false;" style="display: block;"><i class="btn-label ion-printer"></i><span class="bold">Print</span></button></li>
+    </ol>
+    
+    
+   
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder_Header" runat="server">
     <!--Page Title-->
@@ -92,7 +108,7 @@
                                     <div class="form-group">
                                         <div class="col-md-4">
                                             <%--<textarea id="tb_Description" rows="5" cols="50" class="form-control" placeholder="ဆုံးဖြတ်ချက် ရေးပါ။"></textarea>--%>
-                                            <div id="btn_request_add"></div>
+                                            <div class="request_update" id="btn_request_add"></div>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -118,7 +134,7 @@
             </div>
         </div>
     </div>
-
+</div>
 
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder_JS" runat="server">

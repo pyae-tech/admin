@@ -10,7 +10,7 @@ namespace NPT_DC_App.Controllers
 {
     public class Controller_Agenda
     {
-        static string AccessProgramCode = "UserControl";
+        static string AccessProgramCode = "MeetingAgenda";
         public static string GetAllAgendaJSON(string search_text, string RequestID)
         {
             //Security Check
@@ -183,7 +183,7 @@ namespace NPT_DC_App.Controllers
         public static string AddRequestToAgenda(string agendaID, string user_id)
         {
             //Security Check
-            if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, user_id, "update")) throw new Exception("No Access.");
+            if (!Controller_User_Access.CheckProgramAccess("MeetingRequest", user_id, "update")) throw new Exception("No Access.");
             SYS_UserView current_user = Controller_User.GetUser(user_id, user_id);
             LINQ_MeetingDataContext dc = new LINQ_MeetingDataContext();
             try
@@ -198,7 +198,7 @@ namespace NPT_DC_App.Controllers
                 #region Request in agenda
                 //Security Check For AllDepartment
                 string departmentID = "";
-                if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, user_id, "allDepartment"))
+                if (!Controller_User_Access.CheckProgramAccess("MeetingRequest", user_id, "allDepartment"))
                 {
                     departmentID = current_user.DepartmentID;
                 }

@@ -7,9 +7,11 @@
 </asp:Content>
 
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder_TopLeftMenu" runat="server">
-     <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="GotoPage('Portal/departmentdetail');return false;"><i class="btn-label ion-plus-round"></i>
+   <ol class="menucrumb">
+        <li>   <button style="display:none;" class="btn btn-dark  btn-rounded  btn-labeled usercontrol_create" type="button" onclick="GotoPage('Portal/departmentdetail');return false;"><i class="btn-label ion-plus-round"></i>
          <span class="bold">စာရင်း အသစ်သွင်းရန်</span></button>
-      
+      </li>
+       </ol>
     </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Header" runat="server">
     <!--Page Title-->

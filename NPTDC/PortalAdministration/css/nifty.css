@@ -10073,3 +10073,51 @@ body .note-editable.panel-body {
     background-color: #ecf0f5;
     border-radius: 3px;
 }
+
+.menucrumb {
+    border-radius: 0;
+    background-color: transparent;
+    margin-bottom: 0;
+    padding: 0 20px 10px;
+    font-size: 1em;
+    list-style:none;
+}
+
+    .menucrumb li,
+    .menucrumb li a {
+        color: #4d627b;
+    }
+
+        .menucrumb li a:hover {
+            color: #03a9f4;
+            text-decoration: underline;
+        }
+
+    .menucrumb > li + li:before {
+        content: "";
+        border-color: #4d627b;
+        border-style: solid;
+        border-width: .1em .1em 0 0;
+        display: inline-block;
+        height: .55em;
+        left: 0;
+        position: relative;
+        top: -0.1em;
+        width: .55em;
+        padding: 0;
+        margin-left: 1ex;
+        margin-right: 1.7ex;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        display:none;
+    }
+
+    .menucrumb .active {
+        font-weight: 700;
+        color: #4d627b;
+    }
+
+    .menucrumb > li {
+        display: inline-block;
+    }
