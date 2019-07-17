@@ -75,8 +75,15 @@ namespace NPT_DC_App.Controllers
             SYS_UserView current_user = Controller_User.GetUser(RequestID, RequestID);
             LINQ_MeetingDataContext dc = new LINQ_MeetingDataContext();
 
+            //Security Check For AllDepartment
+            string departmentID = "";
+            if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, RequestID, "allDepartment"))
+            {
+                departmentID = current_user.DepartmentID;
+            }
+
             List<MET_RequestView> the_requestlist = (from c in dc.MET_RequestViews
-                                                     where c.Active == true && c.OrgID == current_user.OrgID &&
+                                                     where c.Active == true && (departmentID == "" || (departmentID != "" && c.DepartmentID == departmentID)) &&
                                                        ((search_text == "") ||
                                                        (search_text != "" && (
 
@@ -133,7 +140,7 @@ namespace NPT_DC_App.Controllers
 
             LINQ_MeetingDataContext dc = new LINQ_MeetingDataContext();
             List<MET_RequestDecisionView> reqdecision_list = (from c in dc.MET_RequestDecisionViews
-                                                              where c.Active == true && c.OrgID == org_id && c.RequestID == meeting_requsetID
+                                                              where c.Active == true && c.RequestID == meeting_requsetID
                                                               orderby c.Seq
                                                               select c).ToList();
             string return_str = new JavaScriptSerializer().Serialize(reqdecision_list);
@@ -392,16 +399,25 @@ namespace NPT_DC_App.Controllers
 
         public static string LoadRequestByAgendaID(string agendaID, string user_id)
         {
-            ////Security Check
-            //if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, user_id, "select")) throw new Exception("No Access.");
+            //Security Check
+            if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, user_id, "select")) throw new Exception("No Access.");
 
             LINQ_MeetingDataContext dc = new LINQ_MeetingDataContext();
             try
             {
-                
+
                 #region get all request
+                //Security Check For AllDepartment
+                SYS_UserView current_user = Controller_User.GetUser(user_id, user_id);
+                string departmentID = "";
+                if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, user_id, "allDepartment"))
+                {
+                    departmentID = current_user.DepartmentID;
+                }
+              
+
                 List<MET_RequestView> reqs_list = (from c in dc.MET_RequestViews
-                                                   where c.Active == true && c.AgendaID == agendaID
+                                                   where c.Active == true && c.AgendaID == agendaID && (departmentID == "" || (departmentID != "" && c.DepartmentID == departmentID))
                                                    orderby c.Protocol ascending
                                                    select c).ToList();
 
@@ -437,8 +453,17 @@ namespace NPT_DC_App.Controllers
                 dc.SubmitChanges(ConflictMode.ContinueOnConflict);
 
                 #region get all request
+
+                SYS_UserView current_user = Controller_User.GetUser(user_id, user_id);
+                //Security Check For AllDepartment
+                string departmentID = "";
+                if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, user_id, "allDepartment"))
+                {
+                    departmentID = current_user.DepartmentID;
+                }
+
                 List<MET_RequestView> reqs_list = (from c in dc.MET_RequestViews
-                                                   where c.Active == true && c.AgendaID == agendaID
+                                                   where c.Active == true && c.AgendaID == agendaID && (departmentID == "" || (departmentID != "" && c.DepartmentID == departmentID))
                                                    orderby c.Protocol ascending
                                                    select c).ToList();
 

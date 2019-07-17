@@ -1752,6 +1752,8 @@ namespace NPT_DC_App.LINQs
 		
 		private string _PrintDescription;
 		
+		private string _PrintDecision;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1802,6 +1804,8 @@ namespace NPT_DC_App.LINQs
     partial void OnCombineDecisionChanged();
     partial void OnPrintDescriptionChanging(string value);
     partial void OnPrintDescriptionChanged();
+    partial void OnPrintDecisionChanging(string value);
+    partial void OnPrintDecisionChanged();
     #endregion
 		
 		public MET_Request()
@@ -2269,6 +2273,26 @@ namespace NPT_DC_App.LINQs
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrintDecision", DbType="NVarChar(MAX)")]
+		public string PrintDecision
+		{
+			get
+			{
+				return this._PrintDecision;
+			}
+			set
+			{
+				if ((this._PrintDecision != value))
+				{
+					this.OnPrintDecisionChanging(value);
+					this.SendPropertyChanging();
+					this._PrintDecision = value;
+					this.SendPropertyChanged("PrintDecision");
+					this.OnPrintDecisionChanged();
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -2355,6 +2379,8 @@ namespace NPT_DC_App.LINQs
 		private decimal _Protocol;
 		
 		private string _PrintDescription;
+		
+		private string _PrintDecision;
 		
 		public MET_RequestView()
 		{
@@ -2852,6 +2878,22 @@ namespace NPT_DC_App.LINQs
 				if ((this._PrintDescription != value))
 				{
 					this._PrintDescription = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrintDecision", DbType="NVarChar(MAX)")]
+		public string PrintDecision
+		{
+			get
+			{
+				return this._PrintDecision;
+			}
+			set
+			{
+				if ((this._PrintDecision != value))
+				{
+					this._PrintDecision = value;
 				}
 			}
 		}
