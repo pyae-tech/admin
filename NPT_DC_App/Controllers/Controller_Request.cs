@@ -35,8 +35,34 @@ namespace NPT_DC_App.Controllers
 
             }
 
-
             the_request.PrintDescription = PrintDescription;
+
+            List<MET_RequestDecision> the_decisions = (from c in dc.MET_RequestDecisions where c.RequestID == RequestID && c.Active == true orderby c.Seq select c).ToList();
+            if (the_decisions == null) return;
+            int decision_seq = display_seq;
+            string PrintDecision = "";
+            if (the_decisions.Count == 1)
+            {
+                foreach(MET_RequestDecision decision in the_decisions)
+                {
+                    PrintDecision = decision_seq + "။  " + "ဆုံးဖြတ်ရန် အချက်။ " +decision.Description +"။<br/><br/>";
+                }
+                
+            }
+            else
+            {
+                PrintDecision = decision_seq + "။  " + "ဆုံးဖြတ်ရန် အချက်။  " + "<br/><br/>";
+                int dec_seq = 1;
+                foreach (MET_RequestDecision decision in the_decisions)
+                {
+                    
+                    PrintDecision = PrintDecision 
+                              +"&nbsp;"+  dec_seq.ToString() + "။  " + decision.Description + "။<br/><br/>";
+                    dec_seq = dec_seq + 1;
+                }
+            };
+
+            the_request.PrintDecision = PrintDecision;
             dc.SubmitChanges();
 
 

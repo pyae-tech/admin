@@ -132,6 +132,7 @@
       <Column Name="LastAction" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="CombineDecision" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="PrintDescription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PrintDecision" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.MET_RequestView" Member="MET_RequestViews">
@@ -167,6 +168,7 @@
       <Column Name="CombineDecision" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="Protocol" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
       <Column Name="PrintDescription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PrintDecision" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.MET_CombineDecisionsOfRequest" Method="MET_CombineDecisionsOfRequest">
