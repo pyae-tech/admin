@@ -78,6 +78,7 @@ namespace NPT_DC_App.Controllers
                 request.RequestTitle = row.RequestTitle;
                 request.RequestStatus = row.RequestStatus;
                 request.RequestOn = row.RequestOn;
+                request.DepartmentName = row.DepartmentName;
                 lists.Add(request);
             }
 

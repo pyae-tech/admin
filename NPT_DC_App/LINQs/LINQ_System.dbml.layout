@@ -2,12 +2,6 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 38.5, 12.75" name="LINQ_System">
   <DataContextMoniker Name="/LINQ_SystemDataContext" />
   <nestedChildShapes>
-    <classShape Id="b0342e9f-46ff-4554-bab0-e76ab1747c2b" absoluteBounds="5.75, 5.75, 2, 3.1170068359375">
-      <DataClassMoniker Name="/LINQ_SystemDataContext/SYS_UserRoleProgramView" />
-      <nestedChildShapes>
-        <elementListCompartment Id="0459034d-d263-4e48-a137-7bb67a6837ce" absoluteBounds="5.765, 6.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="885ca1f3-4224-4b2d-be53-159506cf9831" absoluteBounds="8.75, 5.75, 2, 3.1170068359375">
       <DataClassMoniker Name="/LINQ_SystemDataContext/SYS_UserRoleView" />
       <nestedChildShapes>
@@ -54,12 +48,6 @@
       <DataClassMoniker Name="/LINQ_SystemDataContext/SYS_UserRoleMenu" />
       <nestedChildShapes>
         <elementListCompartment Id="182c55c4-d027-48f6-8188-2d880f7fb3f9" absoluteBounds="11.39, 3.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="05f1d523-d67a-4d3c-9786-04ac31177925" absoluteBounds="6.125, 2.25, 2, 2.3478011067708335">
-      <DataClassMoniker Name="/LINQ_SystemDataContext/SYS_UserRoleProgram" />
-      <nestedChildShapes>
-        <elementListCompartment Id="80729af1-7226-4c45-9708-63360c8a42c0" absoluteBounds="6.14, 2.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="100925c5-b544-4e48-a093-832f415bdf05" absoluteBounds="21.875, 6.25, 2, 6.0015283203125">
@@ -144,6 +132,18 @@
       <DataClassMoniker Name="/LINQ_SystemDataContext/SYS_UserView" />
       <nestedChildShapes>
         <elementListCompartment Id="0defb5c0-05fe-4e2b-8da6-444e2b08a535" absoluteBounds="0.515, 5.835, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ea501691-9dde-44fb-8620-1db69172b22d" absoluteBounds="3.125, 1.125, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/LINQ_SystemDataContext/SYS_UserRoleProgram" />
+      <nestedChildShapes>
+        <elementListCompartment Id="459359f7-2454-4b1d-835d-727deb094557" absoluteBounds="3.14, 1.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e67c072c-4016-4ac9-b916-846bd75a0c5f" absoluteBounds="3.25, 4.25, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/LINQ_SystemDataContext/SYS_UserRoleProgramView" />
+      <nestedChildShapes>
+        <elementListCompartment Id="78bf07d1-1ccc-412a-b6a0-8d363e8115bc" absoluteBounds="3.265, 4.71, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

@@ -1,10 +1,10 @@
 ﻿$('title').html(get_current_organization_title() + "System Roles");
- 
+
 $('#menu_system').addClass('active-sub');
 $('#menu_system_group').addClass('in');
 $('#menu_system_role').addClass('active-link');
 
- 
+
 $("#tab-main").tabs();
 
 
@@ -141,11 +141,11 @@ function SaveUserRole() {
                 $("#tb_id").val(data.d.toString().split('~')[1]);
                 ShowSuccessMessage("Saved.");
                 Load_List();
-                Load_Program_Roles($("#tb_id").val()); 
+                Load_Program_Roles($("#tb_id").val());
                 if ($("#tb_id").val() == $.cookie('roleid')) {
                     ShowConfirmation("Your menu is changed.Do You want to log out to see changes?", "logout", "dologout");
                 }
-                
+
             }
             else {
                 ShowBoxMessage("Oops. " + data.d.toString().split('~')[1]);
@@ -176,20 +176,20 @@ function LoadNew() {
     $('#dialogBox_Detail_Form').modal('show');
     $("#tb_name").focus();
 
-   
+
     //$('#menu - list').empty();
     $('#table_item_list').empty();
     Load_Menus();
     //for (var i = 0; i < menu_list_id.length; i++) {// all menu id       
     //    $('#ch_menu_' + menu_list_id[i]).prop('checked', false);
     //}
-   
-   
+
+
     $('#dialogBox_Detail_Form').on('shown.bs.modas', function () {
         $(this).find('#tb_name').focus();
     });
 
- 
+
 }
 //#endregion
 
@@ -256,12 +256,12 @@ function GetUserRole(id) {
                 $("#tb_menu").val(data.d["RoleMenu"]);
                 $("#lbl_created").text("Created By : " + data.d["CreatedByCode"] + " on " + moment(data.d["CreatedOn"]).format('DD/MM/YYYY HH:mm'));
                 $("#lbl_modified").text("Modified By : " + data.d["ModifiedByCode"] + " on " + moment(data.d["ModifiedOn"]).format('DD/MM/YYYY HH:mm'));
-              //  $('#treeView_menu').empty();
-                Load_SysMenu_TreeView(data.d["RoleID"]);  
+                //  $('#treeView_menu').empty();
+                Load_SysMenu_TreeView(data.d["RoleID"]);
                 RoleMenuList(id);
                 Load_Program_Roles(id);
                 ShowSuccessMessage("Loaded.");
-                $('#dialogBox_Detail_Form').modal('show');   
+                $('#dialogBox_Detail_Form').modal('show');
             }
             else {
                 ShowBoxMessage("Oops, we can't find the record. ");
@@ -301,13 +301,13 @@ function RoleMenuList(id) {
             }
 
             //// checkon 
-          
+
 
             //for (var j = 0; j < arr_user_menu.length;j++)
             //{
             // for (var i = 0; i < menu_list_id.length;i++){// all menu id
             //     if (menu_list_id[i] == arr_user_menu[j]) {// 0,1
-                     //$('#ch_menu_' + arr_user_menu[j]).prop('checked', true);
+            //$('#ch_menu_' + arr_user_menu[j]).prop('checked', true);
 
             //         var instance = $('#treeView_menu').jstree(true);
             //         if (instance != false) {
@@ -364,6 +364,10 @@ function generate_program_roles(records) {
         if (records[key]['AllowView'] == true) _isView = "checked";
         _isDelete = "";
         if (records[key]['AllowDelete'] == true) _isDelete = "checked";
+        _isAllowDecision = "";
+        if (records[key]['AllowDecision'] == true) _isAllowDecision = "checked";
+        _isAllowAllDepartment = "";
+        if (records[key]['AllowAllDepartment'] == true) _isAllowAllDepartment = "checked";
 
         the_item_template = $('#template_item_row').html();
         allCardsCodeITEM += the_item_template.replace()
@@ -371,13 +375,16 @@ function generate_program_roles(records) {
             .replace("[ProgramID]", records[key]['ProgramID'])
             .replace("[ProgramID]", records[key]['ProgramID'])
             .replace("[ProgramID]", records[key]['ProgramID'])
-
+            .replace("[ProgramID]", records[key]['ProgramID'])
+            .replace("[ProgramID]", records[key]['ProgramID'])
 
             .replace("[ProgramName]", records[key]['ProgramName'])
             .replace("[is_create_checked]", _isCreate)
             .replace("[is_view_checked]", _isView)
             .replace("[is_update_checked]", _isUpdate)
             .replace("[is_delete_checked]", _isDelete)
+        .replace("[is_allowdecision_checked]", _isAllowDecision)
+            .replace("[is_allowalldepartment_checked]", _isAllowAllDepartment)
 
 
 
@@ -503,13 +510,13 @@ function Load_SysMenu_TreeView(id) {
         contentType: "application/json; charset=utf-8",
         success: function (data) {
             if (data.d != null) {
-                
+
                 $('#treeview_room').html("");
 
-                treeView_menu_name = "treeView_menu" + running_no;             
-                $('#treeview_room').append("<div id='" + treeView_menu_name+"'></div>");
+                treeView_menu_name = "treeView_menu" + running_no;
+                $('#treeview_room').append("<div id='" + treeView_menu_name + "'></div>");
                 running_no = running_no + 1;
-                $('#'+treeView_menu_name).html(data.d);
+                $('#' + treeView_menu_name).html(data.d);
                 $('#' + treeView_menu_name).jstree({
                     'core': {
                         'check_callback': true
@@ -534,15 +541,15 @@ function Load_SysMenu_TreeView(id) {
                     },
                     "checkbox": {
                         "keep_selected_style": false,
-                        "two_state" : true 
+                        "two_state": true
                     }
 
                 }).bind("loaded.jstree", function (event, data) {
                     $('li[selected=selected]').each(function () {
                         $(this).removeClass('jstree-unchecked').addClass('jstree-checked');
                     });
-                    });
-               
+                });
+
 
                 $('#' + treeView_menu_name).on("changed.jstree", function (e, data) {
                     //if (data.action == "select_node") {

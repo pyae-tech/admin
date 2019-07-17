@@ -199,7 +199,9 @@
                                              <td><input type="checkbox" class="form-control"  onchange="SetProgramRoles('[ProgramID]','view',this);return false;" [is_view_checked]/></td>
                                              <td><input type="checkbox" class="form-control"  onchange="SetProgramRoles('[ProgramID]','update',this);return false;" [is_update_checked] /></td>
                                             <td><input type="checkbox" class="form-control"  onchange="SetProgramRoles('[ProgramID]','delete',this);return false;" [is_delete_checked]/></td>
-                                               
+                                              <td><input type="checkbox" class="form-control"  onchange="SetProgramRoles('[ProgramID]','decision',this);return false;" [is_allowdecision_checked] /></td>
+                                            <td><input type="checkbox" class="form-control"  onchange="SetProgramRoles('[ProgramID]','alldepartment',this);return false;" [is_allowalldepartment_checked]/></td>
+                                                 
                                         </tr>
                                     </tbody>
                                 </table>
@@ -212,6 +214,8 @@
                                                 <th>View</th>
                                                 <th>Update</th>
                                                 <th>Delete</th>
+                                                <th>Decision</th>
+                                                <th>AllDepartment</th>
                                             </tr>
                                         </thead>
                                         <tbody id="table_item_list">
