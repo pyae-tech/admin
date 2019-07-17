@@ -93,7 +93,7 @@ namespace NPT_DC_App.Controllers
 
             LINQ_MeetingDataContext dc = new LINQ_MeetingDataContext();
             List<MET_RequestItemView> reqitems_list = (from c in dc.MET_RequestItemViews
-                                                       where c.Active == true && c.OrgID == org_id && c.RequestID == meeting_requsetID
+                                                       where c.Active == true && c.RequestID == meeting_requsetID
                                                        orderby c.Seq
                                                        select c).ToList();
             string return_str = new JavaScriptSerializer().Serialize(reqitems_list);

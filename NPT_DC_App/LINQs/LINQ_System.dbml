@@ -382,8 +382,8 @@
       <Column Name="AllowUpdate" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="AllowCreate" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="Scope" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="AllowDecision" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="AllowAllDepartment" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AllowDecision" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AllowAllDepartment" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.SYS_UserRoleProgramView" Member="SYS_UserRoleProgramViews">
@@ -400,8 +400,8 @@
       <Column Name="ProgramName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
       <Column Name="RoleCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="RoleName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="AllowDecision" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="AllowAllDepartment" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AllowDecision" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AllowAllDepartment" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Function Name="dbo.SYS_GetOrganizationMenuGroup" Method="SYS_GetOrganizationMenuGroup">

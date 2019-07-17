@@ -19,8 +19,14 @@ namespace NPT_DC_App.Controllers
             SYS_UserView current_user = Controller_User.GetUser(RequestID, RequestID);
             LINQ_MeetingDataContext dc = new LINQ_MeetingDataContext();
 
-            List<MET_AgendaView> the_agendalist = (from c in dc.MET_AgendaViews
-                                                   where c.Active == true &&
+            //Security Check For AllDepartment
+            string departmentID = "";
+            if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, RequestID, "allDepartment"))
+            {
+                departmentID = current_user.DepartmentID;
+            }
+             List<MET_AgendaView> the_agendalist = (from c in dc.MET_AgendaViews
+                                                   where c.Active == true &&    (departmentID==""|| (departmentID!="" && c.DepartmentID== departmentID)) &&
                                                        ((search_text == "") ||
                                                        (search_text != "" && (
 
@@ -176,9 +182,9 @@ namespace NPT_DC_App.Controllers
 
         public static string AddRequestToAgenda(string agendaID, string user_id)
         {
-            ////Security Check
-            //if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, user_id, "select")) throw new Exception("No Access.");
-
+            //Security Check
+            if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, user_id, "update")) throw new Exception("No Access.");
+            SYS_UserView current_user = Controller_User.GetUser(user_id, user_id);
             LINQ_MeetingDataContext dc = new LINQ_MeetingDataContext();
             try
             {
@@ -190,8 +196,18 @@ namespace NPT_DC_App.Controllers
 
 
                 #region Request in agenda
+                //Security Check For AllDepartment
+                string departmentID = "";
+                if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, user_id, "allDepartment"))
+                {
+                    departmentID = current_user.DepartmentID;
+                }
+
                 List<MET_Request> req_list = new List<MET_Request>();
-                req_list = (from c in dc.MET_Requests where c.RequestStatus == "Approved" && c.Active == true select c).ToList();
+                req_list = (from c in dc.MET_Requests where c.RequestStatus == "Approved" &&
+                            (departmentID == "" || (departmentID != "" && c.DepartmentID == departmentID)) &&
+                            c.Active == true select c).ToList();
+
                 if (req_list.Count > 0)
                 {
                     foreach (MET_Request i in req_list)
@@ -205,7 +221,8 @@ namespace NPT_DC_App.Controllers
                     dc.SubmitChanges(ConflictMode.ContinueOnConflict);
                     #region get all request
                     List<MET_RequestView> reqs_list = (from c in dc.MET_RequestViews
-                                                       where c.Active == true && c.AgendaID == agendaID
+                                                       where c.Active == true && c.AgendaID == agendaID &&
+                                                       (departmentID == "" || (departmentID != "" && c.DepartmentID == departmentID))
                                                        orderby c.Protocol ascending
                                                        select c).ToList();
 
