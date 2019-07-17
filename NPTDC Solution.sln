@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NPT_DC_UI", "NPTDC\NPT_DC_UI.csproj", "{79186761-31B6-4CF6-90BC-C7B01D792929}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0D18F98C-29FA-4D30-8A56-8A37A434E98E} = {0D18F98C-29FA-4D30-8A56-8A37A434E98E}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NPT_DC_App", "NPT_DC_App\NPT_DC_App.csproj", "{0D18F98C-29FA-4D30-8A56-8A37A434E98E}"
 EndProject

@@ -4,6 +4,8 @@ using System.Collections;
 using System.ComponentModel;
 using DevExpress.XtraReports.UI;
 
+
+
 namespace SBSPortal3.PortalAdministration.userInterfaces.moduleReport.requsetreport
 {
     public partial class rpt_request_report : DevExpress.XtraReports.UI.XtraReport
@@ -26,20 +28,15 @@ namespace SBSPortal3.PortalAdministration.userInterfaces.moduleReport.requsetrep
         }
         private void CalcHeight(XRSubreport subreport)
         {
-            var pi = subreport.ReportSource.GetType().GetProperty("DisplayableRowCount", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
-            var rows = Convert.ToInt32(pi.GetValue(subreport.ReportSource, null));
-            var rowHeight = subreport.ReportSource.Bands.GetBandByType(typeof(DetailBand)).HeightF;
+            //var pi = subreport.ReportSource.GetType().GetProperty("DisplayableRowCount", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
+            //var rows = Convert.ToInt32(pi.GetValue(subreport.ReportSource, null));
+            //var rowHeight = subreport.ReportSource.Bands.GetBandByType(typeof(DetailBand)).HeightF;
 
-            var newHeight = rows * rowHeight;
-            xrTableCell3.HeightF = newHeight;
+            //var newHeight = rows * rowHeight;
+           // xrTableCell3.HeightF = newHeight;
     
         }
 
-
-        public DateTime search_date = DateTime.Today;
-        private void Detail_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
-        {
-            lbl_year.Text = search_date.ToString("yyyy");
-        }
+      
     }
 }

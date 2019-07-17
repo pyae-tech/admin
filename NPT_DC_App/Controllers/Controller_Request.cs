@@ -17,8 +17,8 @@ namespace NPT_DC_App.Controllers
         {
            
             //Security Check
-            if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, RequestID, "read")) throw new Exception("No Access.");
-
+            //if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, RequestID, "read")) throw new Exception("No Access.");
+          
             LINQ_MeetingDataContext dc = new LINQ_MeetingDataContext();
             MET_Request the_request=(from c in dc.MET_Requests where c.RequestID == RequestID && c.Active == true select c).FirstOrDefault();
             if (the_request == null) throw new Exception("No recrod found");
@@ -43,7 +43,7 @@ namespace NPT_DC_App.Controllers
 
             List<MET_RequestDecision> the_decisions = (from c in dc.MET_RequestDecisions where c.RequestID == RequestID && c.Active == true orderby c.Seq select c).ToList();
             if (the_decisions == null) return;
-            int decision_seq = display_seq;
+            string decision_seq = Controllers.Controller_MyanmarNumbering.GetMM_Number(display_seq);
             string PrintDecision = "";
             if (the_decisions.Count == 1)
             {
@@ -61,7 +61,7 @@ namespace NPT_DC_App.Controllers
                 {
                     
                     PrintDecision = PrintDecision 
-                              +"&nbsp;"+  dec_seq.ToString() + "။  " + decision.Description + "။<br/><br/>";
+                              +"&nbsp;" +"(" + Controllers.Controller_MyanmarNumbering.GetMM_Word(dec_seq) + ")" + "&nbsp;" + decision.Description + "။<br/><br/>";
                     dec_seq = dec_seq + 1;
                 }
             };
