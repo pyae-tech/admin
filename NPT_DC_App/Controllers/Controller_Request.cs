@@ -29,7 +29,7 @@ namespace NPT_DC_App.Controllers
             foreach (MET_RequestItem item in the_items)
             {
                 PrintDescription = PrintDescription +
-                    display_seq.ToString() + "။  " + item.RequestItem + "။<br/><br/>";
+                  Controllers.Controller_MyanmarNumbering.GetMM_Number( display_seq) + "။  " + item.RequestItem + "။<br/><br/>";
 
                 display_seq = display_seq + 1;
 

@@ -32,18 +32,14 @@ namespace SBSPortal3.PortalAdministration.userInterfaces.moduleReport.requsetrep
 
             var newHeight = rows * rowHeight;
             xrTableCell3.HeightF = newHeight;
-            //if (subreport.Parent.HeightF < newHeight)
-            //{
-            //foreach (XRControl el in this.Detail.Controls)
-            //    {
-              
-            //    }
-           // }
+    
         }
 
-        private void xrTableCell3_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+
+        public DateTime search_date = DateTime.Today;
+        private void Detail_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
-           
+            lbl_year.Text = search_date.ToString("yyyy");
         }
     }
 }
