@@ -348,11 +348,19 @@ function LogJSError(errorMessage) {
    // var w = window.location;
     //page_loading_stop();
     //do_loading_hide();
-   // ShowErrorBoxMessage(errorMessage);
+    // ShowErrorBoxMessage(errorMessage);
+    if (errorMessage.indexOf("No Access.") >=0) {
+        bootbox.alert({
+            title: "",
+            message: "  <i class='ion-alert-circled' style='color:red;font-size:50px;margin:40px;'></i> ယခု လုပ်ဆာင်ရန်အတွက် သင့်တွင် ခွင့်ပြုချက် မရှိပါ။" 
+        });
+    }
+    else { 
     bootbox.alert({
-        title: "ERROR",
-        message: errorMessage
-    });
+        title: "",
+        message: " <i class='ion-alert-circled' style='color:red;font-size:50px;margin:40px;'></i> လုပ်ဆောင်ချက် မအောင်မြင်ပါ။ " + "<br/><br/><input type='text' style='font-size:10px;width:100%;background-color:lightyellow' value='" + errorMessage+"' />"
+        });
+    }
     //ShowBoxMessage("Oops, we can't save. " + errorMessage);
     //addErrorLog(errorMessage, w.protocol + "," + w.host + "," + w.pathname);
 }
@@ -510,12 +518,18 @@ function ShowSuccessMessage(Message)
 { 
     toastr.success(Message);
 }
-
+function getStringBetweenTwoWords(original_string, str1, str2) {
+return original_string.substring(
+    original_string.lastIndexOf(str1) + 1,
+    original_string.lastIndexOf(str2)
+    );
+}
 function ShowErrorMessage(Message) { 
     
     //toastr.options = {        
     //    "showDuration": "300"
     //};
+  
     toastr.error(Message);
 }
 
