@@ -5,6 +5,15 @@ $('#menu_meeting_group').addClass('in');
 $('#menu_request_letter').addClass('active-link');
 $("#tab-main").tabs();
 
+var request_Control = [];
+request_Control = JSON.parse(localStorage.getItem('MeetingRequest'));
+if (request_Control != null) {
+    if (request_Control.AllowCreate) {
+        $(".request_create").css("display", "block");
+    }
+};
+
+
 getRequestList();
 function getRequestList() {
     $('#panel_list_background').loading();

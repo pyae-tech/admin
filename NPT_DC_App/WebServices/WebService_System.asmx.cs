@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 using NPT_DC_App.LINQs;
+using static NPT_DC_App.Controllers.model;
 
 namespace NPT_DC_App.WebServices
 {
@@ -19,7 +20,7 @@ namespace NPT_DC_App.WebServices
     {
 
         [WebMethod]
-        public SYS_UserView do_login(string usercode, string password)
+        public Return_login do_login(string usercode, string password)
         {
             return Controllers.Controller_SystemUser.Do_Login(usercode, password);
         }

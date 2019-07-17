@@ -7,6 +7,18 @@ $('#menu_positions').addClass('active-link');
 
 $("#tab-main").tabs();
 
+var user_Control = [];
+user_Control = JSON.parse(localStorage.getItem('UserControl'));
+if (user_Control != null) {
+    if (user_Control.AllowCreate) {
+        $(".usercontrol_create").css("display", "block");
+    }
+    if (user_Control.AllowDelete) {
+        $(".usercontrol_delete").css("display", "block");
+    }
+
+};
+
 
 $('#tb_search_text').keyup(function (e) {
     Load_List();

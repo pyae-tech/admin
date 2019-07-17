@@ -11,7 +11,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder_TopLeftMenu" runat="server">
-         <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="GotoPage('Portal/userdetail');return false;"><i class="btn-label ion-plus-round"></i><span class="bold">စာရင်း အသစ်သွင်းရန်</span></button>
+         <button style="display:none;" class="btn btn-dark  btn-rounded  btn-labeled usercontrol_create" type="button" onclick="GotoPage('Portal/userdetail');return false;"><i class="btn-label ion-plus-round"></i><span class="bold">စာရင်း အသစ်သွင်းရန်</span></button>
     
     </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Header" runat="server">

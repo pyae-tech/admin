@@ -80,9 +80,7 @@ function ShowErrorBoxMessage(Message) {
 }
 
 
-if ($.cookie('userid') == null ||
-    $.cookie('userid') == "" ||
-    $.cookie('orgName') == "") {
+if ($.cookie('userid') == null ||    $.cookie('userid') == "" ) {
     
   GotoPage("portal/login");
 }
@@ -91,9 +89,8 @@ else {
     $('.username').html($.cookie('username'));
     $('.useremail').html($.cookie('DepartmentName'));
     $('.usertype').html($.cookie('reftype'));
-    $('.orgname').html($.cookie('orgName'));
     $('.user').html($.cookie('username'));
-    BuiltModuleMenu();
+   BuiltModuleMenu();
 
 }
 
@@ -232,7 +229,7 @@ function get_current_user_org_Type() {
 }
 
 function get_current_organization_title() {
-    return $.cookie('orgCode') + " | ";
+    return $.cookie('DepartmentName') + " | ";
 }
 
 function get_current_user_DepartmentID() {
@@ -297,9 +294,14 @@ function logout(value) {
                 $.cookie('roleid', "", { expires: 1, path: '/' });
                 $.cookie('rolename', "", { expires: 1, path: '/' });
                 $.cookie('rolemenu', "", { expires: 1, path: '/' });
-                $.cookie('StoreName', "", { expires: 1, path: '/' });
-                $.cookie('orgName', "", { expires: 1, path: '/' });
-                $.cookie('orgID', "", { expires: 1, path: '/' });
+                $.cookie('DepartmentID', "", { expires: 1, path: '/' });
+                $.cookie('DepartmentName', "", { expires: 1, path: '/' });
+
+                localStorage.removeItem('MeetingAgenda');
+                localStorage.removeItem('MeetingMinute');
+                localStorage.removeItem('SysConfig');
+                localStorage.removeItem('MeetingRequest');
+                localStorage.removeItem('UserControl');
                 localStorage.clear();
                 sessionStorage.clear();
                 if (value == 'dologout') {

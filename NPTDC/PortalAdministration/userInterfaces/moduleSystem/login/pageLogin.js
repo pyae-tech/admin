@@ -3,15 +3,10 @@ $.cookie('usercode', '', { expires: 1, path: '/' });
 $.cookie('username', '', { expires: 1, path: '/' });
 $.cookie('refid', '', { expires: 1, path: '/' });
 $.cookie('reftype', '', { expires: 1, path: '/' });
-$.cookie('StoreName', '', { expires: 1, path: '/' });
-$.cookie('StoreCode', '', { expires: 1, path: '/' });
-
 $.cookie('roleid', "", { expires: 1, path: '/' });
 $.cookie('rolename', "", { expires: 1, path: '/' });
 $.cookie('rolemenu', "", { expires: 1, path: '/' });
-$.cookie('orgName', "", { expires: 1, path: '/' });
-$.cookie('orgID', "", { expires: 1, path: '/' });
-$.cookie('orgCode', "", { expires: 1, path: '/' });
+
 
 $('title').html("Login");
 $('#usercode').focus();
@@ -73,23 +68,25 @@ function do_login() {
         success: function (data) {
             if (data.d != null) {
                 ShowSuccessMessage("စနစ် အတွင်းသို့ ဝင်ရောက်ပါမည်။");
-                $.cookie('userid', data.d["UserID"], { expires: 1, path: '/' });
-                $.cookie('usercode', data.d["UserCode"], { expires: 1, path: '/' });
-                $.cookie('username', data.d["UserName"], { expires: 1, path: '/' });
-                $.cookie('useremail', data.d["Email"], { expires: 1, path: '/' });
-                $.cookie('refid', data.d["Ref_ID"], { expires: 1, path: '/' });
-                $.cookie('reftype', data.d["Ref_Type"], { expires: 1, path: '/' });
-                $.cookie('roleid', data.d["RoleID"], { expires: 1, path: '/' });
-                $.cookie('roleCode', data.d["RoleCode"], { expires: 1, path: '/' });
-                $.cookie('rolemenu', data.d["RoleMenu"], { expires: 1, path: '/' });
-                $.cookie('StoreName', data.d["AgentName"], { expires: 1, path: '/' });
-                $.cookie('orgName', data.d["OrgName"], { expires: 1, path: '/' });
-                $.cookie('orgID', data.d["OrgID"], { expires: 1, path: '/' });
-                $.cookie('orgType', data.d["OrgType"], { expires: 1, path: '/' });
-                $.cookie('orgCode', data.d["OrgCode"], { expires: 1, path: '/' });
-                $.cookie('DepartmentID', data.d["DepartmentID"], { expires: 1, path: '/' });
-                $.cookie('DepartmentName', data.d["DepartmentName"], { expires: 1, path: '/' });
+                
+                $.cookie('userid', data.d.user_data.UserID, { expires: 1, path: '/' });
+                $.cookie('usercode', data.d.user_data.UserCode, { expires: 1, path: '/' });
+                $.cookie('username', data.d.user_data.UserName, { expires: 1, path: '/' });
+                $.cookie('useremail', data.d.user_data.Email, { expires: 1, path: '/' });
+                $.cookie('refid', data.d.user_data.Ref_ID, { expires: 1, path: '/' });
+                $.cookie('reftype', data.d.user_data.Ref_Type, { expires: 1, path: '/' });
+                $.cookie('roleid', data.d.user_data.RoleID, { expires: 1, path: '/' });
+                $.cookie('roleCode', data.d.user_data.RoleCode, { expires: 1, path: '/' });                
+                $.cookie('DepartmentID',data.d.user_data.DepartmentID, { expires: 1, path: '/' });
+                $.cookie('DepartmentName', data.d.user_data.DepartmentName, { expires: 1, path: '/' });
 
+                localStorage.setItem('MeetingAgenda', JSON.stringify(data.d.MeetingAgenda));
+                localStorage.setItem('MeetingMinute', JSON.stringify(data.d.MeetingMinute));
+                localStorage.setItem('SysConfig', JSON.stringify(data.d.SysConfig));
+                localStorage.setItem('MeetingRequest', JSON.stringify(data.d.MeetingRequest));
+                localStorage.setItem('UserControl', JSON.stringify(data.d.UserControl));
+
+               // GotoPage("portal/users");
                 CreateMenu();          //Build Menu according to user role      
                
             }
