@@ -22,7 +22,7 @@ namespace NPT_DC_App.Controllers
             LINQ_MeetingDataContext dc = new LINQ_MeetingDataContext();
             MET_Request the_request=(from c in dc.MET_Requests where c.RequestID == RequestID && c.Active == true select c).FirstOrDefault();
             if (the_request == null) throw new Exception("No recrod found");
-            string css_code = "<style>.tab0  { position:absolute;left:25px; background-color:red;}" +
+            string css_code = "<style>.tab0  { position:absolute;left:25px;}" +
                 ".myfont{ font-family: 'Pyidaungsu';}" +
                 "</style>";
 
