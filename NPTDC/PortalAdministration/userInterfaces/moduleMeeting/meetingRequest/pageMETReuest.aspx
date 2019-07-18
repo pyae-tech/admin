@@ -4,26 +4,56 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_CSS" runat="server">
+    <style>
+    .index {
+    background: none repeat scroll 0 0 #0063ff;
+    border: 2px solid #ffffff;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 5px 15px;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    
+    }
+        </style>
     <link href='<%=ResolveUrl("../../../plugins/WidgetsGallery/css/dx.common.css")%>' rel="stylesheet" />
     <link href='<%=ResolveUrl("../../../plugins/WidgetsGallery/css/dx.light.css")%>' rel="stylesheet" />
 
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder_TopLeftMenu" runat="server">
-      <button class="btn btn-success  btn-rounded  btn-labeled" type="button" onclick="SaveRequest();return false;"><i class="btn-label ion-checkmark"></i><span class="bold" data-translate="_save">စာရင်းသိမ်းရန်</span></button>
-                    <button class="btn  btn-dark   btn-rounded btn-labeled" type="button" onclick="DeleteRecordConfirmation();return false;">
-                        <i class="btn-label ion-trash-b"></i><span class="bold" data-translate="_delete">ဖျက်ရန်</span></button>
-                    <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="LoadNew();return false;"><i class="btn-label ion-plus-round"></i><span class="bold" data-translate="_new">အသစ်</span></button>
-     <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="GoToLog();return false;"><i class="btn-label ion-plus-round"></i><span class="bold" data-translate="">Log</span></button>
-                                                      <button class="btn  btn-dark   btn-rounded  btn-labeled" type="button" onclick="Refresh();return false;"><i class="btn-label ion-refresh"></i><span class="bold" data-translate="_reflesh">ပြန်ဖွင့်</span></button>
-    <button data-dismiss="modal" class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="window.close();return false;"><i class="btn-label ion-close"></i><span class="bold" data-translate="_close">ပိတ်မည်</span></button>
-              <button class="btn btn-purple  btn-rounded  btn-labeled" type="button" onclick="print_receipt();return false;"><i class="btn-label ion-printer"></i><span class="bold">စာရွက်ထုတ်ရန်</span></button>
-    
+
+      <ol class="menucrumb">
+        <li>
+            <button class="btn btn-dark  btn-rounded  btn-labeled request_decision"  type="button" onclick="RequestDecision('Approved');return false;" style="display: none;"><i class="btn-label ion-forward"></i><span class="bold" data-translate="_save">ခွင့်ပြုသည်။</span></button></li>
+        <li>
+            <button class="btn btn-dark  btn-rounded  btn-labeled request_decision" type="button" onclick="RequestDecision('Rejected');return false;" style="display: none;"><i class="btn-label ion-settings"></i><span class="bold" data-translate="_save">ပယ်ဖျက်သည်။</span></button></li>
+        <li>
+            <button class="btn btn-success  btn-rounded  btn-labeled request_create" type="button" onclick="SaveRequest();return false;" style="display: none;"><i class="btn-label ion-checkmark"></i><span class="bold" data-translate="_save">စာရင်းသိမ်းရန်</span></button></li>
+        <li>
+            <button class="btn  btn-dark   btn-rounded btn-labeled request_delete" type="button" onclick="DeleteRecordConfirmation();return false;" style="display: none;">
+                <i class="btn-label ion-trash-b"></i><span class="bold" data-translate="_delete">ဖျက်ရန်</span></button></li>
+        <li>
+            <button class="btn btn-dark  btn-rounded  btn-labeled request_create" type="button" onclick="LoadNew();return false;" style="display: none;"><i class="btn-label ion-plus-round"></i><span class="bold" data-translate="_new">အသစ်</span></button></li>
+        <li>
+            <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="GoToLog();return false;" style="display: block;"><i class="btn-label ion-plus-round"></i><span class="bold" data-translate="">Log</span></button></li>
+        <li>
+            <button class="btn  btn-dark   btn-rounded  btn-labeled" type="button" onclick="Refresh();return false;" style="display: block;"><i class="btn-label ion-refresh"></i><span class="bold" data-translate="_reflesh">ပြန်ဖွင့်</span></button></li>
+        <li>
+            <button data-dismiss="modal" class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="window.close();return false;" style="display: block;"><i class="btn-label ion-close"></i><span class="bold" data-translate="_close">ပိတ်မည်</span></button></li>
+        <li>
+            <button class="btn btn-purple  btn-rounded  btn-labeled" type="button" onclick="print_receipt();return false;" style="display: block;"><i class="btn-label ion-printer"></i><span class="bold">Print</span></button></li>
+    </ol>
+      
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Header" runat="server">
     <!--Page Title-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <div id="page-title">
         <h1 class="page-header text-overflow"><span data-translate="">အမှာစာ ပြုစုခြင်း</span></h1>
+         <%-- <button id="demo-bootbox-prompt" class="btn btn-warning">Prompt</button>--%>
     </div>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--End page title-->
@@ -110,6 +140,12 @@
                                                     <textarea id="tb_Description" rows="5" cols="50" class="form-control" placeholder="ဆုံးဖြတ်ချက် ရေးပါ။"></textarea>
                                                 </div>
                                             </div>
+                                              <div class="form-group div_approved" style="display:none;">
+                                                <label for="tb_Description" class="col-md-3 control-label" data-translate="">ဆုံးဖြတ်မှတ်ချက်</label>
+                                                <div class="col-md-9">
+                                                    <textarea id="tb_ApprovedRemark" rows="5" cols="50" class="form-control" placeholder="ဆုံးဖြတ်မှတ်ချက်"></textarea>
+                                                </div>
+                                            </div>
                                             
 
                                         </form>
@@ -131,11 +167,11 @@
 
 
 
-                                            <div class="form-group">
-
-                                                <div class="col-md-12">
-                                                    အမှာစာ  ခေါင်းစဉ် 
+                                            <div class="form-group">                                                
+                                                  <div class="col-md-3">အမှာစာ  ခေါင်းစဉ် <div id="lbl_status"></div>
+                                                    <%--  <div  class="col-md-2 ">  <span class="label label-success label-icon label-circle"><i class="ion-checkmark"></i></span></div> --%>
                                                 </div>
+                                                 <br />
                                             </div>
                                             <div class="form-group">
 

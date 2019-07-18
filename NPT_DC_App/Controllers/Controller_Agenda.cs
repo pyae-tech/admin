@@ -165,7 +165,7 @@ namespace NPT_DC_App.Controllers
                 foreach (MET_Request i in req_list)
                 {
                     i.AgendaID = "";
-                    i.RequestStatus = "Approved";
+                    i.RequestStatus = "Complete";
                     i.ModifiedBy = RequestID;
                     i.ModifiedOn = DateTime.Now;
                 }
@@ -204,7 +204,7 @@ namespace NPT_DC_App.Controllers
                 }
 
                 List<MET_Request> req_list = new List<MET_Request>();
-                req_list = (from c in dc.MET_Requests where c.RequestStatus == "Approved" &&
+                req_list = (from c in dc.MET_Requests where c.ApprovalStatus == "Approved" &&
                             (departmentID == "" || (departmentID != "" && c.DepartmentID == departmentID)) &&
                             c.Active == true select c).ToList();
 

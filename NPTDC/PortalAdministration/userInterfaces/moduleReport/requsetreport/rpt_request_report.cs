@@ -42,7 +42,7 @@ namespace SBSPortal3.PortalAdministration.userInterfaces.moduleReport.requsetrep
             PrivateFontCollection fontColl = new PrivateFontCollection();
             // fontColl.AddFontFile(HttpContext.Current.Server.MapPath("~/PortalAdministration/fonts/Pyidaungsu-2.5_Bold_Regular.ttf"));
             // fontColl.AddFontFile(HttpContext.Current.Server.MapPath("~/PortalAdministration/fonts/Pyidaungsu-2.5_Regular.ttf"));
-            fontColl.AddFontFile("C:\\Systematic\\005 VSTS Source\\04 NPDC\\SourceCode\\NPTDC\\PortalAdministration\\fonts\\Pyidaungsu-2.5_Regular.ttf");
+            fontColl.AddFontFile("D:\\01 Source Code\\NYPDC\\NPTDC\\PortalAdministration\\fonts\\Pyidaungsu-2.5_Regular.ttf");
                rpt_request_report report = (rpt_request_report)sender;
             foreach (Band b in report.Bands)
             {
