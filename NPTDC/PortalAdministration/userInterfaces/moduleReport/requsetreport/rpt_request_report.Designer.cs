@@ -271,7 +271,7 @@
             // 
             // xrPageInfo1
             // 
-            this.xrPageInfo1.Font = new System.Drawing.Font("Pyidaungsu", 11F, System.Drawing.FontStyle.Bold);
+            this.xrPageInfo1.Font = new System.Drawing.Font("Pyidaungsu", 11F);
             this.xrPageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(6.103516E-05F, 10F);
             this.xrPageInfo1.Name = "xrPageInfo1";
             this.xrPageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(6, 2, 0, 0, 100F);
@@ -283,7 +283,7 @@
             // 
             // xrPageInfo2
             // 
-            this.xrPageInfo2.Font = new System.Drawing.Font("Pyidaungsu", 11F, System.Drawing.FontStyle.Bold);
+            this.xrPageInfo2.Font = new System.Drawing.Font("Pyidaungsu", 11F);
             this.xrPageInfo2.LocationFloat = new DevExpress.Utils.PointFloat(611.5416F, 10F);
             this.xrPageInfo2.Name = "xrPageInfo2";
             this.xrPageInfo2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 6, 0, 0, 100F);
