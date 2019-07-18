@@ -120,6 +120,7 @@ namespace NPT_DC_App.Controllers
                 request.RequestStatus = row.RequestStatus;
                 request.RequestOn = row.RequestOn;
                 request.DepartmentName = row.DepartmentName;
+                request.ApprovalStatus = row.ApprovalStatus;
                 lists.Add(request);
             }
 
@@ -482,6 +483,38 @@ namespace NPT_DC_App.Controllers
             catch (ChangeConflictException ex)
             {
                 return "Success~";
+            }
+        }
+
+        public static string RequestApprove(string meetingreq_id,string status,string remark, string user_id)
+        {
+            //Security Check
+            if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, user_id, "decision")) throw new Exception("No Access.");
+            if (!Controller_User_Access.CheckProgramAccess(AccessProgramCode, user_id, "update")) throw new Exception("No Access.");
+            
+            LINQ_MeetingDataContext dc = new LINQ_MeetingDataContext();
+            try
+            {
+                MET_Request request_record = new MET_Request();
+                request_record = (from c in dc.MET_Requests where c.RequestID == meetingreq_id && c.Active == true select c).FirstOrDefault();
+                if (request_record == null)
+                    return "Error~We can't find";
+
+                request_record.ApprovalStatus = status;
+                request_record.ApprovedBy = user_id;
+                request_record.ApprovedOn= DateTime.Now;
+                request_record.ApprovedRemark = remark;
+                request_record.ModifiedOn = DateTime.Now;
+                request_record.ModifiedBy = user_id;
+                request_record.LastAction = Guid.NewGuid().ToString();
+                
+
+                dc.SubmitChanges(ConflictMode.ContinueOnConflict);
+                return "Success~"+request_record.ApprovalStatus+"~"+ request_record.ApprovedRemark;
+            }
+            catch (ChangeConflictException ex)
+            {
+                return "Success~" + status + "~" + remark;
             }
         }
 

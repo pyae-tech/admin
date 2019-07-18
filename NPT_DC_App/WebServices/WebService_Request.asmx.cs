@@ -99,5 +99,11 @@ namespace NPT_DC_App.WebServices
             return Controllers.Controller_Request.ChangeCombineDecision(agendaID,meetingreq_id, edited_decision, user_id);
         }
 
+        [WebMethod]
+        public string RequestApprove(string meetingreq_id, string status, string remark, string user_id)
+        {
+            return Controllers.Controller_Request.RequestApprove(meetingreq_id, status, remark, user_id);
+        }
+       
     }
 }

@@ -78,6 +78,20 @@ function Build_ColumnHeader() {
             caption: "ဌာန",
             //allowHeaderFiltering: false,
             cssClass: 'cls',
+        },
+        {
+            dataField: "ApprovalStatus",
+            caption: "",
+            //allowHeaderFiltering: false,
+            cssClass: 'cls',
+            cellTemplate: function (cellElement, cellInfo) {
+                if (cellInfo.data.ApprovalStatus === "Approved") {
+                    $('<span class="label label-success">').text(cellInfo.data.ApprovalStatus).appendTo(cellElement);
+                }
+                else if (cellInfo.data.ApprovalStatus === "Rejected") {
+                    $('<span class="label label-purple">').text(cellInfo.data.ApprovalStatus).appendTo(cellElement);
+                }
+            }
         }
     ];
 }
