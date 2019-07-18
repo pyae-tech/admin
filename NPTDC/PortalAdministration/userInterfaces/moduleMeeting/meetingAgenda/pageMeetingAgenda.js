@@ -481,3 +481,14 @@ function Refresh()
 {
     GetAgenda(GetURLData('id'));
 }
+
+function print_receipt() {
+    var control = JSON.parse(localStorage.getItem('MeetingAgenda'));
+    var departmentID = get_current_user_DepartmentID();
+    if (control != null) {
+        if (control.AllowAllDepartment) {
+            departmentID = "";
+        }
+        window.open('agendaReport?id=' + $("#tb_id").val() + '&DepartmentId=' + departmentID, '_blank');
+    }
+}
