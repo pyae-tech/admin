@@ -22,6 +22,9 @@ namespace NPT_DC_App.Controllers
             LINQ_MeetingDataContext dc = new LINQ_MeetingDataContext();
             MET_Request the_request=(from c in dc.MET_Requests where c.RequestID == RequestID && c.Active == true select c).FirstOrDefault();
             if (the_request == null) throw new Exception("No recrod found");
+            string css_code = "<style>.tab0  { position:absolute;left:25px; background-color:red;}" +
+                ".myfont{ font-family: 'Pyidaungsu';}" +
+                "</style>";
 
             string PrintDescription = "အကြောင်းအရာ။  <b>" + the_request.RequestTitle+ "</b><br/><br/>";
 
@@ -39,7 +42,7 @@ namespace NPT_DC_App.Controllers
 
             }
 
-            the_request.PrintDescription = PrintDescription;
+            the_request.PrintDescription = css_code + "<div class='myfont'>"+PrintDescription+"</div>";
 
             List<MET_RequestDecision> the_decisions = (from c in dc.MET_RequestDecisions where c.RequestID == RequestID && c.Active == true orderby c.Seq select c).ToList();
             if (the_decisions == null) return;
@@ -57,16 +60,17 @@ namespace NPT_DC_App.Controllers
             {
                 PrintDecision = decision_seq + "။  " + "ဆုံးဖြတ်ရန် အချက်။  " + "<br/><br/>";
                 int dec_seq = 1;
+
                 foreach (MET_RequestDecision decision in the_decisions)
                 {
                     
                     PrintDecision = PrintDecision 
-                              +"&nbsp;" +"(" + Controllers.Controller_MyanmarNumbering.GetMM_Word(dec_seq) + ")" + "&nbsp;" + decision.Description + "။<br/><br/>";
+                              +"&nbsp;" +"(" + Controllers.Controller_MyanmarNumbering.GetMM_Word(dec_seq) + ")" + "<span class='tab0'>     </span>" + decision.Description + "။<br/><br/>";
                     dec_seq = dec_seq + 1;
                 }
             };
 
-            the_request.PrintDecision = PrintDecision;
+            the_request.PrintDecision =css_code+ "<div class='myfont'>" + PrintDecision+"</div>";
             dc.SubmitChanges();
 
 
