@@ -110,6 +110,14 @@ namespace NPT_DC_App.LINQs
 				return this.GetTable<Mst_PositionView>();
 			}
 		}
+		
+		public System.Data.Linq.Table<Mst_ImageView> Mst_ImageViews
+		{
+			get
+			{
+				return this.GetTable<Mst_ImageView>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Mst_Image")]
@@ -1631,6 +1639,357 @@ namespace NPT_DC_App.LINQs
 				if ((this._ModifiedByCode != value))
 				{
 					this._ModifiedByCode = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Mst_ImageView")]
+	public partial class Mst_ImageView
+	{
+		
+		private string _ImageID;
+		
+		private string _ImageName;
+		
+		private string _ImagePath;
+		
+		private string _RefID;
+		
+		private string _RefType;
+		
+		private bool _Active;
+		
+		private string _CreatedBy;
+		
+		private System.DateTime _CreatedOn;
+		
+		private string _ModifiedBy;
+		
+		private System.DateTime _ModifiedOn;
+		
+		private string _LastAction;
+		
+		private string _ImageURL;
+		
+		private System.Data.Linq.Binary _ImageData;
+		
+		private string _UserCode;
+		
+		private string _UserName;
+		
+		private string _OrgName;
+		
+		private string _OrgCode;
+		
+		private string _OrgType;
+		
+		private string _OrgID;
+		
+		public Mst_ImageView()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string ImageID
+		{
+			get
+			{
+				return this._ImageID;
+			}
+			set
+			{
+				if ((this._ImageID != value))
+				{
+					this._ImageID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string ImageName
+		{
+			get
+			{
+				return this._ImageName;
+			}
+			set
+			{
+				if ((this._ImageName != value))
+				{
+					this._ImageName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImagePath", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
+		public string ImagePath
+		{
+			get
+			{
+				return this._ImagePath;
+			}
+			set
+			{
+				if ((this._ImagePath != value))
+				{
+					this._ImagePath = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RefID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string RefID
+		{
+			get
+			{
+				return this._RefID;
+			}
+			set
+			{
+				if ((this._RefID != value))
+				{
+					this._RefID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RefType", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string RefType
+		{
+			get
+			{
+				return this._RefType;
+			}
+			set
+			{
+				if ((this._RefType != value))
+				{
+					this._RefType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Active", DbType="Bit NOT NULL")]
+		public bool Active
+		{
+			get
+			{
+				return this._Active;
+			}
+			set
+			{
+				if ((this._Active != value))
+				{
+					this._Active = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string CreatedBy
+		{
+			get
+			{
+				return this._CreatedBy;
+			}
+			set
+			{
+				if ((this._CreatedBy != value))
+				{
+					this._CreatedBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedOn", DbType="DateTime NOT NULL")]
+		public System.DateTime CreatedOn
+		{
+			get
+			{
+				return this._CreatedOn;
+			}
+			set
+			{
+				if ((this._CreatedOn != value))
+				{
+					this._CreatedOn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string ModifiedBy
+		{
+			get
+			{
+				return this._ModifiedBy;
+			}
+			set
+			{
+				if ((this._ModifiedBy != value))
+				{
+					this._ModifiedBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedOn", DbType="DateTime NOT NULL")]
+		public System.DateTime ModifiedOn
+		{
+			get
+			{
+				return this._ModifiedOn;
+			}
+			set
+			{
+				if ((this._ModifiedOn != value))
+				{
+					this._ModifiedOn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastAction", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string LastAction
+		{
+			get
+			{
+				return this._LastAction;
+			}
+			set
+			{
+				if ((this._LastAction != value))
+				{
+					this._LastAction = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageURL", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
+		public string ImageURL
+		{
+			get
+			{
+				return this._ImageURL;
+			}
+			set
+			{
+				if ((this._ImageURL != value))
+				{
+					this._ImageURL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageData", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary ImageData
+		{
+			get
+			{
+				return this._ImageData;
+			}
+			set
+			{
+				if ((this._ImageData != value))
+				{
+					this._ImageData = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserCode", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string UserCode
+		{
+			get
+			{
+				return this._UserCode;
+			}
+			set
+			{
+				if ((this._UserCode != value))
+				{
+					this._UserCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrgName", DbType="NVarChar(500)")]
+		public string OrgName
+		{
+			get
+			{
+				return this._OrgName;
+			}
+			set
+			{
+				if ((this._OrgName != value))
+				{
+					this._OrgName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrgCode", DbType="NVarChar(50)")]
+		public string OrgCode
+		{
+			get
+			{
+				return this._OrgCode;
+			}
+			set
+			{
+				if ((this._OrgCode != value))
+				{
+					this._OrgCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrgType", DbType="NVarChar(50)")]
+		public string OrgType
+		{
+			get
+			{
+				return this._OrgType;
+			}
+			set
+			{
+				if ((this._OrgType != value))
+				{
+					this._OrgType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrgID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string OrgID
+		{
+			get
+			{
+				return this._OrgID;
+			}
+			set
+			{
+				if ((this._OrgID != value))
+				{
+					this._OrgID = value;
 				}
 			}
 		}

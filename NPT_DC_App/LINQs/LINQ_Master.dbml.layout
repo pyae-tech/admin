@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LINQ_Master">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.75" name="LINQ_Master">
   <DataContextMoniker Name="/LINQ_MasterDataContext" />
   <nestedChildShapes>
     <classShape Id="2b69316a-429a-45bb-8a98-339f5776414d" absoluteBounds="0.5, 0.5, 2, 3.3093082682291666">
@@ -30,6 +30,12 @@
       <DataClassMoniker Name="/LINQ_MasterDataContext/Mst_PositionView" />
       <nestedChildShapes>
         <elementListCompartment Id="f528f79e-7ade-4754-8d60-3eaaa056138e" absoluteBounds="5.265, 4.335, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="64b595d9-ccbd-49a7-8476-46aa48c5d316" absoluteBounds="0.625, 4, 2, 4.4631168619791666">
+      <DataClassMoniker Name="/LINQ_MasterDataContext/Mst_ImageView" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0d186c34-2770-42a1-a9c9-ccc7c2bf91ca" absoluteBounds="0.64, 4.46, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

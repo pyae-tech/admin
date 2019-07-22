@@ -122,19 +122,19 @@ namespace NPT_DC_App.LINQs
 			}
 		}
 		
-		public System.Data.Linq.Table<MET_RequestView> MET_RequestViews
-		{
-			get
-			{
-				return this.GetTable<MET_RequestView>();
-			}
-		}
-		
 		public System.Data.Linq.Table<MET_AgendaView> MET_AgendaViews
 		{
 			get
 			{
 				return this.GetTable<MET_AgendaView>();
+			}
+		}
+		
+		public System.Data.Linq.Table<MET_RequestView> MET_RequestViews
+		{
+			get
+			{
+				return this.GetTable<MET_RequestView>();
 			}
 		}
 		
@@ -2314,6 +2314,303 @@ namespace NPT_DC_App.LINQs
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MET_AgendaView")]
+	public partial class MET_AgendaView
+	{
+		
+		private string _AgendaID;
+		
+		private System.DateTime _AgendaDate;
+		
+		private string _AgendaNo;
+		
+		private string _AgendaStatus;
+		
+		private string _AgendaHistory;
+		
+		private string _AgendaRemark;
+		
+		private bool _Active;
+		
+		private string _CreatedBy;
+		
+		private System.DateTime _CreatedOn;
+		
+		private string _ModifiedBy;
+		
+		private System.DateTime _ModifiedOn;
+		
+		private string _LastAction;
+		
+		private string _CUserCode;
+		
+		private string _MUserCode;
+		
+		private string _AgendaNoLable;
+		
+		private string _DepartmentID;
+		
+		public MET_AgendaView()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgendaID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string AgendaID
+		{
+			get
+			{
+				return this._AgendaID;
+			}
+			set
+			{
+				if ((this._AgendaID != value))
+				{
+					this._AgendaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgendaDate", DbType="DateTime NOT NULL")]
+		public System.DateTime AgendaDate
+		{
+			get
+			{
+				return this._AgendaDate;
+			}
+			set
+			{
+				if ((this._AgendaDate != value))
+				{
+					this._AgendaDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgendaNo", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string AgendaNo
+		{
+			get
+			{
+				return this._AgendaNo;
+			}
+			set
+			{
+				if ((this._AgendaNo != value))
+				{
+					this._AgendaNo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgendaStatus", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string AgendaStatus
+		{
+			get
+			{
+				return this._AgendaStatus;
+			}
+			set
+			{
+				if ((this._AgendaStatus != value))
+				{
+					this._AgendaStatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgendaHistory", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string AgendaHistory
+		{
+			get
+			{
+				return this._AgendaHistory;
+			}
+			set
+			{
+				if ((this._AgendaHistory != value))
+				{
+					this._AgendaHistory = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgendaRemark", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string AgendaRemark
+		{
+			get
+			{
+				return this._AgendaRemark;
+			}
+			set
+			{
+				if ((this._AgendaRemark != value))
+				{
+					this._AgendaRemark = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Active", DbType="Bit NOT NULL")]
+		public bool Active
+		{
+			get
+			{
+				return this._Active;
+			}
+			set
+			{
+				if ((this._Active != value))
+				{
+					this._Active = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string CreatedBy
+		{
+			get
+			{
+				return this._CreatedBy;
+			}
+			set
+			{
+				if ((this._CreatedBy != value))
+				{
+					this._CreatedBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedOn", DbType="DateTime NOT NULL")]
+		public System.DateTime CreatedOn
+		{
+			get
+			{
+				return this._CreatedOn;
+			}
+			set
+			{
+				if ((this._CreatedOn != value))
+				{
+					this._CreatedOn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string ModifiedBy
+		{
+			get
+			{
+				return this._ModifiedBy;
+			}
+			set
+			{
+				if ((this._ModifiedBy != value))
+				{
+					this._ModifiedBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedOn", DbType="DateTime NOT NULL")]
+		public System.DateTime ModifiedOn
+		{
+			get
+			{
+				return this._ModifiedOn;
+			}
+			set
+			{
+				if ((this._ModifiedOn != value))
+				{
+					this._ModifiedOn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastAction", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string LastAction
+		{
+			get
+			{
+				return this._LastAction;
+			}
+			set
+			{
+				if ((this._LastAction != value))
+				{
+					this._LastAction = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CUserCode", DbType="NVarChar(50)")]
+		public string CUserCode
+		{
+			get
+			{
+				return this._CUserCode;
+			}
+			set
+			{
+				if ((this._CUserCode != value))
+				{
+					this._CUserCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MUserCode", DbType="NVarChar(50)")]
+		public string MUserCode
+		{
+			get
+			{
+				return this._MUserCode;
+			}
+			set
+			{
+				if ((this._MUserCode != value))
+				{
+					this._MUserCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgendaNoLable", DbType="NVarChar(50)")]
+		public string AgendaNoLable
+		{
+			get
+			{
+				return this._AgendaNoLable;
+			}
+			set
+			{
+				if ((this._AgendaNoLable != value))
+				{
+					this._AgendaNoLable = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartmentID", DbType="NVarChar(50)")]
+		public string DepartmentID
+		{
+			get
+			{
+				return this._DepartmentID;
+			}
+			set
+			{
+				if ((this._DepartmentID != value))
+				{
+					this._DepartmentID = value;
+				}
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MET_RequestView")]
 	public partial class MET_RequestView
 	{
@@ -2381,6 +2678,16 @@ namespace NPT_DC_App.LINQs
 		private string _PrintDescription;
 		
 		private string _PrintDecision;
+		
+		private string _ImageName;
+		
+		private string _ImagePath;
+		
+		private string _PositionName;
+		
+		private string _ApprovedDepartment;
+		
+		private string _UserName;
 		
 		public MET_RequestView()
 		{
@@ -2897,300 +3204,83 @@ namespace NPT_DC_App.LINQs
 				}
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MET_AgendaView")]
-	public partial class MET_AgendaView
-	{
 		
-		private string _AgendaID;
-		
-		private System.DateTime _AgendaDate;
-		
-		private string _AgendaNo;
-		
-		private string _AgendaStatus;
-		
-		private string _AgendaHistory;
-		
-		private string _AgendaRemark;
-		
-		private bool _Active;
-		
-		private string _CreatedBy;
-		
-		private System.DateTime _CreatedOn;
-		
-		private string _ModifiedBy;
-		
-		private System.DateTime _ModifiedOn;
-		
-		private string _LastAction;
-		
-		private string _CUserCode;
-		
-		private string _MUserCode;
-		
-		private string _AgendaNoLable;
-		
-		private string _DepartmentID;
-		
-		public MET_AgendaView()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgendaID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string AgendaID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageName", DbType="NVarChar(50)")]
+		public string ImageName
 		{
 			get
 			{
-				return this._AgendaID;
+				return this._ImageName;
 			}
 			set
 			{
-				if ((this._AgendaID != value))
+				if ((this._ImageName != value))
 				{
-					this._AgendaID = value;
+					this._ImageName = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgendaDate", DbType="DateTime NOT NULL")]
-		public System.DateTime AgendaDate
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImagePath", DbType="NVarChar(500)")]
+		public string ImagePath
 		{
 			get
 			{
-				return this._AgendaDate;
+				return this._ImagePath;
 			}
 			set
 			{
-				if ((this._AgendaDate != value))
+				if ((this._ImagePath != value))
 				{
-					this._AgendaDate = value;
+					this._ImagePath = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgendaNo", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string AgendaNo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionName", DbType="NVarChar(500)")]
+		public string PositionName
 		{
 			get
 			{
-				return this._AgendaNo;
+				return this._PositionName;
 			}
 			set
 			{
-				if ((this._AgendaNo != value))
+				if ((this._PositionName != value))
 				{
-					this._AgendaNo = value;
+					this._PositionName = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgendaStatus", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string AgendaStatus
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovedDepartment", DbType="NVarChar(500)")]
+		public string ApprovedDepartment
 		{
 			get
 			{
-				return this._AgendaStatus;
+				return this._ApprovedDepartment;
 			}
 			set
 			{
-				if ((this._AgendaStatus != value))
+				if ((this._ApprovedDepartment != value))
 				{
-					this._AgendaStatus = value;
+					this._ApprovedDepartment = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgendaHistory", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string AgendaHistory
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(50)")]
+		public string UserName
 		{
 			get
 			{
-				return this._AgendaHistory;
+				return this._UserName;
 			}
 			set
 			{
-				if ((this._AgendaHistory != value))
+				if ((this._UserName != value))
 				{
-					this._AgendaHistory = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgendaRemark", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string AgendaRemark
-		{
-			get
-			{
-				return this._AgendaRemark;
-			}
-			set
-			{
-				if ((this._AgendaRemark != value))
-				{
-					this._AgendaRemark = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Active", DbType="Bit NOT NULL")]
-		public bool Active
-		{
-			get
-			{
-				return this._Active;
-			}
-			set
-			{
-				if ((this._Active != value))
-				{
-					this._Active = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string CreatedBy
-		{
-			get
-			{
-				return this._CreatedBy;
-			}
-			set
-			{
-				if ((this._CreatedBy != value))
-				{
-					this._CreatedBy = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedOn", DbType="DateTime NOT NULL")]
-		public System.DateTime CreatedOn
-		{
-			get
-			{
-				return this._CreatedOn;
-			}
-			set
-			{
-				if ((this._CreatedOn != value))
-				{
-					this._CreatedOn = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string ModifiedBy
-		{
-			get
-			{
-				return this._ModifiedBy;
-			}
-			set
-			{
-				if ((this._ModifiedBy != value))
-				{
-					this._ModifiedBy = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedOn", DbType="DateTime NOT NULL")]
-		public System.DateTime ModifiedOn
-		{
-			get
-			{
-				return this._ModifiedOn;
-			}
-			set
-			{
-				if ((this._ModifiedOn != value))
-				{
-					this._ModifiedOn = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastAction", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string LastAction
-		{
-			get
-			{
-				return this._LastAction;
-			}
-			set
-			{
-				if ((this._LastAction != value))
-				{
-					this._LastAction = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CUserCode", DbType="NVarChar(50)")]
-		public string CUserCode
-		{
-			get
-			{
-				return this._CUserCode;
-			}
-			set
-			{
-				if ((this._CUserCode != value))
-				{
-					this._CUserCode = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MUserCode", DbType="NVarChar(50)")]
-		public string MUserCode
-		{
-			get
-			{
-				return this._MUserCode;
-			}
-			set
-			{
-				if ((this._MUserCode != value))
-				{
-					this._MUserCode = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgendaNoLable", DbType="NVarChar(50)")]
-		public string AgendaNoLable
-		{
-			get
-			{
-				return this._AgendaNoLable;
-			}
-			set
-			{
-				if ((this._AgendaNoLable != value))
-				{
-					this._AgendaNoLable = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartmentID", DbType="NVarChar(50)")]
-		public string DepartmentID
-		{
-			get
-			{
-				return this._DepartmentID;
-			}
-			set
-			{
-				if ((this._DepartmentID != value))
-				{
-					this._DepartmentID = value;
+					this._UserName = value;
 				}
 			}
 		}

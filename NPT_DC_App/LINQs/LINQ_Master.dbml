@@ -85,4 +85,27 @@
       <Column Name="ModifiedByCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.Mst_ImageView" Member="Mst_ImageViews">
+    <Type Name="Mst_ImageView">
+      <Column Name="ImageID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ImageName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ImagePath" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="RefID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RefType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastAction" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ImageURL" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="ImageData" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="UserCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="OrgName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="OrgCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OrgType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OrgID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
 </Database>

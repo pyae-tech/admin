@@ -4519,6 +4519,8 @@
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemComment\controlComment.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemProgram\pageSystemProgram.aspx" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemProgram\pageSystemProgram.js" />
+    <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemUserRoles\pageSystemUserRoleDetail.aspx" />
+    <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemUserRoles\pageSystemUserRoleDetail.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemUserRoles\pageSystemUserRoles.aspx" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemUserRoles\pageSystemUserRoles.js" />
     <Content Include="PortalAdministration\userInterfaces\moduleSystem\systemUsers\pageSystemUserDetail.aspx" />
@@ -4851,6 +4853,13 @@
     </Compile>
     <Compile Include="PortalAdministration\userInterfaces\moduleSystem\systemProgram\pageSystemProgram.aspx.designer.cs">
       <DependentUpon>pageSystemProgram.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PortalAdministration\userInterfaces\moduleSystem\systemUserRoles\pageSystemUserRoleDetail.aspx.cs">
+      <DependentUpon>pageSystemUserRoleDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PortalAdministration\userInterfaces\moduleSystem\systemUserRoles\pageSystemUserRoleDetail.aspx.designer.cs">
+      <DependentUpon>pageSystemUserRoleDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="PortalAdministration\userInterfaces\moduleSystem\systemUserRoles\pageSystemUserRoles.aspx.cs">
       <DependentUpon>pageSystemUserRoles.aspx</DependentUpon>

@@ -20,7 +20,8 @@ namespace SBSPortal3
             RouteTable.Routes.MapPageRoute("portal/companyprofile", "portal/companyprofile", "~/PortalAdministration/userInterfaces/moduleSystem/systemCompanyProfile/pageCompanyProfile.aspx");
             RouteTable.Routes.MapPageRoute("portal/userdetail", "portal/userdetail", "~/PortalAdministration/userInterfaces/moduleSystem/systemUsers/pageSystemUserDetail.aspx");
             RouteTable.Routes.MapPageRoute("portal/users", "portal/users", "~/PortalAdministration/userInterfaces/moduleSystem/systemUsers/pageSystemUsers.aspx");
-            RouteTable.Routes.MapPageRoute("portal/roles", "portal/roles", "~/PortalAdministration/userInterfaces/moduleSystem/systemUserRoles/pageSystemUserRoles.aspx"); 
+            RouteTable.Routes.MapPageRoute("portal/roles", "portal/roles", "~/PortalAdministration/userInterfaces/moduleSystem/systemUserRoles/pageSystemUserRoles.aspx");
+            RouteTable.Routes.MapPageRoute("portal/roledetail", "portal/roledetail", "~/PortalAdministration/userInterfaces/moduleSystem/systemUserRoles/pageSystemUserRoleDetail.aspx");
             RouteTable.Routes.MapPageRoute("portal/programs", "portal/programs", "~/PortalAdministration/userInterfaces/moduleSystem/systemProgram/pageSystemProgram.aspx");
             RouteTable.Routes.MapPageRoute("portal/organizations", "portal/organizations", "~/PortalAdministration/userInterfaces/moduleSystem/systemOrganization/pageSystemOrganization.aspx");
             RouteTable.Routes.MapPageRoute("portal/organization", "portal/organization", "~/PortalAdministration/userInterfaces/moduleSystem/systemOrganization/pageSystmeOrganizationDetail.aspx");
