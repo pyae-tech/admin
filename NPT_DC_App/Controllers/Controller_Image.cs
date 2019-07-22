@@ -36,6 +36,7 @@ namespace NPT_DC_App.Controllers
                 }
                 if (delete_result == "Success~")
                 {
+
                     the_record = new Mst_Image()
                     {
                         CreatedBy = UserID,
@@ -49,7 +50,8 @@ namespace NPT_DC_App.Controllers
                         ImageURL = ImageURL,
                         ImagePath = ImagePath,
                         RefID = RefID,
-                        RefType = RefType
+                        RefType = RefType,
+                         
                     };
                     dc.Mst_Images.InsertOnSubmit(the_record);
                     dc.SubmitChanges();

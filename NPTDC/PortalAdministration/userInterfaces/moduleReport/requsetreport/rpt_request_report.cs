@@ -26,10 +26,12 @@ namespace SBSPortal3.PortalAdministration.userInterfaces.moduleReport.requsetrep
         {
             string test = xrPictureBox1.ImageUrl;
             if(GetCurrentColumnValue("ImagePath") != null){
-                xrPictureBox1.ImageUrl = GetCurrentColumnValue("ImagePath").ToString();
-               
+                xrPictureBox1.ImageUrl =
+                    "http://localhost:2291/PortalAdministration/img/User_Images/" + GetCurrentColumnValue("ImageName").ToString();
+                //GetCurrentColumnValue("ImageName").ToString();
+
             }
-            
+
         }
         private void xrSubreport_item_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
