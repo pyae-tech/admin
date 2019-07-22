@@ -31,6 +31,7 @@ namespace SBSPortal3.PortalAdministration.userInterfaces.moduleReport.requsetrep
         {
            
         }
+
         private void CalcHeight(XRSubreport subreport)
         {
             //var pi = subreport.ReportSource.GetType().GetProperty("DisplayableRowCount", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
