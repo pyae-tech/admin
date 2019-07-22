@@ -10,10 +10,17 @@
          <li>
              <button class="btn btn-dark  btn-rounded  btn-labeled" runat="server" type="button" onclick="richEditor_temp.commands.filePrint.execute(); return false;;" style="display: block;">
                  <i class="btn-label ion-printer"></i><span class="bold">Print</span></button></li>
-          <li>
+         <li>
+              
+              <asp:LinkButton runat="server"  CssClass="btn btn-dark  btn-rounded  btn-labeled" id="LinkButton1" 
+                   OnClientClick="richEditor_temp.commands.filePrint.execute();"
+                  OnClick="LinkButton1_Click"
+                   >    <i class="btn-label ion-printer"></i><span class="bold">Print</span></asp:LinkButton>
+            
+        <li>
               
               <asp:LinkButton runat="server"  CssClass="btn btn-dark  btn-rounded  btn-labeled" id="btn_download_Pdf"
-                   OnClick="btn_download_Pdf_Click">    <i class="btn-label ion-download"></i><span class="bold">Download PDF</span></asp:LinkButton>
+                   OnClick="btn_download_Pdf_Click">    <i class="btn-label ion-printer"></i><span class="bold">Download PDF</span></asp:LinkButton>
            </li>
              
         <li>

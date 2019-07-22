@@ -36,7 +36,7 @@ namespace SBSPortal3.PortalAdministration.userInterfaces.moduleReport.requsetrep
                 the_report.CreateDocument();
                 docViwer.OpenReport(the_report);
 
-            
+               
             }
 
 
@@ -70,6 +70,31 @@ namespace SBSPortal3.PortalAdministration.userInterfaces.moduleReport.requsetrep
                 richEditor_temp.ExportToPdf(stream,new PdfExportOptions() {  PageRange=""});
                 DevExpress.Web.Internal.HttpUtils.WriteFileToResponse(Page, stream, "ExportedDocument1", true, "pdf");
                
+            }
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            string search_reqid = Request.QueryString["id"];
+            string search_deoid = Request.QueryString["DepartmentId"];
+            the_report = new rpt_request_report();
+
+            if (search_deoid != "")
+            {
+                the_report.do_fill_data(search_deoid, search_reqid);
+                the_report.CreateDocument();
+                docViwer.OpenReport(the_report);  
+            }
+
+            the_report.ExportToDocx("C://Systematic//test.docx", new DocxExportOptions() { TableLayout = false, ExportMode = DocxExportMode.SingleFilePageByPage });
+            richEditor_temp.Open("C://Systematic//test.docx");
+
+
+            using (MemoryStream stream = new MemoryStream())
+            {
+                richEditor_temp.ExportToPdf(stream, new PdfExportOptions() { PageRange = "" });
+                DevExpress.Web.Internal.HttpUtils.WriteFileToResponse(Page, stream, "ExportedDocument1", true, "pdf");
+
             }
         }
     }
