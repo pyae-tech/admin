@@ -22,9 +22,10 @@
         <li>
             <button class="btn  btn-dark   btn-rounded  btn-labeled" type="button" onclick="Refresh();return false;" style="display: block;"><i class="btn-label ion-refresh"></i><span class="bold" data-translate="_reflesh">ပြန်ဖွင့်</span></button></li>
         <li>
-            <button data-dismiss="modal" class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="window.close();return false;" style="display: block;"><i class="btn-label ion-close"></i><span class="bold" data-translate="_close">ပိတ်မည်</span></button></li>
+             <button class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="print_receipt();return false;" style="display: block;"><i class="btn-label ion-printer"></i><span class="bold">စာရွက်ထုတ်ရန်</span></button></li>
+           
         <li>
-            <button class="btn btn-purple  btn-rounded  btn-labeled" type="button" onclick="print_receipt();return false;" style="display: block;"><i class="btn-label ion-printer"></i><span class="bold">Print</span></button></li>
+            <button data-dismiss="modal" class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="window.close();return false;" style="display: block;"><i class="btn-label ion-close"></i><span class="bold" data-translate="_close">ပိတ်မည်</span></button></li>
     </ol>
     
     

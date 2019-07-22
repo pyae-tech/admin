@@ -71,7 +71,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="WebServices\WebService_Agenda.asmx" />
     <Content Include="WebServices\WebService_Attachment.asmx" />
     <Content Include="WebServices\WebService_Department.asmx" />

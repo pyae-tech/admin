@@ -43,6 +43,7 @@ namespace SBSPortal3
 
             //Report
             RouteTable.Routes.MapPageRoute("portal/requestReport", "portal/requestReport", "~/PortalAdministration/userInterfaces/moduleReport/requsetreport/PageRequestReport.aspx");
+            RouteTable.Routes.MapPageRoute("portal/agendaReport", "portal/agendaReport", "~/PortalAdministration/userInterfaces/moduleReport/agendareport/PageAgendaReport.aspx");
             DevExpress.XtraReports.Web.ASPxWebDocumentViewer.StaticInitialize();
             DevExpress.XtraReports.Web.ASPxReportDesigner.StaticInitialize();
         }

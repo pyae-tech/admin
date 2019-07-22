@@ -196,6 +196,7 @@ function GetAgenda(id) {
                 //$("#tb_department_name").val(data.d["DepartmentName"]);
                 $("#tb_Remark").val(data.d["AgendaRemark"]);
                 $("#tb_agenda_no").val(data.d["AgendaNo"]);
+                $("#tb_agenda_no_label").val(data.d["AgendaNoLable"]);
 
                 $("#lbl_created").text("စာရင်းသွင်းသူ : " + data.d["CUserCode"] + " on " + JsonDateToFormat(data.d["CreatedOn"], 'DD/MM/YYYY HH:mm'));
                 $("#lbl_modified").text("ပြင်ဆင်သူ : " + data.d["MUserCode"] + " on " + JsonDateToFormat(data.d["ModifiedOn"], 'DD/MM/YYYY HH:mm'));
@@ -480,4 +481,15 @@ function GoToLog() {
 function Refresh()
 {
     GetAgenda(GetURLData('id'));
+}
+
+function print_receipt() {
+    var control = JSON.parse(localStorage.getItem('MeetingAgenda'));
+    var departmentID = get_current_user_DepartmentID();
+    if (control != null) {
+        if (control.AllowAllDepartment) {
+            departmentID = "";
+        }
+        window.open('agendaReport?id=' + $("#tb_id").val() + '&DepartmentId=' + departmentID, '_blank');
+    }
 }
