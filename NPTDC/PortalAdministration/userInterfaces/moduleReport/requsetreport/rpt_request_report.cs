@@ -22,6 +22,11 @@ namespace SBSPortal3.PortalAdministration.userInterfaces.moduleReport.requsetrep
             sqlDataSource1.Fill();
         }
 
+        private void xrPictureBox1_BeforePrint(System.Object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            string test = xrPictureBox1.ImageUrl;
+            xrPictureBox1.ImageUrl = GetCurrentColumnValue("ImagePath").ToString();
+        }
         private void xrSubreport_item_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
            
@@ -39,16 +44,16 @@ namespace SBSPortal3.PortalAdministration.userInterfaces.moduleReport.requsetrep
 
         private void rpt_request_report_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
-            PrivateFontCollection fontColl = new PrivateFontCollection();
-            fontColl.AddFontFile("C:\\Systematic\\005 VSTS Source\\04 NPDC\\SourceCode\\NPTDC\\PortalAdministration\\fonts\\Pyidaungsu-2.5_Regular.ttf");
-            rpt_request_report report = (rpt_request_report)sender;
-            foreach (Band b in report.Bands)
-            {
-                foreach (XRControl c in b.Controls)
-                {
-                    c.Font = new Font(fontColl.Families[0], c.Font.Size, c.Font.Style);
-                }
-            }
+            //PrivateFontCollection fontColl = new PrivateFontCollection();
+            //fontColl.AddFontFile("D:\\01 Source Code\\NYPDC\\NPTDC\\PortalAdministration\\fonts\\Pyidaungsu-2.5_Bold.ttf");
+            //rpt_request_report report = (rpt_request_report)sender;
+            //foreach (Band b in report.Bands)
+            //{
+            //    foreach (XRControl c in b.Controls)
+            //    {
+            //        c.Font = new Font(fontColl.Families[0], c.Font.Size, c.Font.Style);
+            //    }
+            //}
         }
     }
 }

@@ -75,18 +75,25 @@
             this.xrTableCell5 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell6 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell9 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
+            this.xrRichText4 = new DevExpress.XtraReports.UI.XRRichText();
+            this.xrRichText5 = new DevExpress.XtraReports.UI.XRRichText();
+            this.xrRichText6 = new DevExpress.XtraReports.UI.XRRichText();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrRichText3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrRichText2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrRichText1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrRichText4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrRichText5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrRichText6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
             // 
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable2});
-            this.Detail.HeightF = 137.5F;
+            this.Detail.HeightF = 545.8333F;
             this.Detail.Name = "Detail";
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -97,7 +104,7 @@
             this.xrTable2.Name = "xrTable2";
             this.xrTable2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow2});
-            this.xrTable2.SizeF = new System.Drawing.SizeF(924.5417F, 137.5F);
+            this.xrTable2.SizeF = new System.Drawing.SizeF(924.5417F, 535.8333F);
             // 
             // xrTableRow2
             // 
@@ -115,7 +122,7 @@
             this.xrTableCell2.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell2.Font = new System.Drawing.Font("Pyidaungsu", 11F);
+            this.xrTableCell2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.xrTableCell2.Name = "xrTableCell2";
             this.xrTableCell2.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 14, 0, 100F);
             this.xrTableCell2.StylePriority.UseBorders = false;
@@ -133,7 +140,7 @@
             this.xrTableCell3.CanGrow = false;
             this.xrTableCell3.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrRichText3});
-            this.xrTableCell3.Font = new System.Drawing.Font("Pyidaungsu", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTableCell3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrTableCell3.Name = "xrTableCell3";
             this.xrTableCell3.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 6, 0, 100F);
             this.xrTableCell3.StylePriority.UseBorders = false;
@@ -150,7 +157,7 @@
             this.xrRichText3.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrRichText3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Rtf", "[DepartmentName]")});
-            this.xrRichText3.Font = new System.Drawing.Font("Pyidaungsu", 11F);
+            this.xrRichText3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.xrRichText3.LocationFloat = new DevExpress.Utils.PointFloat(9.999847F, 10.00001F);
             this.xrRichText3.Name = "xrRichText3";
             this.xrRichText3.SerializableRtfString = resources.GetString("xrRichText3.SerializableRtfString");
@@ -164,11 +171,17 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell10.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrRichText6,
+            this.xrRichText5,
+            this.xrRichText4,
+            this.xrPictureBox1,
             this.xrLabel6,
             this.xrLabel5,
             this.xrRichText2,
             this.xrRichText1});
-            this.xrTableCell10.Font = new System.Drawing.Font("Pyidaungsu", 9.75F);
+            this.xrTableCell10.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[username]")});
+            this.xrTableCell10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell10.Multiline = true;
             this.xrTableCell10.Name = "xrTableCell10";
             this.xrTableCell10.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 6, 0, 100F);
@@ -183,8 +196,8 @@
             // xrLabel6
             // 
             this.xrLabel6.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrLabel6.Font = new System.Drawing.Font("Pyidaungsu", 11F);
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(313.3332F, 101.8751F);
+            this.xrLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(313.3331F, 490.3749F);
             this.xrLabel6.Name = "xrLabel6";
             this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel6.SizeF = new System.Drawing.SizeF(166.6666F, 35.45837F);
@@ -195,8 +208,8 @@
             // xrLabel5
             // 
             this.xrLabel5.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrLabel5.Font = new System.Drawing.Font("Pyidaungsu", 11F);
-            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(313.3332F, 66.41668F);
+            this.xrLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(313.3331F, 454.9166F);
             this.xrLabel5.Name = "xrLabel5";
             this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel5.SizeF = new System.Drawing.SizeF(166.6666F, 35.45837F);
@@ -209,7 +222,7 @@
             this.xrRichText2.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrRichText2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Html", "[PrintDecision]")});
-            this.xrRichText2.Font = new System.Drawing.Font("Pyidaungsu", 9.75F);
+            this.xrRichText2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrRichText2.LocationFloat = new DevExpress.Utils.PointFloat(9.999974F, 43.41668F);
             this.xrRichText2.Name = "xrRichText2";
             this.xrRichText2.SerializableRtfString = resources.GetString("xrRichText2.SerializableRtfString");
@@ -221,7 +234,7 @@
             this.xrRichText1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrRichText1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Html", "[PrintDescription]")});
-            this.xrRichText1.Font = new System.Drawing.Font("Pyidaungsu", 9.75F);
+            this.xrRichText1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrRichText1.LocationFloat = new DevExpress.Utils.PointFloat(9.999974F, 10.00001F);
             this.xrRichText1.Name = "xrRichText1";
             this.xrRichText1.SerializableRtfString = resources.GetString("xrRichText1.SerializableRtfString");
@@ -231,7 +244,7 @@
             // xrTableCell7
             // 
             this.xrTableCell7.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell7.Font = new System.Drawing.Font("Pyidaungsu", 9.75F);
+            this.xrTableCell7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell7.Name = "xrTableCell7";
             this.xrTableCell7.StylePriority.UseBorders = false;
             this.xrTableCell7.StylePriority.UseFont = false;
@@ -244,7 +257,7 @@
             this.xrTableCell8.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell8.Font = new System.Drawing.Font("Pyidaungsu", 9.75F);
+            this.xrTableCell8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell8.Name = "xrTableCell8";
             this.xrTableCell8.StylePriority.UseBorders = false;
             this.xrTableCell8.StylePriority.UseFont = false;
@@ -264,15 +277,15 @@
             this.BottomMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrPageInfo1,
             this.xrPageInfo2});
-            this.BottomMargin.HeightF = 90F;
+            this.BottomMargin.HeightF = 35F;
             this.BottomMargin.Name = "BottomMargin";
             this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // xrPageInfo1
             // 
-            this.xrPageInfo1.Font = new System.Drawing.Font("Pyidaungsu", 11F);
-            this.xrPageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(6.103516E-05F, 10F);
+            this.xrPageInfo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.xrPageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(0.0001017253F, 10F);
             this.xrPageInfo1.Name = "xrPageInfo1";
             this.xrPageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(6, 2, 0, 0, 100F);
             this.xrPageInfo1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
@@ -283,8 +296,8 @@
             // 
             // xrPageInfo2
             // 
-            this.xrPageInfo2.Font = new System.Drawing.Font("Pyidaungsu", 11F);
-            this.xrPageInfo2.LocationFloat = new DevExpress.Utils.PointFloat(611.5416F, 10F);
+            this.xrPageInfo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.xrPageInfo2.LocationFloat = new DevExpress.Utils.PointFloat(600.7084F, 10F);
             this.xrPageInfo2.Name = "xrPageInfo2";
             this.xrPageInfo2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 6, 0, 0, 100F);
             this.xrPageInfo2.SizeF = new System.Drawing.SizeF(313F, 23F);
@@ -331,7 +344,7 @@
             // 
             // xrLabel4
             // 
-            this.xrLabel4.Font = new System.Drawing.Font("Pyidaungsu", 11F, System.Drawing.FontStyle.Bold);
+            this.xrLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(211.0418F, 122.7917F);
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -344,7 +357,7 @@
             // 
             // xrLabel3
             // 
-            this.xrLabel3.Font = new System.Drawing.Font("Pyidaungsu", 11F, System.Drawing.FontStyle.Bold);
+            this.xrLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(211.0419F, 84.5417F);
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -357,7 +370,7 @@
             // 
             // xrLabel2
             // 
-            this.xrLabel2.Font = new System.Drawing.Font("Pyidaungsu", 11F, System.Drawing.FontStyle.Bold);
+            this.xrLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(211.0418F, 46.29167F);
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -370,7 +383,7 @@
             // 
             // xrLabel1
             // 
-            this.xrLabel1.Font = new System.Drawing.Font("Pyidaungsu", 11F, System.Drawing.FontStyle.Bold);
+            this.xrLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(211.0418F, 8.041668F);
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -480,7 +493,7 @@
             // 
             this.xrTableCell1.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right)));
-            this.xrTableCell1.Font = new System.Drawing.Font("Pyidaungsu", 11F);
+            this.xrTableCell1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.StylePriority.UseBorders = false;
             this.xrTableCell1.StylePriority.UseFont = false;
@@ -492,7 +505,7 @@
             // xrTableCell4
             // 
             this.xrTableCell4.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right)));
-            this.xrTableCell4.Font = new System.Drawing.Font("Pyidaungsu", 11F);
+            this.xrTableCell4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.xrTableCell4.Name = "xrTableCell4";
             this.xrTableCell4.StylePriority.UseBorders = false;
             this.xrTableCell4.StylePriority.UseFont = false;
@@ -504,7 +517,7 @@
             // xrTableCell5
             // 
             this.xrTableCell5.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right)));
-            this.xrTableCell5.Font = new System.Drawing.Font("Pyidaungsu", 11F);
+            this.xrTableCell5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.xrTableCell5.Name = "xrTableCell5";
             this.xrTableCell5.StylePriority.UseBorders = false;
             this.xrTableCell5.StylePriority.UseFont = false;
@@ -516,7 +529,7 @@
             // xrTableCell6
             // 
             this.xrTableCell6.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right)));
-            this.xrTableCell6.Font = new System.Drawing.Font("Pyidaungsu", 11F);
+            this.xrTableCell6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.xrTableCell6.Name = "xrTableCell6";
             this.xrTableCell6.StylePriority.UseBorders = false;
             this.xrTableCell6.StylePriority.UseFont = false;
@@ -528,7 +541,7 @@
             // xrTableCell9
             // 
             this.xrTableCell9.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right)));
-            this.xrTableCell9.Font = new System.Drawing.Font("Pyidaungsu", 11F);
+            this.xrTableCell9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.xrTableCell9.Name = "xrTableCell9";
             this.xrTableCell9.StylePriority.UseBorders = false;
             this.xrTableCell9.StylePriority.UseFont = false;
@@ -536,6 +549,54 @@
             this.xrTableCell9.Text = "မှတ်ချက်";
             this.xrTableCell9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell9.Weight = 0.94333612432358138D;
+            // 
+            // xrPictureBox1
+            // 
+            this.xrPictureBox1.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(313.3332F, 213.9167F);
+            this.xrPictureBox1.Name = "xrPictureBox1";
+            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(166.6665F, 115.5F);
+            this.xrPictureBox1.StylePriority.UseBorders = false;
+            this.xrPictureBox1.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.xrPictureBox1_BeforePrint);
+            // 
+            // xrRichText4
+            // 
+            this.xrRichText4.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrRichText4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Rtf", "[username]")});
+            this.xrRichText4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.xrRichText4.LocationFloat = new DevExpress.Utils.PointFloat(313.3331F, 341.1042F);
+            this.xrRichText4.Name = "xrRichText4";
+            this.xrRichText4.SerializableRtfString = resources.GetString("xrRichText4.SerializableRtfString");
+            this.xrRichText4.SizeF = new System.Drawing.SizeF(166.6665F, 27.79163F);
+            this.xrRichText4.StylePriority.UseBorders = false;
+            this.xrRichText4.StylePriority.UseFont = false;
+            // 
+            // xrRichText5
+            // 
+            this.xrRichText5.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrRichText5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Rtf", "[PositionName]")});
+            this.xrRichText5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.xrRichText5.LocationFloat = new DevExpress.Utils.PointFloat(313.3331F, 379.7292F);
+            this.xrRichText5.Name = "xrRichText5";
+            this.xrRichText5.SerializableRtfString = resources.GetString("xrRichText5.SerializableRtfString");
+            this.xrRichText5.SizeF = new System.Drawing.SizeF(166.6665F, 26.12497F);
+            this.xrRichText5.StylePriority.UseBorders = false;
+            this.xrRichText5.StylePriority.UseFont = false;
+            // 
+            // xrRichText6
+            // 
+            this.xrRichText6.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrRichText6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Rtf", "[ApprovedDepartment]")});
+            this.xrRichText6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.xrRichText6.LocationFloat = new DevExpress.Utils.PointFloat(313.3331F, 416.2916F);
+            this.xrRichText6.Name = "xrRichText6";
+            this.xrRichText6.SerializableRtfString = resources.GetString("xrRichText6.SerializableRtfString");
+            this.xrRichText6.SizeF = new System.Drawing.SizeF(166.6665F, 27.79166F);
+            this.xrRichText6.StylePriority.UseBorders = false;
+            this.xrRichText6.StylePriority.UseFont = false;
             // 
             // rpt_request_report
             // 
@@ -549,9 +610,9 @@
             this.sqlDataSource1});
             this.DataMember = "MST_Report_Request";
             this.DataSource = this.sqlDataSource1;
-            this.Font = new System.Drawing.Font("Pyidaungsu", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Landscape = true;
-            this.Margins = new System.Drawing.Printing.Margins(118, 0, 0, 90);
+            this.Margins = new System.Drawing.Printing.Margins(118, 0, 0, 35);
             this.PageHeight = 827;
             this.PageWidth = 1169;
             this.PaperKind = System.Drawing.Printing.PaperKind.A4;
@@ -573,6 +634,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.xrRichText2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrRichText1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrRichText4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrRichText5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrRichText6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -619,5 +683,9 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel6;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell3;
         private DevExpress.XtraReports.UI.XRRichText xrRichText3;
+        private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox1;
+        private DevExpress.XtraReports.UI.XRRichText xrRichText6;
+        private DevExpress.XtraReports.UI.XRRichText xrRichText5;
+        private DevExpress.XtraReports.UI.XRRichText xrRichText4;
     }
 }

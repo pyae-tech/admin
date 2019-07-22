@@ -601,18 +601,12 @@ function GetRequest(id) {
                 if (data.d["ApprovalStatus"] == "Approved") {
                     $(".div_approved").css("display", "block");
                     $("#tb_ApprovedRemark").val(data.d["ApprovedRemark"]);
-                    //$("#lbl_status").text('( ခွင့်ပြုသည်။ )');
-                    //$("#lbl_status").text('<i class="ion-checkmark-circled"></i>');
-                    //$("#lbl_status").append("<i class='ion-checkmark-round'></i>");
                     $("#lbl_status").replaceWith(function () { return "<span style='font-size: 23px;margin-top:-9px;' class='badge badge-success div_approved'><i class='ion-checkmark-round'></i></span>"; });
 
-                    $("#lbl_status").addClass("badge-success");
                 }
                 else if (data.d["ApprovalStatus"] == "Rejected") {
                     $(".div_approved").css("display", "block");
-                    $("#tb_ApprovedRemark").val(data.d["ApprovedRemark"]);
-                    //$("#lbl_status").append("<i class='ion-close'></i>");
-                    //$("#lbl_status").addClass("badge-danger");
+                    $("#tb_ApprovedRemark").val(data.d["ApprovedRemark"]);                   
                     $("#lbl_status").replaceWith(function () { return "<span style='font-size: 23px;margin-top:-9px;' class='badge badge-danger div_approved'><i class='ion-close'></i></span>"; });
                 }
                 else {
@@ -728,14 +722,14 @@ function RequestDecision(status) {
                     '<input id="remark" type="text" class="form-control" value="မှတ်ချက်" autocomplete="off"></div>',
         buttons: {
             confirm: {
-                label: 'Ok',
+                label: 'လုပ်ဆောင်မည်။',
                 className: 'btn-success',
                 callback: function () {
                     RequestApprove($('#remark').val(), status);
                 }
             },
             cancel: {
-                label: 'Cancle',
+                label: 'ပိတ်မည်။',
                 className: 'btn-danger',
                 callback: function () {
 
@@ -749,7 +743,7 @@ function RequestDecision(status) {
 
 //#region  Approve/Reject  Request
 function RequestApprove(remark, status) {
-
+   
     $.ajax({
         url: baseUrl() + "WebServices/WebService_Request.asmx/RequestApprove",
         data: JSON.stringify({
@@ -764,21 +758,7 @@ function RequestApprove(remark, status) {
         success: function (data) {
             if (data.d.toString().split('~')[0] == 'Success') {
                 ShowSuccessMessage(status);
-                if (data.d.toString().split('~')[1] == "Approved") {
-                    $(".div_approved").css("display", "block");
-                    $("#tb_ApprovedRemark").val(data.d.toString().split('~')[2]);
-                    $("#lbl_status").replaceWith(function () { return "<span style='font-size: 23px;margin-top:-9px;' class='badge badge-success div_approved'><i class='ion-checkmark-round'></i></span>"; });
-
-                    $("#lbl_status").addClass("badge-success");
-                }
-                else if (data.d.toString().split('~')[1] == "Rejected") {
-                    $(".div_approved").css("display", "block");
-                    $("#tb_ApprovedRemark").val(data.d.toString().split('~')[2]);
-                    $("#lbl_status").replaceWith(function () { return "<span style='font-size: 23px;margin-top:-9px;' class='badge badge-danger div_approved'><i class='ion-close'></i></span>"; });
-                }
-                else {
-                    $(".div_approved").css("display", "block");
-                }
+                GetRequest($("#tb_id").val());
             }
             else {
                 ShowBoxMessage("Oops. " + data.d.toString().split('~')[1]);

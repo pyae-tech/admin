@@ -4,21 +4,7 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_CSS" runat="server">
-    <style>
-    .index {
-    background: none repeat scroll 0 0 #0063ff;
-    border: 2px solid #ffffff;
-    border-radius: 25px;
-    color: #fff;
-    font-size: 28px;
-    font-weight: bold;
-    padding: 5px 15px;
-    position: absolute;
-    right: -10px;
-    top: -10px;
-    
-    }
-        </style>
+   
     <link href='<%=ResolveUrl("../../../plugins/WidgetsGallery/css/dx.common.css")%>' rel="stylesheet" />
     <link href='<%=ResolveUrl("../../../plugins/WidgetsGallery/css/dx.light.css")%>' rel="stylesheet" />
 
