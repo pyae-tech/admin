@@ -13,13 +13,13 @@ namespace SBSPortal3.PortalAdministration.userInterfaces.moduleReport.requsetrep
     public partial class PageRequestReport {
         
         /// <summary>
-        /// form1 control.
+        /// btn_download_Pdf control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.LinkButton btn_download_Pdf;
         
         /// <summary>
         /// hf_selected_value control.
@@ -38,5 +38,14 @@ namespace SBSPortal3.PortalAdministration.userInterfaces.moduleReport.requsetrep
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.XtraReports.Web.ASPxWebDocumentViewer docViwer;
+        
+        /// <summary>
+        /// richEditor_temp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxRichEdit.ASPxRichEdit richEditor_temp;
     }
 }
