@@ -17,7 +17,7 @@
            </li>
              
         <li>
-            <button data-dismiss="modal" class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="window.close();return false;" style="display: block;"><i class="btn-label ion-close"></i><span class="bold" data-translate="_close">ပိတ်မည်</span></button></li>
+            <button data-dismiss="modal" class="btn btn-dark  btn-rounded  btn-labeled" type="button" onclick="window.close();return false;" style="display: block;color:white;"><i class="btn-label ion-close"></i><span class="bold" data-translate="_close">ပိတ်မည်</span></button></li>
     </ol> 
 
 
@@ -42,7 +42,7 @@
                                             if (!options) {
                                                 currentExportOptions(null);
                                             } else { 
-                                                delete options["pdf"];
+                                                //delete options["pdf"];
                                                 currentExportOptions(options);
                                             }
                                         } finally {
@@ -66,8 +66,8 @@
                               //DevExpress.Report.Preview.ActionId.ZoomOut,
                               //DevExpress.Report.Preview.ActionId.ZoomSelector,
                               //DevExpress.Report.Preview.ActionId.ZoomIn,
-                              DevExpress.Report.Preview.ActionId.Print,
-                              DevExpress.Report.Preview.ActionId.PrintPage,
+                              //DevExpress.Report.Preview.ActionId.Print,
+                              //DevExpress.Report.Preview.ActionId.PrintPage,
                               //DevExpress.Report.Preview.ActionId.Search,
                                     ]
                                     e.Actions.filter(function (i) { return itemsToHide.indexOf(i.id) !== -1; }).forEach(function (i) { i.visible = false; });

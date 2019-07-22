@@ -27,6 +27,7 @@ namespace SBSPortal3.PortalAdministration.userInterfaces.moduleReport.requsetrep
             string test = xrPictureBox1.ImageUrl;
             if(GetCurrentColumnValue("ImagePath") != null){
                 xrPictureBox1.ImageUrl = GetCurrentColumnValue("ImagePath").ToString();
+               
             }
             
         }
