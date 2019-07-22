@@ -91,6 +91,7 @@
 <!--TIPS-->
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
 <body onunload="bodyUnload();" onclick="clicked=true;">
+    <form runat="server">
     <div id="container" class="effect aside-float aside-bright mainnav-lg">
 
         <!--NAVBAR-->
@@ -703,7 +704,7 @@
             </div>
         </div>
     </div>
-
+        </form>
     <!--Custom Style [ DEMONSTRATION ]-->
     <!--===================================================-->
     <style>

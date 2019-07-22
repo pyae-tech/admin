@@ -25,7 +25,10 @@ namespace SBSPortal3.PortalAdministration.userInterfaces.moduleReport.requsetrep
         private void xrPictureBox1_BeforePrint(System.Object sender, System.Drawing.Printing.PrintEventArgs e)
         {
             string test = xrPictureBox1.ImageUrl;
-            xrPictureBox1.ImageUrl = GetCurrentColumnValue("ImagePath").ToString();
+            if(GetCurrentColumnValue("ImagePath") != null){
+                xrPictureBox1.ImageUrl = GetCurrentColumnValue("ImagePath").ToString();
+            }
+            
         }
         private void xrSubreport_item_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
