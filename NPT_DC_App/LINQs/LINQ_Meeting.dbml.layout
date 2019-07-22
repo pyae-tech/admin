@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 13.5" name="LINQ_Meeting">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 14.375" name="LINQ_Meeting">
   <DataContextMoniker Name="/LINQ_MeetingDataContext" />
   <nestedChildShapes>
     <classShape Id="44576a92-faba-440c-84ae-3b4e548094c7" absoluteBounds="3.5, 0.75, 2, 2.7324039713541666">
@@ -38,16 +38,16 @@
         <elementListCompartment Id="804bb3d3-e57a-4050-85a2-da092cc01574" absoluteBounds="1.0150000000000001, 0.96, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="9e351841-2cfa-446c-9426-cc3f5814a277" absoluteBounds="0.75, 6.25, 2, 6.9630354817708326">
-      <DataClassMoniker Name="/LINQ_MeetingDataContext/MET_RequestView" />
-      <nestedChildShapes>
-        <elementListCompartment Id="111a8ead-6c80-4a40-8467-25a47302e17f" absoluteBounds="0.765, 6.71, 1.9700000000000002, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="2e3566b5-9e75-4560-8a4c-6964d0430853" absoluteBounds="8.5, 4.125, 2, 3.8862125651041666">
       <DataClassMoniker Name="/LINQ_MeetingDataContext/MET_AgendaView" />
       <nestedChildShapes>
         <elementListCompartment Id="4cb545c5-5200-4cf0-ad07-894154f6dc6f" absoluteBounds="8.515, 4.585, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9761d2ab-76ae-48e3-b119-af5639fa0c0e" absoluteBounds="1.125, 6.25, 2, 7.9245426432291648">
+      <DataClassMoniker Name="/LINQ_MeetingDataContext/MET_RequestView" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ffd55674-5f7f-4e78-82b6-9ec25a9da87a" absoluteBounds="1.1400000000000001, 6.71, 1.9700000000000002, 7.3645426432291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

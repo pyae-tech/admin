@@ -165,6 +165,7 @@ function BindTable(data) {
         text: "Expand All Groups",
         onValueChanged: function (data) {
             dataGrid.option("grouping.autoExpandAll", data.value);
+            dataGrid.clearSelection();
         }
     });
 }
