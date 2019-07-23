@@ -49,7 +49,7 @@
                                             if (!options) {
                                                 currentExportOptions(null);
                                             } else { 
-                                                //delete options["pdf"];
+                                                delete options["pdf"];
                                                 currentExportOptions(options);
                                             }
                                         } finally {
@@ -73,8 +73,8 @@
                               //DevExpress.Report.Preview.ActionId.ZoomOut,
                               //DevExpress.Report.Preview.ActionId.ZoomSelector,
                               //DevExpress.Report.Preview.ActionId.ZoomIn,
-                              //DevExpress.Report.Preview.ActionId.Print,
-                              //DevExpress.Report.Preview.ActionId.PrintPage,
+                              DevExpress.Report.Preview.ActionId.Print,
+                              DevExpress.Report.Preview.ActionId.PrintPage,
                               //DevExpress.Report.Preview.ActionId.Search,
                                     ]
                                     e.Actions.filter(function (i) { return itemsToHide.indexOf(i.id) !== -1; }).forEach(function (i) { i.visible = false; });

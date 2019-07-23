@@ -9,13 +9,13 @@
         <div class="panel">
             <div class="panel-body">
                 <div class="panel">
-                     <form id="form1" runat="server">
+                     
                             <asp:HiddenField runat="server" ID="hf_selected_value" ClientIDMode="Static" value="" />
          <div id="rp_view" style="min-height: 300px; border:1px solid silver;">        
         <dx:ASPxWebDocumentViewer ID="docViwer" runat="server" 
         ></dx:ASPxWebDocumentViewer>
              </div>    
-    </form>
+    
                    
                 </div>
             </div>

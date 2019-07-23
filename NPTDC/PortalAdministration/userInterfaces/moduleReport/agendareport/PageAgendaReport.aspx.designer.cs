@@ -13,15 +13,6 @@ namespace SBSPortal3.PortalAdministration.userInterfaces.moduleReport.agendarepo
     public partial class PageAgendaReport {
         
         /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
         /// hf_selected_value control.
         /// </summary>
         /// <remarks>
